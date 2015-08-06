@@ -1,0 +1,213 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iLost Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-17 20:25+0700\n"
+"PO-Revision-Date: 2011-08-17 20:25+0700\n"
+"Last-Translator: Xu.hel <xu@xuui.net>\n"
+"Language-Team: Xu.Design <xu@xuui.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost\n"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:6
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:42
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:25
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:26
+msgid "Not Found"
+msgstr "Not Found"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:9
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr "Apologies, but the page you requested could not be found. Perhaps searching will help."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
+msgid "Archive for the &#8216;"
+msgstr "Archive for the &#8216;"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
+msgid "&#8217; Category"
+msgstr "&#8217; Category"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
+msgid "Posts Tagged &#8216;"
+msgstr "Posts Tagged &#8216;"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
+msgid "&#8217;"
+msgstr "&#8217;"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:11
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:13
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:15
+msgid "Archive for "
+msgstr "Archive for "
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:17
+msgid "Archive for Author: "
+msgstr "Archive for Author: "
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:19
+msgid "Blog Archives"
+msgstr "Blog Archives"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+msgid "No Comments"
+msgstr "No Comments"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+msgid "1 Comment"
+msgstr "1 Comment"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+msgid "% Comments"
+msgstr "% Comments"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:16
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:15
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/links.php:9
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:14
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:16
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:8
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:15
+msgid "Edit"
+msgstr "Edit"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:16
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:16
+msgid "Tags: "
+msgstr "Tags: "
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:45
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:28
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:29
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "Sorry, but you are looking for something that isn't here."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:46
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:29
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:30
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:12
+msgid "Recent Articles"
+msgstr "Recent Articles"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:3
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "This post is password protected. Enter the password to view any comments."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
+#, php-format
+msgid "One Response to %2$s"
+msgstr "One Response to %2$s"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
+#, php-format
+msgid "%1$s Responses to %2$s"
+msgstr "%1$s Responses to %2$s"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:14
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
+msgid "HOME"
+msgstr "HOME"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:5
+msgid " &brvbar; "
+msgstr " &brvbar; "
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:8
+msgid "Copyright &copy;2011 "
+msgstr "Copyright &copy;2011 "
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:5
+msgid "Primary Navigation"
+msgstr "Primary Navigation"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:19
+msgid "Excerpt"
+msgstr "Excerpt"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:21
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:12
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:10
+msgid "Learn more"
+msgstr "Learn more"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
+msgid "[Edit]"
+msgstr "[Edit]"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:56
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
+#, php-format
+msgid "Search results for \"%s\""
+msgstr "Search results for \"%s\""
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
+msgid "Error 404 - Not Found"
+msgstr "Error 404 - Not Found"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:5
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Search Results for: %s"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:4
+msgid "Categories"
+msgstr "Categories"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:7
+msgid "Most Popular Articles"
+msgstr "Most Popular Articles"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:14
+msgid "Recent Comments"
+msgstr "Recent Comments"
+
+#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:20
+msgid "Meta"
+msgstr "Meta"
+
