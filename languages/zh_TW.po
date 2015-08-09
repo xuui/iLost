@@ -1,213 +1,877 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: iLost Theme\n"
+"Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-17 20:25+0700\n"
-"PO-Revision-Date: 2011-08-18 08:31+0800\n"
-"Last-Translator: Xu.hel <xu@xuui.net>\n"
+"POT-Creation-Date: 2012-08-02 15:18+0800\n"
+"PO-Revision-Date: 2012-08-02 15:19+0800\n"
+"Last-Translator: Xu.hel <zvzhssj@gmail.com>\n"
 "Language-Team: Xu.Design <xu@xuui.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:6
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:42
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:25
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:26
-msgid "Not Found"
-msgstr "没有找到"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:9
-msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
-msgstr "抱歉，您請求的頁面無法找到。也許使用搜索會對您有所幫助。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
-msgid "Archive for the &#8216;"
-msgstr "存檔： &#8216;"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
-msgid "&#8217; Category"
-msgstr "&#8217; 分類"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
-msgid "Posts Tagged &#8216;"
-msgstr "文檔標籤 &#8216;"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
-msgid "&#8217;"
-msgstr "&#8217;"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:11
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:13
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:15
-msgid "Archive for "
-msgstr "存檔："
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:17
-msgid "Archive for Author: "
-msgstr "作者："
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:19
-msgid "Blog Archives"
-msgstr "文章歸檔"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
-msgid "No Comments"
-msgstr "没有回應"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
-msgid "1 Comment"
-msgstr "1 條回應"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
-msgid "% Comments"
-msgstr "% 條回應"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/links.php:9
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:14
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:15
-msgid "Edit"
-msgstr "編輯"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:16
-msgid "Tags: "
-msgstr "標籤："
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:45
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:28
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:29
-msgid "Sorry, but you are looking for something that isn't here."
-msgstr "對不起，您正在查找的東西不在這裡。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:46
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:29
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:30
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
-msgstr "抱歉，沒有找到任何文檔。也許您可以使用搜索來查找一下。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:12
-msgid "Recent Articles"
-msgstr "最近的文檔"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:3
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "這是一篇受密碼保護的文檔。需要輸入密碼後才能查看評論。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
-#, php-format
-msgid "One Response to %2$s"
-msgstr "%2$s 有1條回應"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
-#, php-format
-msgid "%1$s Responses to %2$s"
-msgstr "%2$s 有 %1$s 條回應"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:14
-msgid "Comments are closed."
-msgstr "回應已關閉。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-msgid "HOME"
-msgstr "首頁"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:5
-msgid " &brvbar; "
-msgstr " &brvbar; "
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-msgid "RSS Feed"
-msgstr "RSS 訂閱"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:8
-msgid "Copyright &copy;2011 "
-msgstr "&copy; 版權所有 2011 "
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:5
-msgid "Primary Navigation"
-msgstr "主導航菜單"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:19
-msgid "Excerpt"
-msgstr "簡要"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:21
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:12
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:10
-msgid "Learn more"
-msgstr "了解更多"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s 在 %2$s"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
-msgid "[Edit]"
-msgstr "[編輯]"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:56
-msgid "Your comment is awaiting moderation."
-msgstr "您的回應正在等待審核。"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
-msgid "Pingback:"
-msgstr "引用："
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
-#, php-format
-msgid "Search results for \"%s\""
-msgstr "\"%s\" 的搜索結果"
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
+#: ../404.php:5
+#: ../header.php:9
 msgid "Error 404 - Not Found"
 msgstr "404 錯誤 - 沒有找到"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:5
+#: ../archive.php:6
+msgid "Archive for the &#8216;"
+msgstr "歷史歸檔 &#8216;"
+
+#: ../archive.php:6
+msgid "&#8217; Category"
+msgstr "&#8217; 分類"
+
+#: ../archive.php:7
+msgid "Posts Tagged &#8216;"
+msgstr "文檔標籤 &#8216;"
+
+#: ../archive.php:7
+msgid "&#8217;"
+msgstr "&#8217;"
+
+#: ../archive.php:8
+#: ../archive.php:9
+#: ../archive.php:10
+msgid "Archive for "
+msgstr "歸檔"
+
+#: ../archive.php:11
+msgid "Archive for Author: "
+msgstr "作者歸檔："
+
+#: ../archive.php:12
+msgid "Blog Archives"
+msgstr "博客歸檔"
+
+#: ../archive.php:19
+#: ../index.php:8
+#: ../mode.talk.php:13
+msgid "No Comments"
+msgstr "沒有回應"
+
+#: ../archive.php:19
+#: ../index.php:8
+#: ../mode.talk.php:13
+msgid "1 Comment"
+msgstr "1 條回應"
+
+#: ../archive.php:19
+#: ../index.php:8
+#: ../mode.talk.php:13
+msgid "% Comments"
+msgstr "% 條回應"
+
+#: ../archive.php:19
+#: ../archive.php:27
+#: ../attachment.php:8
+#: ../attachment.php:14
+#: ../index.php:8
+#: ../index.php:15
+#: ../mode.about.php:14
+#: ../mode.archives.php:15
+#: ../mode.guestbook.php:13
+#: ../mode.links.php:10
+#: ../mode.talk.php:13
+msgid "Edit"
+msgstr "編輯"
+
+#: ../archive.php:27
+#: ../attachment.php:15
+#: ../index.php:15
+msgid "Tags: "
+msgstr "標籤："
+
+#: ../archive.php:36
+#: ../index.php:24
+msgid "Not Found"
+msgstr "沒有找到"
+
+#: ../archive.php:38
+#: ../index.php:26
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr "對不起，您要找的東西不再這裡。"
+
+#: ../archive.php:39
+#: ../index.php:27
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "抱歉，您請求的頁面無法找到。也許您可以使用搜索來查找一下。"
+
+#: ../comments.php:2
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "這是一篇受密碼保護的文檔。需要輸入密碼後才能查看回應。"
+
+#: ../comments.php:6
 #, php-format
-msgid "Search Results for: %s"
-msgstr "%s 的搜索結果"
+msgid "One Response to %2$s"
+msgstr "One Response to %2$s"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:4
-msgid "Categories"
-msgstr "分類"
+#: ../comments.php:6
+#, php-format
+msgid "%1$s Responses to %2$s"
+msgstr "%1$s Responses to %2$s"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:7
+#: ../comments.php:12
+msgid "Comments are closed."
+msgstr "這篇文檔的回應已關閉。"
+
+#: ../footer.php:2
+msgid "Back Top"
+msgstr "返回頂部"
+
+#: ../footer.php:5
+msgid " Archives"
+msgstr "文檔歸檔"
+
+#: ../footer.php:19
+msgid " &brvbar; "
+msgstr " &brvbar; "
+
+#: ../functions.php:37
+msgid "Share this post:"
+msgstr "將本文分享到："
+
+#: ../functions.php:37
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../functions.php:37
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../functions.php:37
+msgid "Delicious"
+msgstr "Delicious"
+
+#: ../functions.php:37
+msgid "Fanfou"
+msgstr "飯否"
+
+#: ../functions.php:38
+msgid "QQ Weibo"
+msgstr "腾讯微博"
+
+#: ../functions.php:38
+msgid "Sina Weibo"
+msgstr "新浪微博"
+
+#: ../functions.php:38
+msgid "163 Weibo"
+msgstr "网易微博"
+
+#: ../functions.php:38
+msgid "kaixin001"
+msgstr "開心網"
+
+#: ../functions.php:38
+msgid "Renren"
+msgstr "人人網"
+
+#: ../functions.php:38
+msgid "Douban"
+msgstr "豆瓣"
+
+#: ../functions.php:52
+#, php-format
+msgid "%1$s %2$s <span class=\"says\">said:</span>"
+msgstr "%1$s %2$s <span class=\"says\">說：</span>"
+
+#: ../functions.php:52
+#, php-format
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: ../functions.php:54
+msgid "Your comment is awaiting moderation."
+msgstr "您的回應正在等候審核。"
+
+#: ../functions.php:61
+msgid "Pingback:"
+msgstr "應用："
+
+#: ../functions.php:61
+msgid "[Edit]"
+msgstr "[編輯]"
+
+#: ../header.php:9
+#, php-format
+msgid "Search results for \"%s\""
+msgstr "\"%s\" 的搜尋結果"
+
+#: ../index.php:11
+#: ../mode.about.php:10
+#: ../mode.guestbook.php:9
+msgid "Learn more"
+msgstr "瞭解更多"
+
+#: ../mode.archives.php:11
+msgid "Recent Articles"
+msgstr "最近文當"
+
+#: ../mode.theme.php:41
+msgid "DownLoad Now!"
+msgstr "DownLoad Now!"
+
+#: ../sidebar.php:4
+#: ../single.php:18
+msgid "View Demo"
+msgstr "View Demo"
+
+#: ../sidebar.php:5
+#: ../single.php:19
+msgid "Download Now"
+msgstr "Download Now"
+
+#: ../sidebar.php:6
+#: ../single.php:20
+msgid "Buy Now"
+msgstr "Buy Now"
+
+#: ../single.php:15
+msgid "View this article need to login."
+msgstr "這篇文檔需要登錄後才能瀏覽。"
+
+#: ../include/core.php:3
+msgid " theme's SideBar."
+msgstr " 主題的主邊欄"
+
+#: ../include/core.php:4
+msgid " theme's Home page template of right sidebar."
+msgstr " 主題的主頁模板頁的右側邊欄。"
+
+#: ../include/core.php:5
+msgid " theme's Home page template of left sidebar."
+msgstr " 主題的主頁模板頁的左側邊欄"
+
+#: ../include/core.php:6
+msgid " theme's page sidebar."
+msgstr " 主題的頁面邊欄。"
+
+#: ../include/core.php:7
+msgid " theme' footer sidebar, This can only be placed on 5 widget."
+msgstr " 主題的頁腳欄，一行最多之允許放置 5 個小工具。"
+
+#: ../include/core.php:14
+msgid "Primary Navigation"
+msgstr "主導航菜單"
+
+#: ../include/core.php:48
+msgid "Excerpt"
+msgstr "摘要"
+
+#: ../include/core.php:57
+#: ../include/options.php:82
+#: ../include/options.php:85
+msgid " Options"
+msgstr " 選項"
+
+#: ../include/core.php:62
+msgid "Show images"
+msgstr "展示圖片"
+
+#: ../include/core.php:62
+msgid "Show image"
+msgstr "展示圖片"
+
+#: ../include/core.php:62
+msgid "Add Images"
+msgstr "添加圖片"
+
+#: ../include/core.php:62
+msgid "Add New Images"
+msgstr "添加新圖片"
+
+#: ../include/core.php:62
+msgid "Edit Image"
+msgstr "編輯圖片"
+
+#: ../include/core.php:62
+msgid "Add Show image"
+msgstr "添加展示圖片"
+
+#: ../include/core.php:62
+msgid "View Image"
+msgstr "查看圖片"
+
+#: ../include/core.php:62
+msgid "Search Show images"
+msgstr "搜尋展示圖片"
+
+#: ../include/core.php:62
+msgid "No images found"
+msgstr "找不到任何圖片"
+
+#: ../include/core.php:62
+msgid "No images found in Trash"
+msgstr "垃圾桶裡面沒有發現任何展示圖片"
+
+#: ../include/core.php:116
+#: ../include/options.php:155
+msgid "Use Ctrl+Enter to reply comments"
+msgstr "使用 Ctrl+Enter 快速回覆回應"
+
+#: ../include/core.php:166
+msgid "No Comments &raquo;"
+msgstr "No Comments &raquo;"
+
+#: ../include/core.php:166
+msgid "1 Comment &raquo;"
+msgstr "1 Comment &raquo;"
+
+#: ../include/core.php:166
+msgid "% Comments &raquo;"
+msgstr "% Comments &raquo;"
+
+#: ../include/core.php:180
+msgid "Related Post:"
+msgstr "相關文檔："
+
+#: ../include/core.php:225
+msgid "TalkPost"
+msgstr "TalkPost"
+
+#: ../include/core.php:225
+msgid "Add TalkPost"
+msgstr "Add TalkPost"
+
+#: ../include/core.php:225
+msgid "Add New TalkPost"
+msgstr "Add New TalkPost"
+
+#: ../include/core.php:225
+msgid "Edit TalkPost"
+msgstr "Edit TalkPost"
+
+#: ../include/core.php:225
+msgid "View TalkPost"
+msgstr "View TalkPost"
+
+#: ../include/core.php:225
+msgid "Search TalkPost"
+msgstr "Search TalkPost"
+
+#: ../include/core.php:225
+msgid "No TalkPost found"
+msgstr "No TalkPost found"
+
+#: ../include/core.php:225
+msgid "No TalkPost found in Trash"
+msgstr "No TalkPost found in Trash"
+
+#: ../include/fanfou.php:5
+msgid "[Update] "
+msgstr "[更新] "
+
+#: ../include/fanfou.php:5
+msgid "[New] "
+msgstr "[新] "
+
+#: ../include/options.php:79
+msgid "Settings saved."
+msgstr "設置已儲存。"
+
+#: ../include/options.php:81
+msgid "Settings have been restored to default."
+msgstr "設置已復原為默認值。"
+
+#: ../include/options.php:85
+msgid "Script Code"
+msgstr "廣告和腳本"
+
+#: ../include/options.php:118
+msgid "Thank you for purchasing this theme, designed by the Xu.hel."
+msgstr "谢谢您购买这个主题，这个主题由 Xu.hel 设计。謝謝您購買這個主題，這個主題由 Xu.hel 設計。"
+
+#: ../include/options.php:123
+msgid "General Options"
+msgstr "常規選項"
+
+#: ../include/options.php:124
+msgid "Custom Logo picture"
+msgstr "自定義 Logo 圖片"
+
+#: ../include/options.php:127
+msgid "Please enter the URL address of the Logo picture."
+msgstr "請錄入 Logo 圖片的 URL 地址。"
+
+#: ../include/options.php:130
+msgid "Custom Favicon"
+msgstr "自定義 Favicon"
+
+#: ../include/options.php:133
+msgid "Please enter the URL address of the Favicon icon."
+msgstr "請錄入 Favicon 圖標的 URL 地址。"
+
+#: ../include/options.php:136
+msgid "Sidebar float:"
+msgstr "邊欄浮動："
+
+#: ../include/options.php:137
+msgid "Left"
+msgstr "左邊"
+
+#: ../include/options.php:138
+msgid "Right"
+msgstr "右邊"
+
+#: ../include/options.php:140
+msgid "Custom RSS Subscription"
+msgstr "自定義 RSS 訂閱地址"
+
+#: ../include/options.php:141
+msgid "Is empty, use the default automatic WordPress address. "
+msgstr "為空則自動使用 WordPress 的默認地址。"
+
+#: ../include/options.php:143
+msgid "Search engine keywords"
+msgstr "搜索引擎關鍵字"
+
+#: ../include/options.php:144
+msgid "Keywords using a comma (\",\") between them. Is empty, the automatic acquisition."
+msgstr "關鍵詞用逗號(“，”)分開。為空則自動獲得。"
+
+#: ../include/options.php:146
+msgid "Google custom search"
+msgstr "Google 自定義搜索"
+
+#: ../include/options.php:146
+#: ../include/options.php:170
+msgid "Enabled"
+msgstr "啟用"
+
+#: ../include/options.php:148
+#, php-format
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "在 <a href=\"%1$s\">Google Custom Search Engine</a> 的搜索框代碼中找到 <code>name=\"cx\"</code> ， 並將同行中 value 的值填寫在下面的輸入框內。<br />n例如: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: ../include/options.php:148
+msgid "http://www.google.com/coop/cse/"
+msgstr "http://www.google.com/coop/cse/"
+
+#: ../include/options.php:153
+msgid "Enable Google + 1 button"
+msgstr "啟用 Google +1 按鈕"
+
+#: ../include/options.php:157
+msgid "Automatically copy the article URL"
+msgstr "自動拷貝文檔網址"
+
+#: ../include/options.php:158
+msgid "Copy operation is automatically appended to the current article addresses to the clipboard."
+msgstr "拷貝操作的時候自動拷貝文檔的網址到剪貼板。"
+
+#: ../include/options.php:160
+msgid "Focus image shows quantity"
+msgstr "輪換圖片顯示數目"
+
+#: ../include/options.php:161
+msgid "The default show 4 images"
+msgstr "默認顯示4張圖片"
+
+#: ../include/options.php:163
+msgid "The related article is displayed as:"
+msgstr "相關文檔顯示為："
+
+#: ../include/options.php:164
+msgid "Post lists"
+msgstr "文檔列表"
+
+#: ../include/options.php:165
+msgid "thumbnail"
+msgstr "微縮圖"
+
+#: ../include/options.php:167
+msgid "Relevant article display quantity"
+msgstr "相關文檔顯示數目"
+
+#: ../include/options.php:168
+msgid "The default display 5 articles "
+msgstr "默認顯示5篇文檔"
+
+#: ../include/options.php:170
+msgid "GrowlBox pop-up tips"
+msgstr "GrowlBox 氣泡提醒"
+
+#: ../include/options.php:172
+msgid "Text...##Title#Pop-up bubble title"
+msgstr "內容...##Title#彈出氣泡標題"
+
+#: ../include/options.php:173
+msgid "Set GrowlBox tip box's contents. Use the # # Title# \"separate content and title, can do not have a title. Is empty is not GrowlBox tip box popup."
+msgstr "設置 GrowlBox 提醒框的提示內容。使用“##Title#”區分內容和標題，可以沒有標題。為空則不會彈出 GrowlBox 提醒框。"
+
+#: ../include/options.php:176
+msgid "."
+msgstr "."
+
+#: ../include/options.php:181
+msgid "Fanfou Synchronization"
+msgstr "飯否同步"
+
+#: ../include/options.php:182
+msgid "Fanfou authorization code:"
+msgstr "飯否授權碼："
+
+#: ../include/options.php:185
+msgid "Get Authorization Code"
+msgstr "獲取授權碼"
+
+#: ../include/options.php:186
+msgid "To obtain the authorization code needs to be saved to take effect."
+msgstr "獲得的授權碼需要儲存後才能生效。"
+
+#: ../include/options.php:191
+msgid "jQuery Library"
+msgstr "jQuery 庫"
+
+#: ../include/options.php:192
+msgid "Source URL"
+msgstr "來源網址"
+
+#: ../include/options.php:192
+msgid "WordPress Default"
+msgstr "WordPress 默認庫"
+
+#: ../include/options.php:194
+msgid "Google API"
+msgstr "Google API 庫"
+
+#: ../include/options.php:195
+msgid "jQurey.com"
+msgstr "jQurey.com"
+
+#: ../include/options.php:196
+msgid "Custom URL: "
+msgstr "自定義網址："
+
+#: ../include/options.php:196
+msgid "http:///"
+msgstr "http:///"
+
+#: ../include/options.php:201
+msgid "Google Analytics statistics"
+msgstr "Google Analytics 統計分析"
+
+#: ../include/options.php:202
+msgid "Google Analytics statistics code"
+msgstr "Google Analytics 統計分析代碼"
+
+#: ../include/options.php:207
+msgid "AD Codes"
+msgstr "廣告代碼"
+
+#: ../include/options.php:208
+msgid "Side bar at the top advertising"
+msgstr "邊欄頂部廣告"
+
+#: ../include/options.php:211
+msgid "Side bar at the bottom of the advertising"
+msgstr "邊欄底部廣告"
+
+#: ../include/options.php:214
+msgid "The article embedded advertising"
+msgstr "文檔內嵌廣告"
+
+#: ../include/options.php:217
+msgid "The article tail advertising"
+msgstr "文檔結尾廣告"
+
+#: ../include/options.php:222
+msgid "Save Changes"
+msgstr "儲存設置"
+
+#: ../include/options.php:222
+msgid "Restore to defaults"
+msgstr "還原默認值"
+
+#: ../include/options.php:295
+msgid "Search for:"
+msgstr "搜索结果："
+
+#: ../include/widgets.php:4
+msgid "Appear in the Footer of a specified category articles"
+msgstr "在頁腳顯示指定類別的文檔"
+
+#: ../include/widgets.php:4
+msgid "iLost Footer article list"
+msgstr "iLost 頁腳文檔列表"
+
+#: ../include/widgets.php:14
+#: ../include/widgets.php:37
+msgid "Categories ID:"
+msgstr "文檔類別 ID"
+
+#: ../include/widgets.php:14
+#: ../include/widgets.php:38
+#: ../include/widgets.php:60
+#: ../include/widgets.php:80
+msgid "Number of posts to show:"
+msgstr "顯示文檔數目:"
+
+#: ../include/widgets.php:19
+msgid "Home template in the right sidebar of articles specified category show"
+msgstr "在 Home 模板的右側邊欄顯示指定類別的文檔文章"
+
+#: ../include/widgets.php:19
+msgid "iLost Categories article list"
+msgstr "iLost 類別文檔列表"
+
+#: ../include/widgets.php:39
+msgid "Show excerpt"
+msgstr "顯示摘要"
+
+#: ../include/widgets.php:45
+msgid "Display random sequence articles"
+msgstr "顯示隨機文檔"
+
+#: ../include/widgets.php:45
+msgid "iLost Random Posts"
+msgstr "iLost 隨機文檔"
+
+#: ../include/widgets.php:49
+msgid "Random Articles"
+msgstr "隨機文檔"
+
+#: ../include/widgets.php:60
+#: ../include/widgets.php:80
+#: ../include/widgets.php:100
+#: ../include/widgets.php:120
+msgid "Title:"
+msgstr "標題:"
+
+#: ../include/widgets.php:65
+#: ../include/widgets.php:69
 msgid "Most Popular Articles"
-msgstr "最受歡迎文檔"
+msgstr "最受歡迎的文檔"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:14
+#: ../include/widgets.php:65
+msgid "iLost Most Popular Articles"
+msgstr "iLost 最受歡迎文檔"
+
+#: ../include/widgets.php:85
+msgid "The most recent comments"
+msgstr "最近的回應"
+
+#: ../include/widgets.php:85
+msgid "iLost Recent Comments"
+msgstr "iLost 最近回應"
+
+#: ../include/widgets.php:89
 msgid "Recent Comments"
 msgstr "最近回應"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:20
-msgid "Meta"
-msgstr "其他"
+#: ../include/widgets.php:100
+msgid "Number of comments to show:"
+msgstr "顯示回應數目:"
 
+#: ../include/widgets.php:105
+msgid "The most recent avatars"
+msgstr "最近的來訪者"
+
+#: ../include/widgets.php:105
+msgid "iLost Recent Avatar"
+msgstr "iLost 最近來訪者"
+
+#: ../include/widgets.php:109
+msgid "Recent Avatar"
+msgstr "最近來訪者"
+
+#: ../include/widgets.php:120
+msgid "Number of avatars to show:"
+msgstr "顯示來訪者數目:"
+
+#~ msgid "Categories"
+#~ msgstr "文檔類別"
+
+#~ msgid "Meta"
+#~ msgstr "其他"
+
+#~ msgid ""
+#~ "Please put the Logo pictures into the subject catalogue \"image\" folder, "
+#~ "and then input file name."
+#~ msgstr "請把 Logo 圖片放入主題目錄的“image”檔案夾，然後輸入圖片的文件名稱。"
+
+#~ msgid ""
+#~ "Please put the Favicon ICONS into the subject catalogue \"image\" folder, "
+#~ "and then input file name."
+#~ msgstr "請把 Favicon 圖標放入主題目錄的“image”檔案夾，然後輸入文件名稱。"
+
+#~ msgid "%s <cite class=\"says\">:&nbsp;</cite>"
+#~ msgstr "%s <cite class=\"says\">:&nbsp;</cite>"
+
+#~ msgid "This page validates as HTML"
+#~ msgstr "HTML 標準校驗"
+
+#~ msgid "Valid <abbr title=\"HyperText Markup Language\">HTML</abbr>"
+#~ msgstr "Valid <abbr title=\"HyperText Markup Language\">HTML</abbr>"
+
+#~ msgid "ID:"
+#~ msgstr "ID:"
+
+#~ msgid "Name:"
+#~ msgstr "用戶名："
+
+#~ msgid "Password:"
+#~ msgstr "密碼："
+
+#~ msgid "Verify account"
+#~ msgstr "帳號校驗"
+
+#~ msgid "自动复制文章地址"
+#~ msgstr "自动复制文章地址"
+
+#~ msgid "复制操作的时候自动追加当前文章地址到剪贴板。"
+#~ msgstr "复制操作的时候自动追加当前文章地址到剪贴板。"
+
+#~ msgid "CMS home page template pages ID"
+#~ msgstr "CMS 首页模板页 ID"
+
+#~ msgid "Home page template pages of designated page ID"
+#~ msgstr "指定首页模板页的页面ID"
+
+#~ msgid " theme's home SideBar"
+#~ msgstr " 主题的首页模板页边栏"
+
+#~ msgid "iLost 随机文章"
+#~ msgstr "iLost 随机文章"
+
+#~ msgid "显示随机排列的文章"
+#~ msgstr "显示随机排列的文章"
+
+#~ msgid "随机显示指定数目的文章"
+#~ msgstr "随机显示指定数目的文章"
+
+#~ msgid "在 Footer 上显现指定分类的文章"
+#~ msgstr "在 Footer 上显现指定分类的文章"
+
+#~ msgid "边栏顶部广告"
+#~ msgstr "边栏顶部广告"
+
+#~ msgid "边栏底部广告"
+#~ msgstr "边栏底部广告"
+
+#~ msgid "文章内嵌广告"
+#~ msgstr "文章内嵌广告"
+
+#~ msgid "文章尾部广告"
+#~ msgstr "文章尾部广告"
+
+#~ msgid "Google Analytics 统计代码"
+#~ msgstr "Google Analytics 统计代码"
+
+#~ msgid "帐号验证"
+#~ msgstr "帐号验证"
+
+#~ msgid "Name:用户名："
+#~ msgstr "Name:用户名："
+
+#~ msgid "饭否帐号"
+#~ msgstr "饭否帐号"
+
+#~ msgid ""
+#~ "设置 GrowlBox 提示框的提示内容。使用“##Title#”分开内容和标题，标题可以为"
+#~ "空。输入框为空则不会弹出 GrowlBox 提示框。"
+#~ msgstr ""
+#~ "设置 GrowlBox 提示框的提示内容。使用“##Title#”分开内容和标题，标题可以为"
+#~ "空。输入框为空则不会弹出 GrowlBox 提示框。"
+
+#~ msgid "设置 GrowlBox 提示框的提示内容，留空则不显示"
+#~ msgstr "设置 GrowlBox 提示框的提示内容，留空则不显示"
+
+#~ msgid "内容...##Title#标题"
+#~ msgstr "内容...##Title#标题"
+
+#~ msgid "默认显示5篇文章"
+#~ msgstr "默认显示5篇文章"
+
+#~ msgid "相关文章显示数量"
+#~ msgstr "相关文章显示数量"
+
+#~ msgid "默认显示4张图片"
+#~ msgstr "默认显示4张图片"
+
+#~ msgid "轮换图片显示数量"
+#~ msgstr "轮换图片显示数量"
+
+#~ msgid "指定首页模板页的页面ID"
+#~ msgstr "指定首页模板页的页面ID"
+
+#~ msgid ""
+#~ "指定首页模板页的页面IDHome page template pages of designated page ID "
+#~ msgstr ""
+#~ "指定首页模板页的页面IDHome page template pages of designated page ID "
+
+#~ msgid "CMS 首页模板页 ID"
+#~ msgstr "CMS 首页模板页 ID"
+
+#~ msgid "Use Ctrl+Enter to Reply Comments"
+#~ msgstr "使用 Ctrl+Enter 快速回复评论"
+
+#, fuzzy
+#~ msgid "Use Ctrl+Enter to Reply Comments使用 Ctrl+Enter 快速回复评论"
+#~ msgstr "使用 Ctrl+Enter 快速回复评论"
+
+#~ msgid "Enabled 启用"
+#~ msgstr "Enabled 启用"
+
+#~ msgid "启用"
+#~ msgstr "启用"
+
+#~ msgid "关键词用逗号（“，”）隔开，为空则自动获取"
+#~ msgstr "关键词用逗号（“，”）隔开，为空则自动获取"
+
+#, fuzzy
+#~ msgid "留空则自动使用 WordPress 的默认地址"
+#~ msgstr "留空则自动使用 WordPress 的默认地址"
+
+#~ msgid ""
+#~ "Please put the Favicon icon in the theme list of \"images\" directory, "
+#~ "and then input filename."
+#~ msgstr "请将 Favicon 图标放在主题目录下的“images”目录里面，然后输入文件名。"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please the Favicon icons on the theme directory \"images\" directory, "
+#~ "then input the file name."
+#~ msgstr ""
+#~ "请将 Favicon 图标放在主题目录下的 “images” 目录里面，然后输入文件名。"
+
+#~ msgid ""
+#~ "Please the logo picture the \"images\" on the theme directory under the "
+#~ "directory, then enter the file name."
+#~ msgstr "请将 Logo 图片放在主题目录下的 “images” 目录里面，然后输入文件名。"
+
+#~ msgid ""
+#~ "Place the icons on the theme directory \"images\" directory, then enter "
+#~ "the file name.请将图标放在主题目录下的 “images” 目录里面，然后输入文件名。"
+#~ msgstr ""
+#~ "Place the icons on the theme directory \"images\" directory, then enter "
+#~ "the file name.请将图标放在主题目录下的 “images” 目录里面，然后输入文件名。"
+
+#~ msgid "自定义 Favicon"
+#~ msgstr "自定义 Favicon"
+
+#~ msgid "请将图标放在主题目录下的 images 目录里面，然后输入文件名"
+#~ msgstr "请将图标放在主题目录下的 images 目录里面，然后输入文件名"
+
+#~ msgid "自定义 RSS 订阅地址"
+#~ msgstr "自定义 RSS 订阅地址"
+
+#~ msgid "GrowlBox 提示"
+#~ msgstr "GrowlBox 提示"
+
+#~ msgid "Recent Archives"
+#~ msgstr "最近文章"
+
+#~ msgid "自定义 Logo 图片"
+#~ msgstr "自定义 Logo 图片"
+
+#~ msgid "饭否"
+#~ msgstr "饭否"

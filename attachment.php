@@ -11,8 +11,8 @@
     	<?php the_content();?>
     </div>
     <div class="post-meta">
-			<?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');?>
-			<?php the_tags(__('Tags: ','iLost'),' | ','');?><div class="clear"></div>
+			<?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
+			the_tags(__('Tags: ','iLost'),' | ','');?><div class="clear"></div>
     </div>
     <nav class="post-nav">
     	<span class="previous"><?php previous_post_link('%link');?></span>
