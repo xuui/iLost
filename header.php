@@ -45,8 +45,8 @@ window.external.msSiteModeShowJumpList();
 <iframe class="manifest" src="<?php echo ilost_path.'/manifest.html';?>"></iframe>
 <?php }?>
 <header>
-	<?php ilost_getSearchform();?>
-	<div class="caption"><?php ilost_getlogoimg();?></div>
+  <?php ilost_getSearchform();?>
+  <div class="caption"><?php ilost_getlogoimg();?></div>
   <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'nav','container_id'=>'navs'));?>
 </header>
-<?php if(!is_single()&&!is_page()){ilost_getiloshow();}?>
+<?php if(!is_single()&&!is_page()&&!is_search()){ilost_getiloshow();}?>

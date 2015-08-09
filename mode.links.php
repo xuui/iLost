@@ -7,7 +7,7 @@ get_header();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <ul id="linkpage"><?php wp_list_bookmarks();?></ul>
     <div class="post-meta"<?php ilost_lgshow();?>>
-			<?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
     </div>
   </section>
   <?php }}?>

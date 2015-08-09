@@ -2,22 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-02 15:19+0800\n"
-"PO-Revision-Date: 2012-08-02 15:19+0800\n"
-"Last-Translator: Xu.hel <zvzhssj@gmail.com>\n"
+"POT-Creation-Date: 2012-11-14 22:21+0800\n"
+"PO-Revision-Date: 2012-11-14 22:21+0800\n"
+"Last-Translator: Xu.hel <xuui@outlook.com>\n"
 "Language-Team: Xu.Design <xu@xuui.net>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Chinese\n"
-"X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:5
-#: ../header.php:9
+#: ../404.php:5 ../header.php:6
 msgid "Error 404 - Not Found"
 msgstr ""
 
@@ -37,9 +36,7 @@ msgstr ""
 msgid "&#8217;"
 msgstr ""
 
-#: ../archive.php:8
-#: ../archive.php:9
-#: ../archive.php:10
+#: ../archive.php:8 ../archive.php:9 ../archive.php:10
 msgid "Archive for "
 msgstr ""
 
@@ -51,61 +48,48 @@ msgstr ""
 msgid "Blog Archives"
 msgstr ""
 
-#: ../archive.php:19
-#: ../index.php:8
-#: ../mode.talk.php:13
+#: ../archive.php:19 ../index.php:8 ../mode.talk.php:13 ../search.php:19
 msgid "No Comments"
 msgstr ""
 
-#: ../archive.php:19
-#: ../index.php:8
-#: ../mode.talk.php:13
+#: ../archive.php:19 ../index.php:8 ../mode.talk.php:13 ../search.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: ../archive.php:19
-#: ../index.php:8
-#: ../mode.talk.php:13
+#: ../archive.php:19 ../index.php:8 ../mode.talk.php:13 ../search.php:19
 msgid "% Comments"
 msgstr ""
 
-#: ../archive.php:19
-#: ../archive.php:27
-#: ../attachment.php:8
-#: ../attachment.php:14
-#: ../index.php:8
-#: ../index.php:15
-#: ../mode.about.php:14
-#: ../mode.archives.php:15
-#: ../mode.guestbook.php:13
-#: ../mode.links.php:10
-#: ../mode.talk.php:13
+#: ../archive.php:19 ../archive.php:27 ../attachment.php:8
+#: ../attachment.php:14 ../index.php:8 ../index.php:15 ../mode.about.php:14
+#: ../mode.archives.php:15 ../mode.guestbook.php:13 ../mode.links.php:10
+#: ../mode.talk.php:13 ../page.php:12 ../search.php:19 ../search.php:26
+#: ../single-ilostshow.php:8 ../single-ilostshow.php:15 ../single-talk.php:11
+#: ../single.php:8 ../single.php:25
 msgid "Edit"
 msgstr ""
 
-#: ../archive.php:27
-#: ../attachment.php:15
-#: ../index.php:15
+#: ../archive.php:27 ../attachment.php:15 ../index.php:15 ../single.php:26
 msgid "Tags: "
 msgstr ""
 
-#: ../archive.php:36
-#: ../index.php:24
+#: ../archive.php:36 ../index.php:24 ../search.php:35
 msgid "Not Found"
 msgstr ""
 
-#: ../archive.php:38
-#: ../index.php:26
+#: ../archive.php:38 ../index.php:26 ../search.php:37
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: ../archive.php:39
-#: ../index.php:27
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+#: ../archive.php:39 ../index.php:27 ../search.php:38
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
 msgstr ""
 
 #: ../comments.php:2
-msgid "This post is password protected. Enter the password to view any comments."
+msgid ""
+"This post is password protected. Enter the password to view any comments."
 msgstr ""
 
 #: ../comments.php:6
@@ -150,7 +134,7 @@ msgstr ""
 msgid "Delicious"
 msgstr ""
 
-#: ../functions.php:37
+#: ../functions.php:37 ../include/options.php:89 ../include/options.php:241
 msgid "Fanfou"
 msgstr ""
 
@@ -200,14 +184,13 @@ msgstr ""
 msgid "[Edit]"
 msgstr ""
 
-#: ../header.php:9
+#: ../header.php:6 ../search.php:6 ../search.php:14
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: ../index.php:11
-#: ../mode.about.php:10
-#: ../mode.guestbook.php:9
+#: ../index.php:11 ../mode.about.php:10 ../mode.guestbook.php:9 ../page.php:8
+#: ../include/core.php:50
 msgid "Learn more"
 msgstr ""
 
@@ -219,18 +202,15 @@ msgstr ""
 msgid "DownLoad Now!"
 msgstr ""
 
-#: ../sidebar.php:4
-#: ../single.php:18
+#: ../sidebar.php:4 ../single.php:18
 msgid "View Demo"
 msgstr ""
 
-#: ../sidebar.php:5
-#: ../single.php:19
+#: ../sidebar.php:5 ../single.php:19
 msgid "Download Now"
 msgstr ""
 
-#: ../sidebar.php:6
-#: ../single.php:20
+#: ../sidebar.php:6 ../single.php:20
 msgid "Buy Now"
 msgstr ""
 
@@ -264,12 +244,6 @@ msgstr ""
 
 #: ../include/core.php:48
 msgid "Excerpt"
-msgstr ""
-
-#: ../include/core.php:57
-#: ../include/options.php:82
-#: ../include/options.php:85
-msgid " Options"
 msgstr ""
 
 #: ../include/core.php:62
@@ -312,8 +286,7 @@ msgstr ""
 msgid "No images found in Trash"
 msgstr ""
 
-#: ../include/core.php:116
-#: ../include/options.php:155
+#: ../include/core.php:116 ../include/options.php:159
 msgid "Use Ctrl+Enter to reply comments"
 msgstr ""
 
@@ -333,35 +306,43 @@ msgstr ""
 msgid "Related Post:"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:193
+msgid "Author"
+msgstr ""
+
+#: ../include/core.php:196
+msgid "Author description"
+msgstr ""
+
+#: ../include/core.php:234
 msgid "TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "Add TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "Add New TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "Edit TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "View TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "Search TalkPost"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "No TalkPost found"
 msgstr ""
 
-#: ../include/core.php:225
+#: ../include/core.php:234
 msgid "No TalkPost found in Trash"
 msgstr ""
 
@@ -373,225 +354,263 @@ msgstr ""
 msgid "[New] "
 msgstr ""
 
-#: ../include/options.php:79
+#: ../include/options.php:83
 msgid "Settings saved."
 msgstr ""
 
-#: ../include/options.php:81
+#: ../include/options.php:85
 msgid "Settings have been restored to default."
 msgstr ""
 
-#: ../include/options.php:85
+#: ../include/options.php:86 ../include/options.php:89
+#: ../include/options.php:239
+msgid " Options"
+msgstr ""
+
+#: ../include/options.php:89 ../include/options.php:242
 msgid "Script Code"
 msgstr ""
 
-#: ../include/options.php:118
+#: ../include/options.php:122
 msgid "Thank you for purchasing this theme, designed by the Xu.hel."
 msgstr ""
 
-#: ../include/options.php:123
+#: ../include/options.php:127 ../include/options.php:240
 msgid "General Options"
 msgstr ""
 
-#: ../include/options.php:124
+#: ../include/options.php:128
 msgid "Custom Logo picture"
 msgstr ""
 
-#: ../include/options.php:127
+#: ../include/options.php:131
 msgid "Please enter the URL address of the Logo picture."
 msgstr ""
 
-#: ../include/options.php:130
+#: ../include/options.php:134
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../include/options.php:133
+#: ../include/options.php:137
 msgid "Please enter the URL address of the Favicon icon."
 msgstr ""
 
-#: ../include/options.php:136
+#: ../include/options.php:140
 msgid "Sidebar float:"
 msgstr ""
 
-#: ../include/options.php:137
+#: ../include/options.php:141
 msgid "Left"
 msgstr ""
 
-#: ../include/options.php:138
+#: ../include/options.php:142
 msgid "Right"
 msgstr ""
 
-#: ../include/options.php:140
+#: ../include/options.php:144
 msgid "Custom RSS Subscription"
 msgstr ""
 
-#: ../include/options.php:141
+#: ../include/options.php:145
 msgid "Is empty, use the default automatic WordPress address. "
 msgstr ""
 
-#: ../include/options.php:143
+#: ../include/options.php:147
 msgid "Search engine keywords"
 msgstr ""
 
-#: ../include/options.php:144
-msgid "Keywords using a comma (\",\") between them. Is empty, the automatic acquisition."
+#: ../include/options.php:148
+msgid ""
+"Keywords using a comma (\",\") between them. Is empty, the automatic "
+"acquisition."
 msgstr ""
 
-#: ../include/options.php:146
+#: ../include/options.php:150
 msgid "Google custom search"
 msgstr ""
 
-#: ../include/options.php:146
-#: ../include/options.php:170
+#: ../include/options.php:150 ../include/options.php:168
+#: ../include/options.php:177 ../include/options.php:179
 msgid "Enabled"
 msgstr ""
 
-#: ../include/options.php:148
+#: ../include/options.php:152
 #, php-format
-msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgid ""
+"Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
+"href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</"
+"code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
 msgstr ""
 
-#: ../include/options.php:148
+#: ../include/options.php:152
 msgid "http://www.google.com/coop/cse/"
 msgstr ""
 
-#: ../include/options.php:153
-msgid "Enable Google + 1 button"
+#: ../include/options.php:154
+msgid "Embedded in the site search results"
 msgstr ""
 
 #: ../include/options.php:157
-msgid "Automatically copy the article URL"
-msgstr ""
-
-#: ../include/options.php:158
-msgid "Copy operation is automatically appended to the current article addresses to the clipboard."
-msgstr ""
-
-#: ../include/options.php:160
-msgid "Focus image shows quantity"
+msgid "Enable Google + 1 button"
 msgstr ""
 
 #: ../include/options.php:161
-msgid "The default show 4 images"
+msgid "Automatically copy the article URL"
 msgstr ""
 
-#: ../include/options.php:163
-msgid "The related article is displayed as:"
+#: ../include/options.php:162
+msgid ""
+"Copy operation is automatically appended to the current article addresses to "
+"the clipboard."
 msgstr ""
 
 #: ../include/options.php:164
-msgid "Post lists"
+msgid "Focus image shows quantity"
 msgstr ""
 
 #: ../include/options.php:165
-msgid "thumbnail"
-msgstr ""
-
-#: ../include/options.php:167
-msgid "Relevant article display quantity"
+msgid "The default show 4 images"
 msgstr ""
 
 #: ../include/options.php:168
-msgid "The default display 5 articles "
+msgid "Related articles"
 msgstr ""
 
 #: ../include/options.php:170
-msgid "GrowlBox pop-up tips"
+msgid "Type:"
+msgstr ""
+
+#: ../include/options.php:170
+msgid "Post lists"
+msgstr ""
+
+#: ../include/options.php:170
+msgid "thumbnail"
+msgstr ""
+
+#: ../include/options.php:171
+msgid "Number:"
 msgstr ""
 
 #: ../include/options.php:172
-msgid "Text...##Title#Pop-up bubble title"
+msgid "The default display 5 articles "
 msgstr ""
 
-#: ../include/options.php:173
-msgid "Set GrowlBox tip box's contents. Use the # # Title# \"separate content and title, can do not have a title. Is empty is not GrowlBox tip box popup."
+#: ../include/options.php:177
+msgid "Article footer display author information"
 msgstr ""
 
-#: ../include/options.php:176
-msgid "."
+#: ../include/options.php:179
+msgid "GrowlBox pop-up tips"
 msgstr ""
 
 #: ../include/options.php:181
-msgid "Fanfou Synchronization"
+msgid "Text...##Title#Pop-up bubble title"
 msgstr ""
 
 #: ../include/options.php:182
-msgid "Fanfou authorization code:"
+msgid ""
+"Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
+"title, can do not have a title. Is empty is not GrowlBox tip box popup."
 msgstr ""
 
 #: ../include/options.php:185
-msgid "Get Authorization Code"
+msgid "."
 msgstr ""
 
-#: ../include/options.php:186
-msgid "To obtain the authorization code needs to be saved to take effect."
+#: ../include/options.php:190
+msgid "Fanfou Synchronization"
 msgstr ""
 
 #: ../include/options.php:191
-msgid "jQuery Library"
-msgstr ""
-
-#: ../include/options.php:192
-msgid "Source URL"
-msgstr ""
-
-#: ../include/options.php:192
-msgid "WordPress Default"
+msgid "Fanfou authorization code:"
 msgstr ""
 
 #: ../include/options.php:194
-msgid "Google API"
+msgid "Get Authorization Code"
 msgstr ""
 
 #: ../include/options.php:195
-msgid "jQurey.com"
+msgid "To obtain the authorization code needs to be saved to take effect."
 msgstr ""
 
-#: ../include/options.php:196
-msgid "Custom URL: "
-msgstr ""
-
-#: ../include/options.php:196
-msgid "http:///"
+#: ../include/options.php:200
+msgid "jQuery Library"
 msgstr ""
 
 #: ../include/options.php:201
+msgid "Source URL"
+msgstr ""
+
+#: ../include/options.php:201
+msgid "WordPress Default"
+msgstr ""
+
+#: ../include/options.php:203
+msgid "Google API"
+msgstr ""
+
+#: ../include/options.php:204
+msgid "jQurey.com"
+msgstr ""
+
+#: ../include/options.php:205
+msgid "Custom URL: "
+msgstr ""
+
+#: ../include/options.php:205
+msgid "http:///"
+msgstr ""
+
+#: ../include/options.php:210
 msgid "Google Analytics statistics"
 msgstr ""
 
-#: ../include/options.php:202
+#: ../include/options.php:211
 msgid "Google Analytics statistics code"
 msgstr ""
 
-#: ../include/options.php:207
+#: ../include/options.php:216
 msgid "AD Codes"
 msgstr ""
 
-#: ../include/options.php:208
+#: ../include/options.php:217
 msgid "Side bar at the top advertising"
 msgstr ""
 
-#: ../include/options.php:211
+#: ../include/options.php:220
 msgid "Side bar at the bottom of the advertising"
 msgstr ""
 
-#: ../include/options.php:214
+#: ../include/options.php:223
 msgid "The article embedded advertising"
 msgstr ""
 
-#: ../include/options.php:217
+#: ../include/options.php:226
 msgid "The article tail advertising"
 msgstr ""
 
-#: ../include/options.php:222
+#: ../include/options.php:231
 msgid "Save Changes"
 msgstr ""
 
-#: ../include/options.php:222
+#: ../include/options.php:231
 msgid "Restore to defaults"
 msgstr ""
 
-#: ../include/options.php:295
+#: ../include/options.php:243
+msgid "Menus"
+msgstr ""
+
+#: ../include/options.php:244
+msgid "Custom Background"
+msgstr ""
+
+#: ../include/options.php:245
+msgid "Edit Themes"
+msgstr ""
+
+#: ../include/options.php:326
 msgid "Search for:"
 msgstr ""
 
@@ -603,15 +622,12 @@ msgstr ""
 msgid "iLost Footer article list"
 msgstr ""
 
-#: ../include/widgets.php:14
-#: ../include/widgets.php:37
+#: ../include/widgets.php:14 ../include/widgets.php:37
 msgid "Categories ID:"
 msgstr ""
 
-#: ../include/widgets.php:14
-#: ../include/widgets.php:38
-#: ../include/widgets.php:60
-#: ../include/widgets.php:80
+#: ../include/widgets.php:14 ../include/widgets.php:38
+#: ../include/widgets.php:60 ../include/widgets.php:80
 msgid "Number of posts to show:"
 msgstr ""
 
@@ -639,15 +655,12 @@ msgstr ""
 msgid "Random Articles"
 msgstr ""
 
-#: ../include/widgets.php:60
-#: ../include/widgets.php:80
-#: ../include/widgets.php:100
-#: ../include/widgets.php:120
+#: ../include/widgets.php:60 ../include/widgets.php:80
+#: ../include/widgets.php:100 ../include/widgets.php:120
 msgid "Title:"
 msgstr ""
 
-#: ../include/widgets.php:65
-#: ../include/widgets.php:69
+#: ../include/widgets.php:65 ../include/widgets.php:69
 msgid "Most Popular Articles"
 msgstr ""
 
@@ -686,4 +699,3 @@ msgstr ""
 #: ../include/widgets.php:120
 msgid "Number of avatars to show:"
 msgstr ""
-
