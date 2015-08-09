@@ -19,6 +19,7 @@
       $downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}
       $paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}}?>
     </div>
+    <div class="postQR"><span class="alignleft"><?php _e('<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR code  -->','iLost');?></span><img src="https://chart.googleapis.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=L|1&chl=<?php the_permalink();?>" width="100" height="100" alt="" /></div>
     <?php if(ilost_showAuthor())ilost_postAuthor();
 	if(ilost_relatedpost())ilost_relatedposts(get_the_ID(),$limit=ilost_repostNum());?>
     <div class="post-meta">

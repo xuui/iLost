@@ -1,16 +1,15 @@
 /*
-Theme Name: iLost Full
+Theme Name: iLost
 Theme URI: http://xuui.net/themes/ilost-release.html
 Github Theme URI: https://github.com/xuui/iLost
 Description: The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 3.4 or later is Version to use.
-Version: 1.7
+Version: 1.8
 Author: Xu.hel
 Author URI: http://xuui.net/
 Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, custom-menu, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, microformats, rtl-language-support
 License: iLost full end-user agreement
 License URI: license.txt
 */
-@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url('/include/opensanslight.woff') format('woff')}
 
 /* Reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
@@ -94,32 +93,34 @@ a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 ::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
 
 /* layout */
-header{margin:0 5px;padding:20px 0 0;height:42px}
-#container{background:#fff url(images/sidebg.png) repeat-y -20px 0;border:1px solid #e0e0e0;border-color:rgba(255,255,255,.86);border-radius:5px;box-shadow:0 1px 7px rgba(0,0,0,.21)}
-.single #container{position:relative;background-image:url(images/postside.png)}
+header{margin:0 5px;padding:15px 0 10px;height:48px}
+#container{position:relative;background:#fff url(images/sidebg.png) repeat-y -20px 0;border-radius:5px;width:960px;box-shadow:0 1px 7px rgba(0,0,0,.21)}
+.single #container{background-image:url(images/postside.png)}
+.search #container{overflow:auto;}
 article{float:right;padding:10px 24px;width:670px}
 aside{float:left;width:240px}
-footer{clear:both;margin:20px 0 0;padding:0 0 10px;text-align:left}
-header .feedrss,header .menu li.sub-ul,#searchform #s,section .entry a.external,aside ul li ul li a,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,#sidehome li ul li a,.home .sticky h2,.breadcrumb,section .more-link{background:url(images/lostbg.png) no-repeat}
+footer{clear:both;padding:20px 0 10px;text-align:left}
+header .feedrss,header .menu li.sub-ul,#searchform #s,aside ul li ul li a,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,#sidehome li ul li a,.home .sticky h2,.breadcrumb,section .more-link{background:url(images/lostbg.png) no-repeat}
+#content{overflow:auto;background:#fff;border:1px solid #e0e0e0;border-color:rgba(255,255,255,.86);border-radius:0 0 5px 5px;box-shadow:0 1px 7px rgba(0,0,0,.21)}
+#content .mu_register{width:50%;text-align:left;}
+#content .mu_register h2{margin:0;padding:0.83em 0;}
 
 /* Header */
 header .hidden{display:none}
-header .caption{float:left;width:180px;height:32px}
+header .caption{float:left;width:200px;height:48px}
 header h1,header .description{text-align:left}
-header h1,header .title{float:left;overflow:hidden;display:block;display:inline;margin:0;height:21px;max-width:160px;height:1.2em;line-height:1;font-size:21px;font-weight:700}
+header h1,header .title{float:left;display:inline;margin:0;line-height:48px;font-size:21px;font-weight:700}
 header h1,header .title,header h1 a,header .title a{color:#565656;text-shadow:0 1px 0 #fff}
 header h1 a:hover,header .title a:hover{color:#000;text-decoration:underline}
 header .description{float:left;font-size:.9em}
-header .logo{float:left;display:block;background:transparent url(images/logo.png) no-repeat 0 0;width:160px;height:21px}
-header .feedrss{float:left;display:block;overflow:hidden;background-position:0 -192px;margin:4px 0 0 2px;width:16px;height:16px;text-indent:999em}
+header .logo{float:left;height:48px}
+header .feedrss{display:block;overflow:hidden;background-position:0 -192px;margin:17px 0 0 4px;width:16px;height:16px;text-indent:999em}
 header .feedrss:hover{background-position:0 -208px}
 
 /* Menus Nav */
-header div.menu,header nav{float:left;overflow:hidden;height:25px;text-align:right}
-header div.menu{width:550px}
-header nav{width:590px}
-header div.menu ul,header nav ul{margin:0;list-style:none}
-header .menu{margin:0;padding:0 10px 0 20px;background:url(images/gradient.png) no-repeat 0 9em}
+header nav{margin:0 190px 0 200px;line-height:48px;text-align:right}
+header ul{margin:0;list-style:none;}
+header .menu{margin:0;padding:0 10px;background:url(images/gradient.png) no-repeat 0 9em;}
 header .menu li{display:inline-block;margin:0 5px;padding:0 6px;line-height:21px;color:#666}
 header .menu li a{color:#333}
 header .menu li a:hover{color:#08c;text-decoration:none}
@@ -127,15 +128,16 @@ header .menu li.sub-ul{background-position:100% -150px}
 header .menu li.current_page_item a,header .menu li.current-menu-item a,header .menu li.current_page_parent a{color:#999}
 header .menu li.current_page_item a:hover,header .menu li.current-menu-item a:hover,header .menu li.current_page_parent a:hover{color:#999}
 header .menu li:hover > ul{display:block}
-header .menu li ul{display:none;position:absolute;background:#ddd url(images/gradient.png) repeat-x 0 0;border:1px solid #ccc;margin:0;padding:0;z-index:1002;width:150px;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+header .menu li ul{display:none;position:absolute;background:#ddd url(images/gradient.png) repeat-x 0 0;margin:0;padding:0;z-index:1002;width:auto;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,.3)}
 header .menu li ul li,header .menu li ul li a{color:#666}
-header .menu li ul li{display:block;margin:0 4px;padding:0;text-align:left}
-header .menu li ul ul{margin:-24px 0 0 143px}
-header .menu li ul a{display:block;margin:0 -3px;padding:1px 7px;border-radius:5px}
+header .menu li ul li{display:block;padding:0;text-align:left;}
+header .menu li ul li.sub-ul{background-position: 100% -147px;}
+header .menu li ul ul{margin:-3px 0 0}
+header .menu li ul a{display:block;padding:3px 5px;border-radius:5px}
 header .menu li ul a:hover{text-shadow:0 1px 1px rgba(0,0,0,.1)}
 
 /* Search */
-#searchform{float:right;width:180px;height:21px}
+#searchform{float:right;margin-top:13px;width:180px;height:21px}
 #searchform .screen-reader-text{display:none}
 #searchform #s{background-position:0 -80px;border:none;padding:2px 10px 2px 20px;width:150px;height:17px;color:#666;box-shadow:none}
 #searchform #searchsubmit{display:none}
@@ -153,14 +155,12 @@ section .title h1,section .title h1 a,section .title h2,section .title h2 a{colo
 section .title h1 a:hover,section .title h2 a:hover{text-decoration:underline}
 section .title small,article .title small a{font-size:.9em;color:#888}
 section .title small a:hover{color:#357}
-section .entry{margin:5px 0;line-height:1.8;font-size:1em;text-shadow:0 1px 0 #e5e5e5}
+section .entry{margin:5px 0;line-height:1.8;font-size:1.077em;text-shadow:0 1px 0 #e5e5e5}
 section .entry h1,section .entry h2,section .entry h3,section .entry h4,section .entry h5,section .entry h6{clear:both}
-section .entry a.external{background-position:100% -243px;padding-right:12px}
 section .entry p::-moz-selection,section .entry p::selection{background:#3875d7;color:#fff;text-shadow:0 -1px 0 #333}
 section .entry img{background:#fcfcfc url(images/loading.gif) no-repeat center;border:1px solid #C6C9CB;border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.21);-webkit-box-shadow:0 1px 3px rgba(0,0,0,.21);padding:4px;max-width:650px;height:auto;min-height:20px;min-width:20px}
 section .entry img.wp-post-image{transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
 section .entry img.wp-post-image:hover{transform:scale(1.03) rotate(2deg);-moz-transform:scale(1.03) rotate(2deg);-webkit-transform:scale(1.03) rotate(2deg)}
-section .entry a.external img{max-width:630px}
 section .entry code{background:#d1d7dc;color:#1b2837;text-shadow:0 1px 0 #eee;text-indent:0;border-radius:3px}
 section .entry blockquote{clear:both;display:block;overflow:auto;background:#ebf3fc url(images/blockquote.png) repeat;border:1px solid #ccc;border-radius:5px;margin:1em 40px;padding:4px 10px;width:auto;color:#777;text-shadow:1px 1px 0 #fff}
 section .more-link{background-position:100% -215px;padding-right:6px;line-height:18px}
@@ -172,7 +172,11 @@ section .related li,section .related li a{color:#666}
 section .related li a:hover{color:#08c}
 section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px}
 section .related .thumbnail img{width:100px;height:100px}
-#authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:30px 0 15px;padding:8px 10px}
+section .postQR{margin:15px auto 0;width:360px;height:110px;}
+section .postQR span.alignleft{display:block;margin:0 10px 0 0;padding:10px 0;width:248px;height:82px;line-height:40px;text-align:center;}
+section .postQR img{border:1px solid #eee;}
+section .postQR strong{color:#666;}
+#authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:15px 0 15px;padding:8px 10px}
 #authorbox p{margin:0}
 #authorbox .avatar-warp{float:left;overflow:hidden;position:relative;background:#fff;margin:0 6px 0 0;width:58px;height:58px}
 #authorbox .avatar-warp span{position:absolute;background:url(images/avatar_warp.png) no-repeat;background-size:58px 58px;width:58px;height:58px}
@@ -180,11 +184,12 @@ section .related .thumbnail img{width:100px;height:100px}
 #authorbox .author a{color:#444;font-weight:700}
 
 /* Sidebar */
+aside ul.clear{width:240px;}
 aside ul{margin:0;list-style:none;text-align:left}
 aside ul li{margin-bottom:10px}
 aside ul li h3{clear:both;border-bottom:1px solid #dbdbdb;margin:0;padding:0 10px;line-height:35px;color:#555;font-size:1em;font-weight:700}
 aside ul li a{color:#6c6f73}
-aside ul li ul{margin:0 10px;font-family:'Open Sans',sans-serif;font-weight:300}
+aside ul li ul{margin:0 10px;}
 aside ul li ul ul{margin:0 0 0 10px;list-style:none}
 aside ul li ul li{border:none;margin-bottom:0;padding:1px 0}
 aside ul li ul li a{overflow:hidden;display:block;outline:medium none;background-position:100% -335px;padding-right:16px;white-space:nowrap;text-overflow:ellipsis;-webkit-transition:padding .2s ease-out;-moz-transition:padding .2s ease-out;transition:padding .2s ease-out}
@@ -201,10 +206,9 @@ aside ul ul.comment li .avatar{background:#fff;width:32px;height:32px}
 aside ul ul.comment li a{display:inline;padding-right:0}
 aside ul ul.comment li a,aside ul .recentcomments a{background:none;white-space:pre-wrap}
 aside ul .random a{overflow:hidden;padding-right:20px;white-space:nowrap;text-overflow:ellipsis}
-aside ul .reavatar{padding:8px 0 0}
-aside ul .reavatar a{margin:1px}
-aside ul .reavatar a .avatar-warp{float:left;overflow:hidden;display:block;border:2px solid #fff;border-radius:20px;box-shadow:0 1px 3px rgba(0,0,0,.21),0 1px 3px rgba(0,0,0,.34) inset;margin:3px 5px 0 0;width:32px;height:32px;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-ms-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out}
-aside ul .reavatar a .avatar{background:#fff;width:32px;height:32px}
+aside ul .reavatar{padding:8px 3px 0}
+aside ul .reavatar a .avatar-warp{float:left;overflow:hidden;display:block;border:2px solid #fff;border-radius:20px;box-shadow:0 1px 3px rgba(0,0,0,.21),0 1px 3px rgba(0,0,0,.34) inset;margin:3px 6px 0 0;width:32px;height:32px;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-ms-transition:all .2s ease-out;-o-transition:all .2s ease-out;transition:all .2s ease-out;}
+aside ul .reavatar a .avatar{background:#fff;width:32px;height:32px;}
 aside ul .reavatar a:hover .avatar-warp{-moz-transform:scale(1.3);-webkit-transform:scale(1.3);transform:scale(1.3)}
 
 /* Comments */
@@ -302,11 +306,10 @@ footer aside li h3,footer aside li ul{padding:0 10px}
 footer aside li a{overflow:hidden;color:#888;white-space:nowrap;text-overflow:ellipsis}
 footer aside li a:hover{color:#333;text-decoration:none}
 footer aside li ul li{float:none;padding:0;width:auto}
-footer p{font-family:'Open Sans',sans-serif;margin:0;padding:9px 0;font-size:10px;font-weight:300}
+footer p{margin:0;padding:9px 0;font-size:10px;font-weight:300}
 footer p.line{border-bottom:1px solid #d6d6d6;border-color:rgba(0,0,0,.16)}
 footer p.line span{color:#ccc}
 footer .alignright{margin:0}
-footer .mtlogo{display:inline-block;overflow:hidden;background:transparent url(images/mediatemple.png) no-repeat;width:149px;height:12px;text-indent:-99em;vertical-align:middle}
 
 /* Page */
 section.page .post-meta{background:none;display:none;padding:0}
@@ -420,8 +423,8 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 .ilost_demo a:hover,.ilost_downloads a:hover,.ilost_paybys a:hover{text-decoration:none}
 
 /* Rotation */
-#flexslider,#flexslider .flexslider{position:relative;border-radius:7px;width:960px;height:240px}
-#flexslider{margin:0}
+#flexslider,#flexslider .flexslider{position:relative;border-radius:5px 5px 0 0;width:960px;height:240px}
+#flexslider{overflow:hidden;margin:0}
 #flexslider .flexslider{background:#eee url(images/imlost_show.png) no-repeat;padding:0;text-align:left}
 #flexslider ul,#flexslider ol{margin:0;list-style:none}
 #flexslider .flexslider .slides{background:url(images/slideloading.gif) no-repeat 50% 50%;height:240px}
@@ -476,22 +479,17 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 body{margin:0 auto;width:100%;font-size:10.5pt}
 div,p{white-space:normal;word-break:break-all;word-wrap:break-word}
 header{margin:0!important;padding:5px 10px!important;height:auto!important;border-radius:0!important}
-#searchform{float:right;margin:7px 0}
 header .caption{float:none;width:auto}
-header .logo{background-position:0% 50%;height:35px}
 header h1{margin-top:7px}
 header .feedrss{margin:10px 0 9px 2px}
-header nav{width:auto!important;padding:5px 0}
-header div.menu,header nav{width:auto}
+header nav{clear:both;margin:0;padding:5px 0;line-height:1.6;text-align:left}
 header .menu li{margin:4px 5px}
-header div.menu,header nav{float:none;height:auto;clear:both;text-align:left}
-header .menu{padding:0}
+#searchform{float:right;margin-top: 18px;}
 #container{background:transparent;border:none;border-radius:0;box-shadow:none;margin-bottom:20px}
 .single #container{background-image:none}
 article,aside{float:none!important;background:#fff;width:auto;box-shadow:0 1px 7px rgba(0,0,0,.21)}
 article{margin-bottom:20px;padding:5px 10px;width:auto}
 section .entry{width:100%}
-section .entry img,section .entry a.external img{max-width:94%;height:auto}
 section .entry blockquote{margin:0 1.5em}
 section .related{margin:16px 0 5px}
 section .related ul{padding:0}
@@ -555,13 +553,11 @@ body.error p.button{margin:20px auto 10px}
 }
 @media only screen and (min-width:569px) and (max-width:768px){
 body{background-color:#fff;width:720px;margin:0 auto}
-header{margin:0 0 0!important;padding:13px 10px 10px!important;height:auto!important}
-header nav{clear:both;border-bottom:1px dashed #ccc;padding-top:10px;width:100%!important;text-align:left}
-header div.menu,header nav{float:none;padding-top:15px}
-header .menu{padding:0}
+header{margin:0 0 0!important;padding:0 0 10px!important;height:auto!important}
+header nav{clear:both;border-bottom:1px dashed #ccc;margin:0;padding-top:5px;width:100%!important;text-align:left}
 #container{background:#fff;margin-bottom:10px;box-shadow:none}
 .single #container{background-image:none}
-article{float:none;padding:10px;width:auto} 
+article{float:none;padding:10px;width:auto}
 aside{display:none}
 #share{width:auto}
 #gotop{right:16px;bottom:24px}
@@ -574,8 +570,8 @@ aside{display:none}
 #flexslider .flex-direction-nav{display:none}
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){
-header .feedrss,header .menu li.sub-ul,#searchform #s,section .entry a.external,aside ul li ul li a,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,#sidehome li ul li a,.home .sticky h2,.breadcrumb,section .more-link{background-image:url(images/retina/lostbg.png);background-size:300px 510px}
-header .logo{background-image:url(images/retina/logo.png);background-size:160px 21px}
+header .feedrss,header .menu li.sub-ul,#searchform #s,aside ul li ul li a,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,#sidehome li ul li a,.home .sticky h2,.breadcrumb,section .more-link{background-image:url(images/retina/lostbg.png);background-size:300px 510px}
+header .logo img{}
 footer .mtlogo{background-image:url(images/retina/mediatemple.png);background-size:149px 12px}
 section .entry img{background-size:10px 10px}
 section .post-meta{padding:6px 10px 9px;background-size:100% 5px;-webkit-background-size:100% 5px}
