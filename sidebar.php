@@ -16,7 +16,7 @@
   }else{if(!function_exists('dynamic_sidebar')||!dynamic_sidebar('ilost-sidebar')){
     the_widget('WP_Widget_Categories','',$ilost_widgerSide);
     if(is_home()&&function_exists('get_most_viewed')){the_widget('ilost_viewsWidget','number=5',$ilost_widgerSide);}
-    the_widget('ilost_RavatarWidget','number=12',$ilost_widgerSide);
+    the_widget('ilost_RavatarWidget','number=10',$ilost_widgerSide);
     the_widget('ilost_RCommentsWidget','number=6',$ilost_widgerSide);
     the_widget('WP_Widget_Meta','',$ilost_widgerSide);
   }}ilost_adgsidebarbottom();?>

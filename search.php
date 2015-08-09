@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div id="content">
+<div id="container">
 <article>
   <?php if(ilost_embedgSearch()){?>
   <section>

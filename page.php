@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div id="content">
+<div id="container">
 <div class="pageheader"><h1><?php the_title();?></h1></div>
 <article>
   <?php ilost_breadcrumb();if(have_posts()){while(have_posts()){the_post();?>
@@ -12,7 +12,8 @@
       <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
     </div>
   </section>
-  <?php }}?>
+  <?php //comments_template('',true);
+  }}?>
 </article>
 <?php get_sidebar();?>
 <div class="clear"></div>

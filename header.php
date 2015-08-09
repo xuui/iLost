@@ -44,6 +44,7 @@ window.external.msSiteModeShowJumpList();
 <?php if(is_single()&&is_page()){?>
 <iframe class="manifest" src="<?php echo ilost_path.'/manifest.html';?>"></iframe>
 <?php }?>
+<!--div id="wrapper"-->
 <header>
   <?php ilost_getSearchform();?>
   <div class="caption"><?php ilost_getlogoimg();?></div>

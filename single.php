@@ -1,5 +1,5 @@
 <?php if(!@$_GET['ajax']){ get_header();?>
-<div id="content"><?php }?>
+<div id="container"><?php }?>
 <article>
   <?php if(have_posts()){while(have_posts()){the_post();ilost_breadcrumb();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
@@ -12,7 +12,7 @@
       <?php ilost_adgpostemb();
       $logined=get_post_meta(get_the_ID(),"logined",$single=true);if($logined){if(is_user_logged_in()){
       the_content();wp_link_pages('before=<nav class="post-link">&after=</nav>&next_or_number=number&pagelink=<span>%</span>');
-      }else{printf(__('View this article need to login.','iLost'));}}else{//the_post_thumbnail('thumbnail');
+      }else{printf(__('View this article need to login.','iLost'));}}else{
       the_content();
       wp_link_pages('before=<nav class="post-link">&after=</nav>&next_or_number=number&pagelink=<span>%</span>');}
       $demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}

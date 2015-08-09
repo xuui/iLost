@@ -1,5 +1,5 @@
 <?php get_header();?>
-<div id="content">
+<div id="container">
 <article>
   <?php if(have_posts()){ilost_breadcrumb();?>
   <section class="archive">
