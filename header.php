@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html <?php language_attributes();?>>
+<html lang="zh">
 <head>
-<meta charset="<?php bloginfo('charset');?>" />
-<title><?php if(is_single()){single_post_title();echo ' - ';bloginfo('name');}elseif(is_home()||is_front_page()){bloginfo('name');ilost_page_number();}elseif(is_page()){single_post_title(''); echo ' - ';bloginfo('name');}elseif(is_search()){printf( __('Search results for "%s"','iLost'),esc_html($s));ilost_page_number();echo ' - '; bloginfo('name');}elseif(is_404()){_e('Error 404 - Not Found','iLost');echo ' - ';bloginfo('name');}else{wp_title('');echo ' - ';bloginfo('name');ilost_page_number();}?></title>
+<meta charset="utf-8">
+<?php ilost_get_iexuaCompatible();?>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<title><?php if(is_single()){single_post_title();echo ' - ';echo ilost_wp_name;}elseif(is_home()||is_front_page()){echo ilost_wp_name;ilost_page_number();}elseif(is_page()){single_post_title(''); echo ' - ';echo ilost_wp_name;}elseif(is_search()){printf( __('Search results for "%s"','iLost'),esc_html($s));ilost_page_number();echo ' - '; echo ilost_wp_name;}elseif(is_404()){_e('Error 404 - Not Found','iLost');echo ' - ';echo ilost_wp_name;}else{wp_title('');echo ' - ';echo ilost_wp_name;ilost_page_number();}?></title>
 <?php if(is_front_page()){?>
-<meta name="description" content="<?php bloginfo('description'); ?>" />
-<meta name="keywords" content="<?php bloginfo('name'); ?>" />
+<meta name="description" content="<?php echo ilost_wp_description;?>" />
+<meta name="keywords" content="<?php echo ilost_wp_name;echo ', '.ilost_searchKey();?>" />
 <?php }elseif(is_tag()){?>
-<meta name="description" content="<?php single_tag_title();?> related content posted by <?php bloginfo('name');?>,enjoy reading <?php single_tag_title();?><?php $paged=get_query_var('paged');if($paged>1)printf('page %s',$paged);?>" />
-<meta name="keywords" content="<?php single_tag_title();?>" />
+<meta name="description" content="<?php single_tag_title();?> related content posted by <?php echo ilost_wp_name;?>,enjoy reading <?php single_tag_title();?><?php $paged=get_query_var('paged');if($paged>1)printf('page %s',$paged);?>" />
+<meta name="keywords" content="<?php single_tag_title();echo ilost_searchKey();?>" />
 <?php }elseif(is_category()){?>
-<meta name="description" content="<?php wp_title('');?> related content <?php $paged=get_query_var('paged');if($paged>1)printf('page %s',$paged);?> posted by <?php bloginfo('name');?>,enjoy reading <?php wp_title('');?> related content." />
+<meta name="description" content="<?php wp_title('');?> related content <?php $paged=get_query_var('paged');if($paged>1)printf('page %s',$paged);?> posted by <?php echo ilost_wp_name;?>,enjoy reading <?php wp_title('');?> related content." />
 <meta name="keywords" content="<?php wp_title('');?>" />
 <?php }elseif(is_single()){$description=strip_tags($post->post_excerpt);$keywords="";$tags=wp_get_post_tags($post->ID);foreach($tags as $tag){$keywords=$keywords.$tag->name.", ";}?>
 <meta name="description" content="<?php echo $description?>" />
-<meta name="keywords" content="<?php echo $keywords;?>" />
-<?php }?>
+<meta name="keywords" content="<?php echo $keywords.ilost_searchKey();?>" />
+<?php }ilost_is_mobileos();?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url');?>" />
-<link rel="pingback" href="<?php bloginfo('pingback_url');?>" />
-<?php wp_head();?>
+<link rel="theme author" href="Xu.hel,xw@xuui.net" />
+<?php ilost_getfavicon();ilost_getstyles();?>
+<link rel="pingback" href="<?php echo ilost_wp_pingback_url;?>" />
+<?php ilost_customRssurl();wp_head();?>
 </head>
 <body <?php body_class();?>>
-<header>
-	<?php get_search_form();?>
-	<div class="hgroup">
-	<h1><a href="<?php echo home_url('/');?>"><?php bloginfo('name');?></a></h1>
-	<span class="hidden"><?php bloginfo('description');?></span>
-	<a class="feedrss" href="<?php bloginfo('rss2_url');?>">Feed Rss</a>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse"><i class="fa fa-bars fa-lg"></i>&equiv;</button>
+      <?php ilost_getlogoimg();?>
+    </div>
+    <div class="collapse navbar-collapse" id="ilost-collapse">
+      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav navbar-right'));?>
+    </div>
   </div>
-	<?php wp_nav_menu(array('theme_location'=>'primary','container'=>'nav','container_id'=>'navs'));?>
-</header>
-<hr/>
+</nav>
+  <?php //if(!is_front_page()){echo '<div id="container" class="container">';}elseif(is_home()){echo '<div id="container" class="container">';}?>
+<?php if(!is_single()){ilost_getiloshow();}?>
+<div id="container" class="container">
