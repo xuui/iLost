@@ -1,0 +1,728 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iLost CMS v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-07 11:33+0800\n"
+"PO-Revision-Date: 2014-03-07 11:33+0800\n"
+"Last-Translator: Xu.hel <zvzhssj@gmail.com>\n"
+"Language-Team: Xu.Design <xu@xuui.net>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../404.php:5 ../header.php:6
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: ../archive.php:6
+msgid "Archive for the &#8216;"
+msgstr ""
+
+#: ../archive.php:6
+msgid "&#8217; Category"
+msgstr ""
+
+#: ../archive.php:7
+msgid "Posts Tagged &#8216;"
+msgstr ""
+
+#: ../archive.php:7
+msgid "&#8217;"
+msgstr ""
+
+#: ../archive.php:8 ../archive.php:9 ../archive.php:10
+msgid "Archive for "
+msgstr ""
+
+#: ../archive.php:11
+msgid "Archive for Author: "
+msgstr ""
+
+#: ../archive.php:12
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
+msgid "No Comments"
+msgstr ""
+
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
+msgid "1 Comment"
+msgstr ""
+
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
+msgid "% Comments"
+msgstr ""
+
+#: ../archive.php:19 ../archive.php:29 ../attachment.php:8
+#: ../attachment.php:14 ../include/single-talk.php:11 ../index.php:9
+#: ../index.php:18 ../mode.about.php:14 ../mode.archives.php:15
+#: ../mode.guestbook.php:13 ../mode.links.php:10 ../mode.talk.php:13
+#: ../page.php:12 ../search.php:19 ../search.php:29 ../single-ilostshow.php:8
+#: ../single-ilostshow.php:15 ../single.php:8 ../single.php:32
+msgid "Edit"
+msgstr ""
+
+#: ../archive.php:24 ../index.php:13 ../search.php:24 ../single.php:17
+msgid "View this article need to login."
+msgstr ""
+
+#: ../archive.php:29 ../attachment.php:15 ../index.php:18 ../single.php:33
+msgid "Tags: "
+msgstr ""
+
+#: ../archive.php:38 ../index.php:27 ../search.php:38
+msgid "Not Found"
+msgstr ""
+
+#: ../archive.php:40 ../index.php:29 ../search.php:40
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: ../archive.php:41 ../index.php:30 ../search.php:41
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+
+#: ../comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: ../comments.php:6
+#, php-format
+msgid "One Response to %2$s"
+msgstr ""
+
+#: ../comments.php:6
+#, php-format
+msgid "%1$s Responses to %2$s"
+msgstr ""
+
+#: ../comments.php:12
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:2
+msgid "Back Top"
+msgstr ""
+
+#: ../footer.php:5
+msgid " Archives"
+msgstr ""
+
+#: ../footer.php:19
+msgid " &brvbar; "
+msgstr ""
+
+#: ../functions.php:1
+msgid "Share this post:"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Facebook"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Twitter"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Delicious"
+msgstr ""
+
+#: ../functions.php:1 ../include/options.php:91 ../include/options.php:244
+msgid "Fanfou"
+msgstr ""
+
+#: ../functions.php:1
+msgid "QQ Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Sina Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "163 Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "kaixin001"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Renren"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Douban"
+msgstr ""
+
+#: ../functions.php:1
+#, php-format
+msgid "%1$s %2$s <span class=\"says\">said:</span>"
+msgstr ""
+
+#: ../functions.php:1
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../functions.php:1
+msgid "Pingback:"
+msgstr ""
+
+#: ../functions.php:1
+msgid "[Edit]"
+msgstr ""
+
+#: ../functions.php:10
+msgid "登录才能浏览:"
+msgstr ""
+
+#: ../functions.php:12
+msgid "浏览这个篇文章的用户等级为:"
+msgstr ""
+
+#: ../functions.php:14
+msgid "用户等级0~10 留空为所有人都可以看。"
+msgstr ""
+
+#: ../header.php:6 ../search.php:6 ../search.php:14
+#, php-format
+msgid "Search results for \"%s\""
+msgstr ""
+
+#: ../include/core.php:3
+msgid " theme's SideBar."
+msgstr ""
+
+#: ../include/core.php:4
+msgid " theme's Home page template of right sidebar."
+msgstr ""
+
+#: ../include/core.php:5
+msgid " theme's Home page template of left sidebar."
+msgstr ""
+
+#: ../include/core.php:6
+msgid " theme's page sidebar."
+msgstr ""
+
+#: ../include/core.php:7
+msgid " theme' footer sidebar, This can only be placed on 5 widget."
+msgstr ""
+
+#: ../include/core.php:15
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../include/core.php:46
+msgid "Excerpt"
+msgstr ""
+
+#: ../include/core.php:48 ../index.php:12 ../index.php:14 ../mode.about.php:10
+#: ../mode.guestbook.php:9 ../page.php:8
+msgid "Learn more"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Show images"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Show image"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Add Images"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Add New Images"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Edit Image"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Add Show image"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "View Image"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "Search Show images"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "No images found"
+msgstr ""
+
+#: ../include/core.php:60
+msgid "No images found in Trash"
+msgstr ""
+
+#: ../include/core.php:117 ../include/options.php:162
+msgid "Use Ctrl+Enter to reply comments"
+msgstr ""
+
+#: ../include/core.php:168
+msgid "No Comments &raquo;"
+msgstr ""
+
+#: ../include/core.php:168
+msgid "1 Comment &raquo;"
+msgstr ""
+
+#: ../include/core.php:168
+msgid "% Comments &raquo;"
+msgstr ""
+
+#: ../include/core.php:182
+msgid "Related Post:"
+msgstr ""
+
+#: ../include/core.php:195
+msgid "Author"
+msgstr ""
+
+#: ../include/core.php:198
+msgid "Author description"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "Add TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "Add New TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "Edit TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "View TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "Search TalkPost"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "No TalkPost found"
+msgstr ""
+
+#: ../include/core.php:238
+msgid "No TalkPost found in Trash"
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[Update] "
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[New] "
+msgstr ""
+
+#: ../include/options.php:85
+msgid "Settings saved."
+msgstr ""
+
+#: ../include/options.php:87
+msgid "Settings have been restored to default."
+msgstr ""
+
+#: ../include/options.php:88 ../include/options.php:91
+#: ../include/options.php:242
+msgid " Options"
+msgstr ""
+
+#: ../include/options.php:91 ../include/options.php:245
+msgid "Script Code"
+msgstr ""
+
+#: ../include/options.php:125
+msgid "Thank you for purchasing this theme, designed by the Xu.hel."
+msgstr ""
+
+#: ../include/options.php:130 ../include/options.php:243
+msgid "General Options"
+msgstr ""
+
+#: ../include/options.php:131
+msgid "Custom Logo picture"
+msgstr ""
+
+#: ../include/options.php:134
+msgid "Please enter the URL address of the Logo picture."
+msgstr ""
+
+#: ../include/options.php:137
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../include/options.php:140
+msgid "Please enter the URL address of the Favicon icon."
+msgstr ""
+
+#: ../include/options.php:143
+msgid "Sidebar float:"
+msgstr ""
+
+#: ../include/options.php:144
+msgid "Left"
+msgstr ""
+
+#: ../include/options.php:145
+msgid "Right"
+msgstr ""
+
+#: ../include/options.php:147
+msgid "Custom RSS Subscription"
+msgstr ""
+
+#: ../include/options.php:148
+msgid "Is empty, use the default automatic WordPress address. "
+msgstr ""
+
+#: ../include/options.php:150
+msgid "Search engine keywords"
+msgstr ""
+
+#: ../include/options.php:151
+msgid ""
+"Keywords using a comma (\",\") between them. Is empty, the automatic "
+"acquisition."
+msgstr ""
+
+#: ../include/options.php:153
+msgid "Google custom search"
+msgstr ""
+
+#: ../include/options.php:153 ../include/options.php:170
+#: ../include/options.php:177 ../include/options.php:179
+#: ../include/options.php:182
+msgid "Enabled"
+msgstr ""
+
+#: ../include/options.php:155
+#, php-format
+msgid ""
+"Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
+"href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</"
+"code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr ""
+
+#: ../include/options.php:155
+msgid "http://www.google.com/coop/cse/"
+msgstr ""
+
+#: ../include/options.php:157
+msgid "Embedded in the site search results"
+msgstr ""
+
+#: ../include/options.php:160
+msgid "Enable Google + 1 button"
+msgstr ""
+
+#: ../include/options.php:164
+msgid "Automatically copy the article URL"
+msgstr ""
+
+#: ../include/options.php:165
+msgid ""
+"Copy operation is automatically appended to the current article addresses to "
+"the clipboard."
+msgstr ""
+
+#: ../include/options.php:167
+msgid "Focus image shows quantity"
+msgstr ""
+
+#: ../include/options.php:168
+msgid "The default show 4 images"
+msgstr ""
+
+#: ../include/options.php:170
+msgid "Related articles"
+msgstr ""
+
+#: ../include/options.php:172
+msgid "Type:"
+msgstr ""
+
+#: ../include/options.php:172
+msgid "Post lists"
+msgstr ""
+
+#: ../include/options.php:172
+msgid "thumbnail"
+msgstr ""
+
+#: ../include/options.php:173
+msgid "Number:"
+msgstr ""
+
+#: ../include/options.php:174
+msgid "The default display 5 articles "
+msgstr ""
+
+#: ../include/options.php:177
+msgid "Article footer display author information"
+msgstr ""
+
+#: ../include/options.php:179
+msgid "Enabled QR Code"
+msgstr ""
+
+#: ../include/options.php:180
+msgid "QR Code is automatically generated at the end of the article"
+msgstr ""
+
+#: ../include/options.php:182
+msgid "GrowlBox pop-up tips"
+msgstr ""
+
+#: ../include/options.php:184
+msgid "Text...##Title#Pop-up bubble title"
+msgstr ""
+
+#: ../include/options.php:185
+msgid ""
+"Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
+"title, can do not have a title. Is empty is not GrowlBox tip box popup."
+msgstr ""
+
+#: ../include/options.php:188
+msgid "."
+msgstr ""
+
+#: ../include/options.php:193
+msgid "Fanfou Synchronization"
+msgstr ""
+
+#: ../include/options.php:194
+msgid "Fanfou authorization code:"
+msgstr ""
+
+#: ../include/options.php:197
+msgid "Get Authorization Code"
+msgstr ""
+
+#: ../include/options.php:198
+msgid "To obtain the authorization code needs to be saved to take effect."
+msgstr ""
+
+#: ../include/options.php:203
+msgid "jQuery Library"
+msgstr ""
+
+#: ../include/options.php:204
+msgid "Source URL"
+msgstr ""
+
+#: ../include/options.php:204
+msgid "WordPress Default"
+msgstr ""
+
+#: ../include/options.php:206
+msgid "Google API"
+msgstr ""
+
+#: ../include/options.php:207
+msgid "jQurey.com"
+msgstr ""
+
+#: ../include/options.php:208
+msgid "Custom URL: "
+msgstr ""
+
+#: ../include/options.php:208
+msgid "http:///"
+msgstr ""
+
+#: ../include/options.php:213
+msgid "Google Analytics statistics"
+msgstr ""
+
+#: ../include/options.php:214
+msgid "Google Analytics statistics code"
+msgstr ""
+
+#: ../include/options.php:219
+msgid "AD Codes"
+msgstr ""
+
+#: ../include/options.php:220
+msgid "Side bar at the top advertising"
+msgstr ""
+
+#: ../include/options.php:223
+msgid "Side bar at the bottom of the advertising"
+msgstr ""
+
+#: ../include/options.php:226
+msgid "The article embedded advertising"
+msgstr ""
+
+#: ../include/options.php:229
+msgid "The article tail advertising"
+msgstr ""
+
+#: ../include/options.php:234
+msgid "Save Changes"
+msgstr ""
+
+#: ../include/options.php:234
+msgid "Restore to defaults"
+msgstr ""
+
+#: ../include/options.php:246
+msgid "Menus"
+msgstr ""
+
+#: ../include/options.php:247
+msgid "Custom Background"
+msgstr ""
+
+#: ../include/options.php:248
+msgid "Edit Themes"
+msgstr ""
+
+#: ../include/options.php:320
+msgid "Search for:"
+msgstr ""
+
+#: ../include/widgets.php:4
+msgid "Appear in the Footer of a specified category articles"
+msgstr ""
+
+#: ../include/widgets.php:4
+msgid "iLost Footer article list"
+msgstr ""
+
+#: ../include/widgets.php:14 ../include/widgets.php:37
+msgid "Categories ID:"
+msgstr ""
+
+#: ../include/widgets.php:14 ../include/widgets.php:38
+#: ../include/widgets.php:60 ../include/widgets.php:80
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../include/widgets.php:19
+msgid "Home template in the right sidebar of articles specified category show"
+msgstr ""
+
+#: ../include/widgets.php:19
+msgid "iLost Categories article list"
+msgstr ""
+
+#: ../include/widgets.php:39
+msgid "Show excerpt"
+msgstr ""
+
+#: ../include/widgets.php:45
+msgid "Display random sequence articles"
+msgstr ""
+
+#: ../include/widgets.php:45
+msgid "iLost Random Posts"
+msgstr ""
+
+#: ../include/widgets.php:49
+msgid "Random Articles"
+msgstr ""
+
+#: ../include/widgets.php:60 ../include/widgets.php:80
+#: ../include/widgets.php:100 ../include/widgets.php:120
+msgid "Title:"
+msgstr ""
+
+#: ../include/widgets.php:65 ../include/widgets.php:69
+msgid "Most Popular Articles"
+msgstr ""
+
+#: ../include/widgets.php:65
+msgid "iLost Most Popular Articles"
+msgstr ""
+
+#: ../include/widgets.php:85
+msgid "The most recent comments"
+msgstr ""
+
+#: ../include/widgets.php:85
+msgid "iLost Recent Comments"
+msgstr ""
+
+#: ../include/widgets.php:89
+msgid "Recent Comments"
+msgstr ""
+
+#: ../include/widgets.php:100
+msgid "Number of comments to show:"
+msgstr ""
+
+#: ../include/widgets.php:105
+msgid "The most recent avatars"
+msgstr ""
+
+#: ../include/widgets.php:105
+msgid "iLost Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:109
+msgid "Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:120
+msgid "Number of avatars to show:"
+msgstr ""
+
+#: ../mode.archives.php:11
+msgid "Recent Articles"
+msgstr ""
+
+#: ../mode.theme.php:41
+msgid "DownLoad Now!"
+msgstr ""
+
+#: ../sidebar.php:4 ../single.php:22
+msgid "View Demo"
+msgstr ""
+
+#: ../sidebar.php:5 ../single.php:23
+msgid "Download Now"
+msgstr ""
+
+#: ../sidebar.php:6 ../single.php:24
+msgid "Buy Now"
+msgstr ""
+
+#: ../single.php:27
+msgid ""
+"<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR "
+"code  -->"
+msgstr ""
