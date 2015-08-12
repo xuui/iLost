@@ -288,20 +288,20 @@ function ilost_searchKey(){
   $searchKey=ilost_getOption('searchKey');
   if($searchKey){return $searchKey;}
 }
-/*function ilost_googlesearch_form($form){
-  $form='<form role="search" id="searchform" action="http://www.google.com/cse" method="get"><div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><input type="text" id="s" name="q" value="'.get_search_query().'" /><input type="submit" id="searchsubmit" name="sa" value="'.esc_attr__('Search').'" /><input type="hidden" name="cx" value=".$googleSearchID." /><input type="hidden" name="ie" value="UTF-8" /></div></form>';
-  return $form;
-}
-add_filter('get_search_form','ilost_googlesearch_form');*/
 function ilost_embedgSearch(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
   if($googleSearch && $googleSearchID && $embedgSearch){return $embedgSearch;}
 }
 function ilost_search_form($form){
-  //$form='<form role="search" method="get" id="searchform" action="'.home_url('/').'"><div><input type="text" value="'.get_search_query().'" name="s" id="s" /><input type="submit" id="searchsubmit" value="'.esc_attr__('Search').'"/></div></form>';
-  $form='<form role="search" method="get" id="searchform" action="'.home_url('/').'"><div><input type="text" value="'.get_search_query().'" name="s" id="s" /><input type="submit" id="searchsubmit" value="'.esc_attr__('Search').'"/></div></form>';
+  $form='<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'">
+  <div class="input-group">
+    <input type="text" name="s" id="s" class="form-control" placeholder="'.esc_attr__('Search blog...').'" value="'.get_search_query().'">
+    <span class="input-group-btn"><button type="submit" id="searchsubmit" class="btn btn-default">'.esc_attr__('Search').'</button></span>
+  </div></form>';
   return $form;
 }
+
+
 function ilost_getSearchform(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
   if($googleSearch && $googleSearchID){
@@ -323,7 +323,7 @@ function ilost_googleaddbut(){
 }
 function ilost_googleaddbutscript(){
   /* Place this tag where you want the +1 button to render */
-  if(is_single())echo "<script type=\"text/javascript\">window.___gcfg={lang:'zh-CN'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='https://apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>\n";
+  if(is_single())echo "<script type=\"text/javascript\">window.___gcfg={lang:'zh-CN'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='//apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>\n";
 }
 if(ilost_googleaddbut())add_action('wp_footer','ilost_googleaddbutscript');
 function ilost_ctrlentry(){
