@@ -307,9 +307,9 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 #gotop a{display:block;overflow:hidden;background:transparent url(images/gotop.png) no-repeat;width:48px;height:32px;text-indent:-99em}
 #gotop a:hover{background-position:0 100%;text-decoration:none}
 section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_paybys{display:inline-block;*display:inline;*zoom:1;margin:0;}
-.ilost_demo,.ilost_downloads,.ilost_paybys{padding:8px 15px;width:210px;color:#fff;}
-aside .ilost_demo,aside .ilost_downloads,aside .ilost_paybys{border-bottom:1px solid #e5e5e5;margin:0;}
-.ilost_demo a,.ilost_downloads a,.ilost_paybys a{display:block;background:#2d76ce url(images/side_button.png) no-repeat 0% 0%;padding:10px 15px 10px 45px;width:150px;height:20px;font-size:13pt;line-height:19px;color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,.5);transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
+.ilost_demo,.ilost_downloads,.ilost_paybys{padding:10px 40px;width:210px;color:#fff;}
+aside .ilost_demo,aside .ilost_downloads,aside .ilost_paybys{border-bottom:1px solid #e5e5e5;margin:0;padding:15px 40px;width:auto;}
+.ilost_demo a,.ilost_downloads a,.ilost_paybys a{display:block;background:#2d76ce url(images/side_button.png) no-repeat 0% 0%;padding:10px 15px 10px 45px;width:210px;height:40px;font-size:13pt;line-height:19px;color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,.5);transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
 .ilost_downloads a{background-position:0% 50%}
 .ilost_paybys a{background-position:0% 100%;padding:10px 5px 10px 45px;width:160px}
 .ilost_demo a:hover,.ilost_downloads a:hover,.ilost_paybys a:hover{text-decoration:none;transform:scale(1.05);-moz-transform:scale(1.05);-webkit-transform:scale(1.05)}
