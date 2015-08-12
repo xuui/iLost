@@ -303,7 +303,8 @@ function ilost_search_form($form){
 
 
 function ilost_getSearchform(){
-  $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
+  $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
+  $embedgSearch=ilost_getOption('embedgSearch');
   if($googleSearch && $googleSearchID){
   if($embedgSearch){
     add_filter('get_search_form','ilost_search_form');
@@ -322,7 +323,6 @@ function ilost_googleaddbut(){
   return $googleaddbut;
 }
 function ilost_googleaddbutscript(){
-  /* Place this tag where you want the +1 button to render */
   if(is_single())echo "<script type=\"text/javascript\">window.___gcfg={lang:'zh-CN'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='//apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>\n";
 }
 if(ilost_googleaddbut())add_action('wp_footer','ilost_googleaddbutscript');
