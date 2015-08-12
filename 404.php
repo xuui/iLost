@@ -12,9 +12,9 @@ wp_head();?>
 <body class="error">
 <div id="wrapper">
 <img src="<?php echo ilost_path.'/images/error404.png';?>" alt="Error 404" border=0 />
-<p class="button"><a class="backhome" href="<?php echo ilost_wp_homeurl.'/';?>">Back to Home</a></p>
+<p class="button"><a class="btn btn-default" href="<?php echo ilost_wp_homeurl.'/';?>">Back to Home</a></p>
 <footer>
-  <p>&copy;2006-2014 <a href="<?php echo ilost_wp_homeurl.'/';?>/"><?php echo ilost_wp_name;?></a></p>
+  <p>&copy;2006-2015 <a href="<?php echo ilost_wp_homeurl.'/';?>/"><?php echo ilost_wp_name;?></a></p>
 </footer>
 </div>
 <?php wp_footer();?>

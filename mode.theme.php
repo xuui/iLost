@@ -1,7 +1,7 @@
 <?php /* Template Name: Themes */
 get_header();?>
-<div id="container">
-<div class="pageheader"><h1><?php the_title();?></h1></div>
+<div class="row">
+<div class="page-header"><h1><?php the_title();?></h1></div>
 <style type="text/css">
 article#thThumbs{padding:10px 24px;width:650px;}
 #thThumbs section{clear:both;margin:20px 20px 10px;}
@@ -15,8 +15,7 @@ article#thThumbs{padding:10px 24px;width:650px;}
 #thThumbs section a span{text-align:center;}
 */
 </style>
-<?php if(ilost_getsidefl()=='left')get_sidebar();?>
-<article id="thThumbs">
+<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>" id="thThumbs">
 <?php //query_posts('meta_key=thumb');while(have_posts()):the_post();
 //echo '<p>';the_title();echo '</p>';
 //endwhile;wp_reset_query();
@@ -45,7 +44,7 @@ while($themeThumbs->have_posts()){$themeThumbs->the_post();?>
 <?php }
 /*echo '<script type="text/javascript" src="'.ilost_path.'/scripts/rotation.js"></script>';*/?>
 </article>
-<?php if(ilost_getsidefl()=='right')get_sidebar();?>
+<?php get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>

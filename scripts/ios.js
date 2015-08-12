@@ -1,1 +1,3 @@
-(function($){$=jQuery.noConflict();$(document).ready(function(){if(window.navigator.standalone){$('a').click(function(event){event.preventDefault();window.location=$(this).attr('href');});}});})(jQuery);
+(function(ilostQ){ilostQ(function(){
+ilostQ(document).ready(function(){if(window.navigator.standalone){ilostQ('a').click(function(event){event.preventDefault();window.location=ilostQ(this).attr('href');});}});
+});})(jQuery);

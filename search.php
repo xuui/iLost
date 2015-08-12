@@ -1,7 +1,6 @@
 <?php get_header();?>
-<div id="container">
-<?php if(ilost_getsidefl()=='left')get_sidebar();?>
-<article>
+<div class="row">
+<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php if(ilost_embedgSearch()){?>
   <section>
   	<div id="cse" style="width:100%;"><?php printf(__('Search results for "%s"','iLost'),get_search_query());?> Loading...
@@ -27,7 +26,7 @@
       }?>
     </div>
     <div class="post-meta">
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags('Tags: ',' | ','');?><div class="clear"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags('Tags: ',' | ','');?>&nbsp;<i class="clear"></i>
     </div>
   </section>
   <?php }?>
@@ -45,7 +44,7 @@
   </section>
   <?php }}?>
 </article>
-<?php if(ilost_getsidefl()=='right')get_sidebar();?>
+<?php get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>

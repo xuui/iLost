@@ -1,9 +1,8 @@
 <?php /* Template Name: Archives */
 get_header();?>
-<div id="container">
-<div class="pageheader"><h1><?php the_title();?></h1></div>
-<?php if(ilost_getsidefl()=='left')get_sidebar();?>
-<article>
+<div class="row">
+<div class="page-header"><h1><?php the_title();?></h1></div>
+<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php ilost_breadcrumb();if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div id="archives" class="entry">
@@ -18,7 +17,7 @@ get_header();?>
   </section>
   <?php }}?>
 </article>
-<?php if(ilost_getsidefl()=='right')get_sidebar();?>
+<?php get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>

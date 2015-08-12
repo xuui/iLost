@@ -15,13 +15,11 @@ class ilostOption{
       $options['embedgSearch']=false;
       $options['googleaddbut']=false;
       $options['ctrlentry']=false;
-      $options['viacopy']=false;
       $options['ilshowNum']='4';
       $options['showAuthor']=true;
       $options['relatedpost']=true;
       $options['repostNum']='5';
       $options['repostShow']='post';
-      $options['QRcode']=true;
       $options['growlBox']=false;
       $options['jgrowltext']='';
       $options['fan_token']='';//SNS.
@@ -55,7 +53,6 @@ class ilostOption{
           if(@$_POST['embedgSearch']){$options['embedgSearch']=(bool)true;}else{$options['embedgSearch']=(bool)false;}
           if(@$_POST['googleaddbut']){$options['googleaddbut']=(bool)true;}else{$options['googleaddbut']=(bool)false;}
           if(@$_POST['ctrlentry']){$options['ctrlentry']=(bool)true;}else{$options['ctrlentry']=(bool)false;}
-          if(@$_POST['viacopy']){$options['viacopy']=(bool)true;}else{$options['viacopy']=(bool)false;}
           if(!$_POST['ilshowNum']){$options['ilshowNum']=stripslashes(4);
           }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
           }else{$options['ilshowNum']=stripslashes($_POST['ilshowNum']);}
@@ -63,7 +60,6 @@ class ilostOption{
           if(!$_POST['repostNum']){$options['repostNum']=stripslashes(5);
           }elseif($_POST['repostNum']<1){$options['repostNum']=stripslashes(1);
           }else{$options['repostNum']=stripslashes($_POST['repostNum']);}
-          if(@$_POST['QRcode']){$options['QRcode']=(bool)true;}else{$options['QRcode']=(bool)false;}
           $options['repostShow']=stripslashes($_POST['repostShow']);
           if(@$_POST['showAuthor']){$options['showAuthor']=(bool)true;}else{$options['showAuthor']=(bool)false;}
           if(@$_POST['growlBox']){$options['growlBox']=(bool)true;}else{$options['growlBox']=(bool)false;}
@@ -161,9 +157,6 @@ p.description,span.description{vertical-align:middle;}
         </p>
         <p><label class="th"  for="ctrlentry"><?php _e('Use Ctrl+Enter to reply comments','iLost');?></label><input name="ctrlentry" id="ctrlentry" type="checkbox" <?php if($options['ctrlentry']){echo 'checked="checked"';}?>>
         </p>
-        <p><label class="th"  for="viacopy"><?php _e('Automatically copy the article URL','iLost');?></label><input name="viacopy" id="viacopy" type="checkbox" <?php if($options['viacopy']){echo 'checked="checked"';}?>>
-          <span class="description"><?php _e('Copy operation is automatically appended to the current article addresses to the clipboard.','iLost');?></span>
-        </p>
         <p><label class="th" for="ilshowNum"><?php _e('Focus image shows quantity','iLost');?></label><input name="ilshowNum" id="ilshowNum" type="text" size="2" value="<?php echo($options['ilshowNum']);?>" placeholder="4">
           <span class="description"><?php _e('The default show 4 images','iLost');?></span>
         </p>
@@ -175,9 +168,6 @@ p.description,span.description{vertical-align:middle;}
           </span>
         </p>
         <p><label class="th"><?php _e('Article footer display author information','iLost');?></label><input name="showAuthor" id="growlBox" type="checkbox" <?php if($options['showAuthor']){echo 'checked="checked"';}?>><label for="showAuthor"><?php _e('Enabled','iLost')?></label>
-        </p>
-        <p><label class="th" for="QRcode"><?php _e('Enabled QR Code','iLost');?></label><input name="QRcode" id="QRcode" type="checkbox" <?php if($options['QRcode']){echo 'checked="checked"';}?>><label><?php _e('Enabled','iLost')?></label>
-          <span class="description"><?php _e('QR Code is automatically generated at the end of the article','iLost');?></span>
         </p>
         <p><label class="th"><?php _e('GrowlBox pop-up tips','iLost');?></label><input name="growlBox" id="growlBox" type="checkbox" <?php if($options['growlBox']){echo 'checked="checked"';}?>><label for="growlBox"><?php _e('Enabled','iLost')?></label><br>
           <span class="supoption">
@@ -203,7 +193,6 @@ p.description,span.description{vertical-align:middle;}
         <legend><?php _e('jQuery Library','iLost');?></legend>
         <p><label class="th"><?php _e('Source URL','iLost');?></label><label class="th"><input type="radio" name="jquerysrc" value="wp_jquery"<?php if($options['jquerysrc']=="wp_jquery")echo 'checked="checked"';?>/> <?php _e('WordPress Default','iLost');?></label><br>
           <span class="supoption">
-          <label class="th"><input type="radio" name="jquerysrc" value="google_jquery"<?php if($options['jquerysrc']=="google_jquery")echo 'checked="checked"';?>/> <?php _e('Google API','iLost');?></label><br>
           <label class="th"><input type="radio" name="jquerysrc" value="jqgzip_jquery"<?php if($options['jquerysrc']=="jqgzip_jquery")echo 'checked="checked"';?>/> <?php _e('jQurey.com','iLost');?></label><br>
           <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL: ','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="<?php _e('http:///','iLost');?>"></label>
           </span>
@@ -263,14 +252,15 @@ function ilost_getOption($option){
 function ilost_getlogoimg(){
   $usrlogoimg=ilost_getOption('usrlogoimg');$logoimgurl=ilost_getoption('logoimgurl');
   if($usrlogoimg){
-  if(is_front_page()||is_home()){echo '<h1 class="hidden">';}else{echo '<span class="hidden">';}?>
-  <a href="<?php echo ilost_wp_homeurl.'/';?>"><?php echo ilost_wp_name;?></a>
-  <?php if(is_front_page()||is_home()){echo '</h1>';}else{echo '</span>';}?>
-  <span class="hidden"><?php echo ilost_wp_description;?></span>
-  <a class="logo"<?php if($logoimgurl){echo ' style="background-image:url('.$logoimgurl.');"';}?> href="<?php echo ilost_wp_homeurl.'/';?>"></a>
-  <?php }else{if(is_front_page()||is_home()){echo '<h1>';}else{echo '<span class="title">';}?><a href="<?php echo ilost_wp_homeurl.'/';?>"><?php echo ilost_wp_name;?></a>
-  <?php if(is_front_page()||is_home()){echo '</h1>';}else{echo '</span>';}?>
-  <span class="hidden"><?php echo ilost_wp_description;?></span>
+    if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}?>
+    <a class="navbar-brand logo"<?php if($logoimgurl){echo ' style="background-image:url('.$logoimgurl.');"';}?> href="<?php echo ilost_wp_homeurl.'/';?>"><?php echo ilost_wp_name;?></a>
+    <?php if(is_front_page()||is_home()){echo '</h1>';}?>
+    <span class="hidden navbar-text"><?php echo ilost_wp_description;?></span>
+  <?php }else{
+    if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}?>
+    <a class="navbar-brand" href="<?php echo ilost_wp_homeurl.'/';?>"><?php echo ilost_wp_name;?></a>
+    <?php if(is_front_page()||is_home()){echo '</h1>';}?>
+    <p class="hidden navbar-text"><?php echo ilost_wp_description;?></p>
   <?php }
 }
 function ilost_getfavicon(){
@@ -344,10 +334,6 @@ function ilost_ctrlentry(){
   }*/
   return $ctrlentry;
 }
-function ilost_viacopy(){
-  $viacopy=ilost_getOption('viacopy');
-  return $viacopy;
-}
 function ilost_getfront(){
   $frontid=esc_attr(get_option('page_on_front'));
   return $frontid;
@@ -375,40 +361,12 @@ function ilost_showAuthor(){
   $showAuthor=ilost_getOption('showAuthor');
   return $showAuthor;
 }
-function ilost_getQRcode(){
-  $QRcode=ilost_getOption('QRcode');
-  return $QRcode;
-}
 function ilost_jgrowlbox(){
   $growlBox=ilost_getOption('growlBox');$jgrowltext=ilost_getOption('jgrowltext');
   if($growlBox && $jgrowltext){
   $jgrowlinfo=explode('##Title#',$jgrowltext);
   if(@$jgrowlinfo[1]){$jgrtitle=$jgrowlinfo[1];}else{$jgrtitle=esc_attr(ilost_wp_name);}
-  //if(ilost_is_safari()){
-  //echo "<script type=\"text/javascript\">ilost_notify('".$jgrtitle."',{'body':'".$jgrowlinfo[0]."','tag':'unique string','onclose':function(){}});</script>\n";}else{
-  //echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script><link rel=\"stylesheet\" href=\"".ilost_path."/scripts/jgrowl.css\" /><script type=\"text/javascript\">".'(function($){$=jQuery.noConflict();$(window).load(function(){$.jGrowl("'.$jgrowlinfo[0].'",{header:"'.$jgrtitle.'"});});})(jQuery);'."</script>\n";
-  echo "
-  <script type=\"text/javascript\">
-(function(){
-(function(jQuery){
-xun=jQuery.noConflict();
-xun(document).ready(function(){
-  xun('body').append('<div id=\"xuNotice\"></div>');
-  var delayTime=[],xuNotice=xun('#xuNotice');
-  xuNotice.append('<b>".$jgrtitle."</b></br>".$jgrowlinfo[0]."');
-  xuNotice.show().addClass('animated flipInY');
-  setTimeout(function(){xuNotice.removeClass()},1000);
-  xuNotice.click(function(index){//Close.
-	xuNotice.addClass('animated hinge bounceOutRight');
-	delayTime[index]=setTimeout(function(){xuNotice.removeClass().hide()},1000);
-	delayTime[index]=setTimeout(function(){xuNotice.empty()},1000);
-  });
-});
-})(jQuery);
-})();
-</script>
-";
-  //}
+  echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script><link rel=\"stylesheet\" href=\"".ilost_path."/scripts/jgrowl.css\" /><script type=\"text/javascript\">".'(function($){$=jQuery.noConflict();$(window).load(function(){$.jGrowl("'.$jgrowlinfo[0].'",{header:"'.$jgrtitle.'"});});})(jQuery);'."</script>\n";
   }
 }
 if(ilost_getOption('growlBox')&&ilost_getOption('jgrowltext'))add_action('wp_footer','ilost_jgrowlbox');

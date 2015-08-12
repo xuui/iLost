@@ -54,7 +54,11 @@ function ilost_home_menulink($args){$args['show_home']=true;return $args;}
 #function ilost_remove_editor_menu(){remove_action('admin_menu','_add_themes_utility_last',101);}
 function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)="\d*"\s/',"",$html);return $html;}
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
-function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?><style type="text/css">body{<?php echo trim($style);?>}header{background:#ddd url(<?php echo ilost_path.'/images/gradient.png';?>) repeat-x 0 -65px;background-color:rgba(255,255,255,.34);border-radius:5px 5px 0 0;box-shadow:0 0 7px rgba(0,0,0,0.21);-webkit-box-shadow:0 0 5px rgba(0,0,0,0.21);margin:34px 0 0;padding:5px 10px;height:46px;}header .hgroup{height:32px;}header nav{width:580px;}#flexslider,#flexslider .flexslider{border-radius:0;margin:0;}#container{border-radius:0;}#proaside{background:#fff;margin:0;padding:10px 0;}#container{border-radius:0;}footer{background:#fff;background-color:rgba(255,255,255,.65);border-radius:0 0 5px 5px;box-shadow:0 0 7px rgba(0,0,0,0.34);-webkit-box-shadow:0 0 5px rgba(0,0,0,.34);margin-bottom:25px;padding:0 10px;}footer aside{background:none;border:none;}</style><?php }}
+function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
+<style type="text/css">
+  body{<?php echo trim($style);?>}
+</style>
+<?php }}
 //Custom post type.
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>_x(__('Show images','iLost'),'post type general name'),'singular_name'=>_x(__('Show image','iLost'),'post type singular name'),'add_new'=>_x(__('Add Images','iLost'),'Image'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
@@ -75,7 +79,7 @@ function ilost_is_ie10(){return strpos(BROWSER_USER_AGENT,'MSIE 10');}
 function ilost_is_macintosh(){return strpos(BROWSER_USER_AGENT,'Mac OS X 10_8_2');}
 function ilost_is_safari(){return strpos(BROWSER_USER_AGENT,'6.0.2 Safari');}
 function ilost_is_mobileos(){
-  if((ilost_is_iphone())or(ilost_is_wphone())or(ilost_is_ipad())or(ilost_is_android())){echo "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\" />\n<meta name=\"viewport\" content=\"minimum-scale=1.0,maximum-scale=1,width=device-width,user-scalable=no\" />\n<script type=\"application/x-javascript\">addEventListener('load',function(){setTimeout(scrollTo,0,0,1);},false);</script>\n";}
+  if((ilost_is_iphone())or(ilost_is_wphone())or(ilost_is_ipad())or(ilost_is_android())){echo "<script type=\"application/x-javascript\">addEventListener('load',function(){setTimeout(scrollTo,0,0,1);},false);</script>\n";}
 }
 function ilost_getstyles(){
   if(ilost_is_iphone()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
@@ -97,22 +101,20 @@ function ilost_enqueue_script(){
   if((ilost_is_ie())&&(!ilost_is_ie9())&&(!ilost_is_ie10()))wp_enqueue_script('html5shiv','http://html5shiv.googlecode.com/svn/trunk/html5.js');
   if(ilost_getjQuery()!='wp_jquery'){
     wp_deregister_script('jquery');
-    if(ilost_getjQuery()=='google_jquery'){wp_register_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',array(),'1.9.1');}
-    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','http://code.jquery.com/jquery-1.9.1.min.js',array(),'1.9.1');}
+    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','http://code.jquery.com/jquery-1.11.3.min.js',array(),'1.11.3');}
     if(ilost_getjQuery()=='custom_jquery'){wp_register_script('jquery',ilost_getjQueryurl());}
     wp_enqueue_script('jquery');
   }else{wp_enqueue_script('jquery');}
-  wp_enqueue_script('load',ilost_path.'/scripts/load.js',array(),'1.7.1',false);
-  wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'1.7.1',true);
-  if(ilost_viacopy()){wp_enqueue_script('viacopy',ilost_path.'/scripts/viacopy.js',array(),'1.7.1',true);}
-  if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.7.1',true);
+  wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.5',true);
+  wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0.0',true);
+  wp_enqueue_script('load',ilost_path.'/scripts/load.js',array(),'1.9.5',false);
+  if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);
   if(is_single())wp_enqueue_script('prettify',ilost_path.'/scripts/prettify/prettify.js',array(),false,true);
-  wp_enqueue_script('sidescroll',ilost_path.'/scripts/sidescroll.js',array(),'1.7.1',true);
 }
 function ilost_footerscript(){
   $growlBox=ilost_getOption('growlBox');
-  if($growlBox)echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script>\n<script src=\"".ilost_path."/scripts/konami.js\"></script>\n";
+  if($growlBox)echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script>\n";
   if(is_single()&&ilost_ctrlentry()){
     echo "<script type=\"text/javascript\">ilosts.quickComments();(function(jQuery){ilostQ=jQuery.noConflict();ilostQ(document).ready(function(){ilostQ('#commentform .form-submit #submit').after('<label class=\"cereply\">".__('Use Ctrl+Enter to reply comments','iLost')."</label>');});})(jQuery);
 </script>\n";
@@ -202,25 +204,25 @@ function ilost_postAuthor(){?>
 }
 //PageNavs.
 function ilost_pagenav($options=array()){
-  global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','first_text'=>'&laquo; First','last_text'=>'Last &raquo;','prev_text'=>'&laquo;','next_text'=>'&raquo;','dotleft_text'=>'...','dotright_text'=>'...','num_pages'=>5,'always_show'=>false);
+  global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
-  if(!empty($options['pages_text'])){$pages_text=str_replace(array("%CURRENT_PAGE%","%TOTAL_PAGES%"),array(number_format_i18n($paged),number_format_i18n($total_pages)),$options['pages_text']);$out.="<span class='pages'>$pages_text</span>";}
-  if($start_page>=2 && $pages_to_show<$total_pages){$first_text=str_replace('%TOTAL_PAGES%',number_format_i18n($total_pages),$options['first_text']);$out.=ilost_pgnavnum(1,'first',$first_text,'%TOTAL_PAGES%');
-  if(!empty($options['dotleft_text'])){$out.="<span class='extend'>{$options['dotleft_text']}</span>";}}
-  if(!empty($options['prev_text'])){$out.=get_previous_posts_link($options['prev_text']);}
-  foreach(range($start_page,$end_page) as $i){if($i==$paged && !empty($options['current_text'])){$current_page_text=str_replace('%PAGE_NUMBER%',number_format_i18n($i),$options['current_text']);$out.="<span class='current'>$current_page_text</span>";}else{$out.=ilost_pgnavnum($i,'page',$options['page_text']);}}
-  if(!empty($options['next_text'])){$out.=get_next_posts_link($options['next_text'],$total_pages);}$larger_page_end=0;
-  if($end_page<$total_pages){if(!empty($options['dotright_text'])){$out.="<span class='extend'>{$options['dotright_text']}</span>";}$out.=ilost_pgnavnum($total_pages,'last',$options['last_text'],'%TOTAL_PAGES%');}
-  $out="<div class='ilost-pagenav'>\n$out\n</div>\n";
+  if(!empty($options['pages_text'])){$pages_text=str_replace(array("%CURRENT_PAGE%","%TOTAL_PAGES%"),array(number_format_i18n($paged),number_format_i18n($total_pages)),$options['pages_text']);$out.='<li class="disabled"><span>'.$pages_text.'</span></li>';}
+  if(!empty($options['prev_text'])){$out.='<li>'.get_previous_posts_link($options['prev_text']).'</li>';}
+  foreach(range($start_page,$end_page) as $i){if($i==$paged && !empty($options['current_text'])){$current_page_text=str_replace('%PAGE_NUMBER%',number_format_i18n($i),$options['current_text']);$out.='<li class="active"><span>'.$current_page_text."</span></li>";}else{$out.=ilost_pgnavnum($i,'page',$options['page_text']);}}
+  if(!empty($options['next_text'])){$out.='<li>'.get_next_posts_link($options['next_text'],$total_pages).'</li>';}$larger_page_end=0;
+  $out='<ul class="pagination">'."\n".$out."\n</ul>\n";
   echo apply_filters('ilost_pagenav',$out);
-}function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a>";}
+}
+function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
+
 function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i< ($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
 //Breadcrumb.
-function ilost_breadcrumb($prefix='<div class="breadcrumb" itemprop="breadcrumb">',$suffix='</div>'){
+function ilost_breadcrumb(
+  
+  $prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   $breadcrumb_opt=array();
   $breadcrumb_opt['home']=ilost_wp_name;
   $breadcrumb_opt['blog']="Blog";
-  $breadcrumb_opt['sep']="&gt;";//&raquo;
   $breadcrumb_opt['prefix']="";//"You are here:"
   $breadcrumb_opt['nofollowhome']=false;
   $breadcrumb_opt['singleparent']=0;
@@ -228,18 +230,11 @@ function ilost_breadcrumb($prefix='<div class="breadcrumb" itemprop="breadcrumb"
   $breadcrumb_opt['archiveprefix']="Archives for";
   $breadcrumb_opt['searchprefix']="Search for";
   global $wp_query,$post;
-  function ilost_bold_or_not($input){if(is_category()|| is_tag()|| is_date()|| is_author()){return '<h1>'.$input.'</h1>';}else{return '<h2>'.$input.'</h2>';}}
-  function ilost_get_category_parents($id,$link=FALSE,$separator='/',$nicename=FALSE){
-    $chain='';
-    $parent=@get_category($id);
-    
-    if(is_wp_error($parent)){return $parent;}
-    if($nicename){$name=$parent->slug;}else{$name=$parent->cat_name;}
-    if($parent->parent &&($parent->parent != $parent->term_id)){$chain.=get_category_parents($parent->parent,true,$separator,$nicename);}
-    $chain.= ilost_bold_or_not($name);
-    return $chain;
-  }
-  $nofollow=' ';if($breadcrumb_opt['nofollowhome']){$nofollow=' rel="nofollow" ';}$on_front=get_option('show_on_front');if($on_front=="page"){$homelink='<a'.$nofollow.'href="'.get_permalink(get_option('page_on_front')).'">'.$breadcrumb_opt['home'].'</a>';$bloglink=$homelink.' '.$breadcrumb_opt['sep'].' <a href="'.get_permalink(get_option('page_for_posts')).'">'.$breadcrumb_opt['blog'].'</a>';}else{$homelink='<a'.$nofollow.'href="'.ilost_wp_homeurl.'/'.'">'.$breadcrumb_opt['home'].'</a>';$bloglink=$homelink;}if(($on_front=="page" && is_front_page())||($on_front=="posts" && is_home())){$output=ilost_bold_or_not($breadcrumb_opt['home']);}elseif($on_front=="page" && is_home()){$output=$homelink.' '.$breadcrumb_opt['sep'].' '.ilost_bold_or_not($breadcrumb_opt['blog']);}elseif(!is_page()){$output=$bloglink.' '.$breadcrumb_opt['sep'].' ';if((is_single()|| is_category()|| is_tag()|| is_date()|| is_author())&& $breadcrumb_opt['singleparent']!=false){$output.='<a href="'.get_permalink($breadcrumb_opt['singleparent']).'">'.get_the_title($breadcrumb_opt['singleparent']).'</a> '.$breadcrumb_opt['sep'].' ';}if(is_single()&& $breadcrumb_opt['singlecatprefix']){$cats=get_the_category();$cat=$cats[0];if(is_object($cat)){if($cat->parent != 0){$output.= get_category_parents($cat->term_id,true," ".$breadcrumb_opt['sep']." ");}else{$output.= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a> '.$breadcrumb_opt['sep'].' ';}}}if(is_category()){$cat=intval(get_query_var('cat'));$output.=ilost_get_category_parents($cat,false," ".$breadcrumb_opt['sep']." ");}elseif(is_tag()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_cat_title('',false));}elseif(is_date()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_month_title(' ',false));}elseif(is_author()){$user=get_userdatabylogin($wp_query->query_vars['author_name']);$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".$user->display_name);}elseif(is_search()){$output.=ilost_bold_or_not($breadcrumb_opt['searchprefix'].' "'.stripslashes(strip_tags(get_search_query())).'"');}else if(is_tax()){$taxonomy=get_taxonomy(get_query_var('taxonomy'));$term=get_query_var('term');$output.=$taxonomy->label .': '.ilost_bold_or_not($term );}else{$output.=ilost_bold_or_not(get_the_title());}}else{$post=$wp_query->get_queried_object();if(0==$post->post_parent ){$output=$homelink." ".$breadcrumb_opt['sep']." ".ilost_bold_or_not(get_the_title());}else{if(isset($post->ancestors)){if(is_array($post->ancestors)){$ancestors=array_values($post->ancestors);}else{$ancestors=array($post->ancestors);}}else{$ancestors=array($post->post_parent);}$ancestors=array_reverse($ancestors);$ancestors[]=$post->ID;$links=array();foreach($ancestors as $ancestor){$tmp=array();$tmp['title']=strip_tags(get_the_title($ancestor));$tmp['url']=get_permalink($ancestor);$tmp['cur']=false;if($ancestor==$post->ID){$tmp['cur']=true;}$links[]=$tmp;}$output=$homelink;foreach($links as $link){$output.=' '.$breadcrumb_opt['sep'].' ';if(!$link['cur']){$output.='<a href="'.$link['url'].'">'.$link['title'].'</a>';}else{$output.=ilost_bold_or_not($link['title']);}}}}if($breadcrumb_opt['prefix']!=""){$output=$breadcrumb_opt['prefix']." ".$output;}echo $prefix.$output.$suffix;}
+  function ilost_bold_or_not($input){if(is_category()|| is_tag()|| is_date()|| is_author()){return '<li class="active">'.$input.'</li>';}else{return '<li class="active">'.$input.'</li>';}}
+  function ilost_get_category_parents($id,$link=FALSE,$separator='/',$nicename=FALSE){$chain='';$parent=@get_category($id);if(is_wp_error($parent)){return $parent;}if($nicename){$name=$parent->slug;}else{$name=$parent->cat_name;}if($parent->parent &&($parent->parent != $parent->term_id)){$chain.=get_category_parents($parent->parent,true,$separator,$nicename);}$chain.= ilost_bold_or_not($name);return $chain;}
+  $nofollow=' ';if($breadcrumb_opt['nofollowhome']){$nofollow=' rel="nofollow" ';}$on_front=get_option('show_on_front');if($on_front=="page"){$homelink='<li><a'.$nofollow.'href="'.get_permalink(get_option('page_on_front')).'">'.$breadcrumb_opt['home'].'</a></li>';$bloglink=$homelink.' <li><a href="'.get_permalink(get_option('page_for_posts')).'">'.$breadcrumb_opt['blog'].'</a></li>';}else{$homelink='<li><a'.$nofollow.'href="'.ilost_wp_homeurl.'/'.'">'.$breadcrumb_opt['home'].'</a></li>';$bloglink=$homelink;}if(($on_front=="page" && is_front_page())||($on_front=="posts" && is_home())){$output=ilost_bold_or_not($breadcrumb_opt['home']);}elseif($on_front=="page" && is_home()){$output=$homelink.ilost_bold_or_not($breadcrumb_opt['blog']);}elseif(!is_page()){$output=$bloglink;if((is_single()|| is_category()|| is_tag()|| is_date()|| is_author())&& $breadcrumb_opt['singleparent']!=false){$output.='<li><a href="'.get_permalink($breadcrumb_opt['singleparent']).'">'.get_the_title($breadcrumb_opt['singleparent']).'</a></li>';}if(is_single()&& $breadcrumb_opt['singlecatprefix']){$cats=get_the_category();$cat=$cats[0];if(is_object($cat)){if($cat->parent != 0){$output.= get_category_parents($cat->term_id,true,'');}else{$output.= '<li><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></li>';}}}if(is_category()){$cat=intval(get_query_var('cat'));$output.=ilost_get_category_parents($cat,false,'');}elseif(is_tag()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_cat_title('',false));}elseif(is_date()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_month_title(' ',false));}elseif(is_author()){$user=get_userdatabylogin($wp_query->query_vars['author_name']);$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".$user->display_name);}elseif(is_search()){$output.=ilost_bold_or_not($breadcrumb_opt['searchprefix'].' "'.stripslashes(strip_tags(get_search_query())).'"');}else if(is_tax()){$taxonomy=get_taxonomy(get_query_var('taxonomy'));$term=get_query_var('term');$output.=$taxonomy->label .': '.ilost_bold_or_not($term );}else{$output.=ilost_bold_or_not(get_the_title());}}else{$post=$wp_query->get_queried_object();if(0==$post->post_parent ){$output=$homelink.ilost_bold_or_not(get_the_title());}else{if(isset($post->ancestors)){if(is_array($post->ancestors)){$ancestors=array_values($post->ancestors);}else{$ancestors=array($post->ancestors);}}else{$ancestors=array($post->post_parent);}$ancestors=array_reverse($ancestors);$ancestors[]=$post->ID;$links=array();foreach($ancestors as $ancestor){$tmp=array();$tmp['title']=strip_tags(get_the_title($ancestor));$tmp['url']=get_permalink($ancestor);$tmp['cur']=false;if($ancestor==$post->ID){$tmp['cur']=true;}$links[]=$tmp;}$output=$homelink;foreach($links as $link){if(!$link['cur']){$output.='<li><a href="'.$link['url'].'">'.$link['title'].'</a></li>';}else{$output.=ilost_bold_or_not($link['title']);}}}}if($breadcrumb_opt['prefix']!=""){$output=$breadcrumb_opt['prefix']." ".$output;}echo $prefix.$output.$suffix;
+
+}
 //Core End.
 
 //Private Code Start.*/

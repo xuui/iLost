@@ -1,9 +1,8 @@
 <?php /* Template Name: Talk */
 get_header();?>
-<div id="container">
-<div class="pageheader"><h1><?php the_title();?></h1></div>
-<?php if(ilost_getsidefl()=='left')get_sidebar();?>
-<article>
+<div class="row">
+<div class="page-header"><h1><?php the_title();?></h1></div>
+<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php ilost_breadcrumb();$paged=(get_query_var('paged'))?get_query_var('paged'):1;
   query_posts(array('post_type'=>'xutalk','showposts'=>10,'paged'=>$paged));
   $wp_query->is_archive=true;$wp_query->is_home=false;
@@ -18,7 +17,7 @@ get_header();?>
       the_content();?>
     </div>
     <div class="post-meta">
-      <div class="clear"></div>
+      &nbsp;<i class="clear"></i>
     </div>
   </section>
   <?php }?>
@@ -27,7 +26,7 @@ get_header();?>
   </nav>
   <?php }wp_reset_query();?>
 </article>
-<?php if(ilost_getsidefl()=='right')get_sidebar();?>
+<?php get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>
