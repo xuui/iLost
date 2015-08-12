@@ -1,5 +1,6 @@
 <?php get_header();?>
 <div id="container">
+<?php if(ilost_getsidefl()=='left')get_sidebar();?>
 <article>
   <?php if(ilost_embedgSearch()){?>
   <section>
@@ -12,7 +13,7 @@
   </section>
   <?php }else{if(have_posts()){?>
   <section class="archive"><span class="title"><?php printf(__('Search results for "%s"','iLost'),get_search_query());?></span></section>
-   <?php while(have_posts()){the_post();?>
+   <?php while(have_posts()){the_post();$logined=get_post_meta(get_the_ID(),"logined",$single=true);?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
      <div class="title">
       <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
@@ -20,7 +21,10 @@
     </div>
     <div class="entry">
       <?php the_post_thumbnail('thumbnail');
-      the_excerpt();?>
+      if($logined=="1"){if(is_user_logged_in()){the_excerpt();
+          }else{printf(__('View this article need to login.','iLost'));}
+      }else{the_excerpt();
+      }?>
     </div>
     <div class="post-meta">
       <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags('Tags: ',' | ','');?><div class="clear"></div>
@@ -41,7 +45,7 @@
   </section>
   <?php }}?>
 </article>
-<?php get_sidebar();?>
+<?php if(ilost_getsidefl()=='right')get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 22:32+0800\n"
-"PO-Revision-Date: 2013-06-08 22:32+0800\n"
-"Last-Translator: Xu.hel <xuui@outlook.com>\n"
+"POT-Creation-Date: 2014-03-07 11:34+0800\n"
+"PO-Revision-Date: 2014-03-07 11:35+0800\n"
+"Last-Translator: Xu.hel <zvzhssj@gmail.com>\n"
 "Language-Team: Xu.Design <xu@xuui.net>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:5 ../header.php:6
@@ -48,39 +48,44 @@ msgstr "作者歸檔："
 msgid "Blog Archives"
 msgstr "博客歸檔"
 
-#: ../archive.php:19 ../index.php:8 ../search.php:19
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
 msgid "No Comments"
 msgstr "沒有回應"
 
-#: ../archive.php:19 ../index.php:8 ../search.php:19
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
 msgid "1 Comment"
 msgstr "1 條回應"
 
-#: ../archive.php:19 ../index.php:8 ../search.php:19
+#: ../archive.php:19 ../index.php:9 ../mode.talk.php:13 ../search.php:19
 msgid "% Comments"
 msgstr "% 條回應"
 
-#: ../archive.php:19 ../archive.php:26 ../attachment.php:8
-#: ../attachment.php:14 ../index.php:8 ../index.php:14 ../mode.about.php:14
-#: ../mode.archives.php:15 ../mode.guestbook.php:13 ../mode.links.php:10
-#: ../page.php:12 ../search.php:19 ../search.php:26 ../single-ilostshow.php:8
-#: ../single-ilostshow.php:15 ../single.php:8 ../single.php:26
+#: ../archive.php:19 ../archive.php:29 ../attachment.php:8
+#: ../attachment.php:14 ../include/single-talk.php:11 ../index.php:9
+#: ../index.php:18 ../mode.about.php:14 ../mode.archives.php:15
+#: ../mode.guestbook.php:13 ../mode.links.php:10 ../mode.talk.php:13
+#: ../page.php:12 ../search.php:19 ../search.php:29 ../single-ilostshow.php:8
+#: ../single-ilostshow.php:15 ../single.php:8 ../single.php:32
 msgid "Edit"
 msgstr "編輯"
 
-#: ../archive.php:26 ../attachment.php:15 ../index.php:14 ../single.php:27
+#: ../archive.php:24 ../index.php:13 ../search.php:24 ../single.php:17
+msgid "View this article need to login."
+msgstr "這篇文檔需要登錄後才能瀏覽。"
+
+#: ../archive.php:29 ../attachment.php:15 ../index.php:18 ../single.php:33
 msgid "Tags: "
 msgstr "標籤："
 
-#: ../archive.php:35 ../index.php:23 ../search.php:35
+#: ../archive.php:38 ../index.php:27 ../search.php:38
 msgid "Not Found"
 msgstr "沒有找到"
 
-#: ../archive.php:37 ../index.php:25 ../search.php:37
+#: ../archive.php:40 ../index.php:29 ../search.php:40
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr "對不起，您要找的東西不再這裡。"
 
-#: ../archive.php:38 ../index.php:26 ../search.php:38
+#: ../archive.php:41 ../index.php:30 ../search.php:41
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -133,7 +138,7 @@ msgstr "Twitter"
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../functions.php:1 ../include/options.php:2
+#: ../functions.php:1 ../include/options.php:91 ../include/options.php:244
 msgid "Fanfou"
 msgstr "飯否"
 
@@ -183,141 +188,155 @@ msgstr "應用："
 msgid "[Edit]"
 msgstr "[編輯]"
 
+#: ../functions.php:10
+msgid "登录才能浏览:"
+msgstr ""
+
+#: ../functions.php:12
+msgid "浏览这个篇文章的用户等级为:"
+msgstr ""
+
+#: ../functions.php:14
+msgid "用户等级0~10 留空为所有人都可以看。"
+msgstr ""
+
 #: ../header.php:6 ../search.php:6 ../search.php:14
 #, php-format
 msgid "Search results for \"%s\""
 msgstr "\"%s\" 的搜尋結果"
 
-#: ../index.php:11 ../mode.about.php:10 ../mode.guestbook.php:9 ../page.php:8
-#: ../include/core.php:2
-msgid "Learn more"
-msgstr "瞭解更多"
-
-#: ../mode.archives.php:11
-msgid "Recent Articles"
-msgstr "最近文當"
-
-#: ../sidebar.php:4 ../single.php:18
-msgid "View Demo"
-msgstr "View Demo"
-
-#: ../sidebar.php:5 ../single.php:19
-msgid "Download Now"
-msgstr "Download Now"
-
-#: ../sidebar.php:6 ../single.php:20
-msgid "Buy Now"
-msgstr "Buy Now"
-
-#: ../single.php:15
-msgid "View this article need to login."
-msgstr "這篇文檔需要登錄後才能瀏覽。"
-
-#: ../single.php:22
-msgid ""
-"<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR "
-"code  -->"
-msgstr "<strong>用移動設備快速閱讀本文：</strong><br>請掃描二維碼  -->"
-
-#: ../include/core.php:2
+#: ../include/core.php:3
 msgid " theme's SideBar."
 msgstr " 主題的主邊欄"
 
-#: ../include/core.php:2
+#: ../include/core.php:4
 msgid " theme's Home page template of right sidebar."
 msgstr " 主題的主頁模板頁的右側邊欄。"
 
-#: ../include/core.php:2
+#: ../include/core.php:5
 msgid " theme's Home page template of left sidebar."
 msgstr " 主題的主頁模板頁的左側邊欄"
 
-#: ../include/core.php:2
+#: ../include/core.php:6
 msgid " theme's page sidebar."
 msgstr " 主題的頁面邊欄。"
 
-#: ../include/core.php:2
+#: ../include/core.php:7
 msgid " theme' footer sidebar, This can only be placed on 5 widget."
 msgstr " 主題的頁腳欄，一行最多之允許放置 5 個小工具。"
 
-#: ../include/core.php:2
+#: ../include/core.php:15
 msgid "Primary Navigation"
 msgstr "主導航菜單"
 
-#: ../include/core.php:2
+#: ../include/core.php:46
 msgid "Excerpt"
 msgstr "摘要"
 
-#: ../include/core.php:2
+#: ../include/core.php:48 ../index.php:12 ../index.php:14 ../mode.about.php:10
+#: ../mode.guestbook.php:9 ../page.php:8
+msgid "Learn more"
+msgstr "瞭解更多"
+
+#: ../include/core.php:60
 msgid "Show images"
 msgstr "展示圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Show image"
 msgstr "展示圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Add Images"
 msgstr "添加圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Add New Images"
 msgstr "添加新圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Edit Image"
 msgstr "編輯圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Add Show image"
 msgstr "添加展示圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "View Image"
 msgstr "查看圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "Search Show images"
 msgstr "搜尋展示圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "No images found"
 msgstr "找不到任何圖片"
 
-#: ../include/core.php:2
+#: ../include/core.php:60
 msgid "No images found in Trash"
 msgstr "垃圾桶裡面沒有發現任何展示圖片"
 
-#: ../include/core.php:2 ../include/options.php:2
+#: ../include/core.php:117 ../include/options.php:162
 msgid "Use Ctrl+Enter to reply comments"
 msgstr "使用 Ctrl+Enter 快速回覆回應"
 
-#: ../include/core.php:2
+#: ../include/core.php:168
 msgid "No Comments &raquo;"
 msgstr "No Comments &raquo;"
 
-#: ../include/core.php:2
+#: ../include/core.php:168
 msgid "1 Comment &raquo;"
 msgstr "1 Comment &raquo;"
 
-#: ../include/core.php:2
+#: ../include/core.php:168
 msgid "% Comments &raquo;"
 msgstr "% Comments &raquo;"
 
-#: ../include/core.php:2
+#: ../include/core.php:182
 msgid "Related Post:"
 msgstr "相關文檔："
 
-#: ../include/core.php:2
+#: ../include/core.php:195
 msgid "Author"
 msgstr "作者"
 
-#: ../include/core.php:2
+#: ../include/core.php:198
 msgid "Author description"
 msgstr "簡介"
 
-#: ../include/core.php:2
-msgid "Pagination"
-msgstr "分頁"
+#: ../include/core.php:238
+msgid "TalkPost"
+msgstr "TalkPost"
+
+#: ../include/core.php:238
+msgid "Add TalkPost"
+msgstr "Add TalkPost"
+
+#: ../include/core.php:238
+msgid "Add New TalkPost"
+msgstr "Add New TalkPost"
+
+#: ../include/core.php:238
+msgid "Edit TalkPost"
+msgstr "Edit TalkPost"
+
+#: ../include/core.php:238
+msgid "View TalkPost"
+msgstr "View TalkPost"
+
+#: ../include/core.php:238
+msgid "Search TalkPost"
+msgstr "Search TalkPost"
+
+#: ../include/core.php:238
+msgid "No TalkPost found"
+msgstr "No TalkPost found"
+
+#: ../include/core.php:238
+msgid "No TalkPost found in Trash"
+msgstr "No TalkPost found in Trash"
 
 #: ../include/fanfou.php:3
 msgid "[Update] "
@@ -327,87 +346,90 @@ msgstr "[更新] "
 msgid "[New] "
 msgstr "[新] "
 
-#: ../include/options.php:2
+#: ../include/options.php:85
 msgid "Settings saved."
 msgstr "設置已儲存。"
 
-#: ../include/options.php:2
+#: ../include/options.php:87
 msgid "Settings have been restored to default."
 msgstr "設置已復原為默認值。"
 
-#: ../include/options.php:2
+#: ../include/options.php:88 ../include/options.php:91
+#: ../include/options.php:242
 msgid " Options"
 msgstr " 選項"
 
-#: ../include/options.php:2
+#: ../include/options.php:91 ../include/options.php:245
 msgid "Script Code"
 msgstr "廣告和腳本"
 
-#: ../include/options.php:2
+#: ../include/options.php:125
 msgid "Thank you for purchasing this theme, designed by the Xu.hel."
 msgstr ""
 "谢谢您购买这个主题，这个主题由 Xu.hel 设计。謝謝您購買這個主題，這個主題由 "
 "Xu.hel 設計。"
 
-#: ../include/options.php:2
+#: ../include/options.php:130 ../include/options.php:243
 msgid "General Options"
 msgstr "常規選項"
 
-#: ../include/options.php:2
+#: ../include/options.php:131
 msgid "Custom Logo picture"
 msgstr "自定義 Logo 圖片"
 
-#: ../include/options.php:2
+#: ../include/options.php:134
 msgid "Please enter the URL address of the Logo picture."
 msgstr "請錄入 Logo 圖片的 URL 地址。"
 
-#: ../include/options.php:2
+#: ../include/options.php:137
 msgid "Custom Favicon"
 msgstr "自定義 Favicon"
 
-#: ../include/options.php:2
+#: ../include/options.php:140
 msgid "Please enter the URL address of the Favicon icon."
 msgstr "請錄入 Favicon 圖標的 URL 地址。"
 
-#: ../include/options.php:2
+#: ../include/options.php:143
 msgid "Sidebar float:"
 msgstr "邊欄浮動："
 
-#: ../include/options.php:2
+#: ../include/options.php:144
 msgid "Left"
 msgstr "左邊"
 
-#: ../include/options.php:2
+#: ../include/options.php:145
 msgid "Right"
 msgstr "右邊"
 
-#: ../include/options.php:2
+#: ../include/options.php:147
 msgid "Custom RSS Subscription"
 msgstr "自定義 RSS 訂閱地址"
 
-#: ../include/options.php:2
+#: ../include/options.php:148
 msgid "Is empty, use the default automatic WordPress address. "
 msgstr "為空則自動使用 WordPress 的默認地址。"
 
-#: ../include/options.php:2
+#: ../include/options.php:150
 msgid "Search engine keywords"
 msgstr "搜索引擎關鍵字"
 
-#: ../include/options.php:2
+#: ../include/options.php:151
 msgid ""
 "Keywords using a comma (\",\") between them. Is empty, the automatic "
 "acquisition."
 msgstr "關鍵詞用逗號(“，”)分開。為空則自動獲得。"
 
-#: ../include/options.php:2
+#: ../include/options.php:153
 msgid "Google custom search"
 msgstr "Google 自定義搜索"
 
-#: ../include/options.php:2
+#: ../include/options.php:153 ../include/options.php:170
+#: ../include/options.php:177 ../include/options.php:179
+#: ../include/options.php:182
 msgid "Enabled"
 msgstr "啟用"
 
-#: ../include/options.php:2
+#: ../include/options.php:155
 #, php-format
 msgid ""
 "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
@@ -418,77 +440,81 @@ msgstr ""
 "<code>name=\"cx\"</code> ， 並將同行中 value 的值填寫在下面的輸入框內。<br /"
 ">n例如: <code>014782006753236413342:1ltfrybsbz4</code>"
 
-#: ../include/options.php:2
+#: ../include/options.php:155
 msgid "http://www.google.com/coop/cse/"
 msgstr "http://www.google.com/coop/cse/"
 
-#: ../include/options.php:2
+#: ../include/options.php:157
 msgid "Embedded in the site search results"
 msgstr "站點內嵌入檢索結果"
 
-#: ../include/options.php:2
-msgid "Enable Sidebar follow"
-msgstr "啟用邊欄跟隨"
-
-#: ../include/options.php:2
+#: ../include/options.php:160
 msgid "Enable Google + 1 button"
 msgstr "啟用 Google +1 按鈕"
 
-#: ../include/options.php:2
+#: ../include/options.php:164
 msgid "Automatically copy the article URL"
 msgstr "自動拷貝文檔網址"
 
-#: ../include/options.php:2
+#: ../include/options.php:165
 msgid ""
 "Copy operation is automatically appended to the current article addresses to "
 "the clipboard."
 msgstr "拷貝操作的時候自動拷貝文檔的網址到剪貼板。"
 
-#: ../include/options.php:2
+#: ../include/options.php:167
 msgid "Focus image shows quantity"
 msgstr "輪換圖片顯示數目"
 
-#: ../include/options.php:2
+#: ../include/options.php:168
 msgid "The default show 4 images"
 msgstr "默認顯示4張圖片"
 
-#: ../include/options.php:2
+#: ../include/options.php:170
 msgid "Related articles"
 msgstr "關連檔案"
 
-#: ../include/options.php:2
+#: ../include/options.php:172
 msgid "Type:"
 msgstr "種類："
 
-#: ../include/options.php:2
+#: ../include/options.php:172
 msgid "Post lists"
 msgstr "文檔列表"
 
-#: ../include/options.php:2
+#: ../include/options.php:172
 msgid "thumbnail"
 msgstr "微縮圖"
 
-#: ../include/options.php:2
+#: ../include/options.php:173
 msgid "Number:"
 msgstr "數目："
 
-#: ../include/options.php:2
+#: ../include/options.php:174
 msgid "The default display 5 articles "
 msgstr "默認顯示5篇文檔"
 
-#: ../include/options.php:2
+#: ../include/options.php:177
 msgid "Article footer display author information"
 msgstr "文檔結束展現著者介紹"
 
-#: ../include/options.php:2
+#: ../include/options.php:179
+msgid "Enabled QR Code"
+msgstr "使用二維碼"
+
+#: ../include/options.php:180
+msgid "QR Code is automatically generated at the end of the article"
+msgstr "在文章末尾自動生成二維碼"
+
+#: ../include/options.php:182
 msgid "GrowlBox pop-up tips"
 msgstr "GrowlBox 氣泡提醒"
 
-#: ../include/options.php:2
+#: ../include/options.php:184
 msgid "Text...##Title#Pop-up bubble title"
 msgstr "內容...##Title#彈出氣泡標題"
 
-#: ../include/options.php:2
+#: ../include/options.php:185
 msgid ""
 "Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
 "title, can do not have a title. Is empty is not GrowlBox tip box popup."
@@ -496,223 +522,229 @@ msgstr ""
 "設置 GrowlBox 提醒框的提示內容。使用“##Title#”區分內容和標題，可以沒有標題。"
 "為空則不會彈出 GrowlBox 提醒框。"
 
-#: ../include/options.php:2
+#: ../include/options.php:188
 msgid "."
 msgstr "."
 
-#: ../include/options.php:2
+#: ../include/options.php:193
 msgid "Fanfou Synchronization"
 msgstr "飯否同步"
 
-#: ../include/options.php:2
+#: ../include/options.php:194
 msgid "Fanfou authorization code:"
 msgstr "飯否授權碼："
 
-#: ../include/options.php:2
+#: ../include/options.php:197
 msgid "Get Authorization Code"
 msgstr "獲取授權碼"
 
-#: ../include/options.php:2
+#: ../include/options.php:198
 msgid "To obtain the authorization code needs to be saved to take effect."
 msgstr "獲得的授權碼需要儲存後才能生效。"
 
-#: ../include/options.php:2
+#: ../include/options.php:203
 msgid "jQuery Library"
 msgstr "jQuery 庫"
 
-#: ../include/options.php:2
+#: ../include/options.php:204
 msgid "Source URL"
 msgstr "來源網址"
 
-#: ../include/options.php:2
+#: ../include/options.php:204
 msgid "WordPress Default"
 msgstr "WordPress 默認庫"
 
-#: ../include/options.php:2
-msgid "Google's CDN"
+#: ../include/options.php:206
+msgid "Google API"
 msgstr "Google's CDN"
 
-#: ../include/options.php:2
-msgid "Microsoft's CDN "
-msgstr "Microsoft's CDN "
+#: ../include/options.php:207
+msgid "jQurey.com"
+msgstr "jQurey.com"
 
-#: ../include/options.php:2
-msgid "jQurey's CDN "
-msgstr "jQurey's CDN "
-
-#: ../include/options.php:2
+#: ../include/options.php:208
 msgid "Custom URL: "
 msgstr "自定義網址："
 
-#: ../include/options.php:2
+#: ../include/options.php:208
 msgid "http:///"
 msgstr "http:///"
 
-#: ../include/options.php:2
+#: ../include/options.php:213
 msgid "Google Analytics statistics"
 msgstr "Google Analytics 統計分析"
 
-#: ../include/options.php:2
+#: ../include/options.php:214
 msgid "Google Analytics statistics code"
 msgstr "Google Analytics 統計分析代碼"
 
-#: ../include/options.php:2
+#: ../include/options.php:219
 msgid "AD Codes"
 msgstr "廣告代碼"
 
-#: ../include/options.php:2
+#: ../include/options.php:220
 msgid "Side bar at the top advertising"
 msgstr "邊欄頂部廣告"
 
-#: ../include/options.php:2
+#: ../include/options.php:223
 msgid "Side bar at the bottom of the advertising"
 msgstr "邊欄底部廣告"
 
-#: ../include/options.php:2
+#: ../include/options.php:226
 msgid "The article embedded advertising"
 msgstr "文檔內嵌廣告"
 
-#: ../include/options.php:2
+#: ../include/options.php:229
 msgid "The article tail advertising"
 msgstr "文檔結尾廣告"
 
-#: ../include/options.php:2
+#: ../include/options.php:234
 msgid "Save Changes"
 msgstr "儲存設置"
 
-#: ../include/options.php:2
+#: ../include/options.php:234
 msgid "Restore to defaults"
 msgstr "還原默認值"
 
-#: ../include/options.php:2
+#: ../include/options.php:246
 msgid "Menus"
 msgstr "訂製菜單"
 
-#: ../include/options.php:2
+#: ../include/options.php:247
 msgid "Custom Background"
 msgstr "自定義背景"
 
-#: ../include/options.php:2
+#: ../include/options.php:248
 msgid "Edit Themes"
 msgstr "編輯主題"
 
-#: ../include/options.php:2
+#: ../include/options.php:320
 msgid "Search for:"
 msgstr "搜索结果："
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:4
 msgid "Appear in the Footer of a specified category articles"
 msgstr "在頁腳顯示指定類別的文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:4
 msgid "iLost Footer article list"
 msgstr "iLost 頁腳文檔列表"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:14 ../include/widgets.php:37
 msgid "Categories ID:"
 msgstr "文檔類別 ID"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:14 ../include/widgets.php:38
+#: ../include/widgets.php:60 ../include/widgets.php:80
 msgid "Number of posts to show:"
 msgstr "顯示文檔數目:"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:19
 msgid "Home template in the right sidebar of articles specified category show"
 msgstr "在 Home 模板的右側邊欄顯示指定類別的文檔文章"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:19
 msgid "iLost Categories article list"
 msgstr "iLost 類別文檔列表"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:39
 msgid "Show excerpt"
 msgstr "顯示摘要"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:45
 msgid "Display random sequence articles"
 msgstr "顯示隨機文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:45
 msgid "iLost Random Posts"
 msgstr "iLost 隨機文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:49
 msgid "Random Articles"
 msgstr "隨機文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:60 ../include/widgets.php:80
+#: ../include/widgets.php:100 ../include/widgets.php:120
 msgid "Title:"
 msgstr "標題:"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:65 ../include/widgets.php:69
 msgid "Most Popular Articles"
 msgstr "最受歡迎的文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:65
 msgid "iLost Most Popular Articles"
 msgstr "iLost 最受歡迎文檔"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:85
 msgid "The most recent comments"
 msgstr "最近的回應"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:85
 msgid "iLost Recent Comments"
 msgstr "iLost 最近回應"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:89
 msgid "Recent Comments"
 msgstr "最近回應"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:100
 msgid "Number of comments to show:"
 msgstr "顯示回應數目:"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:105
 msgid "The most recent avatars"
 msgstr "最近的來訪者"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:105
 msgid "iLost Recent Avatar"
 msgstr "iLost 最近來訪者"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:109
 msgid "Recent Avatar"
 msgstr "最近來訪者"
 
-#: ../include/widgets.php:2
+#: ../include/widgets.php:120
 msgid "Number of avatars to show:"
 msgstr "顯示來訪者數目:"
 
-#~ msgid "jQurey.com"
-#~ msgstr "jQurey.com"
+#: ../mode.archives.php:11
+msgid "Recent Articles"
+msgstr "最近文當"
 
-#~ msgid "DownLoad Now!"
-#~ msgstr "DownLoad Now!"
+#: ../mode.theme.php:41
+msgid "DownLoad Now!"
+msgstr "DownLoad Now!"
 
-#~ msgid "TalkPost"
-#~ msgstr "TalkPost"
+#: ../sidebar.php:4 ../single.php:22
+msgid "View Demo"
+msgstr "View Demo"
 
-#~ msgid "Add TalkPost"
-#~ msgstr "Add TalkPost"
+#: ../sidebar.php:5 ../single.php:23
+msgid "Download Now"
+msgstr "Download Now"
 
-#~ msgid "Add New TalkPost"
-#~ msgstr "Add New TalkPost"
+#: ../sidebar.php:6 ../single.php:24
+msgid "Buy Now"
+msgstr "Buy Now"
 
-#~ msgid "Edit TalkPost"
-#~ msgstr "Edit TalkPost"
+#: ../single.php:27
+msgid ""
+"<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR "
+"code  -->"
+msgstr "<strong>用移動設備快速閱讀本文：</strong><br>請掃描二維碼  -->"
 
-#~ msgid "View TalkPost"
-#~ msgstr "View TalkPost"
+#~ msgid "Pagination"
+#~ msgstr "分頁"
 
-#~ msgid "Search TalkPost"
-#~ msgstr "Search TalkPost"
+#~ msgid "Enable Sidebar follow"
+#~ msgstr "啟用邊欄跟隨"
 
-#~ msgid "No TalkPost found"
-#~ msgstr "No TalkPost found"
+#~ msgid "Microsoft's CDN "
+#~ msgstr "Microsoft's CDN "
 
-#~ msgid "No TalkPost found in Trash"
-#~ msgstr "No TalkPost found in Trash"
+#~ msgid "jQurey's CDN "
+#~ msgstr "jQurey's CDN "
 
 #~ msgid "The related article is displayed as:"
 #~ msgstr "相關文檔顯示為："

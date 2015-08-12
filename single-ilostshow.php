@@ -1,5 +1,6 @@
 <?php get_header();?>
 <div id="container">
+<?php if(ilost_getsidefl()=='left')get_sidebar();?>
 <article>
   <?php if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
@@ -23,7 +24,7 @@
   </section>
   <?php }}?>
 </article>
-<?php get_sidebar();?>
+<?php if(ilost_getsidefl()=='right')get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>

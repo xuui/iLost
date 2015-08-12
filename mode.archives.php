@@ -2,6 +2,7 @@
 get_header();?>
 <div id="container">
 <div class="pageheader"><h1><?php the_title();?></h1></div>
+<?php if(ilost_getsidefl()=='left')get_sidebar();?>
 <article>
   <?php ilost_breadcrumb();if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
@@ -17,7 +18,7 @@ get_header();?>
   </section>
   <?php }}?>
 </article>
-<?php get_sidebar();?>
+<?php if(ilost_getsidefl()=='right')get_sidebar();?>
 <div class="clear"></div>
 </div>
 <?php get_footer();?>
