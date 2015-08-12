@@ -10,7 +10,11 @@ $document.ready(function(){
   $nav.find('li').each(function(index){ilostQ(this).hover(function(){var _self=this;clearTimeout(mouseout_tid[index]);mouseover_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideDown(200);},200);},function(){var _self=this;clearTimeout(mouseover_tid[index]);mouseout_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideUp(200);},200);});});
   
   /* Search */
-  $searchs.focus(function(){if(ilostQ(this).val()=='Search blog...'){ilostQ(this).css({color:'#555'}).val('');}}).blur(function(){if(ilostQ(this).val()==''){ilostQ(this).css({color:'#aaa'}).val('Search blog...');}});
+  $searchs.focus(function(){if(ilostQ(this).val()=='Search blog...'){
+    ilostQ(this).css({color:'#666'}).val('');
+  }}).blur(function(){
+    if(ilostQ(this).val()==''){ilostQ(this).css({color:'#aaa'}).val('Search blog...');}
+  });
   ilostQ(function(){if($searchs.val()=='' || $searchs.val()=='Search blog...'){$searchs.css({color:'#999'}).val('Search blog...');}});
   
   /* comments first */

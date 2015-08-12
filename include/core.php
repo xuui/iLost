@@ -27,6 +27,7 @@ function ilost_init(){
   add_filter('excerpt_length','ilost_excerpt_length');
   add_filter('excerpt_more','ilost_auto_excerpt_more');
   add_filter('get_the_excerpt','ilost_custom_excerpt_more');
+  add_filter('get_search_form','ilost_search_form');
   add_filter('image_send_to_editor','ilost_remove_width_attribute');
   add_filter('post_thumbnail_html','ilost_remove_width_attribute');
   add_filter('smilies_src','ilost_smilies_src',1,10);

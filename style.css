@@ -42,8 +42,7 @@ a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 aside#aside{padding:0;}
 aside{border:1px solid #dbdbdb;border-top:none;}
 footer{clear:both;background:#fff;background-color:rgba(255,255,255,.65);box-shadow:0 1px 3px rgba(0,0,0,.07);-webkit-box-shadow:0 0 5px rgba(0,0,0,.34);margin-top:20px;margin-bottom:20px;padding:0 15px;text-align:left}
-header .feedrss,.navbar .sub-ul,#searchform #s,
-.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,section .more-link{background:url(images/lostbg.png) no-repeat}
+header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,section .more-link{background:url(images/lostbg.png) no-repeat}
 .post-nav .previous,.post-nav .next,aside li ul li a,#sidehome li ul li a,article.home .aside section,#sidehome li h3::after{background-image:url(images/lostli.png);background-repeat:no-repeat;}
 
 /* Menus Nav */
@@ -63,13 +62,8 @@ header .feedrss,.navbar .sub-ul,#searchform #s,
 /* Search */
 #searchform{margin-top:15px}
 #searchform .screen-reader-text{display:none}
-#searchform #s{background-position:0 -80px;border:none;padding:2px 10px 2px 20px;margin:0 auto;width:180px;height:21px;color:#666;box-shadow:none;text-align:-left;}
-#searchform #searchsubmit{display:none}
-section .entry #searchform{float:none;width:auto;height:auto}
-section .entry #searchform .screen-reader-text{display:inline;display:inline-block;vertical-align:top}
-section .entry #searchform #s{display:inline;display:inline-block}
-section .entry #searchform #searchsubmit{display:inline;display:inline-block;border:1px solid #b8b8b8;border-radius:7px}
-aside #searchform{border-bottom:1px solid #e5e5e5;margin:0;padding:15px;text-align:center;}
+#searchform #s{border-radius:20px 0 0 20px;}
+#searchform #searchsubmit{border-radius:0 20px 20px 0;padding:6px 18px 5px 12px;}
 
 /* Post */
 section{margin:30px 10px;text-align:left}
@@ -398,7 +392,6 @@ header .caption{float:none;width:auto}
 header h1{margin-top:7px}
 header nav{clear:both;margin:0;padding:5px 0;line-height:1.6;text-align:left}
 header .menu li{margin:4px 5px}
-#searchform{float:right;margin-top:18px;}
 #container{background:transparent;border:none;border-radius:0;box-shadow:none;margin-bottom:20px}
 .single #container{background-image:none}
 article,aside{float:none!important;background:#fff;width:auto;box-shadow:0 1px 7px rgba(0,0,0,.21)}
