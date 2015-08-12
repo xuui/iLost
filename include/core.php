@@ -219,7 +219,6 @@ function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty
 function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i< ($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
 //Breadcrumb.
 function ilost_breadcrumb(
-  
   $prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   $breadcrumb_opt=array();
   $breadcrumb_opt['home']=ilost_wp_name;
@@ -250,24 +249,6 @@ function iloft_talk_type(){
     //'taxonomies'=>array('category','post_tag')
   );
   register_post_type('xutalk',$xutalk_Args);
-}
-//Reader Wall.
-function ilost_readerwall(){
-  $exclude_emails=array('zvzhssj@gmail.com','xu@xuui.net','xuw@me.com','xuhel@mac.com','xu.w3@live.com','xu.hel@live.com','zvzhssj@163.com');
-  //$exclude_emails=get_bloginfo('admin_email');
-  $comments=get_comments(array('status'=>'approve','type'=>'comment'));
-  $wpchres=get_option('blog_charset');
-  $ilostoutput='';$i=0;$loadmail=array('');
-  //$ilostoutput.='<h2>Reader Wall<h2><br />'."\n";
-  foreach($comments as $comment){
-    if(in_array($comment->comment_author_email,$exclude_emails))continue;//排除作者
-    if(in_array($comment->comment_author_email,$loadmail))continue;//排除重复
-    if($comment->comment_author_url){$url=$comment->comment_author_url;}else{$url="#";}//排除空URL
-    $ilostoutput.='<a href="'.stripslashes($url).'" target="_blank" title="'.stripslashes($comment->comment_author).'">'.get_avatar($comment,40).'</a>'."\n";
-    $loadmail[]=$comment->comment_author_email;
-    //if($i==100)break;$i++;
-  }$loadmail=array('');
-  echo ent2ncr($ilostoutput);
 }
 //Private Code End.*/
 ?>
