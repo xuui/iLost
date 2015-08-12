@@ -19,9 +19,12 @@ if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$d
     case '':?><li <?php comment_class('media');?> id="li-comment-<?php comment_ID();?>">
     <div class="media-left comment-author"><?php echo get_avatar($comment,96);?></div>
     <div class="comment-body media-body">
-      <h4 class="media-heading"><?php printf(__('%1$s <small>said:</small>','iLost'),sprintf('<cite class="fn">%s</cite>',get_comment_author_link()));echo '<span class="pull-right">';printf('<small class="comment-meta"><a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a></small>',esc_url(get_comment_link( $comment->comment_ID)),get_comment_time('c'),sprintf(__('%1$s %2$s','iLost'),get_comment_date('Y-m-d'),get_comment_time(' H:i')));comment_reply_link(array_merge($args,array('depth'=>$depth,'max_depth'=>$args['max_depth'])));echo '</span>';?></h4>
+      <h4 class="media-heading"><?php printf(__('%1$s <small>said:</small>','iLost'),sprintf('<cite class="fn">%s</cite>',get_comment_author_link()));echo '<span class="pull-right">';printf('<small class="comment-meta"><a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a></small>',esc_url(get_comment_link( $comment->comment_ID)),get_comment_time('c'),sprintf(__('%1$s %2$s','iLost'),get_comment_date('Y-m-d'),get_comment_time(' H:i')));echo '</span>';?></h4>
       <?php if($comment->comment_approved=='0'){echo '<em>'.__('Your comment is awaiting moderation.','iLost').'</em>';}?>
-      <?php edit_comment_link(__('[Edit]','iLost'),'<p class="pull-right">','</p>');comment_text();?>
+      <?php echo '<small class="pull-right">';
+      comment_reply_link(array_merge($args,array('depth'=>$depth,'max_depth'=>$args['max_depth'])));
+      edit_comment_link(__('[Edit]','iLost'),'','');
+      echo '</small>';comment_text();?>
     </div>
     <?php break;
     case 'pingback':case 'trackback':?>

@@ -145,7 +145,7 @@ h3#comments-title,h3#reply-title{font-style:italic;font-variant:small-caps;font-
 .comment-list li.pingback{border-top:1px dotted #b3b3b3;padding:15px 15px 10px;color:#333}
 .comment-list li.pingback p{margin:0}
 .comment-list li.pingback a{color:#5285cc}
-.comment-list .comment-reply-link{float:right;background-position:0% -271px;padding-left:22px}
+.comment-list .comment-reply-link{background-position:0% -275px;margin-right:10px;padding-left:22px}
 .nopassword,.nocomments{display:none}
 .comment-body{margin-left:42px}
 .comment-body p{margin-bottom:5px}
