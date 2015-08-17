@@ -135,7 +135,7 @@ h3#comments-title,h3#reply-title{font-style:italic;font-variant:small-caps;font-
 .comment-list .children,.comment-list .children ul{margin:0;padding:0;list-style:none}
 .comment-list .children,.comment-list .children li.toprep{background:url(images/wavecommml.png) no-repeat}
 .comment-list .children .box-bottom,.comment-list .children .box-bottom .left,.comment-list .children .box-bottom .right{background:url(images/wavecommmb.png) no-repeat}
-.comment-list .children{background-repeat:repeat-y;background-position:-670px 0;margin-left:58px}
+.comment-list .children{background-repeat:repeat-y;background-position:-790px 0;margin-left:58px}
 .comment-list .children .children{margin-left:58px}
 .comment-list .children li{}
 .comment-list .children li.toprep{background-position:0 0}
