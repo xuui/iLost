@@ -18,9 +18,9 @@
       }else{
         the_content();wp_link_pages('before=<nav class="post-link">&after=</nav>&next_or_number=number&pagelink=<span>%</span>');
       }
-      $demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}
-      $downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}
-      $paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}}
+      $demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a class=\"btn btn-success btn-lg\" href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}
+      $downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a class=\"btn btn-primary btn-lg\" href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}
+      $paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a class=\"btn btn-info btn-lg\" href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}}
       ?>
     </div>
     <?php if(ilost_showAuthor())ilost_postAuthor();
