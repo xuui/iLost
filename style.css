@@ -29,6 +29,9 @@ a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 ::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
+.container{cursor:url(images/arrow.cur),default;}
+input[type=text],textarea{cursor:url(images/text.cur),text;}
+a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images/pointer.cur),pointer;}
 
 /* layout */
 .navbar{border:none;border-radius:0;margin:0;}
