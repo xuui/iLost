@@ -51,13 +51,15 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 /* Menus Nav */
 .nav-brand{margin:0;display:inline;}
 .navbar-default{background:none;border:none;}
-.navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;height:50px;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
+.navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;height:60px;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
 .navbar .navbar-toggle{font-size:20px;line-height:1;padding:6px 10px}
 .breadcrumb{background-color:#fafafa;margin-top:15px;}
 .breadcrumb > .active{color:#333;}
-.navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333}
+.navbar .navbar-nav > li{padding:3px 10px 0;}
+.navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333;font-size:16px;}
+.navbar .navbar-nav > li > a{border-bottom:3px solid  transparent;padding:16px 10px;color:#333;outline:none;}
 .navbar .navbar-nav > li > a:hover{color:#08c;text-decoration:none}
-.navbar .navbar-nav > li.current-menu-item > a{color:#08c;text-decoration:none}
+.navbar .navbar-nav > li.current-menu-item > a{color:#08c;border-color:#08c;text-decoration:none}
 .navbar .sub-ul{background-position:104% -138px}
 .navbar .sub-menu{display:none;}
 .navbar-nav > li > .dropdown-menu{margin-top:-1px;}
