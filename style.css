@@ -316,11 +316,8 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 /* Rotation */
 #rotation{margin-bottom:30px;}
 #rotation .flex-viewport{height:-520px}
-#rotation .flex-control-paging a{background:url(images/valshow.png) no-repeat center top;}
-#rotation .flex-control-paging a:hover{background-position:center}
-#rotation .flex-control-paging a.flex-active{background-position:center bottom}
 #rotation .slides li{position:relative;}
-#rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.13) 0%, rgba(0,0,0,.75) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:9px 0 24px;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
+#rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.13) 0%, rgba(0,0,0,.75) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%;}
 #rotation .flex-direction-nav a.flex-next{background-position:100px 50%;right:0}
@@ -349,18 +346,18 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #share a#tencent-share{background-position:0 -144px}
 
 @media screen and (max-width: 767px){
-  section{margin:30px 0;}
-  section .post-meta{padding:6px 15px 18px}
-  .home .aside{padding:0;}
-  #proaside .col-xs-4,#proaside .col-sm-4{padding:0 5px;}
-  #proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%;}
-  .navbar .container{padding:0 10px;}
-  .navbar-collapse{position:relative;z-index:10;background:#fff;padding:0 30px;box-shadow:0 1px 6px rgba(0,0,0,.12),0 1px 4px rgba(0,0,0,.24);}
-  .navbar-collapse.in{overflow-y:visible;}
-  .navbar-default .navbar-toggle{background:#fff;border-color:#aaa;}
-  .flex-control-nav li{margin:4px 2px;}
-  #rotation{margin-bottom:0;}
-  #rotation .flex-caption{padding:4px 0 15px;}
+section{margin:30px 0;}
+section .post-meta{padding:6px 15px 18px}
+.home .aside{padding:0;}
+#proaside .col-xs-4,#proaside .col-sm-4{padding:0 5px;}
+#proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%;}
+.navbar .container{padding:0 10px;}
+.navbar-collapse{position:relative;z-index:10;background:#fff;padding:0 30px;box-shadow:0 1px 6px rgba(0,0,0,.12),0 1px 4px rgba(0,0,0,.24);}
+.navbar-collapse.in{overflow-y:visible;}
+.navbar-default .navbar-toggle{background:#fff;border-color:#aaa;}
+.flex-control-nav li{margin:4px 2px;}
+#rotation{margin-bottom:0;}
+#rotation .flex-caption{padding:4px 0 15px;}
 }
 @media (min-width:960px){
 /*.page #container .row{margin-top:-66px;}*/
@@ -474,6 +471,5 @@ section .post-meta{padding:6px 10px 9px;background-size:100% 5px;-webkit-backgro
 #sidehome li h3{background-image:url(images/retina/pageside.png);background-size:480px 120px}
 #gotop a{background-image:url(images/retina/gotop.png);background-size:48px 64px}
 #rotation .flexslider .slides{background-size:80px auto}
-#rotation .flex-control-paging li a{background-image:url(images/retina/valshow.png);background-size:6px 23px;width:6px;height:6px;}
 }
 /* Made on a Mac */
