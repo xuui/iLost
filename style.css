@@ -227,8 +227,8 @@ article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
 article.home .aside section .title{margin:0;}
 article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
-#sidehome li{margin:0 -15px;}
-#sidehome li h3{position:relative; background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;margin:0;padding:0 13px;}
+#sidehome li{margin:0 -15px -1px;}
+#sidehome li h3{position:relative;background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;border-top:1px solid #e5e5e5;margin:-1px 0 0;padding:0 13px;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;}
 #sidehome li h3::after{background-color:transparent;background-position:0 0;content:' ';
   display:block;position:absolute;right:6px;top:14px;width:16px;height:16px;}
 #sidehome li h3:hover::after,#sidehome li h3.hover::after{background-position:0 -52px}
