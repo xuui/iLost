@@ -36,15 +36,16 @@ a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images
 /* layout */
 .navbar{border:none;border-radius:0;margin:0;}
 .home .navbar,.page-template-mode-index .navbar{margin:0;}
-.container .row{position:relative;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.07);}
+.container .row{position:relative;overflow:hidden;background:#fff;border:1px solid #dbdbdb;box-shadow:0 1px 3px rgba(0,0,0,.07);}
 .page-header{margin:16.5px 0;}
 #container{margin-bottom:30px;}
 #container .mu_register{width:50%;text-align:left;}
 #container .mu_register h2{margin:0;padding:0.83em 0;}
 .search #container{overflow:auto;}
 aside#aside{padding:0;}
-aside{border:1px solid #dbdbdb;border-top:none;}
+aside{border:1px solid #dbdbdb;border-top:none;margin:0 -1px -1px;}
 footer{clear:both;background:#fff;background-color:rgba(255,255,255,.65);box-shadow:0 1px 3px rgba(0,0,0,.07);-webkit-box-shadow:0 0 5px rgba(0,0,0,.34);margin-top:20px;margin-bottom:20px;padding:0 15px;text-align:left}
+footer.container .row,#proaside{border:0;}
 header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,section .more-link{background:url(images/lostbg.png) no-repeat}
 .post-nav .previous,.post-nav .next,aside li ul li a,#sidehome li ul li a,article.home .aside section,#sidehome li h3::after{background-image:url(images/lostli.png);background-repeat:no-repeat;}
 
@@ -56,7 +57,7 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .breadcrumb{background-color:#fafafa;margin-top:15px;}
 .breadcrumb > .active{color:#333;}
 .navbar .navbar-nav > li{padding:3px 10px 0;}
-.navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333;font-size:16px;}
+.navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333;font-size:15px;}
 .navbar .navbar-nav > li > a{border-bottom:3px solid  transparent;padding:16px 10px;color:#333;outline:none;}
 .navbar .navbar-nav > li > a:hover{color:#08c;text-decoration:none}
 .navbar .navbar-nav > li.current-menu-item > a{color:#08c;border-color:#08c;text-decoration:none}
@@ -91,7 +92,7 @@ section .related li a:hover{color:#08c}
 section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px}
 section .related .thumbnail img{width:100px;height:100px}
 #authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:15px 0 15px;padding:8px 10px}
-#authorbox p{margin:0;padding:3px 0;line-height: 1.4;}
+#authorbox p{margin:0;padding:3px 0;line-height:1.4;}
 #authorbox .avatar{float:left;background:#fff;border-radius:32px;box-shadow:0 1px 2px rgba(0,0,0,.13),0 1px 3px rgba(0,0,0,.34) inset;margin:0 6px 0 0;width:48px;height:48px}
 #authorbox .author a{color:#444;font-weight:700}
 
@@ -226,10 +227,11 @@ article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
 article.home .aside section .title{margin:0;}
 article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
+#sidehome{}
 #sidehome li{margin:0 -15px;}
-#sidehome li h3{position: relative; background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;margin:0;padding:0 13px;}
+#sidehome li h3{position:relative; background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;margin:0;padding:0 13px;}
 #sidehome li h3::after{background-color:transparent;background-position:0 0;content:' ';
-  display:block;position: absolute;right:6px;top:14px;width:16px;height:16px;}
+  display:block;position:absolute;right:6px;top:14px;width:16px;height:16px;}
 #sidehome li h3:hover::after,#sidehome li h3.hover::after{background-position:0 -52px}
 #sidehome li h3:active::after,#sidehome li h3.active::after{background-position:0 -158px}
 #sidehome li h3:hover,#sidehome li h3.hover{background-position:0% -40px;color:#08c;}
@@ -268,7 +270,7 @@ body.error{background:#dee0e0}
 body.error #wrapper{width:480px;margin:66px auto 0}
 body.error img{background:transparent url(images/eding.gif) no-repeat center}
 body.error p.button{display:block;overflow:hidden}
-body.error p.button{margin:20px auto;width:100%;text-align: center;}
+body.error p.button{margin:20px auto;width:100%;text-align:center;}
 body.error p.button .btn-default{background:none;border-color:#999;}
 body.error footer{background:none;padding:0}
 body.error footer p{text-align:center}
@@ -345,7 +347,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #share a#netease-share{background-position:0 -128px}
 #share a#tencent-share{background-position:0 -144px}
 
-@media screen and (max-width: 767px){
+@media screen and (max-width:767px){
 section{margin:30px 0;}
 section .post-meta{padding:6px 15px 18px}
 .home .aside{padding:0;}
