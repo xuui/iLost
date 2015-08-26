@@ -140,7 +140,7 @@ function ilost_rcomments($limit=5){
   foreach($comments as $comment){
     //$ilostoutput.='<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>: '.mb_substr(strip_tags($comment->comment_content),0,43,$wpchres).'...</li>'."\n";
     //$ilostoutput.='<li><a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>: '.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'...</li>'."\n";
-    $ilostoutput.='<li>'.get_avatar($comment,64).'<a href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>: <p>'.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'</p></li>'."\n";
+    $ilostoutput.='<li class="media"><div class="media-left">'.get_avatar($comment,64).'</div><div class="media-body"><a class="media-heading" href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>: <p>'.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'</p></div></li>'."\n";
     if($i==$limit){break;}$i++;
   }echo ent2ncr($ilostoutput);
 }

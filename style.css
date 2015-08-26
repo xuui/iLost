@@ -227,7 +227,6 @@ article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
 article.home .aside section .title{margin:0;}
 article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
-#sidehome{}
 #sidehome li{margin:0 -15px;}
 #sidehome li h3{position:relative; background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;margin:0;padding:0 13px;}
 #sidehome li h3::after{background-color:transparent;background-position:0 0;content:' ';
@@ -237,6 +236,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #sidehome li h3:hover,#sidehome li h3.hover{background-position:0% -40px;color:#08c;}
 #sidehome li h3:active,#sidehome li h3.active{background-position:0% -80px}
 #sidehome li ul{display:none;background:#fff;border-bottom:1px solid #e5e5e5;margin:0;padding:0;list-style:none}
+/*#sidehome li h3:last-child,#sidehome li ul:last-child{margin-bottom:-1px;}*/
 #sidehome li ul ul{border:none;margin:0;padding:0;list-style:none}
 #sidehome li ul li{padding:0;margin:0 6px;}
 #sidehome li ul li a{background-position:100% -200px;height:32px;padding:0 16px 0 8px;line-height:32px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
