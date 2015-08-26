@@ -68,8 +68,8 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 /* Search */
 #searchform{margin-top:15px}
 #searchform .screen-reader-text{display:none}
-#searchform #s{border-radius:20px 0 0 20px;}
-#searchform #searchsubmit{border-radius:0 20px 20px 0;padding:6px 18px 5px 12px;}
+#searchform #s{}
+#searchform #searchsubmit{padding:6px 20px;}
 
 /* Post */
 section{margin:30px 10px;text-align:left}
@@ -222,6 +222,7 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #proaside{background:#f2f2f2;padding:20px 0;box-shadow:none;}
 #proaside a img{margin:0 auto;transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
 #proaside a:hover img{transform:scale(1.03) rotate(2deg);-moz-transform:scale(1.03) rotate(2deg);-webkit-transform:scale(1.03) rotate(2deg)}
+article.home .aside{padding-bottom:10px;}
 article.home .aside .cat{border-bottom:1px dashed #dbdbdb;margin-top:12px;padding:5px 0;text-align:left;color:#999;font-size:12pt}
 article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
