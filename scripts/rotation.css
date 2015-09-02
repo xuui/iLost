@@ -30,7 +30,7 @@ html[xmlns] .flexslider .slides{display:block;}
 .flex-pauseplay a.flex-play:before{content:'&there4;';}
 .flex-control-nav{position:absolute;top:0;right:0;padding:10px;text-align:right;}
 .flex-control-nav li{display:block;margin:0 0 6px;}
-.flex-control-paging li a{display:block;overflow:hidden;background:#aaa;background:rgba(255,255,255,.4);margin:0 5px;width:22px;height:14px;cursor:pointer;text-indent:999em;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;}
+.flex-control-paging li a{display:block;overflow:hidden;background:#aaa;background:rgba(255,255,255,.4);margin:0 5px;width:22px;height:14px;cursor:pointer;text-indent:999em;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-webkit-transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-ms-transition:all .2s ease-in-out;transition:all .2s ease-in-out;}
 .flex-control-paging li a:hover{background:#eee;background:rgba(255,255,255,.75)}
 .flex-control-paging li a.flex-active{background:#fff;background:rgba(255,255,255,1);margin:0;width:32px;cursor:default;}
 /*

@@ -349,24 +349,22 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #share a#tencent-share{background-position:0 -144px}
 
 @media screen and (max-width:767px){
+/*
 .navbar.navbar-default{position:fixed;left:0;right:0;z-index:1030;}
-.navbar .container{padding:0 10px;}
-.navbar-nav{margin:3px -15px;}
-.navbar-collapse{position:relative;z-index:10;background:#fff;margin:0!important;padding:0 10px;
-border-radius:3px;
-box-shadow:0 1px 6px rgba(0,0,0,.12),0 1px 4px rgba(0,0,0,.24);}
-.navbar-collapse.in{overflow-y:visible;}
 .navbar-default .navbar-toggle{background:transparent;border-color:transparent;color:#fff;}
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background:rgba(255,255,255,.21);border-color:rgba(255,255,255,.34)}
-
+*/
+.navbar .container{padding:0 10px;}
+.navbar-nav{margin:0 -15px 4px;}
+.navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:rgba(255,255,255,.9);margin:0 -2px!important;padding:0 13px;border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.12),0 1px 4px rgba(0,0,0,.24);}
+.navbar-collapse.in{overflow-y:visible;}
 section{margin:30px 0;}
 section .post-meta{padding:6px 15px 18px}
-
 .home .aside{padding:0;}
 #proaside .col-xs-4,#proaside .col-sm-4{padding:0 5px;}
 #proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%;}
 .flex-control-nav li{margin:4px 2px;}
-#rotation,.home.page #rotation{margin-bottom:0;max-height:220px;overflow: hidden}
+#rotation,.home.page #rotation{margin-bottom:0;max-height:180px;overflow: hidden}
 #rotation .flex-caption{padding:5px 0 7px;}
 }
 @media (min-width:960px){
