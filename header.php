@@ -32,7 +32,7 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse"><i class="fa fa-bars fa-lg"></i>&equiv;</button>
+      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button>
       <?php ilost_getlogoimg();?>
     </div>
     <div class="collapse navbar-collapse" id="ilost-collapse">
