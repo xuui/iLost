@@ -2,7 +2,7 @@
 <div class="row">
 <div class="page-header"><h1><?php the_title();?></h1></div>
 <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
-  <?php ilost_breadcrumb();if(have_posts()){while(have_posts()){the_post();?>
+  <?php if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div class="entry">
       <?php the_content(__('Learn more','iLost'));

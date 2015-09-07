@@ -41,5 +41,5 @@
   </div>
 </nav>
   <?php //if(!is_front_page()){echo '<div id="container" class="container">';}elseif(is_home()){echo '<div id="container" class="container">';}?>
-<?php if(!is_single()){ilost_getiloshow();}?>
+<?php if(is_front_page()){ilost_getiloshow();}?>
 <div id="container" class="container">
