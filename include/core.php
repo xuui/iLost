@@ -42,6 +42,7 @@ function ilost_init(){
   remove_action('wp_head','wp_generator');
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
   if(!isset($content_width))$content_width=600;
+  remove_action('admin_init','_wp_check_for_scheduled_split_terms');
 }
 function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
 function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
@@ -243,6 +244,7 @@ function ilost_breadcrumb(
 //Private Code Start.*/
 #add_action('init','iloft_talk_type');
 #add_filter('pre_get_posts','ilost_add_talk_feed');
+/*
 function ilost_add_talk_feed($query){if(is_feed()){$query->set('post_type',array('post','xutalk'));}return $query;}
 function iloft_talk_type(){
   $xutalk_labels=array('name'=>_x(__('TalkPost','iLost'),'post type general name'),'singular_name'=>_x(__('TalkPost','iLost'),'post type singular name'),'add_new'=>_x(__('Add TalkPost','iLost'),'Project'),'add_new_item'=>__('Add New TalkPost','iLost'),'edit_item'=>__('Edit TalkPost','iLost'),'new_item'=>__('Add TalkPost','iLost'),'view_item'=>__('View TalkPost','iLost'),'search_items'=>__('Search TalkPost','iLost'),'not_found'=>__('No TalkPost found','iLost'),'not_found_in_trash'=>__('No TalkPost found in Trash','iLost'),'parent_item_colon'=>'');
