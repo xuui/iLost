@@ -3,7 +3,7 @@
   <div id="gotop"><a href="javascript:;" onClick="ilosts.goTop();return false;" title="<?php _e('Back Top','iLost');?>"><?php _e('Back Top','iLost');?></a></div>
   <?php if(!is_front_page()){?>
   <aside class="row  hidden-xs hidden-sm">
-    <h3><?php _e(ilost_wp_name.' Archives','iLost');?></h3>
+    <h3><?php _e(ilost_wp_name.' Archives','iLost');?> &raquo;</h3>
     <ul>
       <?php if(!dynamic_sidebar('footer-sidebar')){$ilost_widgerFooter=array('before_widget'=>'<li>','after_widget'=>'</li>');
         the_widget('ilost_catlistsWidget','catid=1&number=5',$ilost_widgerFooter);

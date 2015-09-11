@@ -69,7 +69,7 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 #searchform{margin-top:15px}
 #searchform .screen-reader-text{display:none}
 #searchform #s{}
-#searchform #searchsubmit{padding:6px 20px;}
+#searchform #searchsubmit{padding:6px 20px 5px;}
 
 /* Post */
 section{margin:30px 10px;text-align:left}
@@ -97,33 +97,31 @@ section .related .thumbnail img{width:100px;height:100px}
 #authorbox .author a{color:#444;font-weight:700}
 
 /* Sidebar */
+aside h3{clear:both;border-bottom:1px solid #dbdbdb;margin-top:16px;padding:0 16px;height:29px;line-height:29px;color:#555;font-size:1em;font-weight:700;}
+aside h3:hover{color:#000;}
+aside abbr[title],aside abbr[data-original-title]{border:none}
 aside ul{margin:0;padding:0;list-style:none;}
-aside li{margin-bottom:10px}
-aside li h3{clear:both;border-bottom:1px solid #dbdbdb;margin:15px 0 0;padding:0 15px;height:29px;line-height:29px;color:#555;font-size:1em;font-weight:700;}
-aside li h3:hover{color:#000;}
 aside li a{color:#6c6f73}
-aside li ul{margin:0 15px;padding:5px 0;}
-aside li ul ul{margin:0 0 0 10px;list-style:none}
-aside li ul li{border:none;margin-bottom:0;padding:1px 0}
+aside li ul,aside li div{margin:0 16px;}
+aside li ul ul{margin-left:10px;}
+aside li div div{margin:0}
+aside li ul li{border-bottom:1px dashed #eee;margin-bottom:0;padding:8px 0px}
 aside li ul li a{overflow:hidden;display:block;outline:medium none;background-position:100% 5px;padding-right:16px;white-space:nowrap;text-overflow:ellipsis;-webkit-transition:padding .2s ease-out;-moz-transition:padding .2s ease-out;transition:padding .2s ease-out}
 aside li ul li a:hover{background-position:100% -47px;padding-left:5px;color:#08c;text-decoration:none}
-aside ul.comment li{clear:both}
-aside ul.comment li .avatar-warp{float:left;overflow:hidden;display:block;border:2px solid #fff;border-radius:20px;box-shadow:0 1px 3px rgba(0,0,0,.21),0 1px 3px rgba(0,0,0,.34) inset;margin:3px 5px 0 0;width:32px;height:32px}
-aside ul.comment li .avatar{background:#fff;width:32px;height:32px}
-aside ul.comment li a{display:inline;padding-right:0}
-aside ul.comment li a,aside ul .recentcomments a{background:none;white-space:pre-wrap}
-aside ul .recentcomments span{padding-right:3px;}
-aside li ul li.current-cat a{background-position:100% -493px;color:#08c}
+aside .widget{margin-bottom:15px;}
+aside .media{border-bottom:1px dashed #eee;margin-top:0;}
+aside .media .avatar,aside .reavatar a .avatar{background:#fff;border-radius:30px;width:32px;height:32px;}
+aside .media .avatar{margin-top:3px;}
+aside .media .media-body p{margin-bottom:0;line-height:1.3}
+aside .media .media-heading{display:inline;padding-right:0;}
+aside ul.comment li a,aside ul .recentcomments a{background:none;}
+aside ul .recentcomments span{padding-right:5px;}
+aside .current-cat a{color:#08c}
 aside li ul .children{margin-left:8px}
-aside li div{margin:0 12px}
-aside li div div{margin:0}
 aside #wp-calendar{margin:10px 0 0;width:100%}
-aside #wp-calendar caption{padding-bottom:4px}
-aside .random a{overflow:hidden;padding-right:20px;white-space:nowrap;text-overflow:ellipsis}
+aside #wp-calendar caption{padding-bottom:5px}
 aside .reavatar{padding:8px 3px 0}
-aside .reavatar a .avatar-warp{float:left;overflow:hidden;display:block;border:2px solid #fff;border-radius:20px;box-shadow:0 1px 3px rgba(0,0,0,.21),0 1px 3px rgba(0,0,0,.34) inset;margin:3px 6px 0 0;width:32px;height:32px;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;-ms-transition:all .2s ease-out;transition:all .2s ease-out;}
-aside .reavatar a .avatar{background:#fff;margin:5px;width:32px;height:32px;border-radius:30px;}
-aside .reavatar a:hover .avatar-warp{-moz-transform:scale(1.3);-webkit-transform:scale(1.3);transform:scale(1.3)}
+aside .reavatar a .avatar{margin:5px;}
 
 /* Comments */
 #comments{overflow:hidden;margin:0 10px;text-align:left}
@@ -187,17 +185,13 @@ h3#comments-title,h3#reply-title{font-style:italic;font-variant:small-caps;font-
 /* Footer */
 footer.container aside.row{float:none;background:none;padding:0 0 10px;box-shadow:none;}
 footer aside{border:none;}
-footer aside h3{display:block;border-bottom:1px solid #ccc;margin:0;padding:12px 15px 9px;font-size:1em;font-weight:400}
-footer aside ul li{margin:0}
-footer aside ul li ul{margin:0;display:block;background:transparent;border:none;}
-footer aside ul li ul li a{background:none}
-footer aside li{float:left;padding:10px 0 0;width:20%}
-footer aside li h3{border:none;height:auto;line-height:18px;color:#666;font-weight:700}
-footer aside li h3,footer aside li ul{padding:0 15px}
-footer aside li a{overflow:hidden;padding:0;height:auto;line-height:1.5;color:#888;white-space:nowrap;text-overflow:ellipsis}
+footer aside h3{margin:0;border-bottom-color:#ccc;height:40px;line-height:40px;font-weight:400;color:#000;}
+footer aside .widget h3{border:none;padding-top:5px;height:34px;line-height:34px;color:#666;font-weight:700}
+footer aside li{float:left;width:20%}
+footer aside li li{float:none;width:auto;padding:5px 0}
+footer aside li li a{background:none;padding-right:0;line-height:1.4;color:#888;}
 footer aside li a:hover{color:#333;text-decoration:none}
-footer aside li ul li{float:none;padding:0;width:auto}
-footer p{margin:0 -10px;padding:9px 5px;font-size:10px;font-weight:300}
+footer p{margin:0 -5px;padding:9px 5px;font-size:10px;font-weight:300}
 footer p.line{border-bottom:1px solid #d6d6d6;border-color:rgba(0,0,0,.16)}
 footer p.line span{color:#ccc}
 footer .alignright{margin:0}
@@ -211,6 +205,7 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 .page .page-header{background:transparent url(images/lostbg.png) repeat-x;border:none;margin:0;height:70px;width:100%;text-align:left}
 .page .page-header h1{margin:0;padding:0 32px;line-height:67px;font-size:20px;font-weight:400}
 .page #rotation,.single #rotation{margin-bottom:0;}
+.page aside{margin-top:-3px;}
 
 /* Archive */
 section.archive{overflow:hidden;background:#f0f2f2;border:1px solid #e8e8e8;margin:5px 0 10px;padding:5px 15px;text-align:left;border-radius:5px}
@@ -228,21 +223,19 @@ article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
 article.home .aside section .title{margin:0;}
 article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
-#sidehome li{margin:0 -15px -1px;}
-#sidehome li h3{position:relative;background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;border-top:1px solid #e5e5e5;margin:-1px 0 0;padding:0 13px;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;}
-#sidehome li h3::after{background-color:transparent;background-position:0 0;content:' ';
-  display:block;position:absolute;right:6px;top:14px;width:16px;height:16px;}
-#sidehome li h3:hover::after,#sidehome li h3.hover::after{background-position:0 -52px}
-#sidehome li h3:active::after,#sidehome li h3.active::after{background-position:0 -158px}
-#sidehome li h3:hover,#sidehome li h3.hover{background-position:0% -40px;color:#08c;}
-#sidehome li h3:active,#sidehome li h3.active{background-position:0% -80px}
-#sidehome li ul{display:none;background:#fff;border-bottom:1px solid #e5e5e5;margin:0;padding:0;list-style:none}
-/*#sidehome li h3:last-child,#sidehome li ul:last-child{margin-bottom:-1px;}*/
-#sidehome li ul ul{border:none;margin:0;padding:0;list-style:none}
-#sidehome li ul li{padding:0;margin:0 6px;}
-#sidehome li ul li a{background-position:100% -200px;height:32px;padding:0 16px 0 8px;line-height:32px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-#sidehome li ul li a:hover{background-position:100% -305px}
-#sidehome li ul li a:active{background-position:100% -252px}
+#sidehome{margin:0 -15px;}
+#sidehome h3{position:relative;background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;border-top:1px solid #e5e5e5;margin:-1px 0 0;padding:0 13px;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;}
+#sidehome h3:hover,#sidehome h3.hover{background-position:0% -40px;color:#08c;}
+#sidehome h3::after{background-color:transparent;background-position:0 0;content:' ';display:block;position:absolute;right:6px;top:14px;width:16px;height:16px;}
+#sidehome h3:hover::after,#sidehome h3.hover::after{background-position:0 -52px}
+#sidehome h3:active,#sidehome h3.active{background-position:0% -80px}
+#sidehome h3:active::after,#sidehome h3.active::after{background-position:0 -158px}
+#sidehome li{margin-bottom:0;}
+#sidehome li ul{margin:0;}
+#sidehome li li{padding:5px 6px 5px 16px;border-bottom-style:solid;border-bottom-color:#e5e5e5;}
+#sidehome li a{background-position:100% -200px;height:32px;padding-right:16px;line-height:32px}
+#sidehome li a:hover{background-position:100% -305px}
+#sidehome li a:active{background-position:100% -252px}
 
 /* Archives */
 #archives h2,#archives h3{font-size:18px;margin-top:0}
@@ -260,7 +253,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 /* Linkpage */
 #linkpage{margin:0;padding:0 0 10px 0px}
 #linkpage ul{margin:0;padding:0;}
-#linkpage h2{margin:0 0 10px;line-height:25px;color:#1b232a;font-size:19px;font-weight:700;text-shadow:1px 1px 2px #999}
+#linkpage h2{margin:0 0 10px;line-height:25px;color:#1b232a;font-size:19px;font-weight:400;text-shadow:1px 1px 2px #999}
 #linkpage li{float:left;display:block;margin:0 0 10px;padding:0;width:100%;list-style-type:none}
 #linkpage li ul li{float:left;border:1px solid #fff;margin:2px 1px;width:24.3%;height:23px;list-style:none;line-height:23px;text-align:center}
 #linkpage li ul li a{display:block;border:1px solid #f7f7f7;font-size:1em;text-decoration:none;border-radius:3px;white-space:nowrap;text-overflow:ellipsis}
