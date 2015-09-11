@@ -3,7 +3,7 @@
 </div>
 <?php return;}
 if(have_comments()){?>
-  <h3 id="comments-title"><?php printf(_n(__('One Response to %2$s','iLost'),__('%1$s Responses to %2$s','iLost'),get_comments_number()),number_format_i18n(get_comments_number()),'<em>'.get_the_title().'</em>' );?></h3>
+  <h3 id="comments-title"><?php printf(_n(__('One Response','iLost'),__('%1$s Responses','iLost'),get_comments_number()),number_format_i18n(get_comments_number()));?></h3>
   <ol class="comment-list media-list"><?php wp_list_comments(array('callback'=>'ilost_comments'));?></ol>
 <?php if(get_comment_pages_count()>1 && get_option('page_comments')){?>
   <div class="post-link"><?php paginate_comments_links();?></div>
@@ -13,13 +13,13 @@ if(!comments_open()){?>
 <?php }}
 require_once(TEMPLATEPATH.'/include/smiley.php');
 $ilost_comment_fields=array(
-  'author'=>'<div class="form-group form-group-sm comment-form-author"><label class="control-label" for="author">'.__('Name').($req ? '<span class="required">*</span>':'').'</label> '.'<input type="text" class="form-control" id="author" name="author" placeholder="your name" value="'.esc_attr($commenter['comment_author']).'" size="30"'.$aria_req.' /></div>',
-  'email'=>'<div class="form-group form-group-sm comment-form-email"><label class="control-label" for="email">'.__('Email').($req ? '<span class="required">*</span>':'').'</label>'.'<input type="text" class="form-control" id="email" name="email" placeholder="your@mail.com" value="'.esc_attr($commenter['comment_author_email']).'" '.$aria_req.' /></div>',
-  'url'=>'<div class="form-group form-group-sm comment-form-url"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http:///" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
+  'author'=>'<div class="form-group form-group-sm comment-form-author col-xs-4"><label class="control-label" for="author">'.__('Name').($req ? '<span class="required">*</span>':'').'</label> '.'<input type="text" class="form-control" id="author" name="author" placeholder="your name" value="'.esc_attr($commenter['comment_author']).'" size="30"'.$aria_req.' /></div>',
+  'email'=>'<div class="form-group form-group-sm comment-form-email col-xs-4"><label class="control-label" for="email">'.__('Email').($req ? '<span class="required">*</span>':'').'</label>'.'<input type="text" class="form-control" id="email" name="email" placeholder="your@mail.com" value="'.esc_attr($commenter['comment_author_email']).'" '.$aria_req.' /></div>',
+  'url'=>'<div class="form-group form-group-sm comment-form-url col-xs-4"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http:///" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
 );
 $ilost_comment_form=array(
   'class_submit'=>'btn btn-primary',
-  'comment_field'=>'<div class="form-group form-group-sm comment-form-comment"><label class="control-label" for="comment">'._x('Comment','noun').'</label><textarea class="form-control" id="comment" name="comment" placeholder="o ... .. ." rows="6" aria-required="true">'.'</textarea></div>',
+  'comment_field'=>'<div class="form-group form-group-sm comment-form-comment col-xs-12"><label class="control-label" for="comment">'._x('Comment','noun').'</label><textarea class="form-control" id="comment" name="comment" placeholder="o ... .. ." rows="6" aria-required="true">'.'</textarea></div>',
   //'comment_notes_after'=>'<p class="smiley">'.$smilies.'</p>'.'<p class="help-block form-allowed-tags">'.sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s'),'<code>'.allowed_tags().'</code>').'</p>',
   'comment_notes_after'=>'<p class="form-group smiley">'.$smilies.'</p>',
   'fields'=>apply_filters('comment_form_default_fields',$ilost_comment_fields),
