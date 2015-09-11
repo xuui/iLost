@@ -3,7 +3,7 @@ Theme Name: iLost
 Theme URI: http://xuui.net/themes/ilost-release.html
 GitHub Theme URI: https://github.com/xuui/iLost
 Description:The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 3.4 or later is Version to use.
-Version: 1.9.3
+Version: 1.9.5
 Author: Xu.hel
 Author URI: http://xuui.net/
 Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, custom-menu, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, microformats, rtl-language-support
@@ -221,6 +221,7 @@ article.home .aside section{background-position:100% 15px;margin:5px 0;}
 article.home .aside section:hover{background-position:100% -37px;}
 article.home .aside section .title{margin:0;}
 article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
+.home aside.modhome{border-bottom:0;}
 #sidehome{margin:0 -15px;}
 #sidehome h3{position:relative;background:#ebebeb url(images/pageside.png) repeat-x 0 0;border-bottom:none;border-top:1px solid #e5e5e5;margin:-1px 0 0;padding:0 13px;height:40px;line-height:40px;color:#666;font-weight:400;color:#000;}
 #sidehome h3:hover,#sidehome h3.hover{background-position:0% -40px;color:#08c;}
@@ -308,7 +309,7 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_paybys{text-shadow:none}
 
 /* Rotation */
-#rotation{margin-bottom:30px;}
+#rotation{margin-bottom:30px;min-height:300px;}
 #rotation .flex-viewport{height:-520px}
 #rotation .slides li{position:relative;}
 #rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.13) 0%, rgba(0,0,0,.75) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
