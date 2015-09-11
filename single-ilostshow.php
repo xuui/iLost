@@ -22,6 +22,6 @@
   </section>
   <?php }}?>
 </article>
-<div class="clear"></div>
+<i class="clear"></i>
 </div>
 <?php get_footer();?>

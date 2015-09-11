@@ -14,6 +14,6 @@ get_header();?>
   <?php }}?>
 </article>
 <?php if(ilost_getsidefl()=='right')get_sidebar();?>
-<div class="clear"></div>
+<i class="clear"></i>
 </div>
 <?php get_footer();?>

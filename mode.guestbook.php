@@ -17,6 +17,6 @@ get_header();?>
   }}?>
 </article>
 <?php get_sidebar();?>
-<div class="clear"></div>
+<i class="clear"></i>
 </div>
 <?php get_footer();?>

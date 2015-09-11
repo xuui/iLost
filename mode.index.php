@@ -23,6 +23,6 @@ $shopics=get_post_meta($homempid,"shopimages",$single=false);if($shopics){echo '
       }?>
     </ul>
   </aside>
-  <div class="clear"></div>
+  <i class="clear"></i>
 </div>
 <?php get_footer();?>

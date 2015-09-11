@@ -84,6 +84,7 @@ section .entry{text-shadow:0 1px 0 #e5e5e5}
 section .entry img{max-width:100%;}
 section .post-meta{background:transparent url(images/postmeta.png) no-repeat 0 bottom;padding:6px 34px 18px;color:#888;background-size:100% 10px;-webkit-background-size:100% 10px}
 section .more-link{background-position:100% -217px;padding-right:6px;line-height:18px}
+section .btn-primary{padding-left:2em;padding-right:2em;}
 section .related{margin:16px 0 7px;padding:6px 10px;box-shadow:0 1px 5px rgba(0,0,0,.34);-webkit-box-shadow:0 1px 5px rgba(0,0,0,.34)}
 section .related h3{margin:0;line-height:1.8;color:#666;font-size:1em;font-weight:700}
 section .related ul{margin:0;padding:0 10px 6px;list-style:none}
@@ -169,6 +170,10 @@ aside .reavatar a .avatar{margin:5px;}
 .post-nav a:hover{text-decoration:none}
 .post-nav .previous{float:left;background-position:-287px -440px;padding-left:16px}
 .post-nav .next{float:right;background-position:100% -387px;padding-right:16px;text-align:right}
+.post-nav .previous a::bfter{content:"<";}
+.post-nav .next a::after{content:">";}
+/*
+*/
 .post-link{clear:both;border:none;margin:20px 0;text-align:center}
 .post-link a{border:1px solid #ededec;padding:2px 5px;text-decoration:none;border-radius:5px}
 .post-link a:hover{border-color:#08c}

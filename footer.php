@@ -13,7 +13,7 @@
         the_widget('ilost_catlistsWidget','catid=6&number=5',$ilost_widgerFooter);
       }?>
     </ul>
-    <div class="clearer"></div>
+    <i class="clear"></i>
   </aside>
   <?php }?>
   <div>

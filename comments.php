@@ -1,4 +1,4 @@
-<div id="comments">
+<div id="comments" class="clearfix">
 <?php if(post_password_required()){?><div class="alert alert-warning" role="alert"><?php _e('This post is password protected. Enter the password to view any comments.','iLost');?></div>
 </div>
 <?php return;}

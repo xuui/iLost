@@ -36,15 +36,16 @@
       <div class="clear"></div>
     </nav-->
     <nav>
-      <ul class="pager">
+      <ul class="post-nav">
         <li class="next"><?php previous_post_link('%link');?></li>
         <li class="previous"><?php next_post_link('%link');?></li>
+        <li class="clearfix"></li>
       </ul>
     </nav>
   </section>
   <?php comments_template('',true);}}?>
 </article>
 <?php get_sidebar();?>
-<div class="clear"></div>
+<i class="clear"></i>
 </div>
 <?php get_footer();?>
