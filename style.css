@@ -10,8 +10,6 @@ Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, cu
 License: iLost full end-user agreement
 License URI: license.txt
 */
-
-@import url('styles/bootstrap.css');
 @import url('scripts/rotation.css');
 
 /* Reset */
