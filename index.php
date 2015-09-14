@@ -15,7 +15,7 @@
       }?>
     </div>
     <div class="post-meta">
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clear"></i>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
     </div>
   </section>
   <?php }?>

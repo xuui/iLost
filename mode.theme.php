@@ -45,6 +45,6 @@ while($themeThumbs->have_posts()){$themeThumbs->the_post();?>
 /*echo '<script type="text/javascript" src="'.ilost_path.'/scripts/rotation.js"></script>';*/?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

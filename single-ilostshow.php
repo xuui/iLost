@@ -11,17 +11,19 @@
       <?php ilost_getshare();the_post_thumbnail(array(960,240));?>
     </div>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<p class="text-right">[',']</p>');?>&nbsp;<i class="clear"></i>
+      <?php edit_post_link(__('Edit','iLost'),'<p class="text-right">[',']</p>');?>&nbsp;<i class="clearfix"></i>
     </div>
     <?php ilost_adgpostend();?>
-    <nav class="post-nav">
-      <span class="previous"><?php previous_post_link('%link');?></span>
-      <span class="next"><?php next_post_link('%link');?></span>
-      <div class="clear"></div>
+    <nav>
+      <ul class="pager">
+        <li class="next"><?php previous_post_link('%link');?></li>
+        <li class="previous"><?php next_post_link('%link');?></li>
+        <li class="clearfix"></li>
+      </ul>
     </nav>
   </section>
   <?php }}?>
 </article>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

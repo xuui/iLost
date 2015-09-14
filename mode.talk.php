@@ -17,7 +17,7 @@ get_header();?>
       the_content();?>
     </div>
     <div class="post-meta">
-      &nbsp;<i class="clear"></i>
+      &nbsp;<i class="clearfix"></i>
     </div>
   </section>
   <?php }?>
@@ -27,6 +27,6 @@ get_header();?>
   <?php }wp_reset_query();?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

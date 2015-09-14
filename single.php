@@ -27,16 +27,11 @@
 	if(ilost_relatedpost())ilost_relatedposts(get_the_ID(),$limit=ilost_repostNum());?>
     <div class="post-meta">
     <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
-      the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clear"></i>
+      the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
     </div>
     <?php ilost_adgpostend();?>
-    <!--nav class="post-nav">
-      <span class="previous"></span>
-      <span class="next"></span>
-      <div class="clear"></div>
-    </nav-->
     <nav>
-      <ul class="post-nav">
+      <ul class="pager">
         <li class="next"><?php previous_post_link('%link');?></li>
         <li class="previous"><?php next_post_link('%link');?></li>
         <li class="clearfix"></li>
@@ -46,6 +41,6 @@
   <?php comments_template('',true);}}?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

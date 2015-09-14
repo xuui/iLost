@@ -8,12 +8,12 @@ get_header();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <ul id="linkpage"><?php wp_list_bookmarks();?></ul>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?>&nbsp;<i class="clear"></i>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?>&nbsp;<i class="clearfix"></i>
     </div>
   </section>
   <?php }}?>
 </article>
 <?php if(ilost_getsidefl()=='right')get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

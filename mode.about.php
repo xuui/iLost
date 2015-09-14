@@ -11,13 +11,13 @@ get_header();?>
       wp_link_pages('before=<nav class="page-links">&after=</nav>&next_or_number=number&pagelink=<span>%</span>');?>
     </div>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?>&nbsp;<i class="clear"></i>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?>&nbsp;<i class="clearfix"></i>
     </div>
   </section>
   <?php //comments_template('',true);
   }}?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

@@ -12,7 +12,7 @@ $shopics=get_post_meta($homempid,"shopimages",$single=false);if($shopics){echo '
     }?>
   </article>
   <aside class="col-xl-3 col-md-3 col-sm-4 col-xs-12 modhome">
-    <ul id="sidehome" class="clear">
+    <ul id="sidehome" class="clearfix">
     <?php $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
     if(!dynamic_sidebar('home-sidebar')){
       the_widget('ilost_randompostWidget','number=6',$ilost_widgerSide);
@@ -23,6 +23,6 @@ $shopics=get_post_meta($homempid,"shopimages",$single=false);if($shopics){echo '
       }?>
     </ul>
   </aside>
-  <i class="clear"></i>
+  <i class="clearfix"></i>
 </div>
 <?php get_footer();?>

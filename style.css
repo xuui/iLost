@@ -165,14 +165,17 @@ aside .reavatar a .avatar{margin:5px;}
 #respond .form-submit .btn{padding:6px 24px;}
 
 /* Navigation */
+.pager .previous a::before{content:'← ';}
+.pager .next a::after{content:' →';}
+
+/*
 .post-nav,.post-link{clear:both;border-bottom:1px solid #dbdbdb;padding:10px 5px;}
 .post-nav{list-style:none;padding-left:0;}
 .post-nav a,.post-nav a:visited{text-decoration:none}
 .post-nav a:hover{text-decoration:none}
 .post-nav .previous{float:left;background-position:-287px -440px;padding-left:16px}
 .post-nav .next{float:right;background-position:100% -387px;padding-right:16px;text-align:right}
-.post-nav .previous a::before{content:'< ';}
-.post-nav .next a::after{content:' >';}
+
 .post-link{clear:both;border:none;margin:20px 0;text-align:center}
 .post-link a{border:1px solid #ededec;padding:2px 5px;text-decoration:none;border-radius:5px}
 .post-link a:hover{border-color:#08c}

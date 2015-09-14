@@ -12,7 +12,7 @@
     </div>
     <div class="post-meta">
       <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
-      the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clear"></i>
+      the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
     </div>
     <nav class="post-nav">
       <span class="previous"><?php previous_post_link('%link');?></span>
@@ -23,6 +23,6 @@
   <?php }}?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

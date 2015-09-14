@@ -12,12 +12,12 @@ get_header();?>
       <ul class="ulpost"><?php wp_get_archives('type=postbypost&limit=40');?><li class="clearer"></li></ul>
     </div>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clearfix"></div>
     </div>
   </section>
   <?php }}?>
 </article>
 <?php get_sidebar();?>
-<i class="clear"></i>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>
