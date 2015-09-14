@@ -88,9 +88,9 @@ function ilost_getstyles(){
   if(ilost_is_iphone()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
   }elseif(ilost_is_ipad()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/ipad.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"768x1004\" href=\"".ilost_path."/images/icons/screen_pad.png\" />\n";
   }elseif(ilost_is_wphone()){}
-  echo "<link rel=\"stylesheet\" media=\"screen\" href=\"".ilost_path."/styles/bootstrap.css\" />\n";
-  echo "<link rel=\"stylesheet\" media=\"screen\" href=\"".get_stylesheet_uri()."\" />\n";
-  if(is_single())echo "<link rel=\"stylesheet\" media=\"all\" href=\"".ilost_path."/scripts/prettify/prettify.css\" />\n";
+  echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.css\" />\n";
+  echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
+  if(is_single())echo "<link rel=\"stylesheet\" href=\"".ilost_path."/scripts/prettify/prettify.css\" />\n";
 }
 //Enqueue Script.
 function ilost_enqueue_script(){
