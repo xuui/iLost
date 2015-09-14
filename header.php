@@ -26,7 +26,12 @@
 <link rel="theme author" href="Xu.hel,xw@xuui.net" />
 <?php ilost_getfavicon();ilost_getstyles();?>
 <link rel="pingback" href="<?php echo ilost_wp_pingback_url;?>" />
-<?php ilost_customRssurl();wp_head();?>
+<?php ilost_customRssurl();?>
+<!--[if lt IE 9]>
+<script src="<?php echo(ilost_path.'/scripts/html5shiv.min.js');?>"></script>
+<script src="<?php echo(ilost_path.'/scripts/respond.min.js');?>"></script>
+<![endif]-->
+<?php wp_head();?>
 </head>
 <body <?php body_class();?>>
 <nav class="navbar navbar-default">

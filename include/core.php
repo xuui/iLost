@@ -101,7 +101,6 @@ function ilost_get_iexuaCompatible(){
 }
 //Enqueue Script.
 function ilost_enqueue_script(){
-  if((ilost_is_ie())&&(!ilost_is_ie9())&&(!ilost_is_ie10()))wp_enqueue_script('html5shiv','http://html5shiv.googlecode.com/svn/trunk/html5.js');
   if(ilost_getjQuery()!='wp_jquery'){
     wp_deregister_script('jquery');
     if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','http://code.jquery.com/jquery-1.11.3.min.js',array(),'1.11.3');}
