@@ -2,10 +2,15 @@
 (function(ilostQ){ilostQ(function(){
 var $window=ilostQ(window),$document=ilostQ(document),mouseover_tid=[],mouseout_tid=[];
 $document.ready(function(){
-/*
-  var $nav=ilostQ('#menu-nav'),$searchs=ilostQ('#searchform #s'),Storage=localStorage,$username=ilostQ('input#author'),$usermaill=ilostQ('input#email'),$userurl=ilostQ('input#url');
+
+  var $nav=ilostQ('.navbar-nav');
+/*,$searchs=ilostQ('#searchform #s'),
+Storage=localStorage,
+$username=ilostQ('input#author'),
+$usermaill=ilostQ('input#email'),
+$userurl=ilostQ('input#url');
   
-  /* dropdown-menu *//*
+  /* dropdown-menu */
   $nav.find('li').has('ul').addClass('sub-ul dropdown');
   $nav.find('li').has('ul').find('ul').addClass('dropdown-menu');
   $nav.find('li').each(function(index){ilostQ(this).hover(function(){var _self=this;clearTimeout(mouseout_tid[index]);mouseover_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideDown(200);},200);},function(){var _self=this;clearTimeout(mouseover_tid[index]);mouseout_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideUp(200);},200);});});
