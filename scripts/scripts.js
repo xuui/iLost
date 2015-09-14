@@ -2,7 +2,6 @@
 (function(ilostQ){ilostQ(function(){
 var $window=ilostQ(window),$document=ilostQ(document),mouseover_tid=[],mouseout_tid=[];
 $document.ready(function(){
-
   var $nav=ilostQ('.navbar-nav'),$searchs=ilostQ('#searchform #s'),Storage=localStorage,$username=ilostQ('input#author'),$usermaill=ilostQ('input#email'),$userurl=ilostQ('input#url');
   
   /* dropdown-menu */
