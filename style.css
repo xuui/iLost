@@ -20,8 +20,6 @@ body{background:#f2f2f2;color:#444;}
 .boshadow{box-shadow:0 2px 6px rgba(100,100,100,.3);}
 a,a em,a strong{color:#08c;text-decoration:none}
 a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
-.clear{clear:both}
-.clearer{clear:both;display:block;margin:0;padding:0;height:0;line-height:1px;font-size:1px}
 :link,:visited,ins{text-decoration:none}
 ::-moz-selection{background:#b5d5ff;color:#000}
 ::selection{background:#b5d5ff;color:#000}

@@ -2,7 +2,7 @@
 Theme Name: iLost
 */
 html.mceContentBody{max-width:640px;}
-body,*{font:10pt/1.5 Georgia,Times New Roman,Times,serif;;color:#444;}
+body,*{background-color:#fff;font:14px/1.625 'Helvetica Neue',Helvetica,'Microsoft Yahei','Hiragino Sans GB','WenQuanYi Micro Hei',sans-serif;color:#333;}
 p,dl,td,th,ul,ol,blockquote{font-size:1em;}
 tr th,thead th,label,tr th,thead th{font-family:'Lucida Grande',Helvetica,Arial,sans-serif;}
 pre{font-family:Helvetica,Arial,sans-serif;}
