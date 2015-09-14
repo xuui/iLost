@@ -310,7 +310,7 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_paybys{text-shadow:none}
 
 /* Rotation */
-#rotation{margin-bottom:30px;min-height:300px;}
+#rotation{margin-bottom:30px;}
 #rotation .flex-viewport{height:-520px}
 #rotation .slides li{position:relative;}
 #rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.13) 0%, rgba(0,0,0,.75) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
