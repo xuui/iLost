@@ -3,8 +3,8 @@
 var $window=ilostQ(window),$document=ilostQ(document),mouseover_tid=[],mouseout_tid=[];
 $document.ready(function(){
 
-  var $nav=ilostQ('.navbar-nav');
-/*,$searchs=ilostQ('#searchform #s'),
+  var $nav=ilostQ('.navbar-nav'),$searchs=ilostQ('#searchform #s');
+/*,
 Storage=localStorage,
 $username=ilostQ('input#author'),
 $usermaill=ilostQ('input#email'),
@@ -15,14 +15,15 @@ $userurl=ilostQ('input#url');
   $nav.find('li').has('ul').find('ul').addClass('dropdown-menu');
   $nav.find('li').each(function(index){ilostQ(this).hover(function(){var _self=this;clearTimeout(mouseout_tid[index]);mouseover_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideDown(200);},200);},function(){var _self=this;clearTimeout(mouseover_tid[index]);mouseout_tid[index]=setTimeout(function(){ilostQ(_self).find('ul:eq(0)').slideUp(200);},200);});});
   
-  /* Search *//*
+  /* Search placeholder */
+  if(!('placeholder' in document.createElement('input'))){
   $searchs.focus(function(){if(ilostQ(this).val()=='Search blog...'){
     ilostQ(this).css({color:'#666'}).val('');
   }}).blur(function(){
     if(ilostQ(this).val()==''){ilostQ(this).css({color:'#aaa'}).val('Search blog...');}
   });
   ilostQ(function(){if($searchs.val()=='' || $searchs.val()=='Search blog...'){$searchs.css({color:'#999'}).val('Search blog...');}});
-  
+  }
   /* comments first *//*
   ilostQ('#comments ul.children li:first-child').addClass('toprep');
   ilostQ('#comments ul.children li:last-child').after('<li class="box-bottom"><span class="left"></span><span class="right"></span></li>');
