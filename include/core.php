@@ -91,14 +91,6 @@ function ilost_getstyles(){
   echo "<link rel=\"stylesheet\" media=\"screen\" href=\"".get_stylesheet_uri()."\" />\n";
   if(is_single())echo "<link rel=\"stylesheet\" media=\"all\" href=\"".ilost_path."/scripts/prettify/prettify.css\" />\n";
 }
-function ilost_get_iexuaCompatible(){
-  if(ilost_is_ie()){
-    if(ilost_is_ie9()){echo '<meta http-equiv="X-UA-Compatible" content="IE=9" />'."\n";
-    }elseif(ilost_is_ie8()){echo '<meta http-equiv="X-UA-Compatible" content="IE=8" />'."\n";
-    }elseif(ilost_is_ie7()){echo '<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />'."\n";
-    }else{echo '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'."\n";}
-  }
-}
 //Enqueue Script.
 function ilost_enqueue_script(){
   if(ilost_getjQuery()!='wp_jquery'){
