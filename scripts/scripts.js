@@ -3,12 +3,7 @@
 var $window=ilostQ(window),$document=ilostQ(document),mouseover_tid=[],mouseout_tid=[];
 $document.ready(function(){
 
-  var $nav=ilostQ('.navbar-nav'),$searchs=ilostQ('#searchform #s');
-/*,
-Storage=localStorage,
-$username=ilostQ('input#author'),
-$usermaill=ilostQ('input#email'),
-$userurl=ilostQ('input#url');
+  var $nav=ilostQ('.navbar-nav'),$searchs=ilostQ('#searchform #s'),Storage=localStorage,$username=ilostQ('input#author'),$usermaill=ilostQ('input#email'),$userurl=ilostQ('input#url');
   
   /* dropdown-menu */
   $nav.find('li').has('ul').addClass('sub-ul dropdown');
@@ -24,11 +19,11 @@ $userurl=ilostQ('input#url');
   });
   ilostQ(function(){if($searchs.val()=='' || $searchs.val()=='Search blog...'){$searchs.css({color:'#999'}).val('Search blog...');}});
   }
-  /* comments first *//*
+  /* comments first */
   ilostQ('#comments ul.children li:first-child').addClass('toprep');
   ilostQ('#comments ul.children li:last-child').after('<li class="box-bottom"><span class="left"></span><span class="right"></span></li>');
   
-  /* Storage Remember Me *//*
+  /* Storage Remember Me */
   if(Storage.ilostQ_commentform_author){$username.val(Storage.ilostQ_commentform_author);}
   if(Storage.ilostQ_commentform_author){$usermaill.val(Storage.ilostQ_commentform_email);}
   if(Storage.ilostQ_commentform_author){$userurl.val(Storage.ilostQ_commentform_url);}
