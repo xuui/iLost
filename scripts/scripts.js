@@ -65,15 +65,10 @@ $window.load(function(){
   if(share.length>0)var share0ffset=share.offset();
   $window.scroll(function(){
     gotopbutton(gotop);
-    //sharefixed(share,share0ffset);
+    sharefixed(share,share0ffset);
   });
-});
-function gotopbutton(id){
-  if(id.length>0){
-    if($document.scrollTop()>=128){id.fadeIn(200);}else{id.fadeOut(200);}
-  }
-}
-/*
+})
+function gotopbutton(id){if(id.length>0){if($document.scrollTop()>=128){id.fadeIn(200);}else{id.fadeOut(200);}}}
 function sharefixed(id,offset){
   if(id.length>0){
     if(ilostQ('#wpadminbar').length>0){var idtop=offset.top-ilostQ('#wpadminbar').height()-3;
@@ -86,5 +81,5 @@ function sharefixed(id,offset){
     });
     }else{id.removeClass('fixedpop').css({bottom:'auto'});}
   }
-}*/
+}
 });})(jQuery);
