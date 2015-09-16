@@ -113,6 +113,8 @@ aside .media .avatar{margin-top:3px;}
 aside .media .media-body p{margin-bottom:0;line-height:1.3}
 aside .media .media-heading{display:inline;padding-right:0;}
 aside ul.comment li a,aside ul .recentcomments a{background:none;}
+aside ul .recentcomments{line-height:1.4;}
+aside ul .recentcomments a{display:inline;white-space:normal;}
 aside ul .recentcomments span{padding-right:5px;}
 aside .current-cat a{color:#08c}
 aside li ul .children{margin-left:8px}
