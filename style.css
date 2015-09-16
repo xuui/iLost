@@ -325,9 +325,8 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 
 /* Share */
 #postshare{margin:10px 0;width:100%;height:32px}
-#share{position:relative;background:rgba(255,255,255,.86);border:1px solid #ededed;border-radius:5px;padding:2px 0 4px;list-style:none;z-index:1000;width:678px;}
-#share.fixedpop{position:fixed;top:0;border-color:#d4d4d4;margin-bottom:0;z-index:9998;/*box-shadow:0 6px 12px rgba(0, 0, 0, 0.16);-webkit-box-shadow:0 6px 12px rgba(0, 0, 0, 0.16);*/
-border:none;border-radius:2px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
+#share{position:relative;background:#fff;border:1px solid #ededed;border-radius:5px;padding:5px 10px;list-style:none;z-index:1000;}
+#share.fixed{position:fixed;bottom:0;border-color:rgba(0,0,0,.2);margin-bottom:0;z-index:9998;box-shadow:0 2px 4px 0 rgba(0,0,0,.14),0 2px 3px -2px rgba(0,0,0,.2),0 0 8px 0 rgba(0,0,0,.12);}
 #share span.share{display:inline-block;*display:inline;*zoom:1;margin-left:5px;height:24px;line-height:24px;vertical-align:text-top;cursor:pointer;font-size:9pt}
 #share .sns{height:24px;padding-top:3px}
 #share .popshare{display:none;position:absolute;background:#fff;border-radius:3px;box-shadow:1px 1px 5px #999;margin:3px 0 0 16px;padding:2px 5px;z-index:9998}
