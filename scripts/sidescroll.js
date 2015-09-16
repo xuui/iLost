@@ -1,5 +1,29 @@
 /* iLost Sidefollow. */
 (function(ilostQ){ilostQ(function(){
+var $window=ilostQ(window),$document=ilostQ(document),mouseover_tid=[],mouseout_tid=[];
+$document.ready(function(){
+$window.load(function(){
+  var gotop=ilostQ('#gotop'),share=ilostQ('#share'),$article=ilostQ('article');
+  if(share.length>0)var share0ffset=share.offset();
+  $window.scroll(function(){
+    gotopbutton(gotop);
+    sharefixed(share,share0ffset);
+  });
+})
+function gotopbutton(id){if(id.length>0){if($document.scrollTop()>=128){id.fadeIn(200);}else{id.fadeOut(200);}}}
+function sharefixed(id,offset){
+  if(id.length>0){
+    var id_line=offset.top+id.outerHeight()-$window.height();
+    if($document.scrollTop()>id_line){
+      id.removeClass('fixed');
+    }else{
+      id.addClass('fixed');
+    }
+  }
+}
+});})(jQuery);
+/*
+(function(ilostQ){ilostQ(function(){
 ilostQ(window).load(function(){
   var side=ilostQ('#siderbar'),sideOset=side.offset();
   ilostQ(window).scroll(function(){
