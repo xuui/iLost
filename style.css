@@ -15,12 +15,11 @@ License URI: license.txt
 /* Reset */
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;}
 body{background:#f2f2f2;color:#444;}
-.boshadow{box-shadow:0 2px 6px rgba(100,100,100,.3);}
 a,a em,a strong{color:#08c;text-decoration:none}
 a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 :link,:visited,ins{text-decoration:none}
-::-moz-selection{background:#b5d5ff;color:#000}
 ::selection{background:#b5d5ff;color:#000}
+::-moz-selection{background:#b5d5ff;color:#000}
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
@@ -72,9 +71,10 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 section{margin:30px 10px;text-align:left}
 section .title{margin-bottom:15px;}
 section .title h3{float:right;margin:0;padding:3px 0 0;font-size:1em;color:#a5acb0}
-section .title h1,section .title h2{margin-bottom:.4em;font-family:Georgia,Times New Roman,Times,'Microsoft YaHei',serif;font-weight:400;text-shadow:1px 1px 2px #ccc}
+section .title h1,section .title h2{margin-bottom:.4em;font-family:Georgia,Times New Roman,Times,'Microsoft YaHei',serif;font-weight:400;}
 section .title h1,section .title h1 a,section .title h2,section .title h2 a{color:#000}
-section .title h1 a:hover,section .title h2 a:hover{text-decoration:underline}
+section .title h1:hover,section .title h2:hover,section .title h1 a:hover,section .title h2 a:hover{text-shadow:0 2px 4px rgba(0,0,0,.34)}
+section .title h1 a:hover,section .title h2 a:hover{text-decoration:underline;}
 section .title small,article .title small a{font-size:.9em;color:#888}
 section .title small a:hover{color:#357}
 section .entry{text-shadow:0 1px 0 #e5e5e5}
@@ -82,9 +82,9 @@ section .entry img{max-width:100%;}
 section .post-meta{background:transparent url(images/postmeta.png) no-repeat 0 bottom;padding:6px 34px 18px;color:#888;background-size:100% 10px;-webkit-background-size:100% 10px}
 section .more-link{background-position:100% -217px;padding-right:6px;line-height:18px}
 section .btn-primary{padding-left:2em;padding-right:2em;}
-section .related{margin:16px 0 7px;padding:6px 10px;box-shadow:0 1px 5px rgba(0,0,0,.34);-webkit-box-shadow:0 1px 5px rgba(0,0,0,.34)}
+section .related{margin:16px 0 7px;padding:8px 16px;box-shadow:0 1px 4px rgba(0,0,0,.2);}
 section .related h3{margin:0;line-height:1.8;color:#666;font-size:1em;font-weight:700}
-section .related ul{margin:0;padding:0 10px 6px;list-style:none}
+section .related ul{margin:0;padding:0;list-style:none}
 section .related li,section .related li a{color:#666}
 section .related li a:hover{color:#08c}
 section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px}
@@ -174,11 +174,12 @@ aside .reavatar a .avatar{margin:5px;}
 .post-nav a:hover{text-decoration:none}
 .post-nav .previous{float:left;background-position:-287px -440px;padding-left:16px}
 .post-nav .next{float:right;background-position:100% -387px;padding-right:16px;text-align:right}
-
-.post-link{clear:both;border:none;margin:20px 0;text-align:center}
-.post-link a{border:1px solid #ededec;padding:2px 5px;text-decoration:none;border-radius:5px}
+*/
+.post-link{clear:both;border:none;margin:20px 0;text-align:center;letter-spacing:-4px;}
+.post-link a,.post-link span{border:1px solid #ededec;padding:5px 10px;letter-spacing:0;}
+.post-link a{text-decoration:none;}
 .post-link a:hover{border-color:#08c}
-.post-link span{background:#f9f9f9;border:1px solid #ccc;padding:2px 5px;border-radius:5px}
+.post-link span{background:#f9f9f9;border-color:#ccc;}
 .post-link a span{background:none;border:none;padding:0}
 .post-link span.dots{background:#fff;border-color:#fff;color:#999}
 
