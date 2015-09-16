@@ -47,8 +47,9 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 
 /* Menus Nav */
 .nav-brand{margin:0;display:inline;}
+.navbar-brand{height:55px;}
 .navbar-default{background:none;border:none;}
-.navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;height:55px;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
+.navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
 .navbar .navbar-toggle{background:rgba(0,0,0,0);font-size:27px;line-height:1;padding:3px 9px;margin:10px 0 10px 15px;}
 .breadcrumb{background-color:#fafafa;margin-top:15px;}
 .breadcrumb > .active{color:#333;}
