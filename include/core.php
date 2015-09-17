@@ -231,20 +231,4 @@ function ilost_breadcrumb(
 
 }
 //Core End.
-
-//Private Code Start.*/
-#add_action('init','iloft_talk_type');
-#add_filter('pre_get_posts','ilost_add_talk_feed');
-/*
-function ilost_add_talk_feed($query){if(is_feed()){$query->set('post_type',array('post','xutalk'));}return $query;}
-function iloft_talk_type(){
-  $xutalk_labels=array('name'=>_x(__('TalkPost','iLost'),'post type general name'),'singular_name'=>_x(__('TalkPost','iLost'),'post type singular name'),'add_new'=>_x(__('Add TalkPost','iLost'),'Project'),'add_new_item'=>__('Add New TalkPost','iLost'),'edit_item'=>__('Edit TalkPost','iLost'),'new_item'=>__('Add TalkPost','iLost'),'view_item'=>__('View TalkPost','iLost'),'search_items'=>__('Search TalkPost','iLost'),'not_found'=>__('No TalkPost found','iLost'),'not_found_in_trash'=>__('No TalkPost found in Trash','iLost'),'parent_item_colon'=>'');
-  $xutalk_Args=array('labels'=>$xutalk_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,
-    //'supports'=>array('title','editor','author','thumbnail','custom-fields','excerpt','comments'),
-    'supports'=>array('title','editor','thumbnail','comments')
-    //'taxonomies'=>array('category','post_tag')
-  );
-  register_post_type('xutalk',$xutalk_Args);
-}
-//Private Code End.*/
 ?>

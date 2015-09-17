@@ -3,7 +3,6 @@
 <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php if(have_posts()){while(have_posts()){the_post();ilost_breadcrumb();
   $logined=get_post_meta(get_the_ID(),"logined",$single=true);?>
-  
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div class="title">
       <h1><?php the_title();?></h1>

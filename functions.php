@@ -38,7 +38,6 @@ if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$d
   }
 }}
 
-
 //login_Viewer.
 add_action('post_submitbox_misc_actions','login_Viewer');
 add_action('save_post','save_login_View_meta');

@@ -3,7 +3,6 @@ get_header();?>
 <?php //ilost_getiloshow();?>
 <?php $homempid=ilost_getfront();
 $shopics=get_post_meta($homempid,"shopimages",$single=false);if($shopics){echo '<div id="proaside" class="row clear">';foreach($shopics as $shopic){$shopiclib=explode("###",$shopic);if(@$shopiclib[1]){$shoplink=$shopiclib[1];}else{$shoplink='#';}if($shopiclib[0]){echo '<div class="col-xl-4 col-xs-4 col-md-4 col-sm-4 text-center"><a href="'.$shoplink.'"><img src="'.$shopiclib[0].'" alt=""/></a></div>';}}echo '</div>';}?>
-<!--div class="container"-->
 <div id="row" class="row clear">
   <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12 home<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
     <?php if(!dynamic_sidebar('home-listbar')){
