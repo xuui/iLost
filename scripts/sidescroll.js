@@ -24,10 +24,10 @@ function sideFollow(id,offset,footer,widthFix){
       if($document.scrollTop()<=endLine){
         id.css({position:'fixed',bottom:0,width:widthFix});
       }else{
-        id.css({bottom:function(){
-          return footer - $document.scrollTop();
+        /*id.css({bottom:function(){
+          return $document.height()- footer - $document.scrollTop();
           }
-        });
+        });*/
       }
     }else{
       id.css({position:'static'});
