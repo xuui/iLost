@@ -1,6 +1,6 @@
 <?php /* Template Name: Themes */
 get_header();?>
-<div class="row">
+<div id="row" class="row">
 <div class="page-header"><h1><?php the_title();?></h1></div>
 <style type="text/css">
 article#thThumbs{padding:10px 24px;width:650px;}

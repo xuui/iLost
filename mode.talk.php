@@ -1,6 +1,6 @@
 <?php /* Template Name: Talk */
 get_header();?>
-<div class="row">
+<div id="row" class="row">
 <div class="page-header"><h1><?php the_title();?></h1></div>
 <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php ilost_breadcrumb();$paged=(get_query_var('paged'))?get_query_var('paged'):1;
