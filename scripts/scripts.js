@@ -62,21 +62,21 @@ $document.ajaxStart(function(){
   //$(".log").text("Triggered ajaxComplete handler.");
 });*/
 $window.load(function(){
-  var gotop=ilostQ('#gotop'),share=ilostQ('#share'),$article=ilostQ('article');
+  var gotop=ilostQ('#gotop'),share=ilostQ('#share'),shareW=ilostQ('#share').width(),$article=ilostQ('article');
   if(share.length>0)var share0ffset=share.offset();
   $window.scroll(function(){
     gotopbutton(gotop);
-    sharefixed(share,share0ffset);
+    sharefixed(share,share0ffset,shareW);
   });
 })
 function gotopbutton(id){if(id.length>0){if($document.scrollTop()>=128){id.fadeIn(200);}else{id.fadeOut(200);}}}
-function sharefixed(id,offset){
+function sharefixed(id,offset,Width){
   if(id.length>0){
     var id_line=offset.top+id.outerHeight()-$window.height();
     if($document.scrollTop()>id_line){
       id.removeClass('fixed');
     }else{
-      id.addClass('fixed');
+      id.addClass('fixed').width(Width);
     }
   }
 }
