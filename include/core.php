@@ -175,13 +175,12 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
     $args=array('tag__in'=>array($first_tag),'post__not_in'=>array($postID),'showposts'=>$limit,'ignore_sticky_posts'=>1);
     $my_query=new WP_Query($args);
     if($my_query->have_posts()){
-      echo "<div class=\"related\">\n";echo "<h3>".__('Related Post:','iLost')."</h3>\n<ul>\n";
+      echo "<div class=\"related\">\n<h3>".__('Related Post:','iLost')."</h3>\n<ul>\n";
       while($my_query->have_posts()){$my_query->the_post();?>
-      <!--li><a href="<?php the_permalink();?>" rel="bookmark" title="<?php the_title_attribute();?>"><?php the_title();?> <?php comments_number(' ','(1)','(%)');?></a></li-->
       <li<?php if(ilost_repostShow()=='thumbnail'){echo ' class="thumbnail"';}?>><a href="<?php the_permalink();?>" rel="bookmark" title="<?php the_title_attribute();?>">
       <?php if(ilost_repostShow()=='thumbnail'){echo the_post_thumbnail('thumbnail');}the_title();?> <?php comments_number(' ','(1)','(%)');?></a></li>
       <?php
-      };echo "</ul>\n";echo "</div>\n";
+      };echo "</ul>\n</div>\n";
     }
   }wp_reset_query();
 }

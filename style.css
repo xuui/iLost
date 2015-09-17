@@ -88,7 +88,7 @@ section .related h3{margin:0;line-height:1.8;color:#666;font-size:1em;font-weigh
 section .related ul{margin:0;padding:0;list-style:none}
 section .related li,section .related li a{color:#666}
 section .related li a:hover{color:#08c}
-section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px}
+section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px 26px 6px 0;}
 section .related .thumbnail img{width:100px;height:100px}
 #authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:15px 0 15px;padding:8px 10px}
 #authorbox p{margin:0;padding:3px 0;line-height:1.4;}
