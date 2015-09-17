@@ -7,8 +7,8 @@ Version: 1.9.5
 Author: Xu.hel
 Author URI: http://xuui.net/
 Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, custom-menu, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, microformats, rtl-language-support
-License: iLost full end-user agreement
-License URI: license.txt
+License: GNU General Public License v3 or later
+License URI: LICENSE
 */
 @import url('scripts/rotation.css');
 
@@ -189,7 +189,7 @@ aside .reavatar a .avatar{margin:5px;}
 footer.container aside.row{float:none;background:none;padding:0 0 10px;box-shadow:none;}
 footer aside{border:none;}
 footer aside h3{margin:0;border-bottom-color:#ccc;height:40px;line-height:40px;font-weight:400;color:#000;}
-footer aside .widget h3{border:none;padding-top:5px;height:34px;line-height:34px;color:#666;font-weight:700}
+footer aside li h3{border:none;padding-top:5px;height:34px;line-height:34px;color:#666;font-weight:700}
 footer aside li{float:left;width:20%}
 footer aside li li{float:none;width:auto;padding:5px 0}
 footer aside li li a{background:none;padding-right:0;line-height:1.4;color:#888;}
