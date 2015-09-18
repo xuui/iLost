@@ -374,7 +374,10 @@ section .post-meta{padding:6px 15px 18px}
 #rotation .slides li{height:260px;}
 }
 @media (min-width:992px){
-#rotation .slides li{height:260px;}
+#rotation .slides li{height:320px;}
+}
+@media (min-width:1200px){
+#rotation .slides li{height:420px;}
 }
 @media (max-width:992px){
 #proaside{padding:10px 0;}
