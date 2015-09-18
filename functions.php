@@ -1,17 +1,15 @@
 <?php function We_do_not_love_it(){wp_deregister_style('open-sans');wp_register_style('open-sans',false);wp_enqueue_style('open-sans','');}add_action('init','We_do_not_love_it');
 define("themename","iLost");define("BROWSER_USER_AGENT",$_SERVER["HTTP_USER_AGENT"]);define("ilost_path",get_template_directory_uri());define("ilost_wp_name",get_bloginfo('name'));define("ilost_wp_homeurl",home_url());define("ilost_wp_description",get_bloginfo('description'));define("ilost_wp_rss2_url",get_bloginfo('rss2_url'));define("ilost_wp_pingback_url",get_bloginfo('pingback_url'));add_action('after_setup_theme','ilost_init');require_once(dirname( __FILE__ ).'/include/widgets.php');require_once(dirname( __FILE__ ).'/include/options.php');require_once(dirname( __FILE__ ).'/include/core.php');get_template_part('include/fanfou');
-/*
-function ilost_getthumbnail_url(pID){
-  $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(pID),"Full");
+/*function ilost_getThumbnail_url(ID){
+  $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(ID),'full');
   return $img_src[0];
-}
-*/
+}*/
 function ilost_getiloshow(){
   $showlistloop=new WP_Query(array('post_type'=>'ilostshow','posts_per_page'=>ilost_ilshowNum()));if($showlistloop->have_posts()){?>
 <div id="rotation" class="flexslider">
   <ul class="slides">
-    <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}?>
-    <li><a href="<?php echo $urlLink;?>" target="_blank"><?php the_post_thumbnail('full');?><span class="flex-caption"><?php the_title()?></span></a></li>
+    <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}$img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
+    <li style="background-image:url(<?php echo $img_src[0];?>);"><a href="<?php echo $urlLink;?>" target="_blank"><?php //the_post_thumbnail('full');?><span class="flex-caption"><?php the_title()?></span></a></li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
 </div><?php }wp_reset_postdata();}

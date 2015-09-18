@@ -315,9 +315,9 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 
 /* Rotation */
 #rotation{margin-bottom:30px;}
-#rotation .flex-viewport{height:-520px}
-#rotation .slides li{position:relative;}
-#rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.13) 0%, rgba(0,0,0,.75) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
+#rotation .flex-viewport{}
+#rotation .slides li{position:relative;background:#fff no-repeat top center;height:600px;background-size:auto 100%}
+#rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.07) 0%, rgba(0,0,0,.2) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%;}
 #rotation .flex-direction-nav a.flex-next{background-position:100px 50%;right:0}
@@ -362,8 +362,9 @@ section .post-meta{padding:6px 15px 18px}
 #proaside .col-xs-4,#proaside .col-sm-4{padding:0 5px;}
 #proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%;}
 .flex-control-nav li{margin:4px 2px;}
-#rotation,.home.page #rotation{margin-bottom:0;max-height:180px;overflow: hidden}
-#rotation .flex-caption{padding:5px 0 7px;}
+#rotation,.home.page #rotation{margin-bottom:0;min-height:180px;overflow:hidden}
+#rotation .slides li{height:240px;}
+#rotation .flex-caption{padding:8px 0 7px;}
 }
 @media (min-width:960px){
 /*.page #container .row{margin-top:-66px;}*/
@@ -378,12 +379,10 @@ section .post-meta{padding:6px 15px 18px}
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){
 .comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,section .more-link{background-image:url(images/retina/lostbg.png);background-size:300px 300px}
 .post-nav .previous,.post-nav .next,aside li ul li a,#sidehome li ul li a,article.home .aside section,#sidehome li h3::after{background-image:url(images/retina/lostli.png);background-size:16px 328px}
-
 section .post-meta{padding:6px 10px 9px;background-size:100% 5px;-webkit-background-size:100% 5px}
 .comment-list .children,.comment-list .children li.toprep{background-image:url(images/retina/wavecommml.png);background-size:680px 80px}
 .comment-list .children .box-bottom,.comment-list .children .box-bottom .left,.comment-list .children .box-bottom .right{background-image:url(images/retina/wavecommmb.png);background-size:91px 21px}
 #sidehome li h3{background-image:url(images/retina/pageside.png);background-size:480px 120px}
 #gotop a{background-image:url(images/retina/gotop.png);background-size:48px 64px}
-#rotation .flexslider .slides{background-size:80px auto}
 }
 /* Made on a Mac */
