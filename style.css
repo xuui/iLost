@@ -354,7 +354,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 */
 .navbar .container{padding:0 10px;}
 .navbar-nav{margin:0 -15px 4px;}
-.navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:rgba(255,255,255,.9);margin:0 -2px!important;padding:0 13px;border-radius:3px;box-shadow:0 1px 6px rgba(0,0,0,.12),0 1px 4px rgba(0,0,0,.24);}
+.navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:rgba(255,255,255,.9);margin:0 -2px!important;padding:0 13px;border-radius:2px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
 .navbar-collapse.in{overflow-y:visible;}
 section{margin:30px 0;}
 section .post-meta{padding:6px 15px 18px}
