@@ -47,20 +47,19 @@ $document.ready(function(){
     }
   });
   /* Ajax Load article  */
-  /*
-  ilostQ('body.blog #container article section .title a').click(function(e){
+  ilostQ('body.blog #row article .post .title a').click(function(e){
+    e.preventDefault();
     var $url=ilostQ(this).attr('href');
     ilostQ('#container').load($url+' #container');
-  });*/
+  });
 });
-/*
 $document.ajaxStart(function(){
-  //$(".log").text("Triggered ajaxStart handler.");
+  console.log("Triggered ajaxStart handler.");
 });$document.ajaxStop(function(){
-  //$(".log").text("Triggered ajaxStop handler.");
+  console.log("Triggered ajaxStop handler.");
 });$document.ajaxComplete(function(){
-  //$(".log").text("Triggered ajaxComplete handler.");
-});*/
+  console.log("Triggered ajaxComplete handler.");
+});
 $window.load(function(){
   var gotop=ilostQ('#gotop'),share=ilostQ('#share'),shareW=ilostQ('#share').width(),sidebar=ilostQ('#aside'),side_Width=sidebar.width(),$article=ilostQ('article'),footer=ilostQ('footer');
   if(share.length>0)var share0ffset=share.offset();
