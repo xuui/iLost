@@ -317,7 +317,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 /* Rotation */
 #rotation{margin-bottom:30px;}
 #rotation .flex-viewport{}
-#rotation .slides li{position:relative;background:#fff no-repeat top center;height:480px;background-size:100% auto}
+#rotation .slides li{position:relative;background:#fff no-repeat top center;height:420px;background-size:100% auto}
 #rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.07) 0%, rgba(0,0,0,.2) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%;}
@@ -364,14 +364,17 @@ section .post-meta{padding:6px 15px 18px}
 #proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%;}
 .flex-control-nav li{margin:4px 2px;}
 #rotation,.home.page #rotation{margin-bottom:0;min-height:180px;overflow:hidden}
-#rotation .slides li{height:240px;background-size:auto 100%}
+#rotation .slides li{height:180px;/*background-size:auto 100%*/}
 #rotation .flex-caption{padding:8px 0 7px;}
 }
-@media (min-width:960px){
-/*.page #container .row{margin-top:-66px;}*/
+@media (max-width:480px){
+#rotation .slides li{background-size:auto 100%}
 }
-@media (max-width:960px){
-#rotation .slides li{height:320px;background-size:auto 100%}
+@media (min-width:768px){
+#rotation .slides li{height:260px;}
+}
+@media (min-width:992px){
+#rotation .slides li{height:260px;}
 }
 @media (max-width:992px){
 #proaside{padding:10px 0;}
