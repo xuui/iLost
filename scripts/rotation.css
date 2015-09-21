@@ -16,7 +16,7 @@ html[xmlns] .flexslider .slides{display:block;}
 .loading .flex-viewport{max-height:300px;}
 .carousel li{margin-right:5px;}
 .flex-direction-nav{*height:0;}
-.flex-direction-nav a{position:absolute;top:0;z-index:9;overflow:hidden;display:block;width:72px;height:100%;opacity:0;cursor:pointer;color:rgba(255,255,255,.8);text-indent:-9999px;text-decoration:none;text-shadow:1px 1px 0 rgba(0,0,0,.3);-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out;}
+.flex-direction-nav a{position:absolute;top:0;z-index:9;overflow:hidden;display:block;width:72px;height:100%;opacity:0;cursor:pointer;color:rgba(255,255,255,.8);text-indent:-9999px;text-decoration:none;text-shadow:1px 1px 0 rgba(0,0,0,.3);-webkit-transition:left .3s ease-in-out;-moz-transition:left .3s ease-in-out;-ms-transition:left .3s ease-in-out;transition:left .3s ease-in-out;-webkit-transition:right .3s ease-in-out;-moz-transition:right .3s ease-in-out;-ms-transition:right .3s ease-in-out;transition:right .3s ease-in-out;}
 .flex-direction-nav .flex-prev{left:-50px;}
 .flex-direction-nav .flex-next{right:-50px;}
 .flexslider:hover .flex-direction-nav .flex-prev{opacity:.7;left:10px;}
