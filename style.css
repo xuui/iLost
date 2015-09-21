@@ -66,7 +66,6 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 /* Search */
 #searchform{margin-top:15px}
 #searchform .screen-reader-text{display:none}
-#searchform #s{}
 #searchform #searchsubmit{padding:6px 20px 5px;}
 
 /* Post */
@@ -274,13 +273,6 @@ body.error p.button .btn-default{background:none;border-color:#999;}
 body.error footer{background:none;padding:0}
 body.error footer p{text-align:center}
 
-/* custom background */
-.custom-background .row{border-radius:0;}
-.custom-background .navbar{background-color:rgba(255,255,255,.72);margin:0;}}
-.custom-background #container{margin-bottom:0;}
-.custom-background #container .row{border-radius:0;}
-.custom-background footer{margin-top:0;}
-
 /* Other */
 .alignleft,img.alignleft{display:inline;float:left;margin-right:24px;margin-top:4px}
 .alignright,img.alignright{display:inline;float:right;margin-left:24px;margin-top:4px}
@@ -348,11 +340,6 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #share a#tencent-share{background-position:0 -144px}
 
 @media screen and (max-width:767px){
-/*
-.navbar.navbar-default{position:fixed;left:0;right:0;z-index:1030;}
-.navbar-default .navbar-toggle{background:transparent;border-color:transparent;color:#fff;}
-.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background:rgba(255,255,255,.21);border-color:rgba(255,255,255,.34)}
-*/
 .navbar .container{padding:0 10px;}
 .navbar-nav{margin:0 -15px 4px;}
 .navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:#fff;margin:0 -2px!important;padding:0 13px;border-radius:3px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
