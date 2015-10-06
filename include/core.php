@@ -90,7 +90,6 @@ function ilost_getstyles(){
   }elseif(ilost_is_wphone()){}
   echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
-  if(is_single())echo "<link rel=\"stylesheet\" href=\"".ilost_path."/scripts/prettify/prettify.css\" />\n";
 }
 //Enqueue Script.
 function ilost_enqueue_script(){
@@ -104,7 +103,6 @@ function ilost_enqueue_script(){
   wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0.0',true);
   if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);
-  if(is_single())wp_enqueue_script('prettify',ilost_path.'/scripts/prettify/prettify.js',array(),false,true);
 }
 function ilost_footerscript(){
   $growlBox=ilost_getOption('growlBox');
