@@ -22,12 +22,10 @@ class ilostOption{
       $options['repostShow']='post';
       $options['growlBox']=false;
       $options['jgrowltext']='';
-      $options['fan_token']='';//SNS.
-      $options['fan_token_secret']='';
-      $options['jquerysrc']='wp_jquery';//jQuery.
+      $options['jquerysrc']='wp_jquery';
       $options['custom_jquery']='';
-      $options['googleanalytics']='';//Google Analytics.
-      $options['sidebartopcode']='';//AD.
+      $options['googleanalytics']='';
+      $options['sidebartopcode']='';
       $options['sidebarbottomcode']='';
       $options['postembcode']='';
       $options['postendcode']='';
@@ -40,7 +38,7 @@ class ilostOption{
       $options=ilostOption::getOptions();
       if(isset($_GET['tab'])){$tab=$_GET['tab'];}else{$tab='general';}
       switch($tab){
-        case 'general'://General.
+        case 'general':
           if(@$_POST['usrlogoimg']){$options['usrlogoimg']=(bool)true;}else{$options['usrlogoimg']=(bool)false;}
           $options['logoimgurl']=stripslashes($_POST['logoimgurl']);
           if(@$_POST['usrfavicon']){$options['usrfavicon']=(bool)true;}else{$options['usrfavicon']=(bool)false;}
@@ -64,14 +62,11 @@ class ilostOption{
           if(@$_POST['showAuthor']){$options['showAuthor']=(bool)true;}else{$options['showAuthor']=(bool)false;}
           if(@$_POST['growlBox']){$options['growlBox']=(bool)true;}else{$options['growlBox']=(bool)false;}
           $options['jgrowltext']=stripslashes($_POST['jgrowltext']);
-        break;case 'fanfou'://SNS.
-          $options['fan_token']=stripslashes($_POST['fan_token']);
-          $options['fan_token_secret']=stripslashes($_POST['fan_token_secret']);
-        break;case 'script'://Script & AD.
-          $options['jquerysrc']=stripslashes($_POST['jquerysrc']);//jQuery.
+        break;case 'script':
+          $options['jquerysrc']=stripslashes($_POST['jquerysrc']);
           $options['custom_jquery']=stripslashes($_POST['custom_jquery']);
-          $options['googleanalytics']=stripslashes($_POST['googleanalytics']);//Google Analytics.
-          $options['sidebartopcode']=stripslashes($_POST['sidebartopcode']);//AD.
+          $options['googleanalytics']=stripslashes($_POST['googleanalytics']);
+          $options['sidebartopcode']=stripslashes($_POST['sidebartopcode']);
           $options['sidebarbottomcode']=stripslashes($_POST['sidebarbottomcode']);
           $options['postembcode']=stripslashes($_POST['postembcode']);
           $options['postendcode']=stripslashes($_POST['postendcode']);
@@ -84,7 +79,7 @@ class ilostOption{
     add_theme_page(themename.__(' Options','iLost'),themename.__(' Options','iLost'),'edit_theme_options','ilost_options',array('ilostOption','OptionsPage'));
   }
   public static function option_tabs($current='general'){
-    $tabs=array('general'=>themename.__(' Options','iLost'),'fanfou'=>__('Fanfou','iLost'),'script'=>__('Script Code','iLost'));
+    $tabs=array('general'=>themename.__(' Options','iLost'),'script'=>__('Script Code','iLost'));
     $links=array();
     echo '<h2 class="nav-tab-wrapper">';
     foreach($tabs as $tab=>$name){
@@ -177,17 +172,6 @@ p.description,span.description{vertical-align:middle;}
         </p>
         <p><label class="th"><?php _e('.','iLost');?></label></p>
       </fieldset>
-  <?php break;case 'fanfou':
-    $o=new OAuth(fan_akey,fan_skey,@$_SESSION['temp']['oauth_token'],@$_SESSION['temp']['oauth_token_secret']);$last_key=$o->getAccessToken(@$_SESSION['temp']['oauth_token']);$_SESSION['last_key']=$last_key;?>
-      <fieldset id="fanfou">
-        <legend><?php _e('Fanfou Synchronization','iLost');?></legend>
-        <p><label class="th" for="fan_token_secret"><?php _e('Fanfou authorization code:','iLost');?></label><input type="hidden" name="fan_token" id="fan_token" value="<?php if($options['fan_token']){echo($options['fan_token']);}else{echo($last_key['oauth_token']);}?>" size="34"<?php if($options['fan_token_secret']){echo' disabled="disabled"';}?> />
-        <input type="text" name="fan_token_secret" id="fan_token_secret" value="<?php if($options['fan_token_secret']){echo($options['fan_token_secret']);}else{echo(@$last_key['oauth_token_secret']);}?>" size="34" <?php if($options['fan_token_secret']){echo' disabled="disabled"';}?> /></p>
-        <?php if(!$options['fan_token'] && !$options['fan_token_secret']){?>
-        <p><label class="th"></label><a class="button-secondary" href="<?php echo ilost_get_fanauthorize(); ?>"><?php _e('Get Authorization Code','iLost');?></a><br>
-        <span class="supoption"><span class="description"><?php _e('To obtain the authorization code needs to be saved to take effect.','iLost');?></span></span></p>
-        <?php }?>
-      </fieldset>
   <?php break;case 'script':?>
       <fieldset>
         <legend><?php _e('jQuery Library','iLost');?></legend>
@@ -219,7 +203,7 @@ p.description,span.description{vertical-align:middle;}
           <textarea name="postendcode" id="postendcode" class="large-text" cols="50" rows="3" placeholder="<script><script/>"><?php echo($options['postendcode']);?></textarea>
         </p>
       </fieldset>
-  <?php break;}//submit_button();?>
+  <?php break;}?>
        <p class="submit"><input type="submit" name="save_submit" class="button-primary" value="<?php _e('Save Changes','iLost');?>" /><input name="restore-defaults" id="restore-defaults" onClick="return confirmDefaults();" value="<?php _e('Restore to defaults','iLost');?>" class="button-secondary" type="submit"></p>
     </form>
   </div>
@@ -230,7 +214,6 @@ function ilost_themeopt_bar_render(){
   global $wp_admin_bar;
   $wp_admin_bar->add_menu(array('parent'=>false,'id'=>'iLostOptmul','title'=>themename.__(' Options','iLost'),'href'=>false));
   $wp_admin_bar->add_menu(array('parent'=>'iLostOptmul','id'=>'iLostOptmul_general','title'=>__('General Options','iLost'),'href'=>admin_url('themes.php?page=ilost_options'),'meta'=>false));
-  $wp_admin_bar->add_menu(array('parent'=>'iLostOptmul','id'=>'iLostOptmul_fanfou','title'=>__('Fanfou','iLost'),'href'=>admin_url('themes.php?page=ilost_options&tab=fanfou'),'meta'=>false));
   $wp_admin_bar->add_menu(array('parent'=>'iLostOptmul','id'=>'iLostOptmul_script','title'=>__('Script Code','iLost'),'href'=>admin_url('themes.php?page=ilost_options&tab=script'),'meta'=>false));
   $wp_admin_bar->add_menu(array('parent'=>'iLostOptmul','id'=>'iLostOptmul_menus','title'=>__('Menus','iLost'),'href'=>admin_url('nav-menus.php'),'meta'=>array('class'=>'ilostAline')));
   $wp_admin_bar->add_menu(array('parent'=>'iLostOptmul','id'=>'iLostOptmul_background','title'=>__('Custom Background','iLost'),'href'=>admin_url('themes.php?page=custom-background'),'meta'=>false));
@@ -240,7 +223,6 @@ function ilost_themeopt_bar_css(){echo '<style type="text/css">#wpadminbar .ilos
 add_action('admin_head','ilost_themeopt_bar_css');
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
-  //$options=$ilostOptions;
   if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='googleSearchID')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
     return ent2ncr($options[$option]);
   }elseif(($option=='googleanalytics')or($option=='sidebartopcode')or($option=='sidebarbottomcode')or($option=='postembcode')or($option=='postendcode')){
@@ -266,7 +248,7 @@ function ilost_getlogoimg(){
 function ilost_getfavicon(){
   $usrfavicon=ilost_getOption('usrfavicon');$faviconurl=ilost_getoption('faviconurl');
   if($usrfavicon){if($faviconurl){echo '<link rel="Shortcut Icon" href="'.$faviconurl.'" type="image/x-icon" />'."\n";
-  }else{echo '<link rel="Shortcut Icon" href="'.ilost_path.'/images/favicon.ico" type="image/x-icon" />'."\n";}
+  }else{echo '<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />'."\n";}
   }
 }
 function ilost_sidefloat(){
@@ -300,8 +282,6 @@ function ilost_search_form($form){
   </div></form>';
   return $form;
 }
-
-
 function ilost_getSearchform(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
   $embedgSearch=ilost_getOption('embedgSearch');
@@ -313,7 +293,6 @@ function ilost_getSearchform(){
   echo '<form role="search" id="searchform" action="http://www.google.com/cse" method="get"><div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><input type="text" id="s" name="q" value="'.get_search_query().'" /><input type="submit" id="searchsubmit" name="sa" value="'.esc_attr__('Search').'" /><input type="hidden" name="cx" value=".$googleSearchID." /><input type="hidden" name="ie" value="UTF-8" /></div></form>';}
   }else{get_search_form();}
 }
-
 function ilost_getgcseID(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
   if($googleSearch && $googleSearchID){return $googleSearchID;}
@@ -328,10 +307,6 @@ function ilost_googleaddbutscript(){
 if(ilost_googleaddbut())add_action('wp_footer','ilost_googleaddbutscript');
 function ilost_ctrlentry(){
   $ctrlentry=ilost_getOption('ctrlentry');
-  /*if($ctrlentry){
-    //echo "<script type=\"text/javascript\">ilosts.quickComments();(function(jQuery){ilostQ=jQuery.noConflict();ilostQ(document).ready(function(){ilostQ('#commentform .form-submit #submit').after('<label class=\"cereply\">".__('Use Ctrl+Enter to reply comments','iLost')."</label>');});})(jQuery);
-</script>\n";
-  }*/
   return $ctrlentry;
 }
 function ilost_getfront(){
@@ -398,5 +373,4 @@ function ilost_adgpostemb(){
 function ilost_adgpostend(){
   $postendcode=ilost_getOption('postendcode');
   if($postendcode)echo $postendcode;
-}
-?>
+}?>
