@@ -47,7 +47,7 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 
 /* Menus Nav */
 .nav-brand{margin:0;display:inline;}
-.navbar-brand{height:55px;}
+.navbar-brand{height:55px;line-height:27px;}
 .navbar-default{background:none;border:none;}
 .navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
 .navbar .navbar-toggle{background:rgba(0,0,0,0);font-size:22px;line-height:1;padding:3px 9px;margin:13px 0 12px 15px;}
@@ -55,13 +55,13 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .breadcrumb > .active{color:#333;}
 .navbar .navbar-nav > li{padding:2px 5px 0;}
 .navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333;font-size:15px;}
-.navbar .navbar-nav > li > a{border-bottom:2px solid  transparent;padding:16px 10px 14px;color:#333;outline:none;}
+.navbar .navbar-nav > li > a{border-bottom:2px solid  transparent;padding:16px 8px 14px;color:#333;outline:none;}
 .navbar .navbar-nav > li > a:hover{color:#08c;text-decoration:none}
 .navbar .navbar-nav > li.current-menu-item > a,.navbar .navbar-nav > li.current_page_parent > a{color:#06c;border-color:#06c;text-decoration:none}
 .navbar .sub-ul{background-position:104% -135px}
 .navbar .sub-menu .sub-ul{background-position:104% -142px}
 .navbar .sub-menu{display:none;}
-.navbar-nav > li > .dropdown-menu{margin-top:-1px;}
+.navbar-nav > li > .dropdown-menu{border-top:2px solid #06c;margin-top:-2px;}
 
 /* Search */
 #searchform{margin-top:15px}
