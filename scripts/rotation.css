@@ -5,7 +5,6 @@
 .flexslider{background:#fff;margin:0;padding:0;position:relative;zoom:1;}
 .flexslider a{outline:none;}
 .flexslider .slides{zoom:1;}
-.flexslider .slides > li{display:none;-webkit-backface-visibility:hidden;}
 .flexslider .slides img{display:block;width:100%;height:auto;}
 .flexslider .slides:after{content:'';display:block;clear:both;visibility:hidden;line-height:0;height:0;}
 html[xmlns] .flexslider .slides{display:block;}
