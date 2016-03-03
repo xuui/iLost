@@ -94,8 +94,8 @@ function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!
 </style>
 <?php }}
 function iloft_post_type(){
-  $Show_Image_labels=array('name'=>_x(__('Show images','iLost'),'post type general name'),'singular_name'=>_x(__('Show image','iLost'),'post type singular name'),'add_new'=>_x(__('Add Images','iLost'),'Image'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
-  $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>7,'supports'=>array('title','custom-fields','thumbnail'));
+  $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
+  $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,'menu_icon'=>'dashicons-images-alt','supports'=>array('title','custom-fields','thumbnail'));  
   register_post_type('ilostshow',$Show_Image_Aargs);
 }
 function ilost_Widget(){
