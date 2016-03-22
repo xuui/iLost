@@ -36,118 +36,79 @@ if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$d
   }
 }}
 
-//login_Viewer.
-/*
-add_action('post_submitbox_misc_actions','login_Viewer');
-add_action('save_post','save_login_View_meta');
-function login_Viewer(){
-    $loginED=get_post_meta($_GET["post"],"logined",$single=true);?>
-    <div class="misc-pub-section misc-pub-section-last">
-		<label for="loginview"><?php _e('登录才能浏览:');?></label>
-        <input type="checkbox" id="loginview" name="loginview" value="<?php echo $loginED;?>"<?php if($loginED!='0')echo ' checked="checked"';?>><br />
-		<label for="viewsLevel"><?php _e('浏览这个篇文章的用户等级为:');?></label>
-        <input type="text" id="viewsLevel" name="viewsLevel" size="2" maxlength="2" value=""><br />
-		<label><?php _e('用户等级0~10 留空为所有人都可以看。');?></label>
-	</div>
-<?php
+// 远程图片本地化
+add_filter('content_save_pre', 'auto_save_image');
+function auto_save_image($content){
+$text = stripslashes($content);
+preg_match_all("/<img[^>]+src=(\"|\'){0,}(http:\/\/(.+?))(\"|\'|\s)/is", $text, $img);
+$img = array_unique($img[2]);
+if(empty($img)) {
+return $content;
 }
-function get_curLevel($level){return 'level_'.$level;}
-if(current_user_can('level_10')){   
-//加入符合管理员后需要添加的内容   
+
+$upload_dir = wp_upload_dir(date('Y/m'));
+require_once (ABSPATH . "wp-includes/class-snoopy.php");
+$snoopy_Auto_Save_Image = new Snoopy;
+// 过滤下载域名
+$basehost = $_SERVER["HTTP_HOST"]."|.qq.com|img.baidu.com|.qiniudn.com|.taobaocdn.com|.alicdn.com|.gtimg.com";
+// 以文章的标题作为图片的标题
+if (!empty($_REQUEST['post_title'])) {
+$post_title = wp_specialchars(stripslashes($_REQUEST['post_title']));
 }
-function save_login_View_meta($post_id){
-    if (isset($_REQUEST['loginview'])){
-        update_post_meta($post_id,'logined',sanitize_text_field("1"));
-    }else{
-        update_post_meta($post_id,'logined',sanitize_text_field("0"));
-    }
-    if (isset($_REQUEST['viewsLevel'])){
-        update_post_meta($post_id,'viewsLevel',sanitize_text_field($_REQUEST['viewsLevel']));
-    }else{
-        delete_post_meta($post_id,'viewsLevel','');
-    }
+
+foreach ($img as $key => $imgurl){
+set_time_limit(60); //每张图片允许下载最长时间,秒
+if(preg_match("/$basehost/i", $imgurl)) {
+continue;
 }
-*/
 
-    // 远程图片本地化
-    add_filter('content_save_pre', 'auto_save_image');
-    function auto_save_image($content){
+// 是否本地图片
+if(!preg_match("/^http:\/\//i", $imgurl)) {
+continue;
+}
 
-    $text = stripslashes($content);
-    preg_match_all("/<img[^>]+src=(\"|\'){0,}(http:\/\/(.+?))(\"|\'|\s)/is", $text, $img);
-    $img = array_unique($img[2]);
+// 判断后缀
+$fileext = substr(strrchr($imgurl, '.'), 1);
+$fileext = strtolower($fileext);
+$savefiletype = array('jpg', 'gif', 'png', 'bmp');
+if (!in_array($fileext, $savefiletype)){
+$fileext = "jpg";
+}
 
-    if(empty($img)) {
-    return $content;
-    }
+if($snoopy_Auto_Save_Image->fetch($imgurl)){
+$get_file = $snoopy_Auto_Save_Image->results;
+}else{
+continue;
+}
 
-    $upload_dir = wp_upload_dir(date('Y/m'));
+$filename = substr(md5($imgurl), 0, 8);
+$filetarget = $upload_dir['path'] . "/" . $filename . "." . $fileext;
 
-    require_once (ABSPATH . "wp-includes/class-snoopy.php");
-    $snoopy_Auto_Save_Image = new Snoopy;
+if(!@$fp = fopen($filetarget, 'wb')) {
+continue;
+} else {
+flock($fp, 2);
+fwrite($fp, $get_file);
+fclose($fp);
+}
 
-    // 过滤下载域名
-    $basehost = $_SERVER["HTTP_HOST"]."|.qq.com|img.baidu.com|.qiniudn.com|.taobaocdn.com|.alicdn.com|.gtimg.com";
+$post_ID = (int)$_POST['temp_ID2'];
+$wp_filetype = wp_check_filetype($filename . "." . $fileext, false);
+$url = $upload_dir['url'] . "/" . $filename . "." . $fileext;
 
-    // 以文章的标题作为图片的标题
-    if (!empty($_REQUEST['post_title'])) {
-    $post_title = wp_specialchars(stripslashes($_REQUEST['post_title']));
-    }
+$attachment = array('post_type' => 'attachment',
+'post_mime_type' => $wp_filetype['type'],
+'guid' => $url,
+'post_parent' => $post_ID,
+'post_title' => $post_title,
+'post_content' => "",
+);
+$id = wp_insert_attachment($attachment, $filetarget);
+$text = str_replace($imgurl, $url, $text);
 
-    foreach ($img as $key => $imgurl){
-    set_time_limit(60); //每张图片允许下载最长时间,秒
-
-    if(preg_match("/$basehost/i", $imgurl)) {
-    continue;
-    }
-
-    // 是否本地图片
-    if(!preg_match("/^http:\/\//i", $imgurl)) {
-    continue;
-    }
-
-    // 判断后缀
-    $fileext = substr(strrchr($imgurl, '.'), 1);
-    $fileext = strtolower($fileext);
-    $savefiletype = array('jpg', 'gif', 'png', 'bmp');
-    if (!in_array($fileext, $savefiletype)){
-    $fileext = "jpg";
-    }
-
-    if($snoopy_Auto_Save_Image->fetch($imgurl)){
-    $get_file = $snoopy_Auto_Save_Image->results;
-    }else{
-    continue;
-    }
-
-    $filename = substr(md5($imgurl), 0, 8);
-    $filetarget = $upload_dir['path'] . "/" . $filename . "." . $fileext;
-
-    if(!@$fp = fopen($filetarget, 'wb')) {
-    continue;
-    } else {
-    flock($fp, 2);
-    fwrite($fp, $get_file);
-    fclose($fp);
-    }
-
-    $post_ID = (int)$_POST['temp_ID2'];
-    $wp_filetype = wp_check_filetype($filename . "." . $fileext, false);
-    $url = $upload_dir['url'] . "/" . $filename . "." . $fileext;
-
-    $attachment = array('post_type' => 'attachment',
-    'post_mime_type' => $wp_filetype['type'],
-    'guid' => $url,
-    'post_parent' => $post_ID,
-    'post_title' => $post_title,
-    'post_content' => "",
-    );
-    $id = wp_insert_attachment($attachment, $filetarget);
-    $text = str_replace($imgurl, $url, $text);
-
-    }
-    $content = addslashes($text);
-    remove_filter('content_save_pre', 'auto_save_image');
-    return $content;
-    }
+}
+$content = addslashes($text);
+remove_filter('content_save_pre', 'auto_save_image');
+return $content;
+}
 ?>
