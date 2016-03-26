@@ -36,14 +36,15 @@ $document.ready(function(){
   
   /* sidehome Collapse */
   ilostQ('#sidehome li ul').hide();
-  ilostQ('#sidehome li ul:first').show();
+  ilostQ('#sidehome li ul:first').addClass('active').show();
   ilostQ('#sidehome h3:first').addClass('active');
   ilostQ('#sidehome h3').click(function(){
     if(ilostQ(this).next().is(':hidden')){
       ilostQ('#sidehome h3').removeClass('active');
-      ilostQ('#sidehome li ul').slideUp();
-      ilostQ(this).next().slideDown();
-      ilostQ(this).addClass('active');	
+      ilostQ('#sidehome li ul').slideUp(200);
+      ilostQ(this).next().slideDown(200);
+      ilostQ(this).addClass('active');
+      ilostQ(this).parent().find('> ul').addClass('active');
     }
   });
   /* Ajax Load article  */
