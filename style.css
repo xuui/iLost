@@ -221,7 +221,7 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 
 /* Home */
 .home.page #container .row{margin-top:0;}
-#proaside{background:#f2f2f2;padding:0 0 15px;box-shadow:none;}
+#proaside{background:#f7f7f7;padding:15px 0;box-shadow:none;}
 #proaside a img{margin:0 auto;transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
 #proaside a:hover img{transform:scale(1.03) rotate(2deg);-moz-transform:scale(1.03) rotate(2deg);-webkit-transform:scale(1.03) rotate(2deg)}
 article.home .aside{padding-bottom:10px;}
@@ -240,7 +240,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #sidehome h3:active::after,#sidehome h3.active::after{background-position:0 -158px}
 #sidehome li{margin-bottom:0;padding:0}
 #sidehome li ul{padding:4px 0;}
-#sidehome li ul.active{background:#f7f7f7;}
+#sidehome li ul.active{background:#f7f7f7;border-bottom:1px solid #e5e5e5;}
 #sidehome li li{padding:0 6px 0 16px;border:none;}
 #sidehome li a{background-position:100% -200px;height:32px;padding-right:16px;line-height:32px}
 #sidehome li a:hover{background-position:100% -305px}
