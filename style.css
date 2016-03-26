@@ -238,7 +238,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #sidehome h3:hover::after,#sidehome h3.hover::after{background-position:0 -52px}
 #sidehome h3:active,#sidehome h3.active{background-position:0% -40px}
 #sidehome h3:active::after,#sidehome h3.active::after{background-position:0 -158px}
-#sidehome li{margin-bottom:0;}
+#sidehome li{margin-bottom:0;padding:0}
 #sidehome li ul{padding:4px 0;}
 #sidehome li ul.active{background:#f7f7f7;}
 #sidehome li li{padding:0 6px 0 16px;border:none;}
