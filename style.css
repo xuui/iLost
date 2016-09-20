@@ -2,7 +2,7 @@
 Theme Name: iLost
 Theme URI: http://xuui.net/themes/ilost-release.html
 GitHub Theme URI: https://github.com/xuui/iLost
-Description:The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 3.4 or later is Version to use.
+Description:The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 4.6 or later is Version to use.
 Version: 1.9.8
 Author: Xu.hel
 Author URI: http://xuui.net/
@@ -12,7 +12,9 @@ License URI: LICENSE
 */
 @import url('scripts/rotation.css');
 
-/* Reset */
+.navbar .nav-brand{margin:0}
+
+/* Reset *//* 
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;}
 body{background:#eaeaea;color:#444;}
 a,a em,a strong{color:#08c;text-decoration:none}
@@ -29,10 +31,10 @@ input[type=text],textarea{cursor:url(images/text.cur),text;}
 a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images/pointer.cur),pointer;}
 .dropdown-menu{border-radius:3px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);}
 
-/* layout */
+/* layout *//* 
 .navbar{border:none;border-radius:0;margin:0;}
 .home .navbar,.page-template-mode-index .navbar{margin:0;}
-.container .row{position:relative;overflow:hidden;background:#fff;/*border:1px solid #dbdbdb;/*box-shadow:0 1px 3px rgba(0,0,0,.07);*/}
+.container .row{position:relative;overflow:hidden;background:#fff;/*border:1px solid #dbdbdb;/*box-shadow:0 1px 3px rgba(0,0,0,.07);*//* }
 .page-header{margin:16.5px 0;}
 .container.npd{padding:0;}
 #container{margin-bottom:30px;}
@@ -47,7 +49,7 @@ footer.container .row,#proaside{border:0;}
 header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .previous,.post-nav .next,section .more-link{background:url(images/lostbg.png) no-repeat}
 .post-nav .previous,.post-nav .next,aside li ul li a,#sidehome li ul li a,article.home .aside section,#sidehome li h3::after{background-image:url(images/lostli.png);background-repeat:no-repeat;}
 
-/* Menus Nav */
+/* Menus Nav *//* 
 .nav-brand,.navbar-default .navbar-brand{color:#000}
 .nav-brand{margin:0;display:inline}
 .navbar-brand{height:55px;line-height:28px}
@@ -66,12 +68,12 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .navbar .sub-menu{display:none;}
 .navbar-nav > li > .dropdown-menu{border-top:2px solid #08c;margin-top:-2px;}
 
-/* Search */
+/* Search *//* 
 #searchform{margin-top:15px}
 #searchform .screen-reader-text{display:none}
 #searchform #searchsubmit{padding:6px 20px 5px;}
 
-/* Post */
+/* Post *//* 
 section{margin:30px 10px;text-align:left}
 section .title{margin-bottom:15px;}
 section .title h3{float:right;margin:0;padding:3px 0 0;font-size:1em;color:#a5acb0}
@@ -98,7 +100,7 @@ section .related .thumbnail img{width:100px;height:100px}
 #authorbox .avatar{float:left;background:#fff;border-radius:32px;box-shadow:0 1px 2px rgba(0,0,0,.13),0 1px 3px rgba(0,0,0,.34) inset;margin:0 6px 0 0;width:48px;height:48px}
 #authorbox .author a{color:#444;font-weight:700}
 
-/* Sidebar */
+/* Sidebar *//* 
 aside.affix{top:0;}
 aside h3{clear:both;border-bottom:1px solid #e6e6e6;margin-top:10px;margin-bottom:0;padding:0 16px;height:29px;line-height:29px;color:#555;font-size:1em;font-weight:700;}
 aside h3:hover{color:#000;}
@@ -128,7 +130,7 @@ aside #wp-calendar caption{text-align: center;color: #000;font-weight:700;}
 aside .reavatar{padding:8px 3px 0}
 aside .reavatar a .avatar{margin:5px;}
 
-/* Comments */
+/* Comments *//* 
 #comments{overflow:hidden;margin:0 10px;text-align:left}
 #comments-title,#reply-title{margin-top:0;font-size:15pt;font-weight:300;color:#000}
 .comment-list ul,.comment-list ol{list-style:none;padding:0;}
@@ -168,7 +170,7 @@ aside .reavatar a .avatar{margin:5px;}
 #respond .comment-form-author input:focus,#respond .comment-form-email input:focus,#respond .comment-form-url input:focus,#respond textarea:focus{border-color:#f57900;box-shadow:0 0 5px #fd0}
 #respond .form-submit .btn{padding:6px 24px;}
 
-/* Navigation */
+/* Navigation *//* 
 .pager .previous a::before{content:'← ';}
 .pager .next a::after{content:' →';}
 
@@ -179,7 +181,7 @@ aside .reavatar a .avatar{margin:5px;}
 .post-nav a:hover{text-decoration:none}
 .post-nav .previous{float:left;background-position:-287px -440px;padding-left:16px}
 .post-nav .next{float:right;background-position:100% -387px;padding-right:16px;text-align:right}
-*/
+*//* 
 .post-link{clear:both;border:none;margin:20px 0;text-align:center;letter-spacing:-4px;}
 .post-link a,.post-link span{border:1px solid #ededec;padding:5px 10px;letter-spacing:0;}
 .post-link a{text-decoration:none;}
@@ -188,7 +190,7 @@ aside .reavatar a .avatar{margin:5px;}
 .post-link a span{background:none;border:none;padding:0}
 .post-link span.dots{background:#fff;border-color:#fff;color:#999}
 
-/* Footer */
+/* Footer *//* 
 footer.container aside.row{float:none;background:none;padding:0 0 10px;box-shadow:none;}
 footer aside{border:none;}
 footer aside ul{padding:0;}
@@ -204,7 +206,7 @@ footer p.line{border-bottom:1px solid #cfcfcf;border-color:rgba(0,0,0,.0-6)}
 footer p.line span{color:#ccc}
 footer .alignright{margin:0}
 
-/* Page */
+/* Page *//* 
 section.page .post-meta{background:none;display:none;padding:0}
 .mode-about .avatar-warp{float:left;overflow:hidden;position:relative;background:#fff;margin:5px 15px 5px 5px;width:74px;height:74px}
 .mode-about .avatar-warp span{position:absolute;background:url(images/author_warp.png) no-repeat;background-size:74px 74px;width:74px;height:74px}
@@ -212,14 +214,14 @@ section.page .post-meta{background:none;display:none;padding:0}
 section.page #readerwall .avatar{margin:0;border:none;padding:0}
 .page .page-header{background:transparent url(images/lostbg.png) repeat-x;border:none;margin:0;height:70px;width:100%;text-align:left}
 .page .page-header h1{margin:0;padding:0 32px;line-height:67px;font-size:20px;font-weight:400}
-/*.page #rotation,.single #rotation{margin-bottom:0;}*/
+/*.page #rotation,.single #rotation{margin-bottom:0;}*//* 
 .page aside{margin-top:-3px;}
 
-/* Archive */
+/* Archive *//* 
 section.archive{overflow:hidden;background:#f0f2f2;border:1px solid #e8e8e8;margin:5px 0 10px;padding:5px 15px;text-align:left;border-radius:5px}
 section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:left}
 
-/* Home */
+/* Home *//* 
 .home.page #container .row{margin-top:0;}
 #proaside{background:#f7f7f7;padding:15px 0;box-shadow:none;}
 #proaside a img{margin:0 auto;transition:all .2s ease-out;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out}
@@ -246,7 +248,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #sidehome li a:hover{background-position:100% -305px}
 #sidehome li a:active{background-position:100% -252px}
 
-/* Archives */
+/* Archives *//* 
 #archives h2,#archives h3{font-size:18px;margin-top:0}
 #archives ul{margin:0;padding:0;}
 #archives .arslink{float:left;display:block;margin:0 0 20px;padding:0;width:100%;list-style-type:none}
@@ -259,7 +261,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #archives .ulpost li a{overflow:hidden;display:block;padding:0 1em;border:none;color:#666;white-space:nowrap;text-overflow:ellipsis}
 #archives .ulpost li a:hover{border-color:#08f;color:#08c;text-decoration:none}
 
-/* Linkpage */
+/* Linkpage *//* 
 #linkpage{margin:0;padding:0 0 10px 0px}
 #linkpage ul{margin:0;padding:0;}
 #linkpage h2{margin:0 0 10px;line-height:25px;color:#1b232a;font-size:19px;font-weight:400;text-shadow:1px 1px 2px #999}
@@ -268,7 +270,7 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #linkpage li ul li a{display:block;border:1px solid #f7f7f7;font-size:1em;text-decoration:none;border-radius:3px;white-space:nowrap;text-overflow:ellipsis}
 #linkpage li ul li a:hover{background:#0fade5;border-color:#08f;color:#fff;text-shadow:0 1px 0 #08f}
 
-/* Error 404 */
+/* Error 404 *//* 
 body.error{background:#dee0e0}
 body.error #wrapper{width:480px;margin:66px auto 0}
 body.error img{background:transparent url(images/eding.gif) no-repeat center}
@@ -278,7 +280,7 @@ body.error p.button .btn-default{background:none;border-color:#999;}
 body.error footer{background:none;padding:0}
 body.error footer p{text-align:center}
 
-/* Other */
+/* Other *//* 
 .alignleft,img.alignleft{display:inline;float:left;margin-right:24px;margin-top:4px}
 .alignright,img.alignright{display:inline;float:right;margin-left:24px;margin-top:4px}
 .alignnone{}
@@ -311,7 +313,7 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 #gotop a:hover{background-position:0 100%;text-decoration:none}
 section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_paybys{text-shadow:none}
 
-/* Rotation */
+/* Rotation *//* 
 #rotation{margin-bottom:20px;}
 #rotation .slides li{position:relative;background:#fff no-repeat top center;height:180px;background-size:100% auto}
 #rotation .flex-caption{position:absolute;background-image:linear-gradient(to bottom,rgba(0,0,0,.07) 0%, rgba(0,0,0,.2) 100%);background-repeat:repeat-x;border-top:1px solid rgba(255,255,255,.13);bottom:0;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:15px;text-align:center;text-shadow:0 -1px 0 #000;}
@@ -322,7 +324,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #rotation .flex-direction-nav a.flex-next:hover{background-position:-64px 50%;right:0}
 #rotation .flex-direction-nav a.flex-prev:hover{background-position:15px 50%;left:0}
 
-/* Share */
+/* Share *//* 
 #postshare{margin:10px 0;width:100%;height:32px}
 #share{position:relative;background:#fff;border:1px solid #ededed;border-radius:5px;padding:5px 10px;list-style:none;z-index:1000;}
 #share.fixed{position:fixed;bottom:0;border-color:rgba(0,0,0,.2);margin-bottom:0;z-index:9998;box-shadow:0 2px 4px 0 rgba(0,0,0,.14),0 2px 3px -2px rgba(0,0,0,.2),0 0 8px 0 rgba(0,0,0,.12);}
