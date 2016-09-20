@@ -1,4 +1,5 @@
 *.log
+_*
 .htaccess
 sitemap.xml
 sitemap.xml.gz
