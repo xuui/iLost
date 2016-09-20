@@ -1,6 +1,6 @@
 <?php get_header();?>
-<div id="container">
-<article>
+<div id="row" class="row">
+<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php if(ilost_embedgSearch()){?>
   <section>
   	<div id="cse" style="width:100%;"><?php printf(__('Search results for "%s"','iLost'),get_search_query());?> Loading...
@@ -23,7 +23,7 @@
       the_excerpt();?>
     </div>
     <div class="post-meta">
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags('Tags: ',' | ','');?><div class="clear"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><?php the_tags('Tags: ',' | ','');?>&nbsp;<i class="clearfix"></i>
     </div>
   </section>
   <?php }?>
@@ -42,6 +42,6 @@
   <?php }}?>
 </article>
 <?php get_sidebar();?>
-<div class="clear"></div>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

@@ -1,6 +1,6 @@
 <?php get_header();?>
-<div id="container">
-<article>
+<div id="row" class="row">
+<article class="col-xl-9 col-md-9 col-sm-12 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
   <?php if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div class="title">
@@ -8,22 +8,22 @@
       <small><?php the_time('m.d.Y');?>, <?php the_category(', ');?>, by <?php the_author_posts_link();?><?php if(function_exists('the_views')){?>, <?php the_views();}?>.<?php edit_post_link(__('Edit','iLost'),' [',']&#187;');?></small>
     </div>
     <div class="entry">
-      <?php the_post_thumbnail(array(960,240));?>
+      <?php ilost_getshare();the_post_thumbnail(array(960,240));?>
     </div>
-    <?php ilost_getshare();?>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<p class="text-right">[',']</p>');?>&nbsp;<i class="clearfix"></i>
     </div>
     <?php ilost_adgpostend();?>
-    <nav class="post-nav">
-      <span class="previous"><?php previous_post_link('%link');?></span>
-      <span class="next"><?php next_post_link('%link');?></span>
-      <div class="clear"></div>
+    <nav>
+      <ul class="pager">
+        <li class="next"><?php previous_post_link('%link');?></li>
+        <li class="previous"><?php next_post_link('%link');?></li>
+        <li class="clearfix"></li>
+      </ul>
     </nav>
   </section>
   <?php }}?>
 </article>
-<?php get_sidebar();?>
-<div class="clear"></div>
+<i class="clearfix"></i>
 </div>
 <?php get_footer();?>

@@ -1,12 +1,12 @@
-<aside id="aside">
+<aside id="aside" class="col-xl-3 col-md-3 col-sm-4 hidden-xs">
   <?php $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
   if(is_single()){if(have_posts()){while(have_posts()){the_post();
-	$demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}
-	$downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}
-	$paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}
+	$demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a class=\"btn btn-success btn-lg btn-block\" href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}
+	$downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a class=\"btn btn-primary btn-lg btn-block\" href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}
+	$paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a class=\"btn btn-info btn-lg btn-block\" href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}
   }}}}
   ilost_adgsidebartop();?>
-  <ul class="clear">
+  <ul id="siderbar" class="clear">
   <?php if(is_page()){$children=wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');if($children){?>
     <li><h3><?php the_title();?></h3><ul><?php echo $children;?></ul></li>
   <?php }if(!function_exists('dynamic_sidebar')||!dynamic_sidebar('page-sidebar')){
