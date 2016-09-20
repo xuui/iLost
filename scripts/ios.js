@@ -1,0 +1,1 @@
+(function($){$=jQuery.noConflict();$(document).ready(function(){if(window.navigator.standalone){$('a').click(function(event){event.preventDefault();window.location=$(this).attr('href');});}});})(jQuery);

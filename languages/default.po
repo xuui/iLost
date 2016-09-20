@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-08 21:13+0800\n"
-"PO-Revision-Date: 2015-10-08 21:13+0800\n"
-"Last-Translator: Xu.hel <<zvzhssj@gmail.com>>\n"
-"Language-Team: Xu.Design <xw@xuui.net>\n"
+"POT-Creation-Date: 2013-06-08 22:29+0800\n"
+"PO-Revision-Date: 2013-06-08 22:29+0800\n"
+"Last-Translator: Xu.hel <xuui@outlook.com>\n"
+"Language-Team: Xu.Design <xu@xuui.net>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,50 +13,74 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:5 ../header.php:11
+#: ../404.php:5 ../header.php:6
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../archive.php:6
+msgid "Archive for the &#8216;"
+msgstr ""
+
+#: ../archive.php:6
+msgid "&#8217; Category"
+msgstr ""
+
+#: ../archive.php:7
+msgid "Posts Tagged &#8216;"
+msgstr ""
+
+#: ../archive.php:7
+msgid "&#8217;"
+msgstr ""
+
+#: ../archive.php:8 ../archive.php:9 ../archive.php:10
+msgid "Archive for "
+msgstr ""
+
+#: ../archive.php:11
+msgid "Archive for Author: "
+msgstr ""
+
+#: ../archive.php:12
+msgid "Blog Archives"
+msgstr ""
+
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "No Comments"
 msgstr ""
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "% Comments"
 msgstr ""
 
-#: ../archive.php:9 ../archive.php:19 ../attachment.php:8 ../attachment.php:14
-#: ../index.php:9 ../index.php:18 ../mode.about.php:14 ../mode.archives.php:15
-#: ../mode.guestbook.php:13 ../mode.links.php:11 ../page.php:12
-#: ../search.php:19 ../search.php:29 ../single-ilostshow.php:8
-#: ../single-ilostshow.php:14 ../single.php:9 ../single.php:28
+#: ../archive.php:19 ../archive.php:26 ../attachment.php:8
+#: ../attachment.php:14 ../index.php:8 ../index.php:14 ../mode.about.php:14
+#: ../mode.archives.php:15 ../mode.guestbook.php:13 ../mode.links.php:10
+#: ../page.php:12 ../search.php:19 ../search.php:26 ../single-ilostshow.php:8
+#: ../single-ilostshow.php:15 ../single.php:8 ../single.php:26
 msgid "Edit"
 msgstr ""
 
-#: ../archive.php:14 ../index.php:13 ../search.php:24 ../single.php:15
-msgid "View this article need to login."
-msgstr ""
-
-#: ../archive.php:19 ../attachment.php:15 ../index.php:18 ../single.php:29
+#: ../archive.php:26 ../attachment.php:15 ../index.php:14 ../single.php:27
 msgid "Tags: "
 msgstr ""
 
-#: ../archive.php:28 ../index.php:27 ../search.php:38
+#: ../archive.php:35 ../index.php:23 ../search.php:35
 msgid "Not Found"
 msgstr ""
 
-#: ../archive.php:30 ../index.php:29 ../search.php:40
+#: ../archive.php:37 ../index.php:25 ../search.php:37
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: ../archive.php:31 ../index.php:30 ../search.php:41
+#: ../archive.php:38 ../index.php:26 ../search.php:38
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
@@ -68,327 +92,320 @@ msgid ""
 msgstr ""
 
 #: ../comments.php:6
-msgid "One Response"
+#, php-format
+msgid "One Response to %2$s"
 msgstr ""
 
 #: ../comments.php:6
 #, php-format
-msgid "%1$s Responses"
+msgid "%1$s Responses to %2$s"
 msgstr ""
 
 #: ../comments.php:12
 msgid "Comments are closed."
 msgstr ""
 
-#: ../comments.php:16
-msgid "Name"
-msgstr ""
-
-#: ../comments.php:17
-msgid "Email"
-msgstr ""
-
-#: ../comments.php:18
-msgid "Website"
-msgstr ""
-
-#: ../footer.php:3
+#: ../footer.php:2
 msgid "Back Top"
 msgstr ""
 
-#: ../footer.php:6
+#: ../footer.php:5
 msgid " Archives"
 msgstr ""
 
-#: ../footer.php:20
+#: ../footer.php:19
 msgid " &brvbar; "
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Share this post:"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Facebook"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Twitter"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Delicious"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1 ../include/options.php:2
 msgid "Fanfou"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "QQ Weibo"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Sina Weibo"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "163 Weibo"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "kaixin001"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Renren"
 msgstr ""
 
-#: ../functions.php:17
+#: ../functions.php:1
 msgid "Douban"
 msgstr ""
 
-#: ../functions.php:25
+#: ../functions.php:1
 #, php-format
-msgid "%1$s <small><time pubdate datetime=\"%2$s\">%3$s</time></small>"
+msgid "%1$s %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: ../functions.php:25
+#: ../functions.php:1
 #, php-format
 msgid "%1$s %2$s"
 msgstr ""
 
-#: ../functions.php:26
+#: ../functions.php:1
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: ../functions.php:28 ../functions.php:34
-msgid "[Edit]"
-msgstr ""
-
-#: ../functions.php:34
+#: ../functions.php:1
 msgid "Pingback:"
 msgstr ""
 
-#: ../functions.php:45
-msgid "登录才能浏览:"
+#: ../functions.php:1
+msgid "[Edit]"
 msgstr ""
 
-#: ../functions.php:47
-msgid "浏览这个篇文章的用户等级为:"
-msgstr ""
-
-#: ../functions.php:49
-msgid "用户等级0~10 留空为所有人都可以看。"
-msgstr ""
-
-#: ../header.php:11 ../search.php:6 ../search.php:14
+#: ../header.php:6 ../search.php:6 ../search.php:14
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: ../include/core.php:4
-msgid "iLost SideBar"
-msgstr ""
-
-#: ../include/core.php:6
-msgid " theme's SideBar."
-msgstr ""
-
-#: ../include/core.php:13
-msgid "Home Page Right SideBar"
-msgstr ""
-
-#: ../include/core.php:15
-msgid " theme's Home page template of right sidebar."
-msgstr ""
-
-#: ../include/core.php:22
-msgid "Home Page Left SideBar"
-msgstr ""
-
-#: ../include/core.php:24
-msgid " theme's Home page template of left sidebar."
-msgstr ""
-
-#: ../include/core.php:31
-msgid "Page SideBar"
-msgstr ""
-
-#: ../include/core.php:33
-msgid " theme's page sidebar."
-msgstr ""
-
-#: ../include/core.php:40
-msgid "Footer SideBar"
-msgstr ""
-
-#: ../include/core.php:42
-msgid " theme' footer sidebar, This can only be placed on 5 widget."
-msgstr ""
-
-#: ../include/core.php:49
-msgid "Primary Navigation"
-msgstr ""
-
-#: ../include/core.php:81
-msgid "Excerpt"
-msgstr ""
-
-#: ../include/core.php:83 ../index.php:12 ../index.php:14 ../mode.about.php:10
-#: ../mode.guestbook.php:9 ../page.php:8
+#: ../index.php:11 ../mode.about.php:10 ../mode.guestbook.php:9 ../page.php:8
+#: ../include/core.php:2
 msgid "Learn more"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../mode.archives.php:11
+msgid "Recent Articles"
+msgstr ""
+
+#: ../sidebar.php:4 ../single.php:18
+msgid "View Demo"
+msgstr ""
+
+#: ../sidebar.php:5 ../single.php:19
+msgid "Download Now"
+msgstr ""
+
+#: ../sidebar.php:6 ../single.php:20
+msgid "Buy Now"
+msgstr ""
+
+#: ../single.php:15
+msgid "View this article need to login."
+msgstr ""
+
+#: ../single.php:22
+msgid ""
+"<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR "
+"code  -->"
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's SideBar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's Home page template of right sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's Home page template of left sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's page sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme' footer sidebar, This can only be placed on 5 widget."
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Excerpt"
+msgstr ""
+
+#: ../include/core.php:2
 msgid "Show images"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Show image"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Add Images"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Add New Images"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Edit Image"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Add Show image"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "View Image"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "Search Show images"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "No images found"
 msgstr ""
 
-#: ../include/core.php:97
+#: ../include/core.php:2
 msgid "No images found in Trash"
 msgstr ""
 
-#: ../include/core.php:147 ../include/options.php:153
+#: ../include/core.php:2 ../include/options.php:2
 msgid "Use Ctrl+Enter to reply comments"
 msgstr ""
 
-#: ../include/core.php:194
+#: ../include/core.php:2
 msgid "No Comments &raquo;"
 msgstr ""
 
-#: ../include/core.php:194
+#: ../include/core.php:2
 msgid "1 Comment &raquo;"
 msgstr ""
 
-#: ../include/core.php:194
+#: ../include/core.php:2
 msgid "% Comments &raquo;"
 msgstr ""
 
-#: ../include/core.php:208
+#: ../include/core.php:2
 msgid "Related Post:"
 msgstr ""
 
-#: ../include/core.php:220
+#: ../include/core.php:2
 msgid "Author"
 msgstr ""
 
-#: ../include/core.php:221
+#: ../include/core.php:2
 msgid "Author description"
 msgstr ""
 
-#: ../include/options.php:76
+#: ../include/core.php:2
+msgid "Pagination"
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[Update] "
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[New] "
+msgstr ""
+
+#: ../include/options.php:2
 msgid "Settings saved."
 msgstr ""
 
-#: ../include/options.php:78
+#: ../include/options.php:2
 msgid "Settings have been restored to default."
 msgstr ""
 
-#: ../include/options.php:79 ../include/options.php:82
-#: ../include/options.php:215
+#: ../include/options.php:2
 msgid " Options"
 msgstr ""
 
-#: ../include/options.php:82 ../include/options.php:217
+#: ../include/options.php:2
 msgid "Script Code"
 msgstr ""
 
-#: ../include/options.php:116
+#: ../include/options.php:2
 msgid "Thank you for purchasing this theme, designed by the Xu.hel."
 msgstr ""
 
-#: ../include/options.php:121 ../include/options.php:216
+#: ../include/options.php:2
 msgid "General Options"
 msgstr ""
 
-#: ../include/options.php:122
+#: ../include/options.php:2
 msgid "Custom Logo picture"
 msgstr ""
 
-#: ../include/options.php:125
+#: ../include/options.php:2
 msgid "Please enter the URL address of the Logo picture."
 msgstr ""
 
-#: ../include/options.php:128
+#: ../include/options.php:2
 msgid "Custom Favicon"
 msgstr ""
 
-#: ../include/options.php:131
+#: ../include/options.php:2
 msgid "Please enter the URL address of the Favicon icon."
 msgstr ""
 
-#: ../include/options.php:134
+#: ../include/options.php:2
 msgid "Sidebar float:"
 msgstr ""
 
-#: ../include/options.php:135
+#: ../include/options.php:2
 msgid "Left"
 msgstr ""
 
-#: ../include/options.php:136
+#: ../include/options.php:2
 msgid "Right"
 msgstr ""
 
-#: ../include/options.php:138
+#: ../include/options.php:2
 msgid "Custom RSS Subscription"
 msgstr ""
 
-#: ../include/options.php:139
+#: ../include/options.php:2
 msgid "Is empty, use the default automatic WordPress address. "
 msgstr ""
 
-#: ../include/options.php:141
+#: ../include/options.php:2
 msgid "Search engine keywords"
 msgstr ""
 
-#: ../include/options.php:142
+#: ../include/options.php:2
 msgid ""
 "Keywords using a comma (\",\") between them. Is empty, the automatic "
 "acquisition."
 msgstr ""
 
-#: ../include/options.php:144
+#: ../include/options.php:2
 msgid "Google custom search"
 msgstr ""
 
-#: ../include/options.php:144 ../include/options.php:158
-#: ../include/options.php:165 ../include/options.php:167
+#: ../include/options.php:2
 msgid "Enabled"
 msgstr ""
 
-#: ../include/options.php:146
+#: ../include/options.php:2
 #, php-format
 msgid ""
 "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
@@ -396,240 +413,266 @@ msgid ""
 "code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
 msgstr ""
 
-#: ../include/options.php:146
+#: ../include/options.php:2
 msgid "http://www.google.com/coop/cse/"
 msgstr ""
 
-#: ../include/options.php:148
+#: ../include/options.php:2
 msgid "Embedded in the site search results"
 msgstr ""
 
-#: ../include/options.php:151
+#: ../include/options.php:2
+msgid "Enable Sidebar follow"
+msgstr ""
+
+#: ../include/options.php:2
 msgid "Enable Google + 1 button"
 msgstr ""
 
-#: ../include/options.php:155
+#: ../include/options.php:2
+msgid "Automatically copy the article URL"
+msgstr ""
+
+#: ../include/options.php:2
+msgid ""
+"Copy operation is automatically appended to the current article addresses to "
+"the clipboard."
+msgstr ""
+
+#: ../include/options.php:2
 msgid "Focus image shows quantity"
 msgstr ""
 
-#: ../include/options.php:156
+#: ../include/options.php:2
 msgid "The default show 4 images"
 msgstr ""
 
-#: ../include/options.php:158
+#: ../include/options.php:2
 msgid "Related articles"
 msgstr ""
 
-#: ../include/options.php:160
+#: ../include/options.php:2
 msgid "Type:"
 msgstr ""
 
-#: ../include/options.php:160
+#: ../include/options.php:2
 msgid "Post lists"
 msgstr ""
 
-#: ../include/options.php:160
+#: ../include/options.php:2
 msgid "thumbnail"
 msgstr ""
 
-#: ../include/options.php:161
+#: ../include/options.php:2
 msgid "Number:"
 msgstr ""
 
-#: ../include/options.php:162
+#: ../include/options.php:2
 msgid "The default display 5 articles "
 msgstr ""
 
-#: ../include/options.php:165
+#: ../include/options.php:2
 msgid "Article footer display author information"
 msgstr ""
 
-#: ../include/options.php:167
+#: ../include/options.php:2
 msgid "GrowlBox pop-up tips"
 msgstr ""
 
-#: ../include/options.php:169
+#: ../include/options.php:2
 msgid "Text...##Title#Pop-up bubble title"
 msgstr ""
 
-#: ../include/options.php:170
+#: ../include/options.php:2
 msgid ""
 "Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
 "title, can do not have a title. Is empty is not GrowlBox tip box popup."
 msgstr ""
 
-#: ../include/options.php:173
+#: ../include/options.php:2
 msgid "."
 msgstr ""
 
-#: ../include/options.php:177
+#: ../include/options.php:2
+msgid "Fanfou Synchronization"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Fanfou authorization code:"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Get Authorization Code"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "To obtain the authorization code needs to be saved to take effect."
+msgstr ""
+
+#: ../include/options.php:2
 msgid "jQuery Library"
 msgstr ""
 
-#: ../include/options.php:178
+#: ../include/options.php:2
 msgid "Source URL"
 msgstr ""
 
-#: ../include/options.php:178
+#: ../include/options.php:2
 msgid "WordPress Default"
 msgstr ""
 
-#: ../include/options.php:180
-msgid "jQurey.com"
+#: ../include/options.php:2
+msgid "Google's CDN"
 msgstr ""
 
-#: ../include/options.php:181
+#: ../include/options.php:2
+msgid "Microsoft's CDN "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "jQurey's CDN "
+msgstr ""
+
+#: ../include/options.php:2
 msgid "Custom URL: "
 msgstr ""
 
-#: ../include/options.php:181
+#: ../include/options.php:2
 msgid "http:///"
 msgstr ""
 
-#: ../include/options.php:186
+#: ../include/options.php:2
 msgid "Google Analytics statistics"
 msgstr ""
 
-#: ../include/options.php:187
+#: ../include/options.php:2
 msgid "Google Analytics statistics code"
 msgstr ""
 
-#: ../include/options.php:192
+#: ../include/options.php:2
 msgid "AD Codes"
 msgstr ""
 
-#: ../include/options.php:193
+#: ../include/options.php:2
 msgid "Side bar at the top advertising"
 msgstr ""
 
-#: ../include/options.php:196
+#: ../include/options.php:2
 msgid "Side bar at the bottom of the advertising"
 msgstr ""
 
-#: ../include/options.php:199
+#: ../include/options.php:2
 msgid "The article embedded advertising"
 msgstr ""
 
-#: ../include/options.php:202
+#: ../include/options.php:2
 msgid "The article tail advertising"
 msgstr ""
 
-#: ../include/options.php:207
+#: ../include/options.php:2
 msgid "Save Changes"
 msgstr ""
 
-#: ../include/options.php:207
+#: ../include/options.php:2
 msgid "Restore to defaults"
 msgstr ""
 
-#: ../include/options.php:218
+#: ../include/options.php:2
 msgid "Menus"
 msgstr ""
 
-#: ../include/options.php:219
+#: ../include/options.php:2
 msgid "Custom Background"
 msgstr ""
 
-#: ../include/options.php:220
+#: ../include/options.php:2
 msgid "Edit Themes"
 msgstr ""
 
-#: ../include/options.php:293
+#: ../include/options.php:2
 msgid "Search for:"
 msgstr ""
 
-#: ../include/widgets.php:4
-msgid "iLost Category list"
+#: ../include/widgets.php:2
+msgid "Appear in the Footer of a specified category articles"
 msgstr ""
 
-#: ../include/widgets.php:5
-msgid "显示指定分类的文章"
+#: ../include/widgets.php:2
+msgid "iLost Footer article list"
 msgstr ""
 
-#: ../include/widgets.php:29 ../include/widgets.php:61
-msgid "Categories"
+#: ../include/widgets.php:2
+msgid "Categories ID:"
 msgstr ""
 
-#: ../include/widgets.php:31 ../include/widgets.php:63
-#: ../include/widgets.php:99 ../include/widgets.php:132
-#: ../include/widgets.php:165 ../include/widgets.php:198
-msgid "Show post counts"
+#: ../include/widgets.php:2
+msgid "Number of posts to show:"
 msgstr ""
 
-#: ../include/widgets.php:47
-msgid "iLost Home template article list"
-msgstr ""
-
-#: ../include/widgets.php:47
+#: ../include/widgets.php:2
 msgid "Home template in the right sidebar of articles specified category show"
 msgstr ""
 
-#: ../include/widgets.php:66
+#: ../include/widgets.php:2
+msgid "iLost Categories article list"
+msgstr ""
+
+#: ../include/widgets.php:2
 msgid "Show excerpt"
 msgstr ""
 
-#: ../include/widgets.php:79
-msgid "iLost Random Posts"
-msgstr ""
-
-#: ../include/widgets.php:79
+#: ../include/widgets.php:2
 msgid "Display random sequence articles"
 msgstr ""
 
-#: ../include/widgets.php:86 ../include/widgets.php:98
+#: ../include/widgets.php:2
+msgid "iLost Random Posts"
+msgstr ""
+
+#: ../include/widgets.php:2
 msgid "Random Articles"
 msgstr ""
 
-#: ../include/widgets.php:97 ../include/widgets.php:130
-#: ../include/widgets.php:163 ../include/widgets.php:196
+#: ../include/widgets.php:2
 msgid "Title:"
 msgstr ""
 
-#: ../include/widgets.php:112
-msgid "iLost Recent Comments"
-msgstr ""
-
-#: ../include/widgets.php:112
-msgid "The most recent comments"
-msgstr ""
-
-#: ../include/widgets.php:119 ../include/widgets.php:131
-msgid "Recent Comments"
-msgstr ""
-
-#: ../include/widgets.php:145
-msgid "iLost Recent Avatar"
-msgstr ""
-
-#: ../include/widgets.php:145
-msgid "The most recent avatars"
-msgstr ""
-
-#: ../include/widgets.php:152 ../include/widgets.php:164
-msgid "Recent Avatar"
-msgstr ""
-
-#: ../include/widgets.php:178
-msgid "iLost Most Popular Articles"
-msgstr ""
-
-#: ../include/widgets.php:178 ../include/widgets.php:185
-#: ../include/widgets.php:197
+#: ../include/widgets.php:2
 msgid "Most Popular Articles"
 msgstr ""
 
-#: ../mode.archives.php:11
-msgid "Recent Articles"
+#: ../include/widgets.php:2
+msgid "iLost Most Popular Articles"
 msgstr ""
 
-#: ../sidebar.php:4 ../single.php:20
-msgid "View Demo"
+#: ../include/widgets.php:2
+msgid "The most recent comments"
 msgstr ""
 
-#: ../sidebar.php:5 ../single.php:21
-msgid "Download Now"
+#: ../include/widgets.php:2
+msgid "iLost Recent Comments"
 msgstr ""
 
-#: ../sidebar.php:6 ../single.php:22
-msgid "Buy Now"
+#: ../include/widgets.php:2
+msgid "Recent Comments"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Number of comments to show:"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "The most recent avatars"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Number of avatars to show:"
 msgstr ""

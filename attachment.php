@@ -1,6 +1,6 @@
 <?php get_header();?>
-<div id="row" class="row">
-<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
+<div id="container">
+<article>
   <?php if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div class="title">
@@ -12,7 +12,7 @@
     </div>
     <div class="post-meta">
       <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
-      the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
+      the_tags(__('Tags: ','iLost'),' | ','');?><div class="clear"></div>
     </div>
     <nav class="post-nav">
       <span class="previous"><?php previous_post_link('%link');?></span>
@@ -23,6 +23,6 @@
   <?php }}?>
 </article>
 <?php get_sidebar();?>
-<i class="clearfix"></i>
+<div class="clear"></div>
 </div>
 <?php get_footer();?>

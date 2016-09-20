@@ -1,8 +1,8 @@
 <?php /* Template Name: Archives */
 get_header();?>
-<div id="row" class="row">
-<div class="page-header"><h1><?php the_title();?></h1></div>
-<article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
+<div id="container">
+<div class="pageheader"><h1><?php the_title();?></h1></div>
+<article>
   <?php ilost_breadcrumb();if(have_posts()){while(have_posts()){the_post();?>
   <section id="post-<?php the_ID();?>" <?php post_class();?>>
     <div id="archives" class="entry">
@@ -12,12 +12,12 @@ get_header();?>
       <ul class="ulpost"><?php wp_get_archives('type=postbypost&limit=40');?><li class="clearer"></li></ul>
     </div>
     <div class="post-meta"<?php ilost_lgshow();?>>
-      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clearfix"></div>
+      <?php edit_post_link(__('Edit','iLost'),'<span class="alignright">[',']</span>');?><div class="clear"></div>
     </div>
   </section>
   <?php }}?>
 </article>
 <?php get_sidebar();?>
-<i class="clearfix"></i>
+<div class="clear"></div>
 </div>
 <?php get_footer();?>
