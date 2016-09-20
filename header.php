@@ -41,7 +41,7 @@
       <?php ilost_getlogoimg();?>
     </div>
     <div class="collapse navbar-collapse" id="ilost-collapse">
-      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav navbar-right'));?>
+      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav navbar-right','walker'=>new ilost_strapnav() ));?>
     </div>
   </div>
 </nav>

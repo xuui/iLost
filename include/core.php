@@ -1,4 +1,4 @@
-<?php //Core Functions.
+<?php // Core Functions.
 function ilost_init(){
   register_sidebar(
     array('name'=>__('iLost SideBar','iLost'),
@@ -45,7 +45,7 @@ function ilost_init(){
     'before_title'=>'<h3 class="widgettitle">',
     'after_title'=>'</h3>')
   );
-  if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
+  //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
   register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
   add_action('admin_menu','ilost_excerpt_meta_box');
   add_action('admin_menu',array('ilostOption','addOptions'));
@@ -74,10 +74,10 @@ function ilost_init(){
   remove_action('wp_head','wp_generator');
   remove_action('admin_init','_wp_check_for_scheduled_split_terms');
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
-  if(!isset($content_width))$content_width=600;
+  if(!isset($content_width))$content_width=700;
 }
-function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
-function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
+//function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
+//function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
 function ilost_excerpt_meta_box(){add_meta_box('postexcerpt',__('Excerpt','iLost'),'ilost_excerpt_meta_box','page','normal','core');}
 function ilost_excerpt_length($length){return 200;}
 function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
@@ -123,7 +123,7 @@ function ilost_getstyles(){
   if(ilost_is_iphone()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
   }elseif(ilost_is_ipad()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/ipad.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"768x1004\" href=\"".ilost_path."/images/icons/screen_pad.png\" />\n";
   }elseif(ilost_is_wphone()){}
-  echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.css\" />\n";
+  echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
 }
 function ilost_enqueue_script(){
@@ -160,7 +160,7 @@ function ilost_rcomments($limit=5){
   $comments=get_comments(array('number'=>100,'status'=>'approve'));
   $wpchres=get_option('blog_charset');$exclude_emails=get_bloginfo('admin_email');$i=1;$ilostoutput='';
   foreach($comments as $comment){
-    $ilostoutput.='<li class="media"><div class="media-left">'.get_avatar($comment,64).'</div><div class="media-body"><a class="media-heading" href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>: <p>'.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'</p></div></li>'."\n";
+    $ilostoutput.='<li class="media"><div class="media-left">'.get_avatar($comment,64).'</div><div class="media-body"><a class="media-heading" href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>:<p>'.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'</p></div></li>'."\n";
     if($i==$limit){break;}$i++;
   }echo ent2ncr($ilostoutput);
 }
@@ -215,8 +215,8 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
 function ilost_postAuthor(){?>
   <div id="authorbox">
     <?php echo get_avatar(get_the_author_meta('email'),'96','wavatar');?>
-    <p><?php echo __('Author','iLost').': ';?> <span class="author"><?php the_author_posts_link();?></span></p>
-    <p><?php echo __('Author description','iLost').': '.get_the_author_meta('description');?></p>
+    <p><?php echo __('Author','iLost').':';?> <span class="author"><?php the_author_posts_link();?></span></p>
+    <p><?php echo __('Author description','iLost').':'.get_the_author_meta('description');?></p>
     <div class="clear"></div>
   </div>
 <?php
@@ -228,13 +228,13 @@ function ilost_pagenav($options=array()){
   if(!empty($options['prev_text'])){$out.='<li>'.get_previous_posts_link($options['prev_text']).'</li>';}
   foreach(range($start_page,$end_page) as $i){if($i==$paged && !empty($options['current_text'])){$current_page_text=str_replace('%PAGE_NUMBER%',number_format_i18n($i),$options['current_text']);$out.='<li class="active"><span>'.$current_page_text."</span></li>";}else{$out.=ilost_pgnavnum($i,'page',$options['page_text']);}}
   if(!empty($options['next_text'])){$out.='<li>'.get_next_posts_link($options['next_text'],$total_pages).'</li>';}$larger_page_end=0;
-  $out='<ul class="pagination">'."\n".$out."\n</ul>\n";
+  $out='<ul class="pagination pagination-sm">'."\n".$out."\n</ul>\n";
   echo apply_filters('ilost_pagenav',$out);
 }
 function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
 function ilost_fix_gravatar($avatar){
 $avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
 return $avatar;}
-function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i< ($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
-function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){$breadcrumb_opt=array();$breadcrumb_opt['home']=ilost_wp_name;$breadcrumb_opt['blog']="Blog";$breadcrumb_opt['prefix']="";$breadcrumb_opt['nofollowhome']=false;$breadcrumb_opt['singleparent']=0;$breadcrumb_opt['singlecatprefix']=true;$breadcrumb_opt['archiveprefix']="Archives for";$breadcrumb_opt['searchprefix']="Search for";global $wp_query,$post;function ilost_bold_or_not($input){if(is_category()|| is_tag()|| is_date()|| is_author()){return '<li class="active">'.$input.'</li>';}else{return '<li class="active">'.$input.'</li>';}}function ilost_get_category_parents($id,$link=FALSE,$separator='/',$nicename=FALSE){$chain='';$parent=@get_category($id);if(is_wp_error($parent)){return $parent;}if($nicename){$name=$parent->slug;}else{$name=$parent->cat_name;}if($parent->parent &&($parent->parent != $parent->term_id)){$chain.=get_category_parents($parent->parent,true,$separator,$nicename);}$chain.= ilost_bold_or_not($name);return $chain;}$nofollow=' ';if($breadcrumb_opt['nofollowhome']){$nofollow=' rel="nofollow" ';}$on_front=get_option('show_on_front');if($on_front=="page"){$homelink='<li><a'.$nofollow.'href="'.get_permalink(get_option('page_on_front')).'">'.$breadcrumb_opt['home'].'</a></li>';$bloglink=$homelink.' <li><a href="'.get_permalink(get_option('page_for_posts')).'">'.$breadcrumb_opt['blog'].'</a></li>';}else{$homelink='<li><a'.$nofollow.'href="'.ilost_wp_homeurl.'/'.'">'.$breadcrumb_opt['home'].'</a></li>';$bloglink=$homelink;}if(($on_front=="page" && is_front_page())||($on_front=="posts" && is_home())){$output=ilost_bold_or_not($breadcrumb_opt['home']);}elseif($on_front=="page" && is_home()){$output=$homelink.ilost_bold_or_not($breadcrumb_opt['blog']);}elseif(!is_page()){$output=$bloglink;if((is_single()|| is_category()|| is_tag()|| is_date()|| is_author())&& $breadcrumb_opt['singleparent']!=false){$output.='<li><a href="'.get_permalink($breadcrumb_opt['singleparent']).'">'.get_the_title($breadcrumb_opt['singleparent']).'</a></li>';}if(is_single()&& $breadcrumb_opt['singlecatprefix']){$cats=get_the_category();$cat=$cats[0];if(is_object($cat)){if($cat->parent != 0){$output.= get_category_parents($cat->term_id,true,'');}else{$output.= '<li><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></li>';}}}if(is_category()){$cat=intval(get_query_var('cat'));$output.=ilost_get_category_parents($cat,false,'');}elseif(is_tag()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_cat_title('',false));}elseif(is_date()){$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".single_month_title(' ',false));}elseif(is_author()){$user=get_userdatabylogin($wp_query->query_vars['author_name']);$output.=ilost_bold_or_not($breadcrumb_opt['archiveprefix']." ".$user->display_name);}elseif(is_search()){$output.=ilost_bold_or_not($breadcrumb_opt['searchprefix'].' "'.stripslashes(strip_tags(get_search_query())).'"');}else if(is_tax()){$taxonomy=get_taxonomy(get_query_var('taxonomy'));$term=get_query_var('term');$output.=$taxonomy->label .': '.ilost_bold_or_not($term );}else{$output.=ilost_bold_or_not(get_the_title());}}else{$post=$wp_query->get_queried_object();if(0==$post->post_parent ){$output=$homelink.ilost_bold_or_not(get_the_title());}else{if(isset($post->ancestors)){if(is_array($post->ancestors)){$ancestors=array_values($post->ancestors);}else{$ancestors=array($post->ancestors);}}else{$ancestors=array($post->post_parent);}$ancestors=array_reverse($ancestors);$ancestors[]=$post->ID;$links=array();foreach($ancestors as $ancestor){$tmp=array();$tmp['title']=strip_tags(get_the_title($ancestor));$tmp['url']=get_permalink($ancestor);$tmp['cur']=false;if($ancestor==$post->ID){$tmp['cur']=true;}$links[]=$tmp;}$output=$homelink;foreach($links as $link){if(!$link['cur']){$output.='<li><a href="'.$link['url'].'">'.$link['title'].'</a></li>';}else{$output.=ilost_bold_or_not($link['title']);}}}}if($breadcrumb_opt['prefix']!=""){$output=$breadcrumb_opt['prefix']." ".$output;}echo $prefix.$output.$suffix;}
+function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
+
 ?>
