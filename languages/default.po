@@ -1,213 +1,678 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: iLost Theme\n"
+"Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-17 20:25+0700\n"
-"PO-Revision-Date: 2011-08-17 20:25+0700\n"
-"Last-Translator: Xu.hel <xu@xuui.net>\n"
+"POT-Creation-Date: 2013-06-08 22:29+0800\n"
+"PO-Revision-Date: 2013-06-08 22:29+0800\n"
+"Last-Translator: Xu.hel <xuui@outlook.com>\n"
 "Language-Team: Xu.Design <xu@xuui.net>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:6
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:42
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:25
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:26
-msgid "Not Found"
+#: ../404.php:5 ../header.php:6
+msgid "Error 404 - Not Found"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/404.php:9
-msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
+#: ../archive.php:6
 msgid "Archive for the &#8216;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:7
+#: ../archive.php:6
 msgid "&#8217; Category"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
+#: ../archive.php:7
 msgid "Posts Tagged &#8216;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:9
+#: ../archive.php:7
 msgid "&#8217;"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:11
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:13
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:15
+#: ../archive.php:8 ../archive.php:9 ../archive.php:10
 msgid "Archive for "
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:17
+#: ../archive.php:11
 msgid "Archive for Author: "
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:19
+#: ../archive.php:12
 msgid "Blog Archives"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "No Comments"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
+#: ../archive.php:19 ../index.php:8 ../search.php:19
 msgid "% Comments"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:26
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/links.php:9
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:14
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:10
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:8
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:15
+#: ../archive.php:19 ../archive.php:26 ../attachment.php:8
+#: ../attachment.php:14 ../index.php:8 ../index.php:14 ../mode.about.php:14
+#: ../mode.archives.php:15 ../mode.guestbook.php:13 ../mode.links.php:10
+#: ../page.php:12 ../search.php:19 ../search.php:26 ../single-ilostshow.php:8
+#: ../single-ilostshow.php:15 ../single.php:8 ../single.php:26
 msgid "Edit"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:32
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/attachment.php:16
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:15
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/single.php:16
+#: ../archive.php:26 ../attachment.php:15 ../index.php:14 ../single.php:27
 msgid "Tags: "
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:45
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:28
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:29
+#: ../archive.php:35 ../index.php:23 ../search.php:35
+msgid "Not Found"
+msgstr ""
+
+#: ../archive.php:37 ../index.php:25 ../search.php:37
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archive.php:46
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:29
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:30
-msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+#: ../archive.php:38 ../index.php:26 ../search.php:38
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/archives.php:12
-msgid "Recent Articles"
+#: ../comments.php:2
+msgid ""
+"This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:3
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
+#: ../comments.php:6
 #, php-format
 msgid "One Response to %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:7
+#: ../comments.php:6
 #, php-format
 msgid "%1$s Responses to %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/comments.php:14
+#: ../comments.php:12
 msgid "Comments are closed."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-msgid "HOME"
+#: ../footer.php:2
+msgid "Back Top"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:5
+#: ../footer.php:5
+msgid " Archives"
+msgstr ""
+
+#: ../footer.php:19
 msgid " &brvbar; "
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:4
-msgid "RSS Feed"
+#: ../functions.php:1
+msgid "Share this post:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/footer.php:8
-msgid "Copyright &copy;2011 "
+#: ../functions.php:1
+msgid "Facebook"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:5
-msgid "Primary Navigation"
+#: ../functions.php:1
+msgid "Twitter"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:19
-msgid "Excerpt"
+#: ../functions.php:1
+msgid "Delicious"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:21
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/index.php:12
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/page.php:10
-msgid "Learn more"
+#: ../functions.php:1 ../include/options.php:2
+msgid "Fanfou"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
+#: ../functions.php:1
+msgid "QQ Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Sina Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "163 Weibo"
+msgstr ""
+
+#: ../functions.php:1
+msgid "kaixin001"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Renren"
+msgstr ""
+
+#: ../functions.php:1
+msgid "Douban"
+msgstr ""
+
+#: ../functions.php:1
 #, php-format
-msgid "%1$s at %2$s"
+msgid "%1$s %2$s <span class=\"says\">said:</span>"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:52
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
-msgid "[Edit]"
+#: ../functions.php:1
+#, php-format
+msgid "%1$s %2$s"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:56
+#: ../functions.php:1
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/functions.php:64
+#: ../functions.php:1
 msgid "Pingback:"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
+#: ../functions.php:1
+msgid "[Edit]"
+msgstr ""
+
+#: ../header.php:6 ../search.php:6 ../search.php:14
 #, php-format
 msgid "Search results for \"%s\""
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/header.php:5
-msgid "Error 404 - Not Found"
+#: ../index.php:11 ../mode.about.php:10 ../mode.guestbook.php:9 ../page.php:8
+#: ../include/core.php:2
+msgid "Learn more"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/search.php:5
+#: ../mode.archives.php:11
+msgid "Recent Articles"
+msgstr ""
+
+#: ../sidebar.php:4 ../single.php:18
+msgid "View Demo"
+msgstr ""
+
+#: ../sidebar.php:5 ../single.php:19
+msgid "Download Now"
+msgstr ""
+
+#: ../sidebar.php:6 ../single.php:20
+msgid "Buy Now"
+msgstr ""
+
+#: ../single.php:15
+msgid "View this article need to login."
+msgstr ""
+
+#: ../single.php:22
+msgid ""
+"<strong>Using mobile devices to quickly read:</strong><br>Please scan the QR "
+"code  -->"
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's SideBar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's Home page template of right sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's Home page template of left sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme's page sidebar."
+msgstr ""
+
+#: ../include/core.php:2
+msgid " theme' footer sidebar, This can only be placed on 5 widget."
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Excerpt"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Show images"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Show image"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Add Images"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Add New Images"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Edit Image"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Add Show image"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "View Image"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Search Show images"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "No images found"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "No images found in Trash"
+msgstr ""
+
+#: ../include/core.php:2 ../include/options.php:2
+msgid "Use Ctrl+Enter to reply comments"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "No Comments &raquo;"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "1 Comment &raquo;"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "% Comments &raquo;"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Related Post:"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Author"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Author description"
+msgstr ""
+
+#: ../include/core.php:2
+msgid "Pagination"
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[Update] "
+msgstr ""
+
+#: ../include/fanfou.php:3
+msgid "[New] "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Settings saved."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Settings have been restored to default."
+msgstr ""
+
+#: ../include/options.php:2
+msgid " Options"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Script Code"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Thank you for purchasing this theme, designed by the Xu.hel."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "General Options"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Custom Logo picture"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Please enter the URL address of the Logo picture."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Custom Favicon"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Please enter the URL address of the Favicon icon."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Sidebar float:"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Left"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Right"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Custom RSS Subscription"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Is empty, use the default automatic WordPress address. "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Search engine keywords"
+msgstr ""
+
+#: ../include/options.php:2
+msgid ""
+"Keywords using a comma (\",\") between them. Is empty, the automatic "
+"acquisition."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Google custom search"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Enabled"
+msgstr ""
+
+#: ../include/options.php:2
 #, php-format
-msgid "Search Results for: %s"
+msgid ""
+"Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
+"href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</"
+"code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:4
-msgid "Categories"
+#: ../include/options.php:2
+msgid "http://www.google.com/coop/cse/"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:7
+#: ../include/options.php:2
+msgid "Embedded in the site search results"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Enable Sidebar follow"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Enable Google + 1 button"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Automatically copy the article URL"
+msgstr ""
+
+#: ../include/options.php:2
+msgid ""
+"Copy operation is automatically appended to the current article addresses to "
+"the clipboard."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Focus image shows quantity"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "The default show 4 images"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Related articles"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Type:"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Post lists"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "thumbnail"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Number:"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "The default display 5 articles "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Article footer display author information"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "GrowlBox pop-up tips"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Text...##Title#Pop-up bubble title"
+msgstr ""
+
+#: ../include/options.php:2
+msgid ""
+"Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
+"title, can do not have a title. Is empty is not GrowlBox tip box popup."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Fanfou Synchronization"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Fanfou authorization code:"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Get Authorization Code"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "To obtain the authorization code needs to be saved to take effect."
+msgstr ""
+
+#: ../include/options.php:2
+msgid "jQuery Library"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Source URL"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "WordPress Default"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Google's CDN"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Microsoft's CDN "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "jQurey's CDN "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Custom URL: "
+msgstr ""
+
+#: ../include/options.php:2
+msgid "http:///"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Google Analytics statistics"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Google Analytics statistics code"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "AD Codes"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Side bar at the top advertising"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Side bar at the bottom of the advertising"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "The article embedded advertising"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "The article tail advertising"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Save Changes"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Restore to defaults"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Menus"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Custom Background"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Edit Themes"
+msgstr ""
+
+#: ../include/options.php:2
+msgid "Search for:"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Appear in the Footer of a specified category articles"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Footer article list"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Categories ID:"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Home template in the right sidebar of articles specified category show"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Categories article list"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Show excerpt"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Display random sequence articles"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Random Posts"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Random Articles"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Title:"
+msgstr ""
+
+#: ../include/widgets.php:2
 msgid "Most Popular Articles"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:14
+#: ../include/widgets.php:2
+msgid "iLost Most Popular Articles"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "The most recent comments"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Recent Comments"
+msgstr ""
+
+#: ../include/widgets.php:2
 msgid "Recent Comments"
 msgstr ""
 
-#: /Applications/MAMP/htdocs/wordpress/wp-content/themes/ilost/sidebar.php:20
-msgid "Meta"
+#: ../include/widgets.php:2
+msgid "Number of comments to show:"
 msgstr ""
 
+#: ../include/widgets.php:2
+msgid "The most recent avatars"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "iLost Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Recent Avatar"
+msgstr ""
+
+#: ../include/widgets.php:2
+msgid "Number of avatars to show:"
+msgstr ""
