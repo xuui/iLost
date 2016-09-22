@@ -41,7 +41,13 @@
       <?php ilost_getlogoimg();?>
     </div>
     <div class="collapse navbar-collapse" id="ilost-collapse">
-      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav navbar-right','walker'=>new ilost_strapnav() ));?>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <!--button type="submit" class="btn btn-default">Submit</button-->
+      </form>
+      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav() ));?>
     </div>
   </div>
 </nav>

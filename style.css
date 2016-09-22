@@ -12,7 +12,29 @@ License URI: LICENSE
 */
 @import url('scripts/rotation.css');
 
-.navbar .nav-brand{margin:0}
+body{background:#eee; color:#212121;}
+
+.navbar-default{background:#fff;border:none;border-radius:0;}
+.navbar-default .nav-brand{margin:0;height:64px;}
+.navbar-default .navbar-brand{color:#2196f3;}
+.navbar-default .navbar-brand,.navbar-nav > li > a{padding-top:22px;padding-bottom:22px;}
+.navbar-default .navbar-nav{float:none;text-align: center}
+.navbar-default .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1;}
+.navbar-default .navbar-nav .active a,
+.navbar-default .navbar-nav .active a:hover,
+.navbar-default .navbar-nav .active a:focus{background:#fafafa url(images/nav_active.png) no-repeat 50% 0%;border-bottom:3px solid #2196f3;padding-bottom:19px;color:#2196f3;}
+
+.navbar-form{margin:15px 0}
+
+.navbar-collapse{}
+
+
+
+
+
+
+
+
 
 /* Reset *//* 
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;}
