@@ -1,5 +1,5 @@
 <aside id="aside" class="col-xl-3 col-md-3 col-sm-4 hidden-xs">
-  <?php $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
+  <?php //$ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
   if(is_single()){if(have_posts()){while(have_posts()){the_post();
 	$demos=get_post_meta(get_the_ID(),"demo",$single=true);if($demos){echo "<section class=\"ilost_demo\"><a class=\"btn btn-success btn-lg btn-block\" href=\"".$demos."\">".__('View Demo','iLost')."</a></section>\n";}
 	$downloads=get_post_meta(get_the_ID(),"download",$single=true);if($downloads){echo "<section class=\"ilost_downloads\"><a class=\"btn btn-primary btn-lg btn-block\" href=\"".$downloads."\">".__('Download Now','iLost')."</a></section>\n";}

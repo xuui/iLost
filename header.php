@@ -52,4 +52,3 @@
   </div>
 </nav>
 <?php if(is_front_page()){ilost_getiloshow();}?>
-<div id="container" class="container">

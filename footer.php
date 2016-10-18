@@ -1,4 +1,3 @@
-</div>
 <footer class="container">
   <div id="gotop"><a href="javascript:;" onClick="ilosts.goTop();return false;" title="<?php _e('Back Top','iLost');?>"><?php _e('Back Top','iLost');?></a></div>
   <?php if(!is_front_page()){?>
