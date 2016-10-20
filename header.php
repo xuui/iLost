@@ -51,4 +51,4 @@
     </div>
   </div>
 </nav>
-<?php if(is_front_page()){ilost_getiloshow();}?>
+<?php //if(is_front_page()){ilost_getiloshow();}?>

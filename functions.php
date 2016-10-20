@@ -27,13 +27,15 @@ function ilost_getThumbnail_url(ID){
 
 function ilost_getiloshow(){
   $showlistloop=new WP_Query(array('post_type'=>'ilostshow','posts_per_page'=>ilost_ilshowNum()));if($showlistloop->have_posts()){?>
-<div class="container npd"><div id="rotation" class="flexslider">
+<div class="container-">
+<div id="rotation" class="flexslider">
   <ul class="slides">
     <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}$img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
     <li style="background-image:url(<?php echo $img_src[0];?>);"><a href="<?php echo $urlLink;?>" target="_blank"><?php //the_post_thumbnail('full');?><span class="flex-caption"><?php the_title()?></span></a></li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
-</div></div>
+</div>
+</div>
 <?php }wp_reset_postdata();
 }
 

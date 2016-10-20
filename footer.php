@@ -1,4 +1,5 @@
-<footer class="container">
+<footer>
+<div class="container">
   <div id="gotop"><a href="javascript:;" onClick="ilosts.goTop();return false;" title="<?php _e('Back Top','iLost');?>"><?php _e('Back Top','iLost');?></a></div>
   <?php if(!is_front_page()){?>
   <aside class="row  hidden-xs hidden-sm">
@@ -20,6 +21,7 @@
 	<p><span class="alignright"><?php wp_register('','');?></span><?php printf('Copyright &copy; 2006-2015 <a href="%1$s/" title="%2$s" rel="home">%2$s</a> &brvbar; Powered by <a href="http://wordpress.org/">WordPress</a>.',ilost_wp_homeurl,ilost_wp_name);?>
     </p>
   </div>
+</div>
 </footer>
 <?php wp_footer();?>
 <!--<?php echo get_num_queries();?> queries. <?php timer_stop(1);?> seconds. -->
