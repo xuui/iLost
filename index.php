@@ -1,7 +1,7 @@
 <?php get_header();?>
 <div class="contindex">
   <div class="container">
-    <div id="row" class="row">
+    <div class="row">
     <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
       <?php if(have_posts()){while(have_posts()){the_post();?>
       <section id="post-<?php the_ID();?>" <?php post_class();?>>

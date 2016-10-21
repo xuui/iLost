@@ -1,5 +1,7 @@
 <?php // Core Functions.
+
 function ilost_init(){
+
   register_sidebar(
     array('name'=>__('iLost SideBar','iLost'),
     'id'=>'ilost-sidebar',
@@ -9,6 +11,26 @@ function ilost_init(){
     'after_widget'=>'</li>',
     'before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>')
   );
+  register_sidebar(
+    array('name'=>__('Footer SideBar','iLost'),
+    'id'=>'footer-sidebar',
+    'description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),
+    'before_widget'=>'<li id="%1$s" class="widget col-xl-3 col-xs-3 col-md-3 col-sm-3 %2$s">',
+    'after_widget'=>'</li>',
+    'before_title'=>'<h4 class="widgettitle">',
+    'after_title'=>'</h4>')
+  );
+
+  register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
+
+  remove_action('wp_head','wp_generator');
+  remove_action('admin_init','_wp_check_for_scheduled_split_terms');
+
+  add_action('init','iloft_post_type');
+  add_action('widgets_init','ilost_Widget');
+}
+/*
+function ilost_init(){
   register_sidebar(
     array('name'=>__('Home Page Right SideBar','iLost'),
     'id'=>'home-listbar',
@@ -36,21 +58,9 @@ function ilost_init(){
     'before_title'=>'<h3 class="widgettitle">',
     'after_title'=>'</h3>')
   );
-  register_sidebar(
-    array('name'=>__('Footer SideBar','iLost'),
-    'id'=>'footer-sidebar',
-    'description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),
-    'before_widget'=>'<li id="%1$s" class="widget %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h3 class="widgettitle">',
-    'after_title'=>'</h3>')
-  );
   //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
-  register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
   add_action('admin_menu','ilost_excerpt_meta_box');
   add_action('admin_menu',array('ilostOption','addOptions'));
-  add_action('init','iloft_post_type');
-  add_action('widgets_init','ilost_Widget');
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
   add_action('wp_head','ilost_sidefloat');
   add_action('wp_footer','ilost_footerscript');
@@ -71,11 +81,10 @@ function ilost_init(){
   add_theme_support('custom-background',array('wp-head-callback'=>'ilost_custom_background_cb'));
   add_theme_support('post-formats',array('aside','chat','gallery','link','image','quote','status','video'));
   add_theme_support('post-thumbnails');
-  remove_action('wp_head','wp_generator');
-  remove_action('admin_init','_wp_check_for_scheduled_split_terms');
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
   if(!isset($content_width))$content_width=700;
 }
+/*
 //function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
 //function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
 function ilost_excerpt_meta_box(){add_meta_box('postexcerpt',__('Excerpt','iLost'),'ilost_excerpt_meta_box','page','normal','core');}
@@ -91,6 +100,7 @@ function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/sm
 function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
 <style type="text/css">body{<?php echo trim($style);?>}</style>
 <?php }}
+*/
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
   $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,'menu_icon'=>'dashicons-images-alt','supports'=>array('title','custom-fields','thumbnail'));
@@ -98,16 +108,15 @@ function iloft_post_type(){
 }
 function ilost_Widget(){
   register_widget('ilost_catlistsWidget');
-  register_widget('ilost_querycatsWidget');
-  register_widget('ilost_randompostWidget');
-  register_widget('ilost_RCommentsWidget');
-  register_widget('ilost_RavatarWidget');
-  if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
+  register_widget('ilost_footlistsWidget');
+  
+  //register_widget('ilost_querycatsWidget');
+  //register_widget('ilost_randompostWidget');
+  //register_widget('ilost_RCommentsWidget');
+  //register_widget('ilost_RavatarWidget');
+  //if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
 }
-function ilost_is_iphone(){return strpos(BROWSER_USER_AGENT,'iPhone');}
-function ilost_is_ipad(){return strpos(BROWSER_USER_AGENT,'iPad');}
-function ilost_is_wphone(){return strpos(BROWSER_USER_AGENT,'Windows Phone');}
-function ilost_is_android(){return strpos(BROWSER_USER_AGENT,'Android');}
+/*
 function ilost_is_ie(){return strpos(BROWSER_USER_AGENT,'MSIE');}
 function ilost_is_ie6(){return strpos(BROWSER_USER_AGENT,'MSIE 6');}
 function ilost_is_ie7(){return strpos(BROWSER_USER_AGENT,'MSIE 7');}
@@ -116,6 +125,11 @@ function ilost_is_ie9(){return strpos(BROWSER_USER_AGENT,'MSIE 9');}
 function ilost_is_ie10(){return strpos(BROWSER_USER_AGENT,'MSIE 10');}
 function ilost_is_macintosh(){return strpos(BROWSER_USER_AGENT,'Mac OS X 10_8_2');}
 function ilost_is_safari(){return strpos(BROWSER_USER_AGENT,'6.0.2 Safari');}
+*/
+function ilost_is_iphone(){return strpos(BROWSER_USER_AGENT,'iPhone');}
+function ilost_is_wphone(){return strpos(BROWSER_USER_AGENT,'Windows Phone');}
+function ilost_is_ipad(){return strpos(BROWSER_USER_AGENT,'iPad');}
+function ilost_is_android(){return strpos(BROWSER_USER_AGENT,'Android');}
 function ilost_is_mobileos(){
   if((ilost_is_iphone())or(ilost_is_wphone())or(ilost_is_ipad())or(ilost_is_android())){echo "<script type=\"application/x-javascript\">addEventListener('load',function(){setTimeout(scrollTo,0,0,1);},false);</script>\n";}
 }
@@ -126,6 +140,7 @@ function ilost_getstyles(){
   echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
 }
+/*
 function ilost_enqueue_script(){
   if(ilost_getjQuery()!='wp_jquery'){
     wp_deregister_script('jquery');
@@ -147,6 +162,7 @@ function ilost_footerscript(){
   }
   if((ilost_is_ie6())or(ilost_is_ie7())){echo"<!--[if lte IE 7]><script type=\"text/javascript\">var IE6UPDATE_OPTIONS={icons_path:\"".ilost_path."/scripts/ie6upimg/\"}</script><script type=\"text/javascript\" src=\"".ilost_path."/scripts/ie6update.js\"></script><![endif]-->\n";}
 }
+*/
 function ilost_get_catlist($cat='',$limit=5){
   echo '<h3>'.get_cat_name($cat).'</h3>';
   $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
@@ -156,6 +172,17 @@ function ilost_get_catlist($cat='',$limit=5){
    <?php }
   echo '</ul>';
 }
+
+function ilost_get_footerlist($cat='',$limit=5){
+  echo '<h4>'.get_cat_name($cat).'</h4>';
+  $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
+  echo '<ul>';
+  while($postloop->have_posts()){$postloop->the_post();?>
+  <li><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
+   <?php }
+  echo '</ul>';
+}
+/*
 function ilost_rcomments($limit=5){
   $comments=get_comments(array('number'=>100,'status'=>'approve'));
   $wpchres=get_option('blog_charset');$exclude_emails=get_bloginfo('admin_email');$i=1;$ilostoutput='';
@@ -193,8 +220,24 @@ function ilost_querycats($id=1,$limit=6,$excerpt=false){
      <?php if($excerpt){the_excerpt();}?>
     </div>
   </section>
-  <?php }
+  <?php }wp_reset_postdata();
 }
+*/
+
+function ilost_queryNewp($limit=6,$excerpt=false){
+  $postloop=new WP_Query(array('ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
+  while($postloop->have_posts()){$postloop->the_post();?>
+    <div id="post-<?php the_ID();?>" class="col-xl-3 col-xs-3 col-md-3 col-sm-3">
+     <h3><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h3>
+     <?php //if($excerpt){
+       the_excerpt();
+     //}?>
+     <small><?php the_time('m.d.Y');?></small>
+    </div>
+  <?php }wp_reset_postdata();
+}
+
+/*
 function ilost_lgshow(){if(is_user_logged_in())echo ' style="display:block"';}
 function ilost_relatedposts($postID,$limit=5,$type=''){
   $tags=wp_get_post_tags($postID);
@@ -221,6 +264,7 @@ function ilost_postAuthor(){?>
   </div>
 <?php
 }
+*/
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
@@ -232,9 +276,10 @@ function ilost_pagenav($options=array()){
   echo apply_filters('ilost_pagenav',$out);
 }
 function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
+/*
 function ilost_fix_gravatar($avatar){
 $avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
 return $avatar;}
 function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
-
+*/
 ?>

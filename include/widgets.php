@@ -41,6 +41,37 @@ class ilost_catlistsWidget extends WP_Widget{
     return $instance;
   }
 }
+
+class ilost_footlistsWidget extends WP_Widget{
+  function __construct(){
+    parent::__construct('ilost_catlistsWidget',__('iLost Category list','iLost'),
+    array('description'=>__('显示指定分类的文章','iLost')));
+  }
+  public function widget($args,$instance){
+    echo $args['before_widget'];
+    if(!$catid=(int)$instance['catid']){$catid=1;}
+    if(!$number=(int)$instance['number']){$number=5;}elseif($number<1){$number=1;}
+    ilost_get_footerlist($catid,$number);
+    echo $args['after_widget'];
+  }
+  public function form($instance){
+    $catid=!empty($instance['catid'])? $instance['catid']:'0';
+    $number=!empty($instance['number'])? $instance['number']:'';?>
+    <p><label for="<?php echo $this->get_field_id('catid');?>"><?php _e('Categories');?> :</label>
+    <?php wp_dropdown_categories(array('name'=>$this->get_field_name('catid'),'id'=>$this->get_field_id('catid'),'class'=>'widefat','selected'=>$catid,'show_count'=>1));?></p>
+    <p><label for="<?php echo $this->get_field_id('title');?>"><?php _e('Show post counts');?> :</label> 
+    <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" placeholder="5" value="<?php echo esc_attr($number);?>"></p>
+    <?php 
+  }
+  public function update($new_instance,$old_instance){
+    $instance=array();
+    $instance['catid']=(!empty($new_instance['catid']))? strip_tags($new_instance['catid']):0;
+    $instance['number']=(!empty($new_instance['number']))? strip_tags($new_instance['number']):'';
+    return $instance;
+  }
+}
+
+/*
 ///////////////////////////////////////////////////////////////////////////////
 class ilost_querycatsWidget extends WP_Widget{
   function __construct(){
@@ -205,4 +236,6 @@ class ilost_viewsWidget extends WP_Widget{
     $instance['number']=(!empty($new_instance['number']))? strip_tags($new_instance['number']):'';
     return $instance;
   }
-}?>
+}
+*/
+/*?>

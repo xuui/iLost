@@ -1,4 +1,5 @@
 <?php //Themes Options Page.
+
 class ilostOption{
   public static function getOptions(){
     $options=get_option('ilostOptions');
@@ -210,6 +211,7 @@ p.description,span.description{vertical-align:middle;}
 </div>
   <?php }
 }
+/*
 function ilost_themeopt_bar_render(){
   global $wp_admin_bar;
   $wp_admin_bar->add_menu(array('parent'=>false,'id'=>'iLostOptmul','title'=>themename.__(' Options','iLost'),'href'=>false));
@@ -221,6 +223,7 @@ function ilost_themeopt_bar_render(){
 }
 function ilost_themeopt_bar_css(){echo '<style type="text/css">#wpadminbar .ilostAline{border-top:1px solid #ccc;}</style>';}
 add_action('admin_head','ilost_themeopt_bar_css');
+*/
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
   if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='googleSearchID')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
@@ -251,12 +254,14 @@ function ilost_getfavicon(){
   }else{echo '<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />'."\n";}
   }
 }
+/*
 function ilost_sidefloat(){
   $sidefloat=@ilost_getOption('sidefloat');
   if($sidefloat=='right'){$rightcss='<style type="text/css">#container{background-position:102.7% 0;}#container article{float:left}</style>';
   if((ilost_is_iphone())or(ilost_is_wphone())or(ilost_is_android())){$rightcss='<style type="text/css">#container{background-position:102.7% 0}</style>';}
   echo $rightcss;}
 }
+*/
 function ilost_getsidefl(){
   $sideflt=@ilost_getOption('sidefloat');
   return $sideflt;
@@ -270,6 +275,7 @@ function ilost_searchKey(){
   $searchKey=ilost_getOption('searchKey');
   if($searchKey){return $searchKey;}
 }
+/*
 function ilost_embedgSearch(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
   if($googleSearch && $googleSearchID && $embedgSearch){return $embedgSearch;}
@@ -309,6 +315,7 @@ function ilost_ctrlentry(){
   $ctrlentry=ilost_getOption('ctrlentry');
   return $ctrlentry;
 }
+*/
 function ilost_getfront(){
   $frontid=esc_attr(get_option('page_on_front'));
   return $frontid;
@@ -318,6 +325,7 @@ function ilost_ilshowNum(){
   if(!$ilshowNum){$ilshowNum=4;}
   return $ilshowNum;
 }
+/*
 function ilost_relatedpost(){
   $relatedpost=ilost_getOption('relatedpost');
   return $relatedpost;
@@ -358,6 +366,7 @@ function ilost_googleanalytics(){
   echo $googleanalytics;
 }
 if(ilost_getOption('googleanalytics'))add_action('wp_footer','ilost_googleanalytics');
+*/
 function ilost_adgsidebartop(){
   $sidebartopcode=ilost_getOption('sidebartopcode');
   if($sidebartopcode)echo $sidebartopcode;
@@ -366,6 +375,7 @@ function ilost_adgsidebarbottom(){
   $sidebarbottomcode=ilost_getOption('sidebarbottomcode');
   if($sidebarbottomcode)echo $sidebarbottomcode;
 }
+/*
 function ilost_adgpostemb(){
   $postembcode=ilost_getOption('postembcode');
   if($postembcode)echo $postembcode;
@@ -373,4 +383,6 @@ function ilost_adgpostemb(){
 function ilost_adgpostend(){
   $postendcode=ilost_getOption('postendcode');
   if($postendcode)echo $postendcode;
-}?>
+}
+*/
+?>
