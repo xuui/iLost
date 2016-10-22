@@ -320,6 +320,10 @@ function ilost_getfront(){
   $frontid=esc_attr(get_option('page_on_front'));
   return $frontid;
 }
+function ilost_getposts(){
+  $postsid=esc_attr(get_option('page_for_posts'));
+  return $postsid;
+}
 function ilost_ilshowNum(){
   $ilshowNum=ilost_getOption('ilshowNum');
   if(!$ilshowNum){$ilshowNum=4;}

@@ -1,5 +1,12 @@
 <?php get_header();?>
-<div class="contindex">
+<?php $blogpageID=ilost_getposts();if($blogpageID){?>
+<div class="subhead">
+  <div class="container">
+    <div class="page-header"><h1><?php echo get_the_title($blogpageID);?></h1></div>
+  </div>
+</div>
+<?php }?>
+<div class="contwarp -contindex">
   <div class="container">
     <div class="row">
     <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">

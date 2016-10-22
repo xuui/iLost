@@ -32,6 +32,7 @@ a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;trans
 .subhead{background:#f5f5f5;}
 .contwarp{background:#fff}
 
+.page-header{border-bottom:none;}
 .page-header h1{font-size:29px;font-weight:300;}
 
 .contindex{background:#f5f5f5;padding:30px 0 0}
