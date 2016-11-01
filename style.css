@@ -18,8 +18,10 @@ a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;trans
 .navbar-default{background:#fff;border:none;border-radius:0;margin-bottom:0;}
 .navbar-fixed-top{background:rgba(255,255,255,.925);}
 .navbar-default .nav-brand{margin:0;height:64px;}
+.navbar-default .navbar-brand{padding:0 15px;height:64px;}
+.navbar-default .nav-brand .logo{width:auto;height:64px;}
 .navbar-default .navbar-brand{color:#2196f3;}
-.navbar-default .navbar-brand,.navbar-nav > li > a{padding-top:22px;padding-bottom:22px;}
+.navbar-nav > li > a{padding-top:22px;padding-bottom:22px;}
 .navbar-default .navbar-nav{float:none;text-align: center;height:64px;overflow:hidden;}
 .navbar-default .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1;}
 .navbar-default .navbar-nav .active a,
