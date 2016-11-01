@@ -11,10 +11,6 @@ class ilostOption{
       $options['sidefloat']='right';
       $options['customRssurl']='';
       $options['searchKey']='';
-      $options['googleSearch']=false;
-      $options['googleSearchID']='';
-      $options['embedgSearch']=false;
-      $options['googleaddbut']=false;
       $options['ctrlentry']=false;
       $options['ilshowNum']='4';
       $options['showAuthor']=true;
@@ -47,10 +43,6 @@ class ilostOption{
           $options['sidefloat']=stripslashes($_POST['sidefloat']);
           $options['customRssurl']=stripslashes($_POST['customRssurl']);
           $options['searchKey']=stripslashes($_POST['searchKey']);
-          if(@$_POST['googleSearch']){$options['googleSearch']=(bool)true;}else{$options['googleSearch']=(bool)false;}
-          $options['googleSearchID']=stripslashes($_POST['googleSearchID']);
-          if(@$_POST['embedgSearch']){$options['embedgSearch']=(bool)true;}else{$options['embedgSearch']=(bool)false;}
-          if(@$_POST['googleaddbut']){$options['googleaddbut']=(bool)true;}else{$options['googleaddbut']=(bool)false;}
           if(@$_POST['ctrlentry']){$options['ctrlentry']=(bool)true;}else{$options['ctrlentry']=(bool)false;}
           if(!$_POST['ilshowNum']){$options['ilshowNum']=stripslashes(4);
           }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
@@ -142,15 +134,6 @@ p.description,span.description{vertical-align:middle;}
         <p><label class="th" for="searchKey"><?php _e('Search engine keywords','iLost');?></label><input name="searchKey" id="searchKey" class="regular-text" type="text" size="40" value="<?php echo($options['searchKey']);?>" placeholder="Key1, Key2, Key3...">
           <span class="description"><?php _e('Keywords using a comma (",") between them. Is empty, the automatic acquisition.','iLost');?></span>
         </p>
-        <p><label class="th"><?php _e('Google custom search','iLost');?></label><input name="googleSearch" id="googleSearch" type="checkbox" <?php if($options['googleSearch']){echo 'checked="checked"';}?>><label for="googleSearch"><?php _e('Enabled','iLost')?></label>
-          <span class="supoption">
-            <span class="description"><?php printf(__('Find <code>name="cx"</code> in the <strong>Search box code</strong> of <a href="%1$s">Google Custom Search Engine</a>, and enter the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>','iLost'),esc_url(__('http://www.google.com/coop/cse/','iLost')));?></span><br>
-            <input name="googleSearchID" id="googleSearchID" class="regular-text" type="text" size="40" value="<?php echo($options['googleSearchID']);?>" placeholder="014782006753236413342:1ltfrybsbz4"><br>
-            <input name="embedgSearch" id="embedgSearch" type="checkbox" <?php if($options['embedgSearch']){echo 'checked="checked"';}?>><label for="embedgSearch"><?php _e('Embedded in the site search results','iLost');?></label>
-          </span>
-        </p>
-        <p><label class="th" for="googleaddbut"><?php _e('Enable Google + 1 button','iLost');?></label><input name="googleaddbut" id="googleaddbut" type="checkbox" <?php if($options['googleaddbut']){echo 'checked="checked"';}?>>
-        </p>
         <p><label class="th"  for="ctrlentry"><?php _e('Use Ctrl+Enter to reply comments','iLost');?></label><input name="ctrlentry" id="ctrlentry" type="checkbox" <?php if($options['ctrlentry']){echo 'checked="checked"';}?>>
         </p>
         <p><label class="th" for="ilshowNum"><?php _e('Focus image shows quantity','iLost');?></label><input name="ilshowNum" id="ilshowNum" type="text" size="2" value="<?php echo($options['ilshowNum']);?>" placeholder="4">
@@ -226,7 +209,7 @@ add_action('admin_head','ilost_themeopt_bar_css');
 */
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
-  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='googleSearchID')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
+  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
     return ent2ncr($options[$option]);
   }elseif(($option=='googleanalytics')or($option=='sidebartopcode')or($option=='sidebarbottomcode')or($option=='postembcode')or($option=='postendcode')){
     return stripslashes($options[$option]);
@@ -275,12 +258,7 @@ function ilost_searchKey(){
   $searchKey=ilost_getOption('searchKey');
   if($searchKey){return $searchKey;}
 }
-/*
-function ilost_embedgSearch(){
-  $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
-  if($googleSearch && $googleSearchID && $embedgSearch){return $embedgSearch;}
-}
-*/
+
 function ilost_search_form($form){
   $form='<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'">
   <div class="input-group">
@@ -289,30 +267,7 @@ function ilost_search_form($form){
   </div></form>';
   return $form;
 }
-function ilost_getSearchform(){
-  $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
-  $embedgSearch=ilost_getOption('embedgSearch');
-  if($googleSearch && $googleSearchID){
-  if($embedgSearch){
-    add_filter('get_search_form','ilost_search_form');
-    get_search_form();
-  }else{
-  echo '<form role="search" id="searchform" action="http://www.google.com/cse" method="get"><div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><input type="text" id="s" name="q" value="'.get_search_query().'" /><input type="submit" id="searchsubmit" name="sa" value="'.esc_attr__('Search').'" /><input type="hidden" name="cx" value=".$googleSearchID." /><input type="hidden" name="ie" value="UTF-8" /></div></form>';}
-  }else{get_search_form();}
-}
 /*
-function ilost_getgcseID(){
-  $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
-  if($googleSearch && $googleSearchID){return $googleSearchID;}
-}
-function ilost_googleaddbut(){
-  $googleaddbut=ilost_getOption('googleaddbut');
-  return $googleaddbut;
-}
-function ilost_googleaddbutscript(){
-  if(is_single())echo "<script type=\"text/javascript\">window.___gcfg={lang:'zh-CN'};(function(){var po=document.createElement('script');po.type='text/javascript';po.async=true;po.src='//apis.google.com/js/plusone.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po,s);})();</script>\n";
-}
-if(ilost_googleaddbut())add_action('wp_footer','ilost_googleaddbutscript');
 function ilost_ctrlentry(){
   $ctrlentry=ilost_getOption('ctrlentry');
   return $ctrlentry;
