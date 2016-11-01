@@ -267,12 +267,10 @@ function ilost_search_form($form){
   </div></form>';
   return $form;
 }
-/*
 function ilost_ctrlentry(){
   $ctrlentry=ilost_getOption('ctrlentry');
   return $ctrlentry;
 }
-*/
 function ilost_getfront(){
   $frontid=esc_attr(get_option('page_on_front'));
   return $frontid;
@@ -286,7 +284,6 @@ function ilost_ilshowNum(){
   if(!$ilshowNum){$ilshowNum=4;}
   return $ilshowNum;
 }
-/*
 function ilost_relatedpost(){
   $relatedpost=ilost_getOption('relatedpost');
   return $relatedpost;
@@ -305,6 +302,7 @@ function ilost_showAuthor(){
   $showAuthor=ilost_getOption('showAuthor');
   return $showAuthor;
 }
+/*
 function ilost_jgrowlbox(){
   $growlBox=ilost_getOption('growlBox');$jgrowltext=ilost_getOption('jgrowltext');
   if($growlBox && $jgrowltext){
@@ -338,7 +336,6 @@ function ilost_adgsidebarbottom(){
   $sidebarbottomcode=ilost_getOption('sidebarbottomcode');
   if($sidebarbottomcode)echo $sidebarbottomcode;
 }
-/*
 function ilost_adgpostemb(){
   $postembcode=ilost_getOption('postembcode');
   if($postembcode)echo $postembcode;
@@ -347,5 +344,4 @@ function ilost_adgpostend(){
   $postendcode=ilost_getOption('postendcode');
   if($postendcode)echo $postendcode;
 }
-*/
 ?>

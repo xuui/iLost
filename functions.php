@@ -54,10 +54,22 @@ $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','a
 
 
 */
-/*
-function ilost_getshare(){?><div id="postshare"><div id="share"><?php if(ilost_googleaddbut()){echo '<div class="sns" style="float:right;"><g:plusone size="medium" count="on" href="'.get_permalink().'\"></g:plusone></div>';}?><span class="share"><?php _e('Share this post:','iLost');?></span><a href="http://facebook.com/share.php?u=<?php the_permalink();?>&t=<?php the_title();?>" target="_blank" rel="nofollow" id="facebook-share" title="<?php _e('Facebook','iLost');?>"><?php _e('Facebook','iLost');?></a><a href="http://twitter.com/share?url=<?php the_permalink();?>&text=<?php the_title();?>" target="_blank" rel="nofollow" id="twitter-share" title="<?php _e('Twitter','iLost');?>"><?php _e('Twitter','iLost');?></a><a href="http://delicious.com/post?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="delicious-share" title="<?php _e('Delicious','iLost');?>"><?php _e('Delicious','iLost');?></a><a href="javascript:var%20d=document,w=window,f='http://fanfou.com/share',l=d.location,e=encodeURIComponent,p='?u='+e(l.href)+'&t='+e(d.title)+'&d='+e(w.getSelection?w.getSelection().toString():d.getSelection?d.getSelection():d.selection.createRange().text)+'&s=bm';a=function(){if(!w.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=0,width=600,height=400'))l.href=f+'.new'+p};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else{a()}void(0)" target="_blank" rel="nofollow" id="fanfou-share" title="<?php _e('Fanfou','iLost');?>"><?php _e('Fanfou','iLost');?></a><a href="http://v.t.qq.com/share/share.php?title=<?php the_title();?>&url=<?php the_permalink();?>&site=<?php echo ilost_wp_homeurl.'/';?>" target="_blank" rel="nofollow" id="tencent-share" title="<?php _e('QQ Weibo','iLost');?>"><?php _e('QQ Weibo','iLost');?></a><a href="http://v.t.sina.com.cn/share/share.php?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="sina-share" title="<?php _e('Sina Weibo','iLost');?>"><?php _e('Sina Weibo','iLost');?></a><a href="http://t.163.com/article/user/checkLogin.do?link=<?php the_permalink();?>source='<?php echo ilost_wp_name;?>'&info=<?php the_title();?> <?php the_permalink();?>" target="_blank" rel="nofollow" id="netease-share" title="<?php _e('163 Weibo','iLost');?>"><?php _e('163 Weibo','iLost');?></a><a href="http://www.kaixin001.com/repaste/share.php?rurl=<?php the_permalink();?>&rcontent=<?php the_permalink();?>&rtitle=<?php the_title();?>;" target="_blank" rel="nofollow" id="kaixin001-share" title="<?php _e('kaixin001','iLost');?>"><?php _e('kaixin001','iLost');?></a><a href="http://share.renren.com/share/buttonshare?link=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="renren-share" title="<?php _e('Renren','iLost');?>"><?php _e('Renren','iLost');?></a><a href="http://www.douban.com/recommend/?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="douban-share" title="<?php _e('Douban','iLost');?>"><?php _e('Douban','iLost');?></a></div></div><?php }
+function ilost_getshare(){?>
+<div id="postshare"><div id="share">
+  <span class="share"><?php _e('Share this post:','iLost');?></span>
+  <a href="http://facebook.com/share.php?u=<?php the_permalink();?>&t=<?php the_title();?>" target="_blank" rel="nofollow" id="facebook-share" title="<?php _e('Facebook','iLost');?>"><?php _e('Facebook','iLost');?></a>
+  <a href="http://twitter.com/share?url=<?php the_permalink();?>&text=<?php the_title();?>" target="_blank" rel="nofollow" id="twitter-share" title="<?php _e('Twitter','iLost');?>"><?php _e('Twitter','iLost');?></a>
+  <a href="http://delicious.com/post?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="delicious-share" title="<?php _e('Delicious','iLost');?>"><?php _e('Delicious','iLost');?></a>
+  <a href="javascript:var%20d=document,w=window,f='http://fanfou.com/share',l=d.location,e=encodeURIComponent,p='?u='+e(l.href)+'&t='+e(d.title)+'&d='+e(w.getSelection?w.getSelection().toString():d.getSelection?d.getSelection():d.selection.createRange().text)+'&s=bm';a=function(){if(!w.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=0,width=600,height=400'))l.href=f+'.new'+p};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else{a()}void(0)" target="_blank" rel="nofollow" id="fanfou-share" title="<?php _e('Fanfou','iLost');?>"><?php _e('Fanfou','iLost');?></a>
+  <a href="http://v.t.qq.com/share/share.php?title=<?php the_title();?>&url=<?php the_permalink();?>&site=<?php echo ilost_wp_homeurl.'/';?>" target="_blank" rel="nofollow" id="tencent-share" title="<?php _e('QQ Weibo','iLost');?>"><?php _e('QQ Weibo','iLost');?></a>
+  <a href="http://v.t.sina.com.cn/share/share.php?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="sina-share" title="<?php _e('Sina Weibo','iLost');?>"><?php _e('Sina Weibo','iLost');?></a>
+  <a href="http://t.163.com/article/user/checkLogin.do?link=<?php the_permalink();?>source='<?php echo ilost_wp_name;?>'&info=<?php the_title();?> <?php the_permalink();?>" target="_blank" rel="nofollow" id="netease-share" title="<?php _e('163 Weibo','iLost');?>"><?php _e('163 Weibo','iLost');?></a>
+  <a href="http://www.kaixin001.com/repaste/share.php?rurl=<?php the_permalink();?>&rcontent=<?php the_permalink();?>&rtitle=<?php the_title();?>;" target="_blank" rel="nofollow" id="kaixin001-share" title="<?php _e('kaixin001','iLost');?>"><?php _e('kaixin001','iLost');?></a>
+  <a href="http://share.renren.com/share/buttonshare?link=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="renren-share" title="<?php _e('Renren','iLost');?>"><?php _e('Renren','iLost');?></a>
+  <a href="http://www.douban.com/recommend/?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="douban-share" title="<?php _e('Douban','iLost');?>"><?php _e('Douban','iLost');?></a>
+  </div></div>
+<?php }
 
-/*
 if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$depth){
   $GLOBALS['comment']=$comment;
   switch($comment->comment_type){
@@ -78,6 +90,7 @@ if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$d
   }
 }}
 
+/*
 // 远程图片本地化
 add_filter('content_save_pre', 'auto_save_image');
 function auto_save_image($content){

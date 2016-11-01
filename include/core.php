@@ -237,13 +237,10 @@ function ilost_queryNewp($limit=6,$excerpt=false){
   <?php }wp_reset_postdata();
 }
 function ilost_lgshow(){if(is_user_logged_in())echo ' style="display:block"';}
-
-/*
 function ilost_relatedposts($postID,$limit=5,$type=''){
   $tags=wp_get_post_tags($postID);
   if($tags){
-    $first_tag=$tags[0]->term_id;
-    $args=array('tag__in'=>array($first_tag),'post__not_in'=>array($postID),'showposts'=>$limit,'ignore_sticky_posts'=>1);
+    $first_tag=$tags[0]->term_id; $args=array('tag__in'=>array($first_tag),'post__not_in'=>array($postID),'showposts'=>$limit,'ignore_sticky_posts'=>1);
     $my_query=new WP_Query($args);
     if($my_query->have_posts()){
       echo "<div class=\"related\">\n<h3>".__('Related Post:','iLost')."</h3>\n<ul>\n";
@@ -264,7 +261,6 @@ function ilost_postAuthor(){?>
   </div>
 <?php
 }
-*/
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';

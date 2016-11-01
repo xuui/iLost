@@ -86,7 +86,7 @@ class ilost_strapnav extends Walker_Nav_Menu{
   }
 }
 
-/*
+/**/
 // bootstrap breadcrumb.
 function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   $breadcrumb_opt=array();
@@ -194,5 +194,4 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   }
   echo $prefix.$output.$suffix;
 }
-*/
 ?>
