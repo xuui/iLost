@@ -34,19 +34,24 @@
 <?php wp_head();?>
 </head>
 <body <?php body_class();?>>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default<?php if(is_front_page()){echo ' navbar-fixed-top';}?>" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button>
       <?php ilost_getlogoimg();?>
     </div>
     <div class="collapse navbar-collapse" id="ilost-collapse">
-      <form class="navbar-form navbar-right" role="search">
+      <form role="search" method="get" class="navbar-form navbar-right navbar-search search-form" action="<?php echo home_url('/');?>">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+        <!--label>
+        <span class="screen-reader-text"><?php echo _x('Search for:','label');?></span-->
+        <input type="search" class="form-control search-field" placeholder="<?php echo esc_attr_x('Search …','placeholder');?>" value="<?php echo get_search_query();?>" name="s" title="<?php echo esc_attr_x('Search for:','label');?>" />
+        </label>
+        <!--input type="submit" class="search-submit"
+      value="<?php echo esc_attr_x('Search','submit button');?>" /-->
         </div>
-        <!--button type="submit" class="btn btn-default">Submit</button-->
       </form>
+     
       <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav() ));?>
     </div>
   </div>

@@ -8,7 +8,7 @@ class ilostOption{
       $options['logoimgurl']='';
       $options['usrfavicon']=false;
       $options['faviconurl']='';
-      $options['sidefloat']='left';
+      $options['sidefloat']='right';
       $options['customRssurl']='';
       $options['searchKey']='';
       $options['googleSearch']=false;
@@ -280,6 +280,7 @@ function ilost_embedgSearch(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');$embedgSearch=ilost_getOption('embedgSearch');
   if($googleSearch && $googleSearchID && $embedgSearch){return $embedgSearch;}
 }
+*/
 function ilost_search_form($form){
   $form='<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'">
   <div class="input-group">
@@ -299,6 +300,7 @@ function ilost_getSearchform(){
   echo '<form role="search" id="searchform" action="http://www.google.com/cse" method="get"><div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><input type="text" id="s" name="q" value="'.get_search_query().'" /><input type="submit" id="searchsubmit" name="sa" value="'.esc_attr__('Search').'" /><input type="hidden" name="cx" value=".$googleSearchID." /><input type="hidden" name="ie" value="UTF-8" /></div></form>';}
   }else{get_search_form();}
 }
+/*
 function ilost_getgcseID(){
   $googleSearch=ilost_getOption('googleSearch');$googleSearchID=ilost_getOption('googleSearchID');
   if($googleSearch && $googleSearchID){return $googleSearchID;}
@@ -357,6 +359,7 @@ function ilost_jgrowlbox(){
   }
 }
 if(ilost_getOption('growlBox')&&ilost_getOption('jgrowltext'))add_action('wp_footer','ilost_jgrowlbox');
+*/
 function ilost_getjQuery(){
   $jquerysrc=ilost_getOption('jquerysrc');
   return $jquerysrc;
@@ -365,6 +368,7 @@ function ilost_getjQueryurl(){
   $custom_jquery=ilost_getOption('custom_jquery');
   return $custom_jquery;
 }
+/*
 function ilost_googleanalytics(){
   $googleanalytics=ilost_getOption('googleanalytics');
   echo $googleanalytics;

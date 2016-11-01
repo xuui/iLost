@@ -6,7 +6,7 @@
 	$paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a class=\"btn btn-info btn-lg btn-block\" href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}
   }}}}
   ilost_adgsidebartop();?>
-  <ul id="siderbar" class="clear">
+  <ul id="siderbar" class="sider clear">
   <?php if(is_page()){$children=wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');if($children){?>
     <li><h3><?php the_title();?></h3><ul><?php echo $children;?></ul></li>
   <?php }if(!function_exists('dynamic_sidebar')||!dynamic_sidebar('page-sidebar')){

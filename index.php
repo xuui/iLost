@@ -1,11 +1,11 @@
 <?php get_header();?>
-<?php $blogpageID=ilost_getposts();if($blogpageID){?>
+<?php /*$blogpageID=ilost_getposts();if($blogpageID){?>
 <div class="subhead">
   <div class="container">
     <div class="page-header"><h1><?php echo get_the_title($blogpageID);?></h1></div>
   </div>
 </div>
-<?php }?>
+<?php }*/?>
 <div class="contwarp -contindex">
   <div class="container">
     <div class="row">
