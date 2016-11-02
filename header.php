@@ -51,8 +51,7 @@
       value="<?php echo esc_attr_x('Search','submit button');?>" /-->
         </div>
       </form>
-     
-      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav() ));?>
+      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav()));?>
     </div>
   </div>
 </nav>

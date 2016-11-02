@@ -222,7 +222,8 @@ function ilost_getlogoimg(){
   if($usrlogoimg){
     if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}?>
     <a class="navbar-brand" href="<?php echo ilost_wp_homeurl.'/';?>">
-    <img class="logo" alt="<?php echo ilost_wp_name;?>" src="<?php if($logoimgurl){echo $logoimgurl;}echo ilost_path.'/images/logo.png';?>"></a>
+      <img class="logo" alt="<?php echo ilost_wp_name;?>" src="<?php if($logoimgurl){echo $logoimgurl;}echo ilost_path.'/images/logo.png';?>">
+    </a>
     <?php if(is_front_page()||is_home()){echo '</h1>';}?>
     <span class="hidden navbar-text"><?php echo ilost_wp_description;?></span>
   <?php }else{
