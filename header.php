@@ -37,7 +37,7 @@
 <nav class="navbar navbar-default<?php if(is_front_page()){echo ' navbar-fixed-top';}?>" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button>
       <?php ilost_getlogoimg();?>
     </div>
     <div class="collapse navbar-collapse" id="ilost-collapse">
