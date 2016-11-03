@@ -44,6 +44,7 @@ function ilost_init(){
   add_action('widgets_init','ilost_Widget');
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
+  add_filter('get_search_form','ilost_search_form');
 }
 /*
 function ilost_init(){
@@ -76,7 +77,6 @@ function ilost_init(){
   add_filter('excerpt_more','ilost_auto_excerpt_more');
   add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_the_excerpt','ilost_custom_excerpt_more');
-  add_filter('get_search_form','ilost_search_form');
   add_filter('image_send_to_editor','ilost_remove_width_attribute');
   add_filter('post_thumbnail_html','ilost_remove_width_attribute');
   add_filter('smilies_src','ilost_smilies_src',1,10);
@@ -115,6 +115,14 @@ function ilost_Widget(){
   //register_widget('ilost_RCommentsWidget');
   //register_widget('ilost_RavatarWidget');
   //if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
+}
+function ilost_search_form($form){
+  $form='<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'">
+  <div class="input-group">
+    <input type="text" name="s" id="s" class="form-control" placeholder="'.esc_attr__('Search...').'" value="'.get_search_query().'">
+    <span class="input-group-btn"><button type="submit" id="searchsubmit" class="btn btn-default">'.esc_attr__('Search').'</button></span>
+  </div></form>';
+  return $form;
 }
 /*
 function ilost_is_ie(){return strpos(BROWSER_USER_AGENT,'MSIE');}

@@ -12,10 +12,12 @@ License URI: LICENSE
 */
 @import url('scripts/rotation.css');
 
-body{position:relative;background:#eee;color:#212121;}
+body{position:relative;}
 a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out}
 
-.navbar-default{background:#fff;border:none;border-radius:0;margin-bottom:0;}
+h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121;}
+
+.navbar-default{background:transparent;background:#fff;border:none;border-radius:0;margin-bottom:0;}
 .navbar-fixed-top{background:rgba(255,255,255,.925);}
 .navbar-default .nav-brand{margin:0;height:64px;}
 .navbar-default .navbar-brand{padding:0 15px;height:64px;line-height:64px;}
@@ -33,17 +35,16 @@ a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;trans
 
 .navbar-collapse{}
 
-.subhead{background:#f5f5f5;}
-.contwarp{padding-:30px 0;}
-.contwarp .row{background:#fff;padding:15px 0;}
+.subhead{background:#e1eaed;}
+.contwarp{padding:30px 0;}
+.contwarp .row{}
 
-.contwarp section,.contwarp .sider{background:#fff;}
-
-.page-header{border-bottom:none;}
+.pagewarp{}
+.pagewarp .row{background:#fff;padding:15px 0;margin-top:-25px;}
+.page-header{border-bottom:none;padding-bottom:20px;}
 .page-header h1{font-size:29px;font-weight:300;}
 
-.contindex{background:#f5f5f5;padding:30px 0 0}
-.contindex .row{background:#fff;margin:0;}
+.contindex{}
 
 
 .navbar-search{}
@@ -115,6 +116,10 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 /* Post */
 .title h1,.title h2,.widget h2,.widget h3{margin-top:0;}
 .entry img{max-width:100%;height:auto;}
+
+section{padding:45px 14.9425%}
+
+.contwarp section,.contwarp .widget{background:#fff;margin-bottom:30px;}
 /* 
 section{margin:30px 10px;text-align:left}
 section .title{margin-bottom:15px;}
@@ -143,7 +148,12 @@ section .related .thumbnail img{width:100px;height:100px}
 #authorbox .author a{color:#444;font-weight:700}
 
 /* Sidebar */
-aside ul{padding-left:0;}
+aside ul{list-style:none;padding-left:0;}
+.widget{padding:20px;}
+.widget h3{font-size:16px;}
+.widget ul li{list-style:circle;color:#757575;margin-left:1em;padding:3px 0;line-height:1.2;}
+.widget a{color:#616161;}
+.widget a:hover{color:#2196f3;}
 /* 
 aside.affix{top:0;}
 aside h3{clear:both;border-bottom:1px solid #e6e6e6;margin-top:10px;margin-bottom:0;padding:0 16px;height:29px;line-height:29px;color:#555;font-size:1em;font-weight:700;}
