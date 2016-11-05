@@ -99,7 +99,7 @@ function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
 */
 function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
-<style type="text/css">body{<?php echo trim($style);?>}</style>
+<style type="text/css">body{<?php echo trim($style);?>background-size:100%;}</style>
 <?php }}
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
@@ -232,10 +232,21 @@ function ilost_querycats($id=1,$limit=6,$excerpt=false){
 }
 */
 
+function ilost_showProTu($id=0,$limit=3,$excerpt=false){
+  $postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));
+  
+  $col_class="col-xl-4 col-xs-4 col-md-4 col-sm-4";
+  //$col_class="col-xl-3 col-xs-3 col-md-3 col-sm-3";
+  while($postloop->have_posts()){
+    $postloop->the_post();
+    $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+    echo '<div class="'.$col_class.'"><a href="'.get_the_permalink().'" title="'.get_the_title().'" style="background-image:url('.$img_src[0].')"><span>'.get_the_title().'</span></a></div>';
+  }wp_reset_postdata();
+}
 function ilost_queryNewp($limit=6,$excerpt=false){
   $postloop=new WP_Query(array('ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
   while($postloop->have_posts()){$postloop->the_post();?>
-    <div id="post-<?php the_ID();?>" class="col-sm-6 col-md-3 col-xl-3">
+    <div class="col-sm-6 col-md-3 col-xl-3">
      <h3><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h3>
      <?php //if($excerpt){
        the_excerpt();

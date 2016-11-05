@@ -6,7 +6,7 @@
       <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
         <?php if(have_posts()){while(have_posts()){the_post();
         $logined=get_post_meta(get_the_ID(),"logined",$single=true);?>
-        <section id="post-<?php the_ID();?>" <?php post_class();?>>
+        <section id="post-<?php the_ID();?>" <?php post_class();?>><div class="inarp">
           <div class="title">
             <h1><?php the_title();?></h1>
             <small><?php the_time('m.d.Y');?>, <?php the_category(', ');?>, by <?php the_author_posts_link();?><?php if(function_exists('the_views')){?>, <?php the_views();}?>.<?php edit_post_link(__('Edit','iLost'),' [',']&#187;');?></small>
@@ -34,7 +34,7 @@
               <li class="clearfix"></li>
             </ul>
           </nav>
-        </section>
+        </div></section>
         <?php comments_template('',true);}}?>
       </article>
       <?php get_sidebar();?>

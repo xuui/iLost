@@ -11,7 +11,10 @@ License: GNU General Public License v3 or later
 License URI: LICENSE
 */
 @import url('scripts/rotation.css');
-
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
+::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
+::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
 body{position:relative;}
 a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out}
 
@@ -35,13 +38,18 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121;}
 
 .navbar-collapse{}
 
+
+.breadcrumb{background-color:#fff;background-color:rgba(255,255,255,.89);margin:0 15px 30px;border-radius:0;}
+.breadcrumb > a{color:#333;}
+.breadcrumb > .active{color:#333;}
+
 .subhead{background:#e1eaed;}
 .contwarp{padding:30px 0;}
 .contwarp .row{}
 
-.pagewarp{}
-.pagewarp .row{background:#fff;padding:15px 0;margin-top:-25px;}
-.page-header{border-bottom:none;padding-bottom:20px;}
+.pagewarp{background:#f5f5f5;}
+.pagewarp .row{background:#fff;padding:15px 0;margin-top:-30px;}
+.page-header{border-bottom:none;padding-bottom:30px;}
 .page-header h1{font-size:29px;font-weight:300;}
 
 .contindex{}
@@ -54,13 +62,8 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121;}
 .navbar-search .search-field:focus{border-color:#2196f3;}
 
 /* Reset */
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
-::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
-::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
 /* 
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;}
-body{background:#eaeaea;color:#444;}
 a,a em,a strong{color:#08c;text-decoration:none}
 a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 :link,:visited,ins{text-decoration:none}
@@ -96,8 +99,6 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .navbar-default{background:none;border:none;}
 .navbar .logo{overflow:hidden;display:inline-block;*display:inline;zoom:1;text-indent:-99em;width:180px;background-repeat:no-repeat;background-position:50% 50%;background-image:url(images/logo-xu.png);}
 .navbar .navbar-toggle{background:rgba(0,0,0,0);border-color:#e6e6e6;margin:13px 0 12px 15px;padding:3px 9px;line-height:1;font-size:22px;color:#333;}
-.breadcrumb{background-color:#fafafa;margin-top:15px;}
-.breadcrumb > .active{color:#333;}
 .navbar .navbar-nav > li{padding:0 5px;}
 .navbar .navbar-nav > li,.navbar-default .navbar-nav > li > a{color:#333;font-size:15px;}
 .navbar .navbar-nav > li > a{padding:17px 8px;color:#777;outline:none;}
@@ -108,18 +109,16 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .navbar .sub-menu{display:none;}
 .navbar-nav > li > .dropdown-menu{border-top:2px solid #08c;margin-top:-2px;}
 
-/* Search *//* 
-#searchform{margin-top:15px}
-#searchform .screen-reader-text{display:none}
-#searchform #searchsubmit{padding:6px 20px 5px;}
-
 /* Post */
+.contwarp section,.contwarp .widget{background:#fff;margin-bottom:30px;}
+.contwarp .widget{background:rgba(255,255,255,.9);}
 .title h1,.title h2,.widget h2,.widget h3{margin-top:0;}
 .entry img{max-width:100%;height:auto;}
+section .inarp{padding:0 14.9425% 45px}
+section .title{padding:45px 0 15px;}
+section .post-meta{padding:15px 0 0}
+section .thumg{padding:24px;height:210px;background:#e0e0e0 no-repeat 50% 50%;background-size: cover;}
 
-section{padding:45px 14.9425%}
-
-.contwarp section,.contwarp .widget{background:#fff;margin-bottom:30px;}
 /* 
 section{margin:30px 10px;text-align:left}
 section .title{margin-bottom:15px;}
@@ -388,7 +387,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 /* Rotation */
 #rotation{margin-bottom:0;background:#eee;}
 #rotation .slides{overflow:hidden;}
-#rotation .slides,#rotation .slides li{height:580px;}
+#rotation .slides,#rotation .slides li{height:600px;}
 #rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;background-attachment:fixed;}
 #rotation .flex-caption{position:absolute;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:17px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
@@ -438,7 +437,8 @@ section .post-meta{padding:6px 15px 18px}
 */
 }
 @media (max-width:768px){
-#rotation .slides,#rotation .slides li{height:320px;}
+#rotation .slides,#rotation .slides li{height:360px;}
+#proaside a{height:160px;}
 /*#rotation .slides li{height:260px;}
 */
 }
