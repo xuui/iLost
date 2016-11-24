@@ -1,8 +1,12 @@
 <?php get_header();?>
+<div class="breadwarp">
+  <div class="container">
+      <?php ilost_breadcrumb();?>
+  </div>
+</div>
 <div class="contwarp -contindex">
   <div class="container">
     <div id="row" class="row">
-      <?php ilost_breadcrumb();?>
       <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
         <?php if(have_posts()){while(have_posts()){the_post();
         $logined=get_post_meta(get_the_ID(),"logined",$single=true);?>
@@ -26,14 +30,12 @@
           <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
             the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
           </div>
+        <ul class="row pagnav-row">
+          <li class="col-md-6 previous"><small>Previous</small><?php previous_post_link('%link');?><!--a href="#"><small>Previous</small>previous_post_link</a--></li>
+          <li class="col-md-6 next"><small>Next</small><?php next_post_link('%link');?><!--a href="#"><small>Next</small>next_post_link</a--></li>
+          <li class="clearfix"></li>
+        </ul>
           <?php ilost_adgpostend();?>
-          <nav>
-            <ul class="pager">
-              <li class="next"><?php previous_post_link('%link');?></li>
-              <li class="previous"><?php next_post_link('%link');?></li>
-              <li class="clearfix"></li>
-            </ul>
-          </nav>
         </div></section>
         <?php comments_template('',true);}}?>
       </article>

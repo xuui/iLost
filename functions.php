@@ -54,7 +54,7 @@ $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','a
 
 
 */
-function ilost_getshare(){?>
+function ilost_getshare(){/*?>
 <div id="postshare"><div id="share">
   <span class="share"><?php _e('Share this post:','iLost');?></span>
   <a href="http://facebook.com/share.php?u=<?php the_permalink();?>&t=<?php the_title();?>" target="_blank" rel="nofollow" id="facebook-share" title="<?php _e('Facebook','iLost');?>"><?php _e('Facebook','iLost');?></a>
@@ -68,7 +68,7 @@ function ilost_getshare(){?>
   <a href="http://share.renren.com/share/buttonshare?link=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="renren-share" title="<?php _e('Renren','iLost');?>"><?php _e('Renren','iLost');?></a>
   <a href="http://www.douban.com/recommend/?url=<?php the_permalink();?>&title=<?php the_title();?>" target="_blank" rel="nofollow" id="douban-share" title="<?php _e('Douban','iLost');?>"><?php _e('Douban','iLost');?></a>
   </div></div>
-<?php }
+<?php */}
 
 if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$depth){
   $GLOBALS['comment']=$comment;

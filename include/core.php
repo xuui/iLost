@@ -271,7 +271,7 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
     }
   }wp_reset_query();
 }
-function ilost_postAuthor(){?>
+function ilost_postAuthor($post){?>
   <div id="authorbox">
     <?php echo get_avatar(get_the_author_meta('email'),'96','wavatar');?>
     <p><?php echo __('Author','iLost').':';?> <span class="author"><?php the_author_posts_link();?></span></p>

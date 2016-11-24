@@ -15,13 +15,13 @@ License URI: LICENSE
 ::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
-body{position:relative;}
+body{position:relative;background:#eee-}
 a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out}
-
+.alert{margin-bottom:0;padding:16px 24px;}
 h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121;}
 
-.navbar-default{background:transparent;background:#fff;border:none;border-radius:0;margin-bottom:0;}
-.navbar-fixed-top{background:rgba(255,255,255,.925);}
+.navbar-default{background:transparent;background:#f5f5f5;border:none;border-radius:0;margin-bottom:0;}
+.navbar-fixed-top{background:rgba(240,240,240,.9);}
 .navbar-default .nav-brand{margin:0;height:64px;}
 .navbar-default .navbar-brand{padding:0 15px;height:64px;line-height:64px;}
 .navbar-default .nav-brand .logo{width:auto;height:64px;}
@@ -38,17 +38,17 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121;}
 
 .navbar-collapse{}
 
+.breadwarp{background:#f5f5f5;}
+.breadcrumb{margin:0 15px;padding:25px 0;border-radius:0;}
+.breadcrumb a{color:#bdbdbd;}
+.breadcrumb > .active{color:#757575;}
 
-.breadcrumb{background-color:#fff;background-color:rgba(255,255,255,.89);margin:0 15px 30px;border-radius:0;}
-.breadcrumb > a{color:#333;}
-.breadcrumb > .active{color:#333;}
-
-.subhead{background:#e1eaed;}
+.subhead{background:#f5f5f5;}
 .contwarp{padding:30px 0;}
 .contwarp .row{}
 
-.pagewarp{background:#f5f5f5;}
-.pagewarp .row{background:#fff;padding:15px 0;margin-top:-30px;}
+.pagewarp{background:#fff;}
+.pagewarp .row{background:#fff;padding:15px 0;}
 .page-header{border-bottom:none;padding-bottom:30px;}
 .page-header h1{font-size:29px;font-weight:300;}
 
@@ -114,10 +114,11 @@ header .feedrss,.navbar .sub-ul,.comment-list .comment-reply-link,.post-nav .pre
 .contwarp .widget{background:rgba(255,255,255,.9);}
 .title h1,.title h2,.widget h2,.widget h3{margin-top:0;}
 .entry img{max-width:100%;height:auto;}
-section .inarp{padding:0 14.9425% 45px}
-section .title{padding:45px 0 15px;}
+section .inarp{padding:0 64px 40px}
+section .title{padding:32px 0 16px;}
+section .title small,section .title small a{color:#bdbdbd;}
 section .post-meta{padding:15px 0 0}
-section .thumg{padding:24px;height:210px;background:#e0e0e0 no-repeat 50% 50%;background-size: cover;}
+section .thumg{padding:24px;height:210px;background:#e0e0e0 no-repeat 50% 50%;background-size:cover;}
 
 /* 
 section{margin:30px 10px;text-align:left}
@@ -134,17 +135,27 @@ section .entry img{max-width:100%;}
 section .post-meta{background:transparent url(images/postmeta.png) no-repeat 0 bottom;padding:6px 34px 18px;color:#888;background-size:100% 10px;-webkit-background-size:100% 10px}
 section .more-link{background-position:100% -217px;padding-right:6px;line-height:18px}
 section .btn-primary{padding-left:2em;padding-right:2em;}
-section .related{margin:16px 0 7px;padding:8px 16px;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+*/
+section .related{margin:16px 0 7px;padding:8px 16px;background:#fafafa;border-bottom:1px solid #f5f5f5}
 section .related h3{margin:0;line-height:1.8;color:#666;font-size:1em;font-weight:700}
 section .related ul{margin:0;padding:0;list-style:none}
 section .related li,section .related li a{color:#666}
 section .related li a:hover{color:#08c}
 section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px 26px 6px 0;}
 section .related .thumbnail img{width:100px;height:100px}
-#authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:15px 0 15px;padding:8px 10px}
+
+#authorbox{background:#fff;border:1px dashed #ccc;border-radius:5px;margin:24px 0 16px;padding:8px 16px}
 #authorbox p{margin:0;padding:3px 0;line-height:1.4;}
-#authorbox .avatar{float:left;background:#fff;border-radius:32px;box-shadow:0 1px 2px rgba(0,0,0,.13),0 1px 3px rgba(0,0,0,.34) inset;margin:0 6px 0 0;width:48px;height:48px}
+#authorbox .avatar{float:left;background:#fff;border-radius:32px;box-shadow:0 1px 2px rgba(0,0,0,.13),0 1px 3px rgba(0,0,0,.34) inset;margin:0 10px 0 0;width:48px;height:48px}
 #authorbox .author a{color:#444;font-weight:700}
+
+.pagnav-row{list-style:none;margin:0;padding:24px 0;}
+.pagnav-row li{padding:15px 0;}
+.pagnav-row li + li{border-left:1px solid #d6d6d6;text-align:right;}
+.pagnav-row li + li + li{border:none;}
+.pagnav-row a{display:block;color:#616161;font-size:21px;font-weight:300;line-height:1.1429;}
+.pagnav-row small{display:block;margin-bottom:8px;color:#a8a8a8;font-weight:300;line-height:1.25}
+.pagnav-row a small{text-decoration:none;}
 
 /* Sidebar */
 aside ul{list-style:none;padding-left:0;}
@@ -273,7 +284,7 @@ section.archive{overflow:hidden;background:#f0f2f2;border:1px solid #e8e8e8;marg
 section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:left}
 
 /* Home */
-#proaside{background:#f5f5f5;padding:20px 0;box-shadow:none;}
+#proaside{background:#f5f5f5;padding:20px 0;box-shadow:none;   margin-top:64px;}
 #proaside .container{padding:0;}
 #proaside .row{margin-left:-2px;margin-right:-2px}
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px;}
@@ -282,7 +293,7 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #proaside a span{position:absolute;bottom:-50%;background:rgba(0,0,0,.34);color:#fff;width:100%;padding:16px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #proaside a:hover span{bottom:0;}
 
-#newpost{background:#fff;padding:20px 0;}
+#newpost{background:#fff;padding:32px 0;}
 #newpost .container{}
 #newpost .row{background:#fff;}
 #newpost .col-xl-3{padding:32px;}
@@ -375,6 +386,7 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 .avatar{}
 .bypostauthor{}
 #wpadminbar{box-shadow:0 1px 9px rgba(0,0,0,.34)}
+.admin-bar .navbar-fixed-top{top:32px;}
 /* 
 #container .attachment img{display:block;margin:0 auto}
 .home .sticky{border-left:3px solid #ddd;border-radius:3px;padding-left:10px;}
