@@ -13,7 +13,7 @@ $shopics=get_post_meta($homempid,"shopimages",$single=false);if($shopics){
   }
 }echo '</div></div>';}*/?>
   <div class="container"><div class="row">
-    <?php ilost_showProTu($id=1);?>
+    <?php ilost_showProTu(ilost_frontCat());?>
   </div></div>
 </div>
 <div id="newpost">

@@ -26,6 +26,7 @@ class ilostOption{
       $options['sidebarbottomcode']='';
       $options['postembcode']='';
       $options['postendcode']='';
+      $options['frontcat']='';
       update_option('ilostOptions',$options);
     }return $options;
   }
@@ -44,9 +45,6 @@ class ilostOption{
           $options['customRssurl']=stripslashes($_POST['customRssurl']);
           $options['searchKey']=stripslashes($_POST['searchKey']);
           if(@$_POST['ctrlentry']){$options['ctrlentry']=(bool)true;}else{$options['ctrlentry']=(bool)false;}
-          if(!$_POST['ilshowNum']){$options['ilshowNum']=stripslashes(4);
-          }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
-          }else{$options['ilshowNum']=stripslashes($_POST['ilshowNum']);}
           if(@$_POST['relatedpost']){$options['relatedpost']=(bool)true;}else{$options['relatedpost']=(bool)false;}
           if(!$_POST['repostNum']){$options['repostNum']=stripslashes(5);
           }elseif($_POST['repostNum']<1){$options['repostNum']=stripslashes(1);
@@ -55,6 +53,11 @@ class ilostOption{
           if(@$_POST['showAuthor']){$options['showAuthor']=(bool)true;}else{$options['showAuthor']=(bool)false;}
           if(@$_POST['growlBox']){$options['growlBox']=(bool)true;}else{$options['growlBox']=(bool)false;}
           $options['jgrowltext']=stripslashes($_POST['jgrowltext']);
+        break;case 'frontpg':
+          if(!$_POST['ilshowNum']){$options['ilshowNum']=stripslashes(4);
+          }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
+          }else{$options['ilshowNum']=stripslashes($_POST['ilshowNum']);}
+          $options['frontcat']=stripslashes($_POST['frontcat']);
         break;case 'script':
           $options['jquerysrc']=stripslashes($_POST['jquerysrc']);
           $options['custom_jquery']=stripslashes($_POST['custom_jquery']);
@@ -72,7 +75,7 @@ class ilostOption{
     add_theme_page(themename.__(' Options','iLost'),themename.__(' Options','iLost'),'edit_theme_options','ilost_options',array('ilostOption','OptionsPage'));
   }
   public static function option_tabs($current='general'){
-    $tabs=array('general'=>themename.__(' Options','iLost'),'script'=>__('Script Code','iLost'));
+    $tabs=array('general'=>themename.__(' Options','iLost'),'frontpg'=>__('Front Page','iLost'),'script'=>__('Script Code','iLost'));
     $links=array();
     echo '<h2 class="nav-tab-wrapper">';
     foreach($tabs as $tab=>$name){
@@ -136,9 +139,6 @@ p.description,span.description{vertical-align:middle;}
         </p>
         <p><label class="th"  for="ctrlentry"><?php _e('Use Ctrl+Enter to reply comments','iLost');?></label><input name="ctrlentry" id="ctrlentry" type="checkbox" <?php if($options['ctrlentry']){echo 'checked="checked"';}?>>
         </p>
-        <p><label class="th" for="ilshowNum"><?php _e('Focus image shows quantity','iLost');?></label><input name="ilshowNum" id="ilshowNum" type="text" size="2" value="<?php echo($options['ilshowNum']);?>" placeholder="4">
-          <span class="description"><?php _e('The default show 4 images','iLost');?></span>
-        </p>
         <p><label class="th" for="relatedpost"><?php _e('Related articles','iLost');?></label><input name="relatedpost" id="relatedpost" type="checkbox" <?php if($options['relatedpost']){echo 'checked="checked"';}?>><label><?php _e('Enabled','iLost')?></label><br>
           <span class="supoption">
 		  	<label class="tip"><?php _e('Type:','iLost');?></label><input type="radio" name="repostShow"  id="post" <?php if($options['repostShow']=='post'){echo 'checked="checked"';}?> value="post" /><label for="post"><?php _e('Post lists','iLost');?></label><input type="radio" name="repostShow" class="radio" id="thumbnail" <?php if($options['repostShow']=='thumbnail'){echo 'checked="checked"';}?> value="thumbnail" /><label for="thumbnail"><?php _e('thumbnail','iLost');?></label><br>
@@ -155,6 +155,18 @@ p.description,span.description{vertical-align:middle;}
           </span>
         </p>
         <p><label class="th"><?php _e('.','iLost');?></label></p>
+      </fieldset>
+  <?php break;case 'frontpg':?>
+      <fieldset>
+        <legend><?php _e('Front Page','iLost');?></legend>
+        <p>
+          <label class="th" for="ilshowNum"><?php _e('Focus image shows quantity','iLost');?></label><input name="ilshowNum" id="ilshowNum" type="text" size="2" value="<?php echo($options['ilshowNum']);?>" placeholder="4">
+          <span class="description"><?php _e('The default show 4 images','iLost');?></span>
+        </p>
+        <p>
+          <label class="th" for="frontcat"><?php _e('Front Cat Show','iLost');?></label>
+          <?php wp_dropdown_categories(array('name'=>'frontcat','id'=>'frontcat','class'=>'','selected'=>$options['frontcat'],'show_count'=>1));?>
+        </p>
       </fieldset>
   <?php break;case 'script':?>
       <fieldset>
@@ -259,6 +271,11 @@ function ilost_customRssurl($echo=true){
 function ilost_searchKey(){
   $searchKey=ilost_getOption('searchKey');
   if($searchKey){return $searchKey;}
+}
+
+function ilost_frontCat(){
+  $frontcat=ilost_getOption('frontcat');
+  if($frontcat){return $frontcat;}
 }
 
 function ilost_ctrlentry(){

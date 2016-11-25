@@ -244,7 +244,7 @@ function ilost_showProTu($id=0,$limit=3,$excerpt=false){
   }wp_reset_postdata();
 }
 function ilost_queryNewp($limit=6,$excerpt=false){
-  $postloop=new WP_Query(array('ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
+  $postloop=new WP_Query(array('cat'=>'-'.ilost_frontCat(),'ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
   while($postloop->have_posts()){$postloop->the_post();?>
     <div class="col-sm-6 col-md-3 col-xl-3">
      <h3><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h3>
