@@ -85,7 +85,7 @@ if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$d
     <?php break;
     case 'pingback':case 'trackback':?>
 <li class="pingback media">
-    <div class="media-body"><?php _e('Pingback:','iLost');comment_author_link();edit_comment_link(__('[Edit]','iLost'),'');?></div>
+    <div class="media-body"><?php comment_author_link();edit_comment_link(__('[Edit]','iLost'),'');?></div>
     <?php break;
   }
 }}

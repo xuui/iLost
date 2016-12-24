@@ -30,11 +30,11 @@
           <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');
             the_tags(__('Tags: ','iLost'),' | ','');?>&nbsp;<i class="clearfix"></i>
           </div>
-        <ul class="row pagnav-row">
-          <li class="col-md-6 previous"><small>Previous</small><?php previous_post_link('%link');?><!--a href="#"><small>Previous</small>previous_post_link</a--></li>
-          <li class="col-md-6 next"><small>Next</small><?php next_post_link('%link');?><!--a href="#"><small>Next</small>next_post_link</a--></li>
-          <li class="clearfix"></li>
-        </ul>
+          <ul class="row pagnav-row">
+            <li class="col-md-6 previous"><small>Previous</small><?php previous_post_link('%link');?><!--a href="#"><small>Previous</small>previous_post_link</a--></li>
+            <li class="col-md-6 next"><small>Next</small><?php next_post_link('%link');?><!--a href="#"><small>Next</small>next_post_link</a--></li>
+            <li class="clearfix"></li>
+          </ul>
           <?php ilost_adgpostend();?>
         </div></section>
         <?php comments_template('',true);}}?>

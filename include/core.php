@@ -44,6 +44,7 @@ function ilost_init(){
   add_action('widgets_init','ilost_Widget');
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
+  add_filter('comments_popup_link_attributes','ilost_comments_nofollow_link');
   add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_search_form','ilost_search_form');
   add_filter('user_contactmethods','ilost_contactmethods');
@@ -74,7 +75,6 @@ function ilost_init(){
   add_action('wp_footer','ilost_footerscript');
   add_action('wp_before_admin_bar_render','ilost_themeopt_bar_render');
   add_editor_style();
-  add_filter('comments_popup_link_attributes','ilost_comments_nofollow_link');
   add_filter('excerpt_length','ilost_excerpt_length');
   add_filter('excerpt_more','ilost_auto_excerpt_more');
   add_filter('get_the_excerpt','ilost_custom_excerpt_more');
@@ -93,12 +93,13 @@ function ilost_excerpt_length($length){return 200;}
 function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
 function ilost_auto_excerpt_more($more){return ' &hellip;'.ilost_continue_reading_link();}
 function ilost_custom_excerpt_more($output){if(has_excerpt()&& !is_attachment()){$output.=ilost_continue_reading_link();}return $output;}
-function ilost_comments_nofollow_link(){return ' rel="nofollow" ';}
 function ilost_from_name($email){$wp_from_name=get_option('blogname');return $wp_from_name;}
 function ilost_home_menulink($args){$args['show_home']=true;return $args;}
 function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)="\d*"\s/',"",$html);return $html;}
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
 */
+
+function ilost_comments_nofollow_link(){return ' rel="nofollow" ';}
 function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
 <style type="text/css">body{<?php echo trim($style);?>background-size:100%;}</style>
 <?php }}
