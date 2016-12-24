@@ -24,7 +24,7 @@
             $paybys=get_post_meta(get_the_ID(),"payby",$single=true);if($paybys){$payinfo=explode("###",$paybys);if($payinfo[0] && $payinfo[1]){$payurl=$payinfo[0];$paynum=' ('.$payinfo[1].')';echo "<section class=\"ilost_paybys\"><a class=\"btn btn-info btn-lg\" href=\"".$payurl."\">".__('Buy Now','iLost').$paynum."</a></section>\n";}}
             ?>
           </div>
-          <?php if(ilost_showAuthor())ilost_postAuthor();
+          <?php //
           if(ilost_relatedpost())ilost_relatedposts(get_the_ID(),$limit=ilost_repostNum());?>
           <div class="post-meta">
           <?php edit_post_link(__('Edit','iLost'),'<span class="alignright"> [',']</span>');

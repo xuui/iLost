@@ -272,14 +272,22 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
   }wp_reset_query();
 }
 function ilost_postAuthor($post){?>
-  <div id="authorbox">
-    <?php echo get_avatar(get_the_author_meta('email'),'96','wavatar');?>
-    <p><?php echo __('Author','iLost').':';?> <span class="author"><?php the_author_posts_link();?></span></p>
-    <p><?php echo __('Author description','iLost').':'.get_the_author_meta('description');?></p>
-    <div class="clear"></div>
+<li class="widget-author">
+  <div class="widget-author-header">
+    <div class="widget-author-image">
+      <?php echo get_avatar(get_the_author_meta('email'),'64','wavatar', get_the_author_meta('display_name'),array('class'=>'img-circle'));?>
+    </div>
+    <h3 class="widget-author-username"><?php echo get_the_author_meta('display_name');?></h3>
+    <h5 class="widget-author-desc"><?php echo ilost_wp_name?></h5>
   </div>
-<?php
-}
+  <div class="widget-author-footer">
+    <ul class="nav nav-stacked">
+      <li><p><?php echo get_the_author_meta('description');?></p></li>
+      <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">看他的所有文章<span class="pull-right badge bg-aqua"><?php echo get_the_author_posts(); ?></span></a></li>
+    </ul>
+  </div>
+</li>
+<?php  }
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
