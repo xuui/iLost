@@ -287,7 +287,50 @@ function ilost_postAuthor($post){?>
     </ul>
   </div>
 </li>
-<?php  }
+<?php /*
+<li id="recent-posts-2" class="widget-author">
+  <div class="widget-author-header bg-aqua-active">
+    <h3 class="widget-user-username"><?php echo get_the_author_meta('display_name');?></h3>
+    <h5 class="widget-user-desc"><?php echo ilost_wp_name?></h5>
+  </div>
+  <div class="widget-user-image">
+    <?php echo get_avatar(get_the_author_meta('email'),'64','wavatar', get_the_author_meta('display_name'),array('class'=>'img-circle'));?>
+  </div>
+  <div class="widget-user-footer">
+    <div class="row">
+      <div class="col-sm-4 border-right">
+        <div class="description-block">
+          <h5 class="description-header">3,200</h5>
+          <span class="description-text">SALES</span>
+        </div>
+      </div>
+      <div class="col-sm-4 border-right">
+        <div class="description-block">
+          <h5 class="description-header">13,000</h5>
+          <span class="description-text">FOLLOWERS</span>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="description-block">
+          <h5 class="description-header">35</h5>
+          <span class="description-text">PRODUCTS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+css :
+.widget-author .widget-user-username {font-size:21px;font-weight:300;margin-bottom:5px;margin-top:0;text-shadow:0 1px 1px rgba(0,0,0,.2);color:#fff!important;}
+.widget-author .widget-user-desc {margin-top:0;color:#fff!important;}
+.widget-author .widget-user-image {left:50%;margin-left:-45px;position:absolute;top:65px;}
+.widget-author .widget-user-image img {border:3px solid #fff;height:auto;width:90px;}
+.widget-user-footer {background-color:#fff;border-radius:0 0 3px 3px;border-top:1px solid #f4f4f4;padding:30px 0;}
+.widget-user-footer .border-right{border-right:1px solid #f4f4f4;}
+.description-block {display:block;margin:10px 0;text-align:center;}
+.description-block .description-header {font-size:16px;font-weight:600;margin:0;padding:0;}
+.description-block .description-text {text-transform:uppercase;}
+*/?>
+<?php }
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
