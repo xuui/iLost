@@ -45,6 +45,7 @@ function ilost_init(){
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
   add_filter('get_search_form','ilost_search_form');
+  add_filter('user_contactmethods','ilost_contactmethods');
 }
 /*
 function ilost_init(){
@@ -115,6 +116,10 @@ function ilost_Widget(){
   //register_widget('ilost_RCommentsWidget');
   //register_widget('ilost_RavatarWidget');
   //if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
+}
+function ilost_contactmethods($user_contactmethods){
+  $user_contactmethods['jobs']=__('Jobs','iLost');
+  return $user_contactmethods;
 }
 function ilost_search_form($form){
   $form='<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'">
@@ -278,11 +283,11 @@ function ilost_postAuthor($post){?>
       <?php echo get_avatar(get_the_author_meta('email'),'64','wavatar', get_the_author_meta('display_name'),array('class'=>'img-circle'));?>
     </div>
     <h3 class="widget-author-username"><?php echo get_the_author_meta('display_name');?></h3>
-    <h5 class="widget-author-desc"><?php echo ilost_wp_name?></h5>
+    <?php if(get_the_author_meta('jobs')){echo '<h5 class="widget-author-desc">'.get_the_author_meta('jobs').'</h5>';}else{echo '<h5 class="widget-author-desc">'.ilost_wp_name.'</h5>';}?>
   </div>
   <div class="widget-author-footer">
     <ul class="nav nav-stacked">
-      <li><p><?php echo get_the_author_meta('description');?></p></li>
+      <?php if(get_the_author_meta('description')){echo '<li><p>'.get_the_author_meta('description').'</p></li>';}?>
       <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">看他的所有文章<span class="pull-right badge bg-aqua"><?php echo get_the_author_posts(); ?></span></a></li>
     </ul>
   </div>
