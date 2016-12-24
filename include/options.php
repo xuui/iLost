@@ -123,7 +123,7 @@ p.description,span.description{vertical-align:middle;}
         </p>
         <p><label class="th" for="usrlogoimg"><?php _e('Custom Favicon','iLost');?></label><input name="usrfavicon" id="usrfavicon" type="checkbox" <?php if($options['usrfavicon']){echo 'checked="checked"';}?>><br>
           <span class="supoption">
-            <input name="faviconurl" id="faviconurl" type="text" size="40" value="<?php echo($options['faviconurl']);?>" placeholder="http://www.com/favicon.ico">
+            <input name="faviconurl" id="faviconurl" type="text" size="40" value="<?php echo($options['faviconurl']);?>" placeholder="//www.com/favicon.ico">
             <span class="description"><?php _e('Please enter the URL address of the Favicon icon.','iLost');?></span>
           </span>
         </p>
@@ -174,7 +174,7 @@ p.description,span.description{vertical-align:middle;}
         <p><label class="th"><?php _e('Source URL','iLost');?></label><label class="th"><input type="radio" name="jquerysrc" value="wp_jquery"<?php if($options['jquerysrc']=="wp_jquery")echo 'checked="checked"';?>/> <?php _e('WordPress Default','iLost');?></label><br>
           <span class="supoption">
           <label class="th"><input type="radio" name="jquerysrc" value="jqgzip_jquery"<?php if($options['jquerysrc']=="jqgzip_jquery")echo 'checked="checked"';?>/> <?php _e('jQurey.com','iLost');?></label><br>
-          <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL: ','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="<?php _e('http:///','iLost');?>"></label>
+          <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL: ','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="http://"></label>
           </span>
         </p>
       </fieldset>

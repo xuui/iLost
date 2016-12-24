@@ -13,11 +13,12 @@ if(!comments_open()){?>
 <?php }}
 //require_once(TEMPLATEPATH.'/include/smiley.php');
 $ilost_comment_fields=array(
-  'author'=>'<div class="form-group form-group-sm comment-form-author col-sm-4"><label class="control-label" for="author">'.__('Name').($req ? '<span class="required">*</span>':'').'</label> '.'<input type="text" class="form-control" id="author" name="author" placeholder="your name" value="'.esc_attr($commenter['comment_author']).'" size="30"'.$aria_req.' /></div>',
-  'email'=>'<div class="form-group form-group-sm comment-form-email col-sm-4"><label class="control-label" for="email">'.__('Email').($req ? '<span class="required">*</span>':'').'</label>'.'<input type="text" class="form-control" id="email" name="email" placeholder="your@mail.com" value="'.esc_attr($commenter['comment_author_email']).'" '.$aria_req.' /></div>',
-  'url'=>'<div class="form-group form-group-sm comment-form-url col-sm-4"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http:///" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
+  'author'=>'<div class="form-group form-group-sm comment-form-author col-md-4"><label class="control-label" for="author">'.__('Name').($req ? '<span class="required">*</span>':'').'</label> '.'<input type="text" class="form-control" id="author" name="author" placeholder="your name" value="'.esc_attr($commenter['comment_author']).'" size="30"'.$aria_req.' /></div>',
+  'email'=>'<div class="form-group form-group-sm comment-form-email col-md-4"><label class="control-label" for="email">'.__('Email').($req ? '<span class="required">*</span>':'').'</label>'.'<input type="text" class="form-control" id="email" name="email" placeholder="your@mail.com" value="'.esc_attr($commenter['comment_author_email']).'" '.$aria_req.' /></div>',
+  'url'=>'<div class="form-group form-group-sm comment-form-url col-md-4"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http:///" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
 );
 $ilost_comment_form=array(
+  'class_form'=>'comment-form row',
   'class_submit'=>'btn btn-primary',
   'comment_field'=>'<div class="form-group form-group-sm comment-form-comment col-xs-12"><label class="control-label" for="comment">'._x('Comment','noun').'</label><textarea class="form-control" id="comment" name="comment" placeholder="o ... .. ." rows="6" aria-required="true">'.'</textarea></div>',
   'comment_notes_after'=>'<p class="form-group smiley">'.$smilies.'</p>',

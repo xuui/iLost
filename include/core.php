@@ -44,6 +44,7 @@ function ilost_init(){
   add_action('widgets_init','ilost_Widget');
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
+  add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_search_form','ilost_search_form');
   add_filter('user_contactmethods','ilost_contactmethods');
 }
@@ -76,7 +77,6 @@ function ilost_init(){
   add_filter('comments_popup_link_attributes','ilost_comments_nofollow_link');
   add_filter('excerpt_length','ilost_excerpt_length');
   add_filter('excerpt_more','ilost_auto_excerpt_more');
-  add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_the_excerpt','ilost_custom_excerpt_more');
   add_filter('image_send_to_editor','ilost_remove_width_attribute');
   add_filter('post_thumbnail_html','ilost_remove_width_attribute');
@@ -156,7 +156,7 @@ function ilost_getstyles(){
 function ilost_enqueue_script(){
   if(ilost_getjQuery()!='wp_jquery'){
     wp_deregister_script('jquery');
-    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','http://code.jquery.com/jquery-1.11.3.min.js',array(),'1.11.3');}
+    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','//code.jquery.com/jquery-1.11.3.min.js',array(),'1.11.3');}
     if(ilost_getjQuery()=='custom_jquery'){wp_register_script('jquery',ilost_getjQueryurl());}
     wp_enqueue_script('jquery');
   }else{wp_enqueue_script('jquery');}
@@ -347,10 +347,11 @@ function ilost_pagenav($options=array()){
   echo apply_filters('ilost_pagenav',$out);
 }
 function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
-/*
+
 function ilost_fix_gravatar($avatar){
 $avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
 return $avatar;}
+/*
 function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
 */
 ?>
