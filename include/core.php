@@ -100,9 +100,10 @@ function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/sm
 */
 
 function ilost_comments_nofollow_link(){return ' rel="nofollow" ';}
-function ilost_custom_background_cb(){if(!ilost_is_iphone()&&!ilost_is_ipad()&&!ilost_is_wphone()&&!ilost_is_android()){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
+function ilost_custom_background_cb(){
+  $background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
 <style type="text/css">body{<?php echo trim($style);?>background-size:100%;}</style>
-<?php }}
+<?php }
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
   $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,'menu_icon'=>'dashicons-images-alt','supports'=>array('title','custom-fields','thumbnail'));
@@ -140,17 +141,22 @@ function ilost_is_ie10(){return strpos(BROWSER_USER_AGENT,'MSIE 10');}
 function ilost_is_macintosh(){return strpos(BROWSER_USER_AGENT,'Mac OS X 10_8_2');}
 function ilost_is_safari(){return strpos(BROWSER_USER_AGENT,'6.0.2 Safari');}
 */
+/*
 function ilost_is_iphone(){return strpos(BROWSER_USER_AGENT,'iPhone');}
-function ilost_is_wphone(){return strpos(BROWSER_USER_AGENT,'Windows Phone');}
 function ilost_is_ipad(){return strpos(BROWSER_USER_AGENT,'iPad');}
+function ilost_is_wphone(){return strpos(BROWSER_USER_AGENT,'Windows Phone');}
 function ilost_is_android(){return strpos(BROWSER_USER_AGENT,'Android');}
 function ilost_is_mobileos(){
   if((ilost_is_iphone())or(ilost_is_wphone())or(ilost_is_ipad())or(ilost_is_android())){echo "<script type=\"application/x-javascript\">addEventListener('load',function(){setTimeout(scrollTo,0,0,1);},false);</script>\n";}
 }
+*/
 function ilost_getstyles(){
-  if(ilost_is_iphone()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
-  }elseif(ilost_is_ipad()){echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/ipad.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"768x1004\" href=\"".ilost_path."/images/icons/screen_pad.png\" />\n";
+  /*if(ilost_is_iphone()){
+    echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
+  }elseif(ilost_is_ipad()){
+    echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/ipad.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"768x1004\" href=\"".ilost_path."/images/icons/screen_pad.png\" />\n";
   }elseif(ilost_is_wphone()){}
+  */
   echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
 }
@@ -163,7 +169,9 @@ function ilost_enqueue_script(){
   }else{wp_enqueue_script('jquery');}
   wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.5',true);
   wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0.0',true);
-  if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
+  
+  //if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
+  
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);
 }
 /*

@@ -21,7 +21,8 @@
 <?php }elseif(is_single()){$description=strip_tags($post->post_excerpt);$keywords="";$tags=wp_get_post_tags($post->ID);foreach($tags as $tag){$keywords=$keywords.$tag->name.", ";}?>
 <meta name="description" content="<?php echo $description?>" />
 <meta name="keywords" content="<?php echo $keywords.ilost_searchKey();?>" />
-<?php }ilost_is_mobileos();?>
+<?php }
+//ilost_is_mobileos();?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="theme author" href="Xu.hel,xw@xuui.net" />
 <?php ilost_getfavicon();ilost_getstyles();?>
