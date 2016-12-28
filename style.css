@@ -3,7 +3,7 @@ Theme Name: iLost
 Theme URI: http://xuui.net/themes/ilost-release.html
 GitHub Theme URI: https://github.com/xuui/iLost
 Description:The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 4.6 or later is Version to use.
-Version: 1.9.8
+Version: 1.9.9
 Author: Xu.hel
 Author URI: http://xuui.net/
 Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, custom-menu, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, microformats, rtl-language-support
@@ -50,6 +50,29 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 -webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;transition:all .3s ease-out}
 .navbar-search .search-field:hover{background-color:#fff;padding-left:32px;width:150px;border-color:transparent transparent #e0e0e0;box-shadow:0 1px 1px rgba(0,0,0,.075)inset}
 .navbar-search .search-field:focus{border-color:#2196f3}
+
+.navbar-toggle{float:left;margin:8px 16px 8px 0;padding:16px 14px;width:48px;}
+.navbar-toggle .icon-bar{width:20px}
+.navbar-toggle .icon-bar+.icon-bar{width:14px;}
+.navbar-toggle .icon-bar+.icon-bar+.icon-bar{width:17px;}
+
+.navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:transparent;border-color:transparent;}
+.navbar-default .navbar-toggle .icon-bar{background:#2196f3}
+.navbar-default .navbar-toggle.collapsed .icon-bar{background-color:#616161;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{border-color:transparent;}
+
+.navbar-collapse.in{overflow:visible;padding:0;background:#fff;}
+.navbar-fixed-top .navbar-collapse.in{max-height:inherit;}
+
+.navbar-collapse.in .navbar-form{margin:0;padding:0;}
+.navbar-collapse.in .navbar-search .search-field{background-color:#fff;padding-left:32px;width:100%;border-color:transparent transparent #e0e0e0;box-shadow:0 1px 1px rgba(0,0,0,.075)inset}
+.navbar-collapse.in .navbar-search .search-field:focus{border-color:#2196f3}
+
+.navbar-collapse.in .navbar-nav{margin:0;height:auto;}
+.navbar-collapse.in .navbar-nav li{display:block;}
+.navbar-collapse.in .navbar-nav li a,.navbar-collapse.in .navbar-nav li a:hover{padding:16px;}
+
+
 /*
 menu-item  
 menu-item-type-post_type 
@@ -246,9 +269,9 @@ aside .reavatar a .avatar{margin:5px}
 
 /* Navigation */
 .pagnav-row{list-style:none;margin:0;padding:24px 0 0}
-.pagnav-row li{padding:15px 0}
+.pagnav-row li{padding:15px 0;min-height:80px;}
 .pagnav-row li + li{border-left:1px solid #d6d6d6;text-align:right}
-.pagnav-row li + li + li{border:none}
+.pagnav-row li + li + li{border:none;min-height:0;}
 .pagnav-row a{display:block;color:#616161;font-size:21px;font-weight:300;line-height:1.1429}
 .pagnav-row small{display:block;margin-bottom:8px;color:#a8a8a8;font-weight:300;line-height:1.25}
 .pagnav-row a small{text-decoration:none}
@@ -311,7 +334,7 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #newpost{background:#fff;padding:32px 0}
 #newpost .container{}
 #newpost .row{background:#fff}
-#newpost .col-xl-3{padding:32px}
+#newpost .col-xl-3{padding:32px;min-height:233px;}
 #newpost .col-xl-3 + .col-xl-3{border-left:1px solid #ebebeb}
 #newpost .col-xl-3 h3{font-size:23px;font-weight:300;margin-top:4px;margin-bottom:20px}
 #newpost .col-xl-3 h3,#newpost .col-xl-3 h3 a{color:#616161}
@@ -417,9 +440,9 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 /* Rotation */
 #rotation{margin-bottom:0;background:#eee}
 #rotation .slides{overflow:hidden}
-#rotation .slides,#rotation .slides li{height:520px}
+#rotation .slides,#rotation .slides li{height:580px}
 #rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;background-attachment:fixed}
-#rotation .flex-caption{position:absolute;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:1.1em 2em;width:100%;line-height:32px;font-size:17px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+#rotation .flex-caption{position:absolute;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:16px;width:100%;line-height:1;font-size:20px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .slides li:hover .flex-caption{bottom:-0}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%}
@@ -452,6 +475,11 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 
 */
 @media screen and (max-width:767px){
+body{background-size:cover!important;}
+section .title{padding:16px 0}
+section .inarp{padding:0 16px 16px}
+.contwarp section, .contwarp .widget{margin-bottom:16px;}
+  
 /*.navbar .container{padding:0 10px}
 .navbar-nav{margin:0 -15px 4px}
 .navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:#fff;margin:0 -2px!important;padding:0 13px;border-radius:3px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)}
@@ -473,21 +501,24 @@ section .post-meta{padding:6px 15px 18px}
 */
 }
 @media (max-width:480px){
-#rotation .slides,#rotation .slides li{height:260px}
-#proaside a{height:120px}
-/*#rotation .slides li{background-size:auto 100%}
+/*
+ #proaside a{height:120px}
+#rotation .slides li{background-size:auto 100%}
 */
 }
 @media (min-width:992px){
-/*#rotation .slides li{height:320px}
+/*
+#rotation .slides li{height:320px}
 */
 }
 @media (min-width:1200px){
-/*#rotation .slides li{height:380px}
+/*
+#rotation .slides li{height:380px}
 */
 }
 @media (max-width:992px){
-/*#proaside{padding:10px 0}
+/*
+#proaside{padding:10px 0}
 #proaside a img{width:100%}
 */
 }
