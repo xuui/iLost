@@ -41,7 +41,6 @@ class ilost_catlistsWidget extends WP_Widget{
     return $instance;
   }
 }
-
 class ilost_footlistsWidget extends WP_Widget{
   function __construct(){
     parent::__construct('ilost_catlistsWidget',__('iLost Category list','iLost'),
@@ -67,41 +66,6 @@ class ilost_footlistsWidget extends WP_Widget{
     $instance=array();
     $instance['catid']=(!empty($new_instance['catid']))? strip_tags($new_instance['catid']):0;
     $instance['number']=(!empty($new_instance['number']))? strip_tags($new_instance['number']):'';
-    return $instance;
-  }
-}
-
-/*
-///////////////////////////////////////////////////////////////////////////////
-class ilost_querycatsWidget extends WP_Widget{
-  function __construct(){
-    parent::__construct('ilost_querycatsWidget',__('iLost Home template article list','iLost'),array('description'=>__('Home template in the right sidebar of articles specified category show','iLost')));
-  }
-  public function widget($args,$instance){
-    if(!$catid=(int)$instance['catid']){$catid=1;}
-    if(!$number=(int)$instance['number']){$number=6;}elseif($number<1){$number=1;}
-    if(!@$excerpt=(int)$instance['excerpt']){$excerpt=(int)$excerpt;}
-    echo '<div class="col-xl-6 col-md-6 aside">'."\n";
-    if($excerpt){ilost_querycats($catid,$number,true);}else{ilost_querycats($catid,$number,false);}
-    echo '</div>'."\n";
-  }
-  public function form($instance){
-    $catid=!empty($instance['catid'])? $instance['catid']:'0';
-    $number=!empty($instance['number'])? $instance['number']:'';
-    $excerpt=!empty($instance['excerpt'])? $instance['excerpt']:false;?>
-    <p><label for="<?php echo $this->get_field_id('catid');?>"><?php _e('Categories');?> :</label>
-    <?php wp_dropdown_categories(array('name'=>$this->get_field_name('catid'),'id'=>$this->get_field_id('catid'),'class'=>'widefat','selected'=>$catid,'show_count'=>1));?></p>
-    <p><label for="<?php echo $this->get_field_id('title');?>"><?php _e('Show post counts');?> :</label> 
-    <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" placeholder="5" value="<?php echo esc_attr($number);?>"></p>
-    <p><input id="<?php echo $this->get_field_id('excerpt');?>" name="<?php echo $this->get_field_name('excerpt');?>" type="checkbox" value="1" <?php if($excerpt)echo 'checked="checked"';?> /> 
-    <label for="<?php echo $this->get_field_id('excerpt');?>"><?php _e('Show excerpt','iLost');?></label></p>
-    <?php
-  }
-  public function update($new_instance,$old_instance){
-    $instance=array();
-    $instance['catid']=(!empty($new_instance['catid']))? strip_tags($new_instance['catid']):'0';
-    $instance['number']=(!empty($new_instance['number']))? strip_tags($new_instance['number']):'';
-    $instance['excerpt']=(!empty($new_instance['excerpt']))? strip_tags($new_instance['excerpt']):false;
     return $instance;
   }
 }
@@ -204,6 +168,10 @@ class ilost_RavatarWidget extends WP_Widget{
     return $instance;
   }
 }
+
+/*
+///////////////////////////////////////////////////////////////////////////////
+/*
 class ilost_viewsWidget extends WP_Widget{
   function __construct(){
     parent::__construct('ilost_viewsWidget',__('iLost Most Popular Articles','iLost'),array('description'=>__('Most Popular Articles','iLost')));

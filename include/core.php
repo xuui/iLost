@@ -11,15 +11,7 @@ function ilost_init(){
     'after_widget'=>'</li>',
     'before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>')
   );
-  register_sidebar(
-    array('name'=>__('Footer SideBar','iLost'),
-    'id'=>'footer-sidebar',
-    'description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),
-    'before_widget'=>'<li id="%1$s" class="widget col-xl-3 col-xs-3 col-md-3 col-sm-3 %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h4 class="widgettitle">',
-    'after_title'=>'</h4>')
-  );
+  register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
   register_sidebar(
     array('name'=>__('Page SideBar','iLost'),
     'id'=>'page-sidebar',
@@ -112,11 +104,10 @@ function iloft_post_type(){
 function ilost_Widget(){
   register_widget('ilost_catlistsWidget');
   register_widget('ilost_footlistsWidget');
+  register_widget('ilost_randompostWidget');
+  register_widget('ilost_RavatarWidget');
+  register_widget('ilost_RCommentsWidget');
   
-  //register_widget('ilost_querycatsWidget');
-  //register_widget('ilost_randompostWidget');
-  //register_widget('ilost_RCommentsWidget');
-  //register_widget('ilost_RavatarWidget');
   //if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
 }
 function ilost_contactmethods($user_contactmethods){
@@ -194,7 +185,6 @@ function ilost_get_catlist($cat='',$limit=5){
    <?php }
   echo '</ul>';
 }
-
 function ilost_get_footerlist($cat='',$limit=5){
   echo '<h4>'.get_cat_name($cat).'</h4>';
   $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
@@ -204,7 +194,6 @@ function ilost_get_footerlist($cat='',$limit=5){
    <?php }
   echo '</ul>';
 }
-/*
 function ilost_rcomments($limit=5){
   $comments=get_comments(array('number'=>100,'status'=>'approve'));
   $wpchres=get_option('blog_charset');$exclude_emails=get_bloginfo('admin_email');$i=1;$ilostoutput='';
@@ -231,40 +220,22 @@ function ilost_randompost($limit=5){
     <li><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
   <?php }}wp_reset_query();
 }
-function ilost_querycats($id=1,$limit=6,$excerpt=false){
-  $postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit));
-  echo '<h3 class="cat">'.get_cat_name($id).'</h3>';
-  while($postloop->have_posts()){$postloop->the_post();?>
-  <section id="post-<?php the_ID();?>" <?php post_class();?>>
-    <div class="title">
-     <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
-     <small><span class="time"><?php the_time('m.d.Y');?></span>, <?php the_category(', ');?>, <?php comments_popup_link(__('No Comments &raquo;','iLost'),__('1 Comment &raquo;','iLost'),__('% Comments &raquo;','iLost'));?></small>
-     <?php if($excerpt){the_excerpt();}?>
-    </div>
-  </section>
-  <?php }wp_reset_postdata();
-}
-*/
-
 function ilost_showProTu($id=0,$limit=3,$excerpt=false){
-  $postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));
-  
-  $col_class="col-xl-4 col-xs-4 col-md-4 col-sm-4";
-  //$col_class="col-xl-3 col-xs-3 col-md-3 col-sm-3";
+  $postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
+  $col_class="col-xs-4 col-sm-4 col-md-4 col-xl-4";
+  //$col_class="col-xs-3 col-sm-3 col-md-3 col-xl-3";
   while($postloop->have_posts()){
     $postloop->the_post();
     $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
     echo '<div class="'.$col_class.'"><a href="'.get_the_permalink().'" title="'.get_the_title().'" style="background-image:url('.$img_src[0].')"><span>'.get_the_title().'</span></a></div>';
   }wp_reset_postdata();
 }
-function ilost_queryNewp($limit=6,$excerpt=false){
+function ilost_queryNewp($limit=4){
   $postloop=new WP_Query(array('cat'=>'-'.ilost_frontCat(),'ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
   while($postloop->have_posts()){$postloop->the_post();?>
     <div class="col-sm-6 col-md-3 col-xl-3">
      <h3><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h3>
-     <?php //if($excerpt){
-       the_excerpt();
-     //}?>
+     <?php the_excerpt();?>
      <small><?php the_time('m.d.Y');?></small>
     </div>
   <?php }wp_reset_postdata();
