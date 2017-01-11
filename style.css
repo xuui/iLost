@@ -32,7 +32,7 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 .navbar .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1}
 .navbar .navbar-nav .current_page_parent a,
 .navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,
-.navbar .navbar-nav .active a:focus{background:#fafafa url(images/_nav_active.png) no-repeat 50% 0%;border-bottom:3px solid #2196f3;padding-bottom:19px;color:#2196f3}
+.navbar .navbar-nav .active a:focus{border-bottom:3px solid #2196f3;padding-bottom:19px;color:#2196f3}
 .navbar-nav li.menu-item-has-children a{}
 .navbar-nav li.current-menu-parent > a{color:#2196f3}
 .navbar-nav > li > .dropdown-menu{margin-top:-2px;padding:0;overflow:hidden}
@@ -440,7 +440,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #rotation{margin-bottom:0;background:#eee}
 #rotation .slides{overflow:hidden}
 #rotation .slides,#rotation .slides li{height:520px}
-#rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;background-attachment:fixed}
+#rotation .slides li{background:#fff no-repeat 50% 0%;background-size:cover;}
 #rotation .flex-caption{position:absolute;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:16px;width:100%;line-height:1;font-size:20px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .slides li:hover .flex-caption{bottom:-0}
