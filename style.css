@@ -304,21 +304,17 @@ footer .copyrt p.line span{color:#ccc}
 footer .copyrt .alignright{margin:0}
 
 /* Page */
-/* 
 section.page .post-meta{background:none;display:none;padding:0}
 .mode-about .avatar-warp{float:left;overflow:hidden;position:relative;background:#fff;margin:5px 15px 5px 5px;width:74px;height:74px}
 .mode-about .avatar-warp span{position:absolute;background:url(images/author_warp.png) no-repeat;background-size:74px 74px;width:74px;height:74px}
 .mode-about .avatar-warp .avatar{margin:5px 6px 6px;padding:0;width:64px;height:64px}
+/*
 section.page #readerwall .avatar{margin:0;border:none;padding:0}
+/*
 .page .page-header{background:transparent url(images/lostbg.png) repeat-x;border:none;margin:0;height:70px;width:100%;text-align:left}
 .page .page-header h1{margin:0;padding:0 32px;line-height:67px;font-size:20px;font-weight:400}
-/*.page #rotation,.single #rotation{margin-bottom:0}*//* 
+/*.page #rotation,.single #rotation{margin-bottom:0}*//*
 .page aside{margin-top:-3px}
-
-/* Archive */
-/* 
-section.archive{overflow:hidden;background:#f0f2f2;border:1px solid #e8e8e8;margin:5px 0 10px;padding:5px 15px;text-align:left;border-radius:5px}
-section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:left}
 
 /* Home */
 #proaside{background:#f5f5f5;padding:24px 0;box-shadow:none}
@@ -342,6 +338,8 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #newpost .col-xl-3 small{background:url(images/ico_calendar.png) no-repeat;padding:2px 0 2px 20px;font-size:12px;color:#bdbdbd}
 
 /* Archives */
+section.archive{overflow:hidden;background:#f0f2f2;border:1px solid #e8e8e8;margin:5px 0 10px;padding:5px 15px;text-align:left;border-radius:5px}
+section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:left}
 #archives h2,#archives h3{font-size:18px;margin-top:0}
 #archives ul{margin:0;padding:0}
 #archives .arslink{float:left;display:block;margin:0 0 20px;padding:0;width:100%;list-style-type:none}
