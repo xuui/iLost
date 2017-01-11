@@ -327,9 +327,8 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px}
 #proaside a,#proaside a span{display:block;display:block}
 #proaside a{position:relative;overflow:hidden;background:no-repeat 50% 50%;background-size:cover;height:220px}
-#proaside a span{position:absolute;bottom:-50%;background:rgba(0,0,0,.34);color:#fff;width:100%;padding:16px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+#proaside a span{position:absolute;bottom:-50%;background:rgba(255,255,255,.86);color:#212121;width:100%;padding:16px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #proaside a:hover span{bottom:0}
-
 #newpost{background:#fff;padding:32px 0}
 #newpost .container{}
 #newpost .row{background:#fff}
@@ -342,32 +341,7 @@ section.archive .title{color:#888;font-size:1.1em;font-style:italic;text-align:l
 #newpost .col-xl-3 p{font-size:15px;line-height:25px;color:#999}
 #newpost .col-xl-3 small{background:url(images/ico_calendar.png) no-repeat;padding:2px 0 2px 20px;font-size:12px;color:#bdbdbd}
 
-/* 
-.home.page #container .row{margin-top:0}
-article.home .aside{padding-bottom:10px}
-article.home .aside .cat{border-bottom:1px dashed #dbdbdb;margin-top:12px;padding:5px 0;text-align:left;color:#999;font-size:12pt}
-article.home .aside section{background-position:100% 15px;margin:5px 0}
-article.home .aside section:hover{background-position:100% -37px}
-article.home .aside section .title{overflow:hidden;margin:0;max-height:66px}
-article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;font-size:11pt;white-space:nowrap;text-overflow:ellipsis}
-.home aside.modhome{border-bottom:0}
-#sidehome{margin:0 -15px}
-#sidehome h3{position:relative;background:#fff url(images/pageside.png) repeat-x 0 0;border-bottom:none;border-top:1px solid #e5e5e5;margin:-1px 0 0;padding:0 13px;height:40px;line-height:40px;color:#666;font-weight:400;color:#000}
-#sidehome h3:hover,#sidehome h3.hover{background-position:0% -40px;color:#08c}
-#sidehome h3::after{background-color:transparent;background-position:0 0;content:' ';display:block;position:absolute;right:6px;top:14px;width:16px;height:16px}
-#sidehome h3:hover::after,#sidehome h3.hover::after{background-position:0 -52px}
-#sidehome h3:active,#sidehome h3.active{background-position:0% -40px}
-#sidehome h3:active::after,#sidehome h3.active::after{background-position:0 -158px}
-#sidehome li{margin-bottom:0;padding:0}
-#sidehome li ul{padding:4px 0}
-#sidehome li ul.active{background:#f7f7f7;border-bottom:1px solid #e5e5e5}
-#sidehome li li{padding:0 6px 0 16px;border:none}
-#sidehome li a{background-position:100% -200px;height:32px;padding-right:16px;line-height:32px}
-#sidehome li a:hover{background-position:100% -305px}
-#sidehome li a:active{background-position:100% -252px}
-
 /* Archives */
-/* 
 #archives h2,#archives h3{font-size:18px;margin-top:0}
 #archives ul{margin:0;padding:0}
 #archives .arslink{float:left;display:block;margin:0 0 20px;padding:0;width:100%;list-style-type:none}
@@ -379,9 +353,11 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #archives .ulpost li.clearer{border:none}
 #archives .ulpost li a{overflow:hidden;display:block;padding:0 1em;border:none;color:#666;white-space:nowrap;text-overflow:ellipsis}
 #archives .ulpost li a:hover{border-color:#08f;color:#08c;text-decoration:none}
+/* 
+ * 
+ */
 
 /* Linkpage */
-/* 
 #linkpage{margin:0;padding:0 0 10px 0px}
 #linkpage ul{margin:0;padding:0}
 #linkpage h2{margin:0 0 10px;line-height:25px;color:#1b232a;font-size:19px;font-weight:400;text-shadow:1px 1px 2px #999}
@@ -389,6 +365,9 @@ article.home .aside section .title h2{overflow:hidden;margin:0;line-height:1.5;f
 #linkpage li ul li{float:left;border:1px solid #fff;margin:2px 1px;width:24.3%;height:23px;list-style:none;line-height:23px;text-align:center}
 #linkpage li ul li a{display:block;border:1px solid #f7f7f7;font-size:1em;text-decoration:none;border-radius:3px;white-space:nowrap;text-overflow:ellipsis}
 #linkpage li ul li a:hover{background:#0fade5;border-color:#08f;color:#fff;text-shadow:0 1px 0 #08f}
+/* 
+ * 
+ */
 
 /* Error 404 */
 /* 
@@ -440,8 +419,8 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 #rotation{margin-bottom:0;background:#eee}
 #rotation .slides{overflow:hidden}
 #rotation .slides,#rotation .slides li{height:520px}
-#rotation .slides li{background:#fff no-repeat 50% 0%;background-size:cover;}
-#rotation .flex-caption{position:absolute;background:rgba(0,0,0,.25);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:16px;width:100%;line-height:1;font-size:20px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+#rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;}
+#rotation .flex-caption{position:absolute;background:rgba(0,0,0,.24);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:20px;width:100%;line-height:1;font-size:19px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .slides li:hover .flex-caption{bottom:-0}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%}

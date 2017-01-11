@@ -35,7 +35,7 @@
 <?php wp_head();?>
 </head>
 <body <?php body_class();?>>
-<nav class="navbar navbar-default<?php if(is_front_page()){echo ' navbar-fixed-top';}?>" role="navigation">
+<header class="navbar navbar-default<?php if(is_front_page()){echo ' navbar-fixed-top';}?>" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse">
@@ -60,5 +60,5 @@
       <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav()));?>
     </div>
   </div>
-</nav>
+</header>
 <?php //if(is_front_page()){ilost_getiloshow();}?>
