@@ -456,6 +456,8 @@ section .title{padding:16px 0}
 section .inarp{padding:0 16px 16px}
 .contwarp section, .contwarp .widget{margin-bottom:16px;}
   
+.navbar-form{float:right;margin-top:-56px;}
+
 /*.navbar .container{padding:0 10px}
 .navbar-nav{margin:0 -15px 4px}
 .navbar-collapse{position:absolute;left:8px;right:8px;z-index:10;background:#fff;margin:0 -2px!important;padding:0 13px;border-radius:3px;box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)}

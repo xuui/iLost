@@ -46,17 +46,17 @@
       <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button-->
       <?php ilost_getlogoimg();?>
     </div>
+    <form role="search" method="get" class="navbar-form navbar-right navbar-search search-form" action="<?php echo home_url('/');?>">
+      <div class="form-group">
+      <!--label>
+      <span class="screen-reader-text"><?php echo _x('Search for:','label');?></span-->
+      <input type="search" class="form-control search-field" placeholder="<?php echo esc_attr_x('Search …','placeholder');?>" value="<?php echo get_search_query();?>" name="s" title="<?php echo esc_attr_x('Search for:','label');?>" />
+      </label>
+      <!--input type="submit" class="search-submit"
+    value="<?php echo esc_attr_x('Search','submit button');?>" /-->
+      </div>
+    </form>
     <div class="collapse navbar-collapse" id="ilost-collapse">
-      <form role="search" method="get" class="navbar-form navbar-right navbar-search search-form" action="<?php echo home_url('/');?>">
-        <div class="form-group">
-        <!--label>
-        <span class="screen-reader-text"><?php echo _x('Search for:','label');?></span-->
-        <input type="search" class="form-control search-field" placeholder="<?php echo esc_attr_x('Search …','placeholder');?>" value="<?php echo get_search_query();?>" name="s" title="<?php echo esc_attr_x('Search for:','label');?>" />
-        </label>
-        <!--input type="submit" class="search-submit"
-      value="<?php echo esc_attr_x('Search','submit button');?>" /-->
-        </div>
-      </form>
       <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav()));?>
     </div>
   </div>
