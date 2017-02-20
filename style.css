@@ -17,22 +17,22 @@ License URI: LICENSE
 ::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
 body{position:relative;background:#eee}
-a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out}
+a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out;}
 .alert{margin-bottom:0;padding:16px 24px}
 h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 
 .navbar-default{background:transparent;background:#f5f5f5;border:none;border-radius:0;margin-bottom:0}
-.navbar-fixed-top,.custom-background .navbar-default{background:rgba(240,240,240,.95)}
+.navbar-fixed-top,.custom-background .navbar-default{background:rgba(240,240,240,.86)}
 .navbar-default .nav-brand{margin:0;height:64px}
 .navbar-default .navbar-brand{padding:0 15px;height:64px;line-height:64px}
 .navbar-default .nav-brand .logo{width:auto;height:64px}
 .navbar-default .navbar-brand{color:#2196f3}
-.navbar-nav > li > a{padding-top:22px;padding-bottom:22px;color:#777}
+.navbar-default .navbar-nav li a{padding-top:22px;padding-bottom:22px;color:#424242}
 .navbar .navbar-nav{float:none;text-align:center;height:64px}
 .navbar .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1}
 .navbar .navbar-nav .current_page_parent a,
 .navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,
-.navbar .navbar-nav .active a:focus{border-bottom:3px solid #2196f3;padding-bottom:19px;color:#2196f3}
+.navbar .navbar-nav .active a:focus{border-bottom:3px solid #2196f3;padding-bottom:19px;color:#424242}
 .navbar-nav li.menu-item-has-children a{}
 .navbar-nav li.current-menu-parent > a{color:#2196f3}
 .navbar-nav > li > .dropdown-menu{margin-top:-2px;padding:0;overflow:hidden}
@@ -95,7 +95,7 @@ a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images
 */
 
 .breadwarp,.breadcrumb{background:transparent}
-.breadcrumb{margin:0;padding:20px 0;border-radius:0}
+.breadcrumb{margin:0;padding:24px 0;border-radius:0}
 .breadcrumb a{color:#bdbdbd}
 .breadcrumb > .active{color:#757575}
 .custom-background .breadcrumb a{color:rgba(255,255,255,.6)}
@@ -108,7 +108,7 @@ a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images
 .pagewarp{background:#fff}
 .pagewarp .row{background:#fff;padding:15px 0}
 .page-header,.page-header h1{margin:0}
-.page-header{border-bottom:none;padding:40px 0}
+.page-header{border-bottom:none;padding:56px 0}
 .page-header h1{font-size:29px;font-weight:300;line-height:1}
 .custom-background .page-header h1{color:rgba(255,255,255,.9);}
 .pagewarp section{padding-top:20px}
@@ -293,12 +293,12 @@ aside .reavatar a .avatar{margin:5px}
 footer{clear:both;background:#eee;padding:25px 0 10px}
 footer ul{list-style:none;padding:0}
 footer .row{margin-bottom:20px}
-footer .row h4{margin-top:0;margin-bottom:4px;line-height:20px;font-size:15px;color:#616161}
+footer .row h4{margin-top:0;margin-bottom:16px;line-height:20px;font-size:15px;font-weight:700;color:#757575;text-transform:uppercase}
 footer .row .widget{margin-bottom:16px}
 footer .row li a{color:#616161}
-footer .row li a:hover{color:#2196f3;text-decoration:none}
-footer .copyrt{color:#757575}
-footer .copyrt p{margin:0;padding:8px 0;font-size:11px;font-weight:300;text-transform:-uppercase}
+footer .row li a:hover{color:#1e88e5;text-decoration:none}
+footer .copyrt{color:#424242}
+footer .copyrt p{margin:0;padding:8px 0;font-size:11px;font-weight:300;text-transform:uppercase}
 footer .copyrt p.line{border-bottom:1px solid #e0e0e0}
 footer .copyrt p.line span{color:#ccc}
 footer .copyrt .alignright{margin:0}
@@ -323,7 +323,7 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px}
 #proaside a,#proaside a span{display:block;display:block}
 #proaside a{position:relative;overflow:hidden;background:no-repeat 50% 50%;background-size:cover;height:220px}
-#proaside a span{position:absolute;bottom:-50%;background:rgba(255,255,255,.86);color:#212121;width:100%;padding:16px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+#proaside a span{position:absolute;bottom:-50%;background:rgba(0,0,0,.2);color:#fff;width:100%;padding:16px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #proaside a:hover span{bottom:0}
 #newpost{background:#fff;padding:32px 0}
 #newpost .container{}
@@ -416,11 +416,22 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 /* Rotation */
 #rotation{margin-bottom:0;background:#eee}
 #rotation .slides{overflow:hidden}
-#rotation .slides,#rotation .slides li{height:520px}
+#rotation .slides,#rotation .slides li{height:570px}
 #rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;}
-#rotation .flex-caption{position:absolute;background:rgba(0,0,0,.24);border-top:1px solid rgba(255,255,255,.13);bottom:-80px;margin:0;padding:20px;width:100%;line-height:1;font-size:19px;text-align:center;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+#rotation .flex-caption{position:absolute;bottom:24px;left:24px;
+  
+background:rgba(33,150,243,.64);border-top:1px solid rgba(255,255,255,.13);
+margin:0;
+padding:20px 24px;
+max-width:50%;
+
+line-height:1.26;font-size:19px;text-align:left;
+  
+-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
-#rotation .slides li:hover .flex-caption{bottom:-0}
+/*
+#rotation .slides li:hover .flex-caption{bottom:0}
+*/
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%}
 #rotation .flex-direction-nav a.flex-next{background-position:100px 50%;right:0}
 #rotation .flex-direction-nav a.flex-prev{background-position:100px 50%;left:0}
