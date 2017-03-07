@@ -1,7 +1,6 @@
 <?php // Core Functions.
 
 function ilost_init(){
-
   register_sidebar(
     array('name'=>__('iLost SideBar','iLost'),
     'id'=>'ilost-sidebar',
@@ -61,6 +60,8 @@ function ilost_init(){
     'before_title'=>'<h3 class="widgettitle">',
     'after_title'=>'</h3>')
   );
+
+  
   //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
   add_action('admin_menu','ilost_excerpt_meta_box');
   add_action('wp_head','ilost_sidefloat');
@@ -177,21 +178,19 @@ function ilost_footerscript(){
 }
 */
 function ilost_get_catlist($cat='',$limit=5){
-  echo '<h3>'.get_cat_name($cat).'</h3>';
+  echo '<h3>'.get_cat_name($cat).'</h3><ul>';
   $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
-  echo '<ul>';
   while($postloop->have_posts()){$postloop->the_post();?>
   <li><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
-   <?php }
+   <?php }wp_reset_postdata();
   echo '</ul>';
 }
 function ilost_get_footerlist($cat='',$limit=5){
-  echo '<h4>'.get_cat_name($cat).'</h4>';
+  echo '<h4>'.get_cat_name($cat).'</h4><ul>';
   $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
-  echo '<ul>';
   while($postloop->have_posts()){$postloop->the_post();?>
   <li><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></li>
-   <?php }
+   <?php }wp_reset_postdata();
   echo '</ul>';
 }
 function ilost_rcomments($limit=5){
@@ -244,7 +243,7 @@ function ilost_lgshow(){if(is_user_logged_in())echo ' style="display:block"';}
 function ilost_relatedposts($postID,$limit=5,$type=''){
   $tags=wp_get_post_tags($postID);
   if($tags){
-    $first_tag=$tags[0]->term_id; $args=array('tag__in'=>array($first_tag),'post__not_in'=>array($postID),'showposts'=>$limit,'ignore_sticky_posts'=>1);
+    $first_tag=$tags[0]->term_id;$args=array('tag__in'=>array($first_tag),'post__not_in'=>array($postID),'showposts'=>$limit,'ignore_sticky_posts'=>1);
     $my_query=new WP_Query($args);
     if($my_query->have_posts()){
       echo "<div class=\"related\">\n<h3>".__('Related Post:','iLost')."</h3>\n<ul>\n";
@@ -253,8 +252,8 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
       <?php if(ilost_repostShow()=='thumbnail'){echo the_post_thumbnail('thumbnail');}the_title();?> <?php comments_number(' ','(1)','(%)');?></a></li>
       <?php
       };echo "</ul>\n</div>\n";
-    }
-  }wp_reset_query();
+    }wp_reset_postdata();
+  }
 }
 function ilost_postAuthor($post){?>
 <li class="widget-author">
