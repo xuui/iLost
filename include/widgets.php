@@ -206,4 +206,4 @@ class ilost_viewsWidget extends WP_Widget{
   }
 }
 */
-/*?>
+?>

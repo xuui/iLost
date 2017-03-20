@@ -34,7 +34,7 @@ function ilost_getiloshow(){
 <div id="rotation" class="flexslider">
   <ul class="slides">
     <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}$img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
-    <li style="background-image:url(<?php echo $img_src[0];?>);"><a href="<?php echo $urlLink;?>" target="_blank"><?php //the_post_thumbnail('full');?><span class="flex-caption"><?php the_title()?></span></a></li>
+    <li style="background-image:url(<?php echo $img_src[0];?>);"><a class="flex-caption" href="<?php echo $urlLink;?>" target="_blank"><?php //the_post_thumbnail('full');?><b><?php the_title()?></b><span><?php echo(__('Learn more','iLost'))?></span></a></li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
 </div>
