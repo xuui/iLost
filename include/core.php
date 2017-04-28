@@ -220,7 +220,8 @@ function ilost_randompost($limit=5){
   <?php }}wp_reset_query();
 }
 function ilost_showProTu($id=0,$limit=3,$excerpt=false){
-  $postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
+  //$postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
+  $postloop=new WP_Query(array('tag_id'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
   $col_class="col-xs-4 col-sm-4 col-md-4 col-xl-4";
   //$col_class="col-xs-3 col-sm-3 col-md-3 col-xl-3";
   while($postloop->have_posts()){

@@ -165,7 +165,7 @@ p.description,span.description{vertical-align:middle;}
         </p>
         <p>
           <label class="th" for="frontcat"><?php _e('Front Cat Show','iLost');?></label>
-          <?php wp_dropdown_categories(array('name'=>'frontcat','id'=>'frontcat','class'=>'','selected'=>$options['frontcat'],'show_count'=>1));?>
+          <?php wp_dropdown_categories(array('taxonomy'=>'post_tag','name'=>'frontcat','id'=>'frontcat','class'=>'','selected'=>$options['frontcat'],'show_count'=>1));?>
         </p>
       </fieldset>
   <?php break;case 'script':?>

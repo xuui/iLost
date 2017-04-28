@@ -27,12 +27,12 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 .navbar-default .navbar-brand{padding:0 15px;height:64px;line-height:64px}
 .navbar-default .nav-brand .logo{width:auto;height:64px}
 .navbar-default .navbar-brand{color:#2196f3}
-.navbar-default .navbar-nav li a{padding-top:22px;padding-bottom:22px;color:#424242}
+.navbar-default .navbar-nav li a{padding:22px 16px;color:#424242}
 .navbar .navbar-nav{float:none;text-align:center;height:64px}
 .navbar .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1}
 .navbar .navbar-nav .current_page_parent a,
 .navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,
-.navbar .navbar-nav .active a:focus{border-bottom:3px solid #2196f3;padding-bottom:19px;color:#424242}
+.navbar .navbar-nav .active a:focus{background-color:#f7f7f7;border-bottom:3px solid #2196f3;color:#424242;padding-bottom:19px;}
 .navbar-nav li.menu-item-has-children a{}
 .navbar-nav li.current-menu-parent > a{color:#2196f3}
 .navbar-nav > li > .dropdown-menu{margin-top:-2px;padding:0;overflow:hidden}
