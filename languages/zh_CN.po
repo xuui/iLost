@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iLost CMS v1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-08 21:13+0800\n"
-"PO-Revision-Date: 2015-10-08 21:13+0800\n"
+"POT-Creation-Date: 2017-05-01 02:06+0800\n"
+"PO-Revision-Date: 2017-05-01 02:06+0800\n"
 "Last-Translator: Xu.hel <<zvzhssj@gmail.com>>\n"
 "Language-Team: Xu.Design <xw@xuui.net>\n"
 "Language: zh_CN\n"
@@ -13,449 +13,311 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:5 ../header.php:11
+#: ../_404.php:5
 msgid "Error 404 - Not Found"
 msgstr "404 错误 - 没有找到"
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../_archive.php:9 ../_search.php:19 ../index.php:27
 msgid "No Comments"
 msgstr "没有评论"
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../_archive.php:9 ../_search.php:19 ../index.php:27
 msgid "1 Comment"
 msgstr "1 条评论"
 
-#: ../archive.php:9 ../index.php:9 ../search.php:19
+#: ../_archive.php:9 ../_search.php:19 ../index.php:27
 msgid "% Comments"
 msgstr "% 条评论"
 
-#: ../archive.php:9 ../archive.php:19 ../attachment.php:8 ../attachment.php:14
-#: ../index.php:9 ../index.php:18 ../mode.about.php:14 ../mode.archives.php:15
-#: ../mode.guestbook.php:13 ../mode.links.php:11 ../page.php:12
-#: ../search.php:19 ../search.php:29 ../single-ilostshow.php:8
-#: ../single-ilostshow.php:14 ../single.php:9 ../single.php:28
+#: ../_archive.php:9 ../_archive.php:16 ../_attachment.php:8
+#: ../_attachment.php:14 ../_mode.guestbook.php:13 ../_search.php:19
+#: ../_search.php:26 ../_single-ilostshow.php:8 ../_single-ilostshow.php:14
+#: ../index.php:27 ../index.php:33 ../mode.about.php:20 ../page.php:18
+#: ../single.php:16 ../single.php:30
 msgid "Edit"
 msgstr "编辑"
 
-#: ../archive.php:14 ../index.php:13 ../search.php:24 ../single.php:15
-msgid "View this article need to login."
-msgstr "这篇文章需要登录后才能浏览。"
-
-#: ../archive.php:19 ../attachment.php:15 ../index.php:18 ../single.php:29
+#: ../_archive.php:16 ../_attachment.php:15 ../index.php:33 ../single.php:31
 msgid "Tags: "
 msgstr "标签: "
 
-#: ../archive.php:28 ../index.php:27 ../search.php:38
+#: ../_archive.php:25 ../_search.php:35 ../header.php:11 ../index.php:43
 msgid "Not Found"
 msgstr "没有找到"
 
-#: ../archive.php:30 ../index.php:29 ../search.php:40
+#: ../_archive.php:27 ../_search.php:37 ../index.php:45
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr "对不起，您要找的东西不在这里。"
 
-#: ../archive.php:31 ../index.php:30 ../search.php:41
+#: ../_archive.php:28 ../_search.php:38 ../index.php:46
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr "抱歉，您请求的页面无法找到。也许您可以使用搜索来查找一下。"
 
-#: ../comments.php:2
+#: ../_mode.guestbook.php:9 ../functions.php:36 ../index.php:30
+msgid "Learn more"
+msgstr "了解更多"
+
+#: ../_search.php:6 ../_search.php:14 ../header.php:11
+#, php-format
+msgid "Search results for %s"
+msgstr "%s 的搜索结果"
+
+#: ../comments.php:3
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr "这是一篇受密码保护的文章。需要输入密码后才能查看评论。"
 
-#: ../comments.php:6
+#: ../comments.php:8
 msgid "One Response"
-msgstr ""
+msgstr "1个评论"
 
-#: ../comments.php:6
+#: ../comments.php:8
 #, php-format
 msgid "%1$s Responses"
-msgstr ""
+msgstr "%1$s 个评论"
 
-#: ../comments.php:12
+#: ../comments.php:14
+msgid "Name"
+msgstr "昵称"
+
+#: ../comments.php:15
+msgid "Email"
+msgstr "电子邮箱"
+
+#: ../comments.php:16
+msgid "Website"
+msgstr "网站"
+
+#: ../comments.php:30
 msgid "Comments are closed."
 msgstr "这篇文章的评论已关闭。"
 
-#: ../comments.php:16
-msgid "Name"
-msgstr "用户名："
-
-#: ../comments.php:17
-msgid "Email"
-msgstr "Email"
-
-#: ../comments.php:18
-msgid "Website"
-msgstr "Website"
-
-#: ../footer.php:3
-msgid "Back Top"
-msgstr "返回顶部"
-
-#: ../footer.php:6
-msgid " Archives"
-msgstr " 文章存档"
-
-#: ../footer.php:20
+#: ../footer.php:12
 msgid " &brvbar; "
 msgstr " &brvbar; "
 
-#: ../functions.php:17
-msgid "Share this post:"
-msgstr "将本文分享到："
+#: ../functions.php:15
+#, php-format
+msgid "Page %s"
+msgstr "第 %s 页"
 
-#: ../functions.php:17
-msgid "Facebook"
-msgstr "Facebook"
-
-#: ../functions.php:17
-msgid "Twitter"
-msgstr "Twitter"
-
-#: ../functions.php:17
-msgid "Delicious"
-msgstr "Delicious"
-
-#: ../functions.php:17
-msgid "Fanfou"
-msgstr "饭否"
-
-#: ../functions.php:17
-msgid "QQ Weibo"
-msgstr "腾讯微博"
-
-#: ../functions.php:17
-msgid "Sina Weibo"
-msgstr "新浪微博"
-
-#: ../functions.php:17
-msgid "163 Weibo"
-msgstr "网易微博"
-
-#: ../functions.php:17
-msgid "kaixin001"
-msgstr "开心网"
-
-#: ../functions.php:17
-msgid "Renren"
-msgstr "人人网"
-
-#: ../functions.php:17
-msgid "Douban"
-msgstr "豆瓣"
-
-#: ../functions.php:25
+#: ../functions.php:78
 #, php-format
 msgid "%1$s <small><time pubdate datetime=\"%2$s\">%3$s</time></small>"
-msgstr ""
+msgstr "%1$s <small><time pubdate datetime=\"%2$s\">%3$s</time></small>"
 
-#: ../functions.php:25
+#: ../functions.php:78
 #, php-format
 msgid "%1$s %2$s"
 msgstr "%1$s %2$s"
 
-#: ../functions.php:26
+#: ../functions.php:79
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../functions.php:28 ../functions.php:34
+#: ../functions.php:81 ../functions.php:87
 msgid "[Edit]"
 msgstr "[编辑]"
 
-#: ../functions.php:34
-msgid "Pingback:"
-msgstr "引用:"
-
-#: ../functions.php:45
-msgid "登录才能浏览:"
-msgstr "登录才能浏览:"
-
-#: ../functions.php:47
-msgid "浏览这个篇文章的用户等级为:"
-msgstr "浏览这个篇文章的用户等级为:"
-
-#: ../functions.php:49
-msgid "用户等级0~10 留空为所有人都可以看。"
-msgstr "用户等级0~10 留空为所有人都可以看。"
-
-#: ../header.php:11 ../search.php:6 ../search.php:14
-#, php-format
-msgid "Search results for \"%s\""
-msgstr "\"%s\" 的搜索结果"
-
-#: ../include/core.php:4
+#: ../include/core.php:5
 msgid "iLost SideBar"
-msgstr ""
+msgstr "iLost 边栏"
 
-#: ../include/core.php:6
+#: ../include/core.php:7
 msgid " theme's SideBar."
 msgstr " 主题的主边栏。"
 
 #: ../include/core.php:13
-msgid "Home Page Right SideBar"
-msgstr ""
-
-#: ../include/core.php:15
-msgid " theme's Home page template of right sidebar."
-msgstr " 主题的首页模版页的右侧边栏。"
-
-#: ../include/core.php:22
-msgid "Home Page Left SideBar"
-msgstr ""
-
-#: ../include/core.php:24
-msgid " theme's Home page template of left sidebar."
-msgstr " 主题的首页模版页的左侧边栏。"
-
-#: ../include/core.php:31
-msgid "Page SideBar"
-msgstr ""
-
-#: ../include/core.php:33
-msgid " theme's page sidebar."
-msgstr " 主题的页面边栏。"
-
-#: ../include/core.php:40
 msgid "Footer SideBar"
-msgstr ""
+msgstr "页脚栏"
 
-#: ../include/core.php:42
+#: ../include/core.php:13
 msgid " theme' footer sidebar, This can only be placed on 5 widget."
 msgstr " 主题的页脚边栏，一行最多允许放置 5 个小工具。"
 
-#: ../include/core.php:49
+#: ../include/core.php:15
+msgid "Page SideBar"
+msgstr "页面边栏"
+
+#: ../include/core.php:17
+msgid " theme's page sidebar."
+msgstr " 主题的页面边栏。"
+
+#: ../include/core.php:24
 msgid "Primary Navigation"
 msgstr "主导航菜单"
 
-#: ../include/core.php:81
-msgid "Excerpt"
-msgstr "摘要"
-
-#: ../include/core.php:83 ../index.php:12 ../index.php:14 ../mode.about.php:10
-#: ../mode.guestbook.php:9 ../page.php:8
-msgid "Learn more"
-msgstr "了解更多"
-
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Show images"
 msgstr "展示图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Show image"
 msgstr "展示图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Add Images"
 msgstr "添加图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Add New Images"
 msgstr "添加新图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Edit Image"
 msgstr "编辑图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Add Show image"
 msgstr "添加展示图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "View Image"
 msgstr "查看图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "Search Show images"
 msgstr "搜索展示图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "No images found"
 msgstr "找不到任何展示图片"
 
-#: ../include/core.php:97
+#: ../include/core.php:102
 msgid "No images found in Trash"
 msgstr "垃圾桶里面没有发现任何展示图片"
 
-#: ../include/core.php:147 ../include/options.php:153
-msgid "Use Ctrl+Enter to reply comments"
-msgstr "使用 Ctrl+Enter 快速回复评论"
+#: ../include/core.php:116
+msgid "Jobs"
+msgstr "工作"
 
-#: ../include/core.php:194
-msgid "No Comments &raquo;"
-msgstr "No Comments &raquo;"
-
-#: ../include/core.php:194
-msgid "1 Comment &raquo;"
-msgstr "1 Comment &raquo;"
-
-#: ../include/core.php:194
-msgid "% Comments &raquo;"
-msgstr "% Comments &raquo;"
-
-#: ../include/core.php:208
+#: ../include/core.php:257
 msgid "Related Post:"
 msgstr "相关文章："
 
-#: ../include/core.php:220
-msgid "Author"
-msgstr "作者"
-
-#: ../include/core.php:221
-msgid "Author description"
-msgstr "简介"
-
-#: ../include/options.php:76
+#: ../include/options.php:77
 msgid "Settings saved."
 msgstr "设置已保存。"
 
-#: ../include/options.php:78
+#: ../include/options.php:79
 msgid "Settings have been restored to default."
 msgstr "设置已恢复为默认值。"
 
-#: ../include/options.php:79 ../include/options.php:82
-#: ../include/options.php:215
-msgid " Options"
-msgstr " 选项"
+#: ../include/options.php:80 ../include/options.php:114
+msgid "Options"
+msgstr "选项"
 
-#: ../include/options.php:82 ../include/options.php:217
+#: ../include/options.php:83
+msgid "General"
+msgstr "常规"
+
+#: ../include/options.php:83 ../include/options.php:163
+msgid "Front Page"
+msgstr "首页"
+
+#: ../include/options.php:83
 msgid "Script Code"
 msgstr "广告或脚本"
 
-#: ../include/options.php:116
+#: ../include/options.php:83
+msgid "SEO"
+msgstr "搜索引擎"
+
+#: ../include/options.php:118
 msgid "Thank you for purchasing this theme, designed by the Xu.hel."
 msgstr "谢谢您购买这个主题，这个主题由 Xu.hel 设计。"
 
-#: ../include/options.php:121 ../include/options.php:216
+#: ../include/options.php:123
 msgid "General Options"
 msgstr "常规选项"
 
-#: ../include/options.php:122
+#: ../include/options.php:124
 msgid "Custom Logo picture"
 msgstr "自定义 Logo 图片"
 
-#: ../include/options.php:125
+#: ../include/options.php:127
 msgid "Please enter the URL address of the Logo picture."
 msgstr "请输入 Logo 图片的 URL 地址。"
 
-#: ../include/options.php:128
+#: ../include/options.php:130
 msgid "Custom Favicon"
 msgstr "自定义 Favicon"
 
-#: ../include/options.php:131
+#: ../include/options.php:133 ../include/options.php:191
 msgid "Please enter the URL address of the Favicon icon."
 msgstr "请输入 Favicon 图标的 URL 地址。"
 
-#: ../include/options.php:134
+#: ../include/options.php:136
 msgid "Sidebar float:"
 msgstr "边栏浮动："
 
-#: ../include/options.php:135
+#: ../include/options.php:137
 msgid "Left"
 msgstr "左边"
 
-#: ../include/options.php:136
+#: ../include/options.php:138
 msgid "Right"
 msgstr "右边"
 
-#: ../include/options.php:138
+#: ../include/options.php:140
 msgid "Custom RSS Subscription"
 msgstr "自定义 RSS 订阅地址"
 
-#: ../include/options.php:139
-msgid "Is empty, use the default automatic WordPress address. "
+#: ../include/options.php:141
+msgid "Is empty, use the default automatic WordPress address."
 msgstr "为空则自动使用 WordPress 的默认地址。"
 
-#: ../include/options.php:141
-msgid "Search engine keywords"
-msgstr "搜索引擎关键词"
+#: ../include/options.php:143
+msgid "Use Ctrl+Enter to reply comments"
+msgstr "使用 Ctrl+Enter 快速回复评论"
 
-#: ../include/options.php:142
-msgid ""
-"Keywords using a comma (\",\") between them. Is empty, the automatic "
-"acquisition."
-msgstr "关键词用逗号(“，”)隔开。为空则自动获取。"
-
-#: ../include/options.php:144
-msgid "Google custom search"
-msgstr "Google 自定义搜索"
-
-#: ../include/options.php:144 ../include/options.php:158
-#: ../include/options.php:165 ../include/options.php:167
-msgid "Enabled"
-msgstr "启用"
-
-#: ../include/options.php:146
-#, php-format
-msgid ""
-"Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a "
-"href=\"%1$s\">Google Custom Search Engine</a>, and enter the <code>value</"
-"code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
-msgstr ""
-"在 <a href=\"%1$s\">Google Custom Search Engine</a> 的搜索框代码中找到 "
-"<code>name=\"cx\"</code> ， 并将同行中 value 的值填写在下面的输入框内。<br />"
-"例如: <code>014782006753236413342:1ltfrybsbz4</code>"
-
-#: ../include/options.php:146
-msgid "http://www.google.com/coop/cse/"
-msgstr "http://www.google.com/coop/cse/"
-
-#: ../include/options.php:148
-msgid "Embedded in the site search results"
-msgstr "站点内内嵌搜索结果"
-
-#: ../include/options.php:151
-msgid "Enable Google + 1 button"
-msgstr "启用 Google +1 按钮"
-
-#: ../include/options.php:155
-msgid "Focus image shows quantity"
-msgstr "轮换图片显示数量"
-
-#: ../include/options.php:156
-msgid "The default show 4 images"
-msgstr "默认显示4张图片"
-
-#: ../include/options.php:158
+#: ../include/options.php:145
 msgid "Related articles"
 msgstr "相关文章"
 
-#: ../include/options.php:160
+#: ../include/options.php:145 ../include/options.php:152
+#: ../include/options.php:154 ../include/options.php:186
+msgid "Enabled"
+msgstr "启用"
+
+#: ../include/options.php:147
 msgid "Type:"
 msgstr "类型："
 
-#: ../include/options.php:160
+#: ../include/options.php:147
 msgid "Post lists"
 msgstr "文章列表"
 
-#: ../include/options.php:160
+#: ../include/options.php:147
 msgid "thumbnail"
 msgstr "微缩图"
 
-#: ../include/options.php:161
+#: ../include/options.php:148
 msgid "Number:"
 msgstr "数量："
 
-#: ../include/options.php:162
-msgid "The default display 5 articles "
-msgstr "默认显示5篇文章"
+#: ../include/options.php:149
+msgid "The default display 5 articles."
+msgstr "默认显示5篇文章。"
 
-#: ../include/options.php:165
+#: ../include/options.php:152
 msgid "Article footer display author information"
 msgstr "文章末尾显示作者信息"
 
-#: ../include/options.php:167
+#: ../include/options.php:154
 msgid "GrowlBox pop-up tips"
 msgstr "GrowlBox 气泡提示"
 
-#: ../include/options.php:169
+#: ../include/options.php:156
 msgid "Text...##Title#Pop-up bubble title"
 msgstr "内容…##Title#弹出气泡标题"
 
-#: ../include/options.php:170
+#: ../include/options.php:157
 msgid ""
 "Set GrowlBox tip box's contents. Use the # # Title# \"separate content and "
 "title, can do not have a title. Is empty is not GrowlBox tip box popup."
@@ -463,181 +325,331 @@ msgstr ""
 "设置 GrowlBox 提示框的提示内容。使用“##Title#”分开内容和标题，可以没有标题。"
 "为空则不会弹出 GrowlBox 提示框。"
 
-#: ../include/options.php:173
-msgid "."
-msgstr "."
+#: ../include/options.php:165
+msgid "Focus image shows quantity"
+msgstr "轮换图片显示数量"
+
+#: ../include/options.php:166
+msgid "The default show 4 images"
+msgstr "默认显示4张图片"
+
+#: ../include/options.php:169
+msgid "Front Cat Show"
+msgstr "首页展示分类"
+
+#: ../include/options.php:175
+msgid "Search Engine Optimization"
+msgstr "搜索引擎优化"
+
+#: ../include/options.php:176
+msgid "Search engine keywords"
+msgstr "搜索引擎关键词"
 
 #: ../include/options.php:177
+msgid ""
+"Keywords using a comma (\",\") between them. Is empty, the automatic "
+"acquisition."
+msgstr "关键词用逗号(“，”)隔开。为空则自动获取。"
+
+#: ../include/options.php:179
+msgid "Search engine description"
+msgstr "搜索引擎描述"
+
+#: ../include/options.php:181
+msgid "Site description."
+msgstr "站点描述。"
+
+#: ../include/options.php:185
+msgid "Baidu Search Engine"
+msgstr "百度搜索"
+
+#: ../include/options.php:186
+msgid "自动推送到百度"
+msgstr ""
+
+#: ../include/options.php:188
+msgid "新文章发布推送到百度"
+msgstr ""
+
+#: ../include/options.php:197
 msgid "jQuery Library"
 msgstr "jQuery 库"
 
-#: ../include/options.php:178
+#: ../include/options.php:198
 msgid "Source URL"
 msgstr "来源地址"
 
-#: ../include/options.php:178
+#: ../include/options.php:198
 msgid "WordPress Default"
 msgstr "WordPress 默认地址"
 
-#: ../include/options.php:180
-msgid "jQurey.com"
-msgstr "jQurey.com"
+#: ../include/options.php:200
+msgid "jQurey 3.x"
+msgstr "jQurey 3.x"
 
-#: ../include/options.php:181
-msgid "Custom URL: "
+#: ../include/options.php:201
+msgid "Custom URL:"
 msgstr "自定义地址："
 
-#: ../include/options.php:181
-msgid "http:///"
-msgstr "http:///"
-
-#: ../include/options.php:186
+#: ../include/options.php:206
 msgid "Google Analytics statistics"
 msgstr "Google Analytics 统计分析"
 
-#: ../include/options.php:187
+#: ../include/options.php:207
 msgid "Google Analytics statistics code"
 msgstr "Google Analytics 统计分析代码"
 
-#: ../include/options.php:192
+#: ../include/options.php:212
 msgid "AD Codes"
 msgstr "广告代码"
 
-#: ../include/options.php:193
+#: ../include/options.php:213
 msgid "Side bar at the top advertising"
 msgstr "边栏顶部广告"
 
-#: ../include/options.php:196
+#: ../include/options.php:216
 msgid "Side bar at the bottom of the advertising"
 msgstr "边栏底部广告"
 
-#: ../include/options.php:199
+#: ../include/options.php:219
 msgid "The article embedded advertising"
 msgstr "文章内嵌广告"
 
-#: ../include/options.php:202
+#: ../include/options.php:222
 msgid "The article tail advertising"
 msgstr "文章尾部广告"
 
-#: ../include/options.php:207
+#: ../include/options.php:227
 msgid "Save Changes"
 msgstr "保存设置"
 
-#: ../include/options.php:207
+#: ../include/options.php:227
 msgid "Restore to defaults"
 msgstr "恢复为默认值"
 
-#: ../include/options.php:218
-msgid "Menus"
-msgstr "定制菜单"
-
-#: ../include/options.php:219
-msgid "Custom Background"
-msgstr "自定义背景"
-
-#: ../include/options.php:220
-msgid "Edit Themes"
-msgstr "编辑主题"
-
-#: ../include/options.php:293
-msgid "Search for:"
-msgstr "搜索结果："
-
-#: ../include/widgets.php:4
+#: ../include/widgets.php:4 ../include/widgets.php:46
 msgid "iLost Category list"
-msgstr ""
+msgstr "iLost 分类列表"
 
-#: ../include/widgets.php:5
-msgid "显示指定分类的文章"
-msgstr ""
+#: ../include/widgets.php:5 ../include/widgets.php:47
+msgid "Show classified articles"
+msgstr "显示分类文章"
 
-#: ../include/widgets.php:29 ../include/widgets.php:61
+#: ../include/widgets.php:29 ../include/widgets.php:59
 msgid "Categories"
 msgstr "分类"
 
-#: ../include/widgets.php:31 ../include/widgets.php:63
-#: ../include/widgets.php:99 ../include/widgets.php:132
-#: ../include/widgets.php:165 ../include/widgets.php:198
+#: ../include/widgets.php:31 ../include/widgets.php:61
+#: ../include/widgets.php:94 ../include/widgets.php:127
+#: ../include/widgets.php:160
 msgid "Show post counts"
-msgstr ""
+msgstr "显示文章数量"
 
-#: ../include/widgets.php:47
-msgid "iLost Home template article list"
-msgstr ""
-
-#: ../include/widgets.php:47
-msgid "Home template in the right sidebar of articles specified category show"
-msgstr "在 Home 模板的右侧边栏显现指定分类的文章"
-
-#: ../include/widgets.php:66
-msgid "Show excerpt"
-msgstr "显示摘要"
-
-#: ../include/widgets.php:79
+#: ../include/widgets.php:74
 msgid "iLost Random Posts"
 msgstr "iLost 随机文章"
 
-#: ../include/widgets.php:79
+#: ../include/widgets.php:74
 msgid "Display random sequence articles"
 msgstr "显示随机文章"
 
-#: ../include/widgets.php:86 ../include/widgets.php:98
+#: ../include/widgets.php:81 ../include/widgets.php:93
 msgid "Random Articles"
 msgstr "随机文章"
 
-#: ../include/widgets.php:97 ../include/widgets.php:130
-#: ../include/widgets.php:163 ../include/widgets.php:196
+#: ../include/widgets.php:92 ../include/widgets.php:125
+#: ../include/widgets.php:158
 msgid "Title:"
 msgstr "标题:"
 
-#: ../include/widgets.php:112
+#: ../include/widgets.php:107
 msgid "iLost Recent Comments"
 msgstr "iLost 最近评论"
 
-#: ../include/widgets.php:112
+#: ../include/widgets.php:107
 msgid "The most recent comments"
 msgstr "最近的评论"
 
-#: ../include/widgets.php:119 ../include/widgets.php:131
+#: ../include/widgets.php:114 ../include/widgets.php:126
 msgid "Recent Comments"
 msgstr "最近评论"
 
-#: ../include/widgets.php:145
+#: ../include/widgets.php:140
 msgid "iLost Recent Avatar"
 msgstr "iLost 最近访客"
 
-#: ../include/widgets.php:145
+#: ../include/widgets.php:140
 msgid "The most recent avatars"
 msgstr "最近的访客"
 
-#: ../include/widgets.php:152 ../include/widgets.php:164
+#: ../include/widgets.php:147 ../include/widgets.php:159
 msgid "Recent Avatar"
 msgstr "最近访客"
 
-#: ../include/widgets.php:178
-msgid "iLost Most Popular Articles"
-msgstr "iLost 最受欢迎文章"
-
-#: ../include/widgets.php:178 ../include/widgets.php:185
-#: ../include/widgets.php:197
-msgid "Most Popular Articles"
-msgstr "最受欢迎文章"
-
-#: ../mode.archives.php:11
+#: ../mode.archives.php:18
 msgid "Recent Articles"
 msgstr "最近文章"
 
-#: ../sidebar.php:4 ../single.php:20
+#: ../sidebar.php:5 ../single.php:22
 msgid "View Demo"
 msgstr "View Demo"
 
-#: ../sidebar.php:5 ../single.php:21
+#: ../sidebar.php:6 ../single.php:23
 msgid "Download Now"
 msgstr "Download Now"
 
-#: ../sidebar.php:6 ../single.php:22
+#: ../sidebar.php:7 ../single.php:24
 msgid "Buy Now"
 msgstr "Buy Now"
+
+#~ msgid "Custom URL: "
+#~ msgstr "自定义地址："
+
+#~ msgid "The default display 5 articles "
+#~ msgstr "默认显示5篇文章。"
+
+#~ msgid "Is empty, use the default automatic WordPress address. "
+#~ msgstr "为空则自动使用 WordPress 的默认地址"
+
+#~ msgid "Search results for \"%s\""
+#~ msgstr "\"%s\" 的搜索结果"
+
+#~ msgid "."
+#~ msgstr "."
+
+#~ msgid "View this article need to login."
+#~ msgstr "这篇文章需要登录后才能浏览。"
+
+#~ msgid "Back Top"
+#~ msgstr "返回顶部"
+
+#~ msgid " Archives"
+#~ msgstr " 文章存档"
+
+#~ msgid "Share this post:"
+#~ msgstr "将本文分享到："
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "Delicious"
+#~ msgstr "Delicious"
+
+#~ msgid "Fanfou"
+#~ msgstr "饭否"
+
+#~ msgid "QQ Weibo"
+#~ msgstr "腾讯微博"
+
+#~ msgid "Sina Weibo"
+#~ msgstr "新浪微博"
+
+#~ msgid "163 Weibo"
+#~ msgstr "网易微博"
+
+#~ msgid "kaixin001"
+#~ msgstr "开心网"
+
+#~ msgid "Renren"
+#~ msgstr "人人网"
+
+#~ msgid "Douban"
+#~ msgstr "豆瓣"
+
+#~ msgid "Pingback:"
+#~ msgstr "引用:"
+
+#~ msgid "登录才能浏览:"
+#~ msgstr "登录才能浏览:"
+
+#~ msgid "浏览这个篇文章的用户等级为:"
+#~ msgstr "浏览这个篇文章的用户等级为:"
+
+#~ msgid "用户等级0~10 留空为所有人都可以看。"
+#~ msgstr "用户等级0~10 留空为所有人都可以看。"
+
+#~ msgid " theme's Home page template of right sidebar."
+#~ msgstr " 主题的首页模版页的右侧边栏。"
+
+#~ msgid " theme's Home page template of left sidebar."
+#~ msgstr " 主题的首页模版页的左侧边栏。"
+
+#~ msgid "Excerpt"
+#~ msgstr "摘要"
+
+#~ msgid "No Comments &raquo;"
+#~ msgstr "No Comments &raquo;"
+
+#~ msgid "1 Comment &raquo;"
+#~ msgstr "1 Comment &raquo;"
+
+#~ msgid "% Comments &raquo;"
+#~ msgstr "% Comments &raquo;"
+
+#~ msgid "Author"
+#~ msgstr "作者"
+
+#~ msgid "Author description"
+#~ msgstr "简介"
+
+#~ msgid " Options"
+#~ msgstr " 选项"
+
+#~ msgid "Google custom search"
+#~ msgstr "Google 自定义搜索"
+
+#~ msgid ""
+#~ "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of "
+#~ "<a href=\"%1$s\">Google Custom Search Engine</a>, and enter the "
+#~ "<code>value</code> here.<br/>For example: "
+#~ "<code>014782006753236413342:1ltfrybsbz4</code>"
+#~ msgstr ""
+#~ "在 <a href=\"%1$s\">Google Custom Search Engine</a> 的搜索框代码中找到 "
+#~ "<code>name=\"cx\"</code> ， 并将同行中 value 的值填写在下面的输入框内。"
+#~ "<br />例如: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#~ msgid "http://www.google.com/coop/cse/"
+#~ msgstr "http://www.google.com/coop/cse/"
+
+#~ msgid "Embedded in the site search results"
+#~ msgstr "站点内内嵌搜索结果"
+
+#~ msgid "Enable Google + 1 button"
+#~ msgstr "启用 Google +1 按钮"
+
+#~ msgid "jQurey.com"
+#~ msgstr "jQurey.com"
+
+#~ msgid "http:///"
+#~ msgstr "http:///"
+
+#~ msgid "Menus"
+#~ msgstr "定制菜单"
+
+#~ msgid "Custom Background"
+#~ msgstr "自定义背景"
+
+#~ msgid "Edit Themes"
+#~ msgstr "编辑主题"
+
+#~ msgid "Search for:"
+#~ msgstr "搜索结果："
+
+#~ msgid ""
+#~ "Home template in the right sidebar of articles specified category show"
+#~ msgstr "在 Home 模板的右侧边栏显现指定分类的文章"
+
+#~ msgid "Show excerpt"
+#~ msgstr "显示摘要"
+
+#~ msgid "iLost Most Popular Articles"
+#~ msgstr "iLost 最受欢迎文章"
+
+#~ msgid "Most Popular Articles"
+#~ msgstr "最受欢迎文章"
 
 #~ msgid "One Response to %2$s"
 #~ msgstr "One Response to %2$s"
