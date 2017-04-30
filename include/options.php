@@ -10,7 +10,6 @@ class ilostOption{
       $options['faviconurl']='';
       $options['sidefloat']='right';
       $options['customRssurl']='';
-      $options['searchKey']='';
       $options['ctrlentry']=false;
       $options['ilshowNum']='4';
       $options['showAuthor']=true;
@@ -27,6 +26,9 @@ class ilostOption{
       $options['postembcode']='';
       $options['postendcode']='';
       $options['frontcat']='';
+      $options['searchKey']='';
+      $options['searchDescription']='';
+      $options['baidu_zz_push']=false;
       update_option('ilostOptions',$options);
     }return $options;
   }
@@ -43,7 +45,6 @@ class ilostOption{
           $options['faviconurl']=stripslashes($_POST['faviconurl']);
           $options['sidefloat']=stripslashes($_POST['sidefloat']);
           $options['customRssurl']=stripslashes($_POST['customRssurl']);
-          $options['searchKey']=stripslashes($_POST['searchKey']);
           if(@$_POST['ctrlentry']){$options['ctrlentry']=(bool)true;}else{$options['ctrlentry']=(bool)false;}
           if(@$_POST['relatedpost']){$options['relatedpost']=(bool)true;}else{$options['relatedpost']=(bool)false;}
           if(!$_POST['repostNum']){$options['repostNum']=stripslashes(5);
@@ -58,6 +59,10 @@ class ilostOption{
           }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
           }else{$options['ilshowNum']=stripslashes($_POST['ilshowNum']);}
           $options['frontcat']=stripslashes($_POST['frontcat']);
+        break;case 'seo':
+          $options['searchKey']=stripslashes($_POST['searchKey']);
+          $options['searchDescription']=stripslashes($_POST['searchDescription']);
+          if(@$_POST['baidu_zz_push']){$options['baidu_zz_push']=(bool)true;}else{$options['baidu_zz_push']=(bool)false;}
         break;case 'script':
           $options['jquerysrc']=stripslashes($_POST['jquerysrc']);
           $options['custom_jquery']=stripslashes($_POST['custom_jquery']);
@@ -72,10 +77,10 @@ class ilostOption{
       echo "<div id='message' class='updated fade'><p><strong>".__('Settings saved.')."</strong></p></div>";
     }else{ilostOption::getOptions();}
     if(isset($_REQUEST['restore-defaults'])){ilostOption::resOptions();echo "<div id='message' class='updated fade'><p><strong>".__('Settings have been restored to default.','iLost')."</strong></p></div>";}
-    add_theme_page(themename.__(' Options','iLost'),themename.__(' Options','iLost'),'edit_theme_options','ilost_options',array('ilostOption','OptionsPage'));
+    add_theme_page(themename.' '.__('Options','iLost'),themename.' '.__('Options','iLost'),'edit_theme_options','ilost_options',array('ilostOption','OptionsPage'));
   }
   public static function option_tabs($current='general'){
-    $tabs=array('general'=>themename.__(' Options','iLost'),'frontpg'=>__('Front Page','iLost'),'script'=>__('Script Code','iLost'));
+    $tabs=array('general'=>__('General','iLost'),'frontpg'=>__('Front Page','iLost'),'script'=>__('Script Code','iLost'),'seo'=>__('SEO','iLost'));
     $links=array();
     echo '<h2 class="nav-tab-wrapper">';
     foreach($tabs as $tab=>$name){
@@ -106,7 +111,8 @@ p.description,span.description{vertical-align:middle;}
 .retuvalue{margin-left:1em;}
 </style>
 <div class="wrap">
-  <div id="icon-themes" class="icon32"></div>
+  <h1 class="wp-heading-inline"><?php echo themename.' '.__('Options','iLost');?></h1>
+  <!--div id="icon-themes" class="icon32"></div-->
 <?php if(isset($_GET['tab'])){ilostOption::option_tabs($_GET['tab']);}else{ilostOption::option_tabs('general');}
   if(isset($_GET['tab'])){$tab=$_GET['tab'];}else{$tab='general';}?>
   <p class="themeinfo"><?php _e('Thank you for purchasing this theme, designed by the Xu.hel.','iLost');?></p>
@@ -132,10 +138,7 @@ p.description,span.description{vertical-align:middle;}
           <input type="radio" name="sidefloat" class="radio" id="sidefloatright"<?php if($options['sidefloat']=='right'){echo 'checked="checked"';}?> value="right" /><label for="sidefloatright"><?php _e('Right','iLost');?></label>
         </p> 
         <p><label class="th" for="customRssurl"><?php _e('Custom RSS Subscription','iLost');?></label><input name="customRssurl" id="customRssurl" class="regular-text" type="text" size="40" value="<?php echo($options['customRssurl']);?>" placeholder="http://">
-          <span class="description"><?php _e('Is empty, use the default automatic WordPress address. ','iLost');?></span>
-        </p>
-        <p><label class="th" for="searchKey"><?php _e('Search engine keywords','iLost');?></label><input name="searchKey" id="searchKey" class="regular-text" type="text" size="40" value="<?php echo($options['searchKey']);?>" placeholder="Key1, Key2, Key3...">
-          <span class="description"><?php _e('Keywords using a comma (",") between them. Is empty, the automatic acquisition.','iLost');?></span>
+          <span class="description"><?php _e('Is empty, use the default automatic WordPress address.','iLost');?></span>
         </p>
         <p><label class="th"  for="ctrlentry"><?php _e('Use Ctrl+Enter to reply comments','iLost');?></label><input name="ctrlentry" id="ctrlentry" type="checkbox" <?php if($options['ctrlentry']){echo 'checked="checked"';}?>>
         </p>
@@ -143,7 +146,7 @@ p.description,span.description{vertical-align:middle;}
           <span class="supoption">
 		  	<label class="tip"><?php _e('Type:','iLost');?></label><input type="radio" name="repostShow"  id="post" <?php if($options['repostShow']=='post'){echo 'checked="checked"';}?> value="post" /><label for="post"><?php _e('Post lists','iLost');?></label><input type="radio" name="repostShow" class="radio" id="thumbnail" <?php if($options['repostShow']=='thumbnail'){echo 'checked="checked"';}?> value="thumbnail" /><label for="thumbnail"><?php _e('thumbnail','iLost');?></label><br>
           	<label class="tip"><?php _e('Number:','iLost');?></label><input name="repostNum" id="repostNum" type="text" size="2" value="<?php echo($options['repostNum']);?>" placeholder="5">
-            <span class="description"><?php _e('The default display 5 articles ','iLost');?></span>
+            <span class="description"><?php _e('The default display 5 articles.','iLost');?></span>
           </span>
         </p>
         <p><label class="th"><?php _e('Article footer display author information','iLost');?></label><input name="showAuthor" id="growlBox" type="checkbox" <?php if($options['showAuthor']){echo 'checked="checked"';}?>><label for="showAuthor"><?php _e('Enabled','iLost')?></label>
@@ -154,7 +157,6 @@ p.description,span.description{vertical-align:middle;}
             <span class="description"><?php _e('Set GrowlBox tip box\'s contents. Use the # # Title# "separate content and title, can do not have a title. Is empty is not GrowlBox tip box popup.','iLost');?></span>
           </span>
         </p>
-        <p><label class="th"><?php _e('.','iLost');?></label></p>
       </fieldset>
   <?php break;case 'frontpg':?>
       <fieldset>
@@ -168,13 +170,35 @@ p.description,span.description{vertical-align:middle;}
           <?php wp_dropdown_categories(array('taxonomy'=>'post_tag','name'=>'frontcat','id'=>'frontcat','class'=>'','selected'=>$options['frontcat'],'show_count'=>1));?>
         </p>
       </fieldset>
+  <?php break;case 'seo':?>
+      <fieldset>
+        <legend><?php _e('Search Engine Optimization','iLost');?></legend>
+        <p><label class="th" for="searchKey"><?php _e('Search engine keywords','iLost');?></label><input name="searchKey" id="searchKey" class="regular-text" type="text" size="40" value="<?php echo($options['searchKey']);?>" placeholder="Key1, Key2, Key3...">
+          <span class="description"><?php _e('Keywords using a comma (",") between them. Is empty, the automatic acquisition.','iLost');?></span>
+        </p>
+        <p><label class="th" for="searchDescription"><?php _e('Search engine description','iLost');?></label>
+          <textarea class="large-text" name="searchDescription" id="searchDescription" placeholder="Description..."><?php echo($options['searchDescription']);?></textarea>
+          <span class="description"><?php _e('Site description.','iLost');?></span>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend><?php _e('Baidu Search Engine','iLost');?></legend>
+        <p><label class="th"><?php _e('自动推送到百度','iLost');?></label><input name="baidu_zz_push" id="baidu_zz_push" type="checkbox" <?php if($options['baidu_zz_push']){echo 'checked="checked"';}?>><label for="showAuthor"><?php _e('Enabled','iLost')?></label>
+        </p>
+        <p><label class="th" for="usrlogoimg"><?php _e('新文章发布推送到百度','iLost');?></label><input name="usrfavicon" id="usrfavicon" type="checkbox" <?php if($options['usrfavicon']){echo 'checked="checked"';}?>><br>
+          <span class="supoption">
+            <input name="faviconurl" id="faviconurl" type="text" size="40" value="<?php echo($options['faviconurl']);?>" placeholder="//www.com/favicon.ico">
+            <span class="description"><?php _e('Please enter the URL address of the Favicon icon.','iLost');?></span>
+          </span>
+        </p>
+      </fieldset>
   <?php break;case 'script':?>
       <fieldset>
         <legend><?php _e('jQuery Library','iLost');?></legend>
         <p><label class="th"><?php _e('Source URL','iLost');?></label><label class="th"><input type="radio" name="jquerysrc" value="wp_jquery"<?php if($options['jquerysrc']=="wp_jquery")echo 'checked="checked"';?>/> <?php _e('WordPress Default','iLost');?></label><br>
           <span class="supoption">
-          <label class="th"><input type="radio" name="jquerysrc" value="jqgzip_jquery"<?php if($options['jquerysrc']=="jqgzip_jquery")echo 'checked="checked"';?>/> <?php _e('jQurey.com','iLost');?></label><br>
-          <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL: ','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="http://"></label>
+          <label class="th"><input type="radio" name="jquerysrc" value="jqgzip_jquery"<?php if($options['jquerysrc']=="jqgzip_jquery")echo 'checked="checked"';?>/> <?php _e('jQurey 3.x','iLost');?></label><br>
+          <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL:','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="http://"></label>
           </span>
         </p>
       </fieldset>
@@ -221,7 +245,7 @@ add_action('admin_head','ilost_themeopt_bar_css');
 */
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
-  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
+  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='searchDescription')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
     return ent2ncr($options[$option]);
   }elseif(($option=='googleanalytics')or($option=='sidebartopcode')or($option=='sidebarbottomcode')or($option=='postembcode')or($option=='postendcode')){
     return stripslashes($options[$option]);
@@ -268,9 +292,18 @@ function ilost_customRssurl($echo=true){
   if($echo){if($customRssurl){remove_theme_support('automatic-feed-links');echo '<link rel="alternate" type="application/rss+xml" title="'.esc_attr(ilost_wp_name).' &raquo; RSS Feed" href="'.$customRssurl.'" />'."\n";}
   }else{return $customRssurl;}
 }
+
 function ilost_searchKey(){
-  $searchKey=ilost_getOption('searchKey');
-  if($searchKey){return $searchKey;}
+  $seoKey=ilost_getOption('searchKey');
+  if($seoKey){return $seoKey;}
+}
+function ilost_seDescription(){
+  $seDescription=ilost_getOption('searchDescription');
+  if($seDescription){return $seDescription;}
+}
+function ilost_baidu_zzpush(){
+  $baidu_zz_push=ilost_getOption('baidu_zz_push');
+  if($baidu_zz_push){return $baidu_zz_push;}
 }
 
 function ilost_frontCat(){

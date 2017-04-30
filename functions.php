@@ -12,8 +12,7 @@ require_once(dirname( __FILE__ ).'/include/options.php');
 require_once(dirname( __FILE__ ).'/include/coreclass.php');
 require_once(dirname( __FILE__ ).'/include/core.php');
 
-
-function ilost_page_number(){global $paged;if($paged>=2)echo ' - '.sprintf('Page %s',$paged);}
+function ilost_page_number($echo=true){global $paged;if($paged>=2){if($echo){echo '| '.sprintf(__('Page %s','iLost'),$paged);}else{return '| '.sprintf(__('Page %s','iLost'),$paged);}}}
 
 /*
 

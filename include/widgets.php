@@ -2,7 +2,7 @@
 class ilost_catlistsWidget extends WP_Widget{
   function __construct(){
     parent::__construct('ilost_catlistsWidget',__('iLost Category list','iLost'),
-    array('description'=>__('显示指定分类的文章','iLost')));
+    array('description'=>__('Show classified articles','iLost')));
   }
   public function widget($args,$instance){
     //if (!empty($instance['title'])){
@@ -44,7 +44,7 @@ class ilost_catlistsWidget extends WP_Widget{
 class ilost_footlistsWidget extends WP_Widget{
   function __construct(){
     parent::__construct('ilost_catlistsWidget',__('iLost Category list','iLost'),
-    array('description'=>__('显示指定分类的文章','iLost')));
+    array('description'=>__('Show classified articles','iLost')));
   }
   public function widget($args,$instance){
     echo $args['before_widget'];

@@ -32,6 +32,7 @@ function ilost_init(){
   remove_action('admin_init','_wp_check_for_scheduled_split_terms');
 
   add_action('init','iloft_post_type');
+  add_filter('emoji_svg_url','__return_false');
   add_action('widgets_init','ilost_Widget');
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
@@ -155,17 +156,23 @@ function ilost_getstyles(){
 function ilost_enqueue_script(){
   if(ilost_getjQuery()!='wp_jquery'){
     wp_deregister_script('jquery');
-    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','//code.jquery.com/jquery-1.11.3.min.js',array(),'1.11.3');}
+    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','//code.jquery.com/jquery-3.2.1.min.js',array(),'3.2.1');}
     if(ilost_getjQuery()=='custom_jquery'){wp_register_script('jquery',ilost_getjQueryurl());}
     wp_enqueue_script('jquery');
   }else{wp_enqueue_script('jquery');}
-  wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.5',true);
-  wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0.0',true);
+  wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.7',true);
+  wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0',true);
   
   //if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
   
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);
+
+  if(ilost_baidu_zzpush()){
+    wp_enqueue_script('baidu_zz_push','http://push.zhanzhang.baidu.com/push.js',array(),false,true);
+  }
 }
+
+
 /*
 function ilost_footerscript(){
   $growlBox=ilost_getOption('growlBox');
@@ -331,7 +338,6 @@ function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty
 function ilost_fix_gravatar($avatar){
 $avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
 return $avatar;}
-/*
-function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0]) - $start > $sublen) return join('',array_slice($t_string[0],$start,$sublen))."...";return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0; $i< $strlen; $i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.= substr($string,$i,2);}else{$tmpstr.= substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}if(strlen($tmpstr)< $strlen){$tmpstr.= "...";}return $tmpstr;}}
-*/
+
+function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0])-$start > $sublen)return join('',array_slice($t_string[0],$start,$sublen));return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0;$i<$strlen;$i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.=substr($string,$i,2);}else{$tmpstr.=substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}return $tmpstr;}}
 ?>
