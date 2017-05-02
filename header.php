@@ -46,7 +46,7 @@
     value="<?php echo esc_attr_x('Search','submit button');?>" /-->
       </div>
     </form>
-    <div class="collapse navbar-collapse" id="ilost-collapse">
+    <div class="navbar-collapse collapse" id="ilost-collapse">
       <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav()));?>
     </div>
   </div>
