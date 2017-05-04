@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <ul class="row">
-    <?php if(!dynamic_sidebar('footer-sidebar')){$ilost_widgerFooter=array('before_widget'=>'<li class="col-sm-4 col-md-3 col-xl-3 widget">','after_widget'=>'</li>');
+    <?php if(!dynamic_sidebar('footer-sidebar')){$ilost_widgerFooter=array('before_widget'=>'<li class="col-sm-6 col-md-3 col-xl-3 widget">','after_widget'=>'</li>');
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);

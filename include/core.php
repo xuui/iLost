@@ -37,6 +37,9 @@ function ilost_init(){
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
   add_filter('comments_popup_link_attributes','ilost_comments_nofollow_link');
+  add_filter('excerpt_length','ilost_excerpt_length');
+  add_filter('excerpt_more','ilost_auto_excerpt_more');
+  add_filter('get_the_excerpt','ilost_custom_excerpt_more');
   add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_search_form','ilost_search_form');
   add_filter('user_contactmethods','ilost_contactmethods');
@@ -69,9 +72,6 @@ function ilost_init(){
   add_action('wp_footer','ilost_footerscript');
   add_action('wp_before_admin_bar_render','ilost_themeopt_bar_render');
   add_editor_style();
-  add_filter('excerpt_length','ilost_excerpt_length');
-  add_filter('excerpt_more','ilost_auto_excerpt_more');
-  add_filter('get_the_excerpt','ilost_custom_excerpt_more');
   add_filter('image_send_to_editor','ilost_remove_width_attribute');
   add_filter('post_thumbnail_html','ilost_remove_width_attribute');
   add_filter('smilies_src','ilost_smilies_src',1,10);
@@ -83,20 +83,21 @@ function ilost_init(){
 //function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
 //function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
 function ilost_excerpt_meta_box(){add_meta_box('postexcerpt',__('Excerpt','iLost'),'ilost_excerpt_meta_box','page','normal','core');}
-function ilost_excerpt_length($length){return 200;}
-function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
-function ilost_auto_excerpt_more($more){return ' &hellip;'.ilost_continue_reading_link();}
-function ilost_custom_excerpt_more($output){if(has_excerpt()&& !is_attachment()){$output.=ilost_continue_reading_link();}return $output;}
 function ilost_from_name($email){$wp_from_name=get_option('blogname');return $wp_from_name;}
 function ilost_home_menulink($args){$args['show_home']=true;return $args;}
 function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)="\d*"\s/',"",$html);return $html;}
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
 */
 
+function ilost_excerpt_length($length){return 128;}
+function ilost_auto_excerpt_more($more){return ' &hellip;'.ilost_continue_reading_link();}
+function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
+function ilost_custom_excerpt_more($output){if(has_excerpt()&& !is_attachment()){$output.=ilost_continue_reading_link();}return $output;}
+
 function ilost_comments_nofollow_link(){return ' rel="nofollow" ';}
 function ilost_custom_background_cb(){
   $background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
-<style type="text/css">body{<?php echo trim($style);?>background-size:100%;}</style>
+<style type="text/css">body{<?php echo trim($style);?>background-size:cover;}</style>
 <?php }
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
@@ -241,7 +242,7 @@ function ilost_queryNewp($limit=4){
   $postloop=new WP_Query(array('cat'=>'-'.ilost_frontCat(),'ignore_sticky_posts'=>1,'posts_per_page'=>$limit));
   while($postloop->have_posts()){$postloop->the_post();?>
     <div class="col-sm-6 col-md-3 col-xl-3">
-     <h3><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h3>
+     <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
      <?php the_excerpt();?>
      <small><?php the_time('m.d.Y');?></small>
     </div>
