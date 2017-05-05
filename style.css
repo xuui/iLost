@@ -46,14 +46,14 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 .navbar-toggle .icon-bar+.icon-bar+.icon-bar{width:20px;transform:translate(0,-6px) rotate(-45deg)}
 .navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:transparent;border-color:transparent;}
 .navbar-default .navbar-toggle .icon-bar{background:#2196f3}
-.navbar-default .navbar-toggle.collapsed .icon-bar{background-color:#757575;}
+.navbar-default .navbar-toggle.collapsed .icon-bar{background-color:#616161;}
 .navbar-toggle.collapsed .icon-bar{width:20px;-webkit-transform:rotate(0deg)}
 .navbar-toggle.collapsed .icon-bar+.icon-bar{width:14px;-webkit-transform:rotate(0deg)}
 .navbar-toggle.collapsed .icon-bar+.icon-bar+.icon-bar{width:17px;-webkit-transform:rotate(0deg);}
 
 .navbar-default .container{position:relative;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-search{border-color:transparent}
-.navbar-search{position:absolute;top:0;right:0;margin:0;padding:12px;}
+.navbar-search{position:absolute;top:0;right:0;margin:0;padding:12px 8px;}
 .navbar-search .search-field{background:url(images/search_form.png) no-repeat 0% 50%;background-size:32px 32px;padding-left:20px;padding-bottom:4px;border:none;border-bottom:2px solid transparent;border-radius:0;width:1px;box-shadow:none;-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;transition:all .3s ease-out;border-radius:5px;}
 .navbar-search .search-field:focus{background-color:#fff;padding-left:32px;width:240px;border-color:transparent transparent #ccc;box-shadow:0 1px 1px rgba(0,0,0,.075)inset, 0 1px 5px rgba(0,0,0,.16);}
 .navbar-search .search-field:hover{background-color:#fff;border-color:#2196f3}
@@ -354,20 +354,20 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 .page aside{margin-top:-3px}
 
 /* Home */
-#proaside{background:#f5f5f5;padding:2px 0 8px;box-shadow:none}
+#proaside{background:#f5f5f5;padding:2px 8px 8px;box-shadow:none}
 #proaside .container{padding:0}
 #proaside .row{margin-left:-2px;margin-right:-2px}
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px;}
 #proaside a,#proaside a span{display:block;display:block}
-#proaside a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:120px}
+#proaside a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:100px}
 #proaside a span{position:absolute;bottom:-100%;background:rgba(0,0,0,.34);color:#fff;width:100%;padding:8px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
 #proaside a:hover span{bottom:0}
-#newpost .col-xl-3{background:#fff;padding:16px;margin:0 8px 8px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.07);}
-#newpost .col-xl-3 h2{font-size:23px;font-weight:300;margin-top:4px;margin-bottom:20px}
+#newpost .col-xl-3{background:#fff;padding:16px;margin:0 8px 8px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.16);}
+#newpost .col-xl-3 h2{font-size:23px;font-weight:300;}
 #newpost .col-xl-3 h2,#newpost .col-xl-3 h2 a{color:#616161}
 #newpost .col-xl-3 h2 a:hover{text-decoration:none;color:#2196f3}
-#newpost .col-xl-3 h2,#newpost .col-xl-3 p{margin-bottom:20px}
-#newpost .col-xl-3 p{font-size:15px;line-height:25px;color:#999}
+#newpost .col-xl-3 h2,#newpost .col-xl-3 p{margin:0 0 8px}
+#newpost .col-xl-3 p{font-size:15px;line-height:25px;color:#9e9e9e}
 #newpost .col-xl-3 small{background:url(images/ico_calendar.png) no-repeat;padding:2px 0 2px 20px;font-size:12px;color:#bdbdbd}
 
 /*pad*//*
@@ -420,7 +420,7 @@ body.error footer p{text-align:center}
 #rotation .slides{overflow:hidden}
 #rotation .slides li{position:relative;}
 #rotation .slides img{background:#fff no-repeat 50% 0%;background-size:cover;width:100%;height:160px;}
-#rotation .flex-caption{position:absolute;bottom:16px;left:16px;background-color:transparent;margin:0;max-width:90%;line-height:1.3;font-size:20px;text-align:left;
+#rotation .flex-caption{position:absolute;bottom:16px;left:8px;background-color:transparent;margin:0;max-width:90%;line-height:1.3;font-size:20px;text-align:left;
 -webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out;text-shadow:0 2px 3px rgba(0,0,0,.54)}
 #rotation .flex-caption,#rotation .flex-caption:hover{color:#fff;text-decoration:none}
 #rotation .flex-caption b{display:block;font-weight:300;text-shadow:0 1px 8px rgba(0,0,0,.75)}
@@ -517,12 +517,14 @@ footer .row h4{margin-bottom:16px;}
 #proaside a{height:220px;}
 #proaside a span{padding:16px;}
 
+
 #newpost{background:#fff;padding:32px 0;}
 #newpost .container{}
 #newpost .row{}
 #newpost,#newpost .row{background:#fff;}
 #newpost .col-xl-3{margin:0;padding:32px 32px 0;min-height:233px;box-shadow:none;}
 #newpost .col-xl-3 + .col-xl-3{border-left:1px solid #ebebeb}
+#newpost .col-xl-3 h2,#newpost .col-xl-3 p{margin-bottom:20px}
 
 }
 

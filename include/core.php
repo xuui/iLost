@@ -89,7 +89,7 @@ function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
 */
 
-function ilost_excerpt_length($length){return 128;}
+function ilost_excerpt_length($length){return 256;}
 function ilost_auto_excerpt_more($more){return ' &hellip;'.ilost_continue_reading_link();}
 function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
 function ilost_custom_excerpt_more($output){if(has_excerpt()&& !is_attachment()){$output.=ilost_continue_reading_link();}return $output;}
@@ -205,7 +205,7 @@ function ilost_rcomments($limit=5){
   $comments=get_comments(array('number'=>100,'status'=>'approve'));
   $wpchres=get_option('blog_charset');$exclude_emails=get_bloginfo('admin_email');$i=1;$ilostoutput='';
   foreach($comments as $comment){
-    $ilostoutput.='<li class="media"><div class="media-left">'.get_avatar($comment,64).'</div><div class="media-body"><a class="media-heading" href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>:<p>'.ilost_substr(strip_tags($comment->comment_content),0,43,$wpchres).'</p></div></li>'."\n";
+    $ilostoutput.='<li class="media"><div class="media-left">'.get_avatar($comment,64).'</div><div class="media-body"><a class="media-heading" href="'.get_permalink($comment->comment_post_ID).'#comment-'.$comment->comment_ID.'" title="On '.get_the_title($comment->comment_post_ID).'">'.stripslashes($comment->comment_author).'</a>:<p>'.ilost_substr(strip_tags($comment->comment_content),43,$wpchres).'</p></div></li>'."\n";
     if($i==$limit){break;}$i++;
   }echo ent2ncr($ilostoutput);
 }
@@ -230,12 +230,16 @@ function ilost_randompost($limit=5){
 function ilost_showProTu($id=0,$limit=3,$excerpt=false){
   //$postloop=new WP_Query(array('cat'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
   $postloop=new WP_Query(array('tag_id'=>$id,'posts_per_page'=>$limit,'ignore_sticky_posts'=>1));  
-  $col_class="col-xs-4 col-sm-4 col-md-4 col-xl-4";
+  //$col_class="col-xs-4 col-sm-4 col-md-4 col-xl-4";
+  $col_class="col-xs-6 col-sm-4 col-md-4 col-xl-4";
   //$col_class="col-xs-3 col-sm-3 col-md-3 col-xl-3";
+  $loopi=1;
   while($postloop->have_posts()){
     $postloop->the_post();
     $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+    if($loopi>=3){$col_class="col-xs-12 col-sm-4 col-md-4 col-xl-4";}
     echo '<div class="'.$col_class.'"><a href="'.get_the_permalink().'" title="'.get_the_title().'" style="background-image:url('.$img_src[0].')"><span>'.get_the_title().'</span></a></div>';
+    $loopi++;
   }wp_reset_postdata();
 }
 function ilost_queryNewp($limit=4){
@@ -243,7 +247,8 @@ function ilost_queryNewp($limit=4){
   while($postloop->have_posts()){$postloop->the_post();?>
     <div class="col-sm-6 col-md-3 col-xl-3">
      <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
-     <?php the_excerpt();?>
+     <?php echo '<p>'.ilost_substr(get_the_excerpt(),56).'...</p>';?>
+     <?php //echo '<p>'.wp_trim_words(get_the_excerpt(),64).'</p>';?>
      <small><?php the_time('m.d.Y');?></small>
     </div>
   <?php }wp_reset_postdata();
@@ -340,5 +345,5 @@ function ilost_fix_gravatar($avatar){
 $avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
 return $avatar;}
 
-function ilost_substr($string,$start=0,$sublen,$code='UTF-8'){if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0])-$start > $sublen)return join('',array_slice($t_string[0],$start,$sublen));return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0;$i<$strlen;$i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.=substr($string,$i,2);}else{$tmpstr.=substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}return $tmpstr;}}
+function ilost_substr($string,$sublen,$code='UTF-8'){$start=0;if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0])-$start > $sublen)return join('',array_slice($t_string[0],$start,$sublen));return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0;$i<$strlen;$i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.=substr($string,$i,2);}else{$tmpstr.=substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}return $tmpstr;}}
 ?>
