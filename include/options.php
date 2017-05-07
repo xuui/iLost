@@ -255,19 +255,17 @@ function ilost_getOption($option){
 }
 function ilost_getlogoimg(){
   $usrlogoimg=ilost_getOption('usrlogoimg');$logoimgurl=ilost_getoption('logoimgurl');
+  if(!$logoimgurl){$logoimgurl=ilost_path.'/images/logo.png';}
+  if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}
+  echo '<a class="navbar-brand" href="'.ilost_wp_homeurl.'">';
   if($usrlogoimg){
-    if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}?>
-    <a class="navbar-brand" href="<?php echo ilost_wp_homeurl.'/';?>">
-      <img class="logo" alt="<?php echo ilost_wp_name;?>" src="<?php if($logoimgurl){echo $logoimgurl;}echo ilost_path.'/images/logo.png';?>">
-    </a>
-    <?php if(is_front_page()||is_home()){echo '</h1>';}?>
-    <span class="hidden navbar-text"><?php echo ilost_wp_description;?></span>
-  <?php }else{
-    if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}?>
-    <a class="navbar-brand" href="<?php echo ilost_wp_homeurl.'/';?>"><?php echo ilost_wp_name;?></a>
-    <?php if(is_front_page()||is_home()){echo '</h1>';}?>
-    <p class="hidden navbar-text"><?php echo ilost_wp_description;?></p>
-  <?php }
+    echo '<img class="logo" alt="'.ilost_wp_name.'" src="'.$logoimgurl.'">';
+  }else{
+    echo ilost_wp_name;
+  }
+  echo '</a>';
+  if(is_front_page()||is_home()){echo '</h1>';}
+  echo '<span class="hidden navbar-text">'.ilost_wp_description.'</span>';
 }
 function ilost_getfavicon(){
   $usrfavicon=ilost_getOption('usrfavicon');$faviconurl=ilost_getoption('faviconurl');
