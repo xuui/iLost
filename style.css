@@ -19,10 +19,12 @@ a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 .container{cursor:url(images/arrow.cur),default}
 input[type=text],textarea{cursor:url(images/text.cur),text}
 a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images/pointer.cur),pointer}
+/*
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
 ::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
+*/
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
 body{position:relative;background:#eee}
 a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out;}
@@ -129,12 +131,11 @@ dropdown.active
 .contwarp .widget{background:rgba(255,255,255,.9)}
 
 .breadwarp,.breadcrumb{background:transparent}
-.breadcrumb{margin:0;padding:12px 0;border-radius:0}
-
-.breadcrumb a{color:#bdbdbd}
-.breadcrumb > .active{color:#757575}
+.breadcrumb{margin:0;padding:12px 0;border-radius:0;font-size:12px;color:rgba(0,0,0,.16)}
+.breadcrumb a{color:rgba(0,0,0,.24)}
+.breadcrumb > .active{color:rgba(0,0,0,.48)}
 .custom-background .breadcrumb a{color:rgba(255,255,255,.6)}
-.custom-background .breadcrumb .active{color:#fff}
+.custom-background .breadcrumb .active{color:rgba(255,255,255,.76)}
 /* Container End. */
 
 
