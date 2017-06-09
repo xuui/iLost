@@ -194,4 +194,40 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   }
   echo $prefix.$output.$suffix;
 }
+
+
+
+
+function breadcrumb_simple() {
+    global $post;
+	$separator = '>';//get_option('brs_sep');
+	
+    echo '<div class="breadcrumb">';
+	if (!is_front_page()) {
+		echo '<a href="'.get_option('home').'">'.bloginfo('name')."</a> ";
+    echo $separator;
+		if ( is_category() || is_single() ) {
+			the_category(', ');
+			if ( is_single() ) {
+				echo $separator;
+				the_title();
+			}
+		} elseif ( is_page() && $post->post_parent ) {
+			$home = get_page(get_option('page_on_front'));
+			for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
+				if (($home->ID) != ($post->ancestors[$i])) {
+					echo '<a href="'.get_permalink($post->ancestors[$i]).'">'.get_the_title($post->ancestors[$i])."</a>".$separator;
+				}
+			}
+			echo the_title();
+		} elseif (is_page()) {
+			echo the_title();
+		} elseif (is_404()) {
+			echo "404";
+		}
+	} else {
+		bloginfo('name');
+	}
+	echo '</div>';
+}
 ?>
