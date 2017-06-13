@@ -4,7 +4,7 @@
       <?php ilost_breadcrumb();?>
   </div>
 </div>
-<div class="contwarp -contindex">
+<div class="contwarp singlewarp">
   <div class="container">
     <div id="row" class="row">
       <article class="col-xs-12 col-sm-8 col-md-9 col-xl-9 <?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">

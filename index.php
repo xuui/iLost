@@ -1,7 +1,7 @@
 <?php get_header();?>
 <div class="breadwarp">
   <div class="container">
-      <?php //ilost_breadcrumb();?>
+      <?php echo rand(1,10);//ilost_breadcrumb();?>
   </div>
 </div>
 <?php /*$blogpageID=ilost_getposts();if($blogpageID){?>
@@ -23,7 +23,7 @@
         }?>
         <div class="inarp">
           <div class="title">
-            <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
+            <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('%s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
             <small>
               <span class="post-data pull-right">
                 <i class="fa fa-calendar-o"></i> <?php the_time('Y-m-d');?>
@@ -36,13 +36,13 @@
                 <i class="fa fa-comment-o"></i>
                 <?php comments_popup_link(__('0','iLost'),__('1','iLost'),__('%','iLost'),'post-comments',__('-','iLost'));?>
               </span>
+              <!--span class="post-data">
+                <i class="fa fa-eye"></i> 1<?php if(function_exists('the_views')){?><?php the_views();}?>
+              </span-->
               <?php /*
-              <i class="fa fa-eye-o"></i> <?php if(function_exists('the_views')){?><?php the_views();}?>
-              <i class="fa fa-folder-o"></i> <?php the_category(', ');?>, 
-              <i class="ion-person"></i>  <?php the_author_posts_link();?>
+              <i class="fa fa-folder-o"></i> <?php the_category(', ');?>
                <?php edit_post_link(__('Edit','iLost'),'<i class="fa fa-pencil-square-o"></i> [',']&#187;');?>
               */?>
-              
             </small>
           </div>
           <div class="entry">
