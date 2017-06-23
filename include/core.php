@@ -10,7 +10,6 @@ function ilost_init(){
     'after_widget'=>'</li>',
     'before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>')
   );
-  register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
   register_sidebar(
     array('name'=>__('Page SideBar','iLost'),
     'id'=>'page-sidebar',
@@ -20,6 +19,7 @@ function ilost_init(){
     'before_title'=>'<h3 class="widgettitle">',
     'after_title'=>'</h3>')
   );
+  register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
 
   register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
@@ -333,19 +333,17 @@ css :
 <?php }
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
-  $posts_per_page=intval(get_query_var('posts_per_page'));$paged=absint(get_query_var('paged'));if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}  if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
-  if(!empty($options['pages_text'])){$pages_text=str_replace(array("%CURRENT_PAGE%","%TOTAL_PAGES%"),array(number_format_i18n($paged),number_format_i18n($total_pages)),$options['pages_text']);$out.='<li class="disabled"><span>'.$pages_text.'</span></li>';}
+  $posts_per_page=intval(get_query_var('posts_per_page'));
+  $paged=absint(get_query_var('paged'));
+  if(!$paged){$paged=1;}$total_pages=absint($wp_query->max_num_pages);if(!$total_pages){$total_pages=1;}if(1==$total_pages && !$options['always_show']){return;}$request=$wp_query->request;$numposts=$wp_query->found_posts;$pages_to_show=absint($options['num_pages']);$pages_to_show_minus_1=$pages_to_show-1;$half_page_start=floor($pages_to_show_minus_1/2);$half_page_end=ceil($pages_to_show_minus_1/2);$start_page=$paged-$half_page_start;if($start_page<=0){$start_page=1;}$end_page=$paged+$half_page_end;if(($end_page-$start_page)!=$pages_to_show_minus_1){$end_page=$start_page+$pages_to_show_minus_1;}if($end_page>$total_pages){$start_page=$total_pages-$pages_to_show_minus_1;$end_page=$total_pages;}if($start_page<=0){$start_page=1;}$out='';
+  //if(!empty($options['pages_text'])){$pages_text=str_replace(array("%CURRENT_PAGE%","%TOTAL_PAGES%"),array(number_format_i18n($paged),number_format_i18n($total_pages)),$options['pages_text']);$out.='<li class="disabled"><span>'.$pages_text.'</span></li>';}
   if(!empty($options['prev_text'])){$out.='<li>'.get_previous_posts_link($options['prev_text']).'</li>';}
   foreach(range($start_page,$end_page) as $i){if($i==$paged && !empty($options['current_text'])){$current_page_text=str_replace('%PAGE_NUMBER%',number_format_i18n($i),$options['current_text']);$out.='<li class="active"><span>'.$current_page_text."</span></li>";}else{$out.=ilost_pgnavnum($i,'page',$options['page_text']);}}
   if(!empty($options['next_text'])){$out.='<li>'.get_next_posts_link($options['next_text'],$total_pages).'</li>';}$larger_page_end=0;
-  $out='<ul class="pagination pagination-sm">'."\n".$out."\n</ul>\n";
+  $out='<ul class="pagination">'."\n".$out."\n</ul>\n";
   echo apply_filters('ilost_pagenav',$out);
 }
 function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
-
-function ilost_fix_gravatar($avatar){
-$avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);
-return $avatar;}
-
+function ilost_fix_gravatar($avatar){$avatar=str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"), "secure.gravatar.com",$avatar);$avatar=str_replace("http://","https://",$avatar);return $avatar;}
 function ilost_substr($string,$sublen,$code='UTF-8'){$start=0;if($code=='UTF-8'){$pa="/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";preg_match_all($pa,$string,$t_string);if(count($t_string[0])-$start > $sublen)return join('',array_slice($t_string[0],$start,$sublen));return join('',array_slice($t_string[0],$start,$sublen));}else{$start=$start*2;$sublen=$sublen*2;$strlen=strlen($string);$tmpstr='';for($i=0;$i<$strlen;$i++){if($i>=$start && $i<($start+$sublen)){if(ord(substr($string,$i,1))>129){$tmpstr.=substr($string,$i,2);}else{$tmpstr.=substr($string,$i,1);}}if(ord(substr($string,$i,1))>129){$i++;}}return $tmpstr;}}
 ?>

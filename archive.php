@@ -1,15 +1,14 @@
 <?php get_header();?>
 <div class="breadwarp">
   <div class="container">
-      <?php breadcrumb_simple();//ilost_breadcrumb();?>
+      <?php ilost_breadcrumb();?>
   </div>
 </div>
 <div class="contwarp contindex">
   <div class="container">
     <div class="row">
     <article class="col-xs-12 col-sm-8 col-md-9 col-xl-9 <?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
-      <?php if(have_posts()){ilost_breadcrumb();?>
-      <?php while(have_posts()){the_post();?>
+      <?php if(have_posts()){while(have_posts()){the_post();?>
         <section id="post-<?php the_ID();?>" <?php post_class();?>>
         <?php if(has_post_thumbnail()){
         $img_src=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');

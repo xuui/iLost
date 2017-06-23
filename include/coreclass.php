@@ -87,7 +87,8 @@ class ilost_strapnav extends Walker_Nav_Menu{
 }
 
 /**/
-// bootstrap breadcrumb.
+// bootstrap breadcrumb. 
+/*
 function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   $breadcrumb_opt=array();
   $breadcrumb_opt['home']=ilost_wp_name;
@@ -194,15 +195,38 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   }
   echo $prefix.$output.$suffix;
 }
+*/
 
 
 
-
-function breadcrumb_simple() {
-    global $post;
+function ilost_breadcrumb() {
+  global $post;
 	$separator = '>';//get_option('brs_sep');
+
+  foreach((get_the_category()) as $category){
+    $catName=$category->cat_name;
+    $catUrl=$category->slug;
+  }
+
+  //echo '<div class="breadcrumb">';
+  
+  echo '<ol class="breadcrumb">';
+  if(is_page()){
+    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
+    echo '<li class="active">'.get_the_title().'</li>';
+  }elseif(is_single()){
+    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
+    echo '<li><a href="'.$catUrl.'">'.$catName.'</a></li>';
+    echo '<li class="active">'.get_the_title().'</li>';
+
+  }else{
+    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
+    echo '<li class="active">'.get_the_title().'</li>';
+  }
+  echo '</ol>';
+  /*
 	
-    echo '<div class="breadcrumb">';
+    echo '<div class="breadcrumb"><i class="fa fa-home"></i> ';
 	if (!is_front_page()) {
 		echo '<a href="'.get_option('home').'">'.bloginfo('name')."</a> ";
     echo $separator;
@@ -229,5 +253,7 @@ function breadcrumb_simple() {
 		bloginfo('name');
 	}
 	echo '</div>';
+  */
+	//echo '</div>';
 }
 ?>
