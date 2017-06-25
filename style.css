@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 .navbar-collapse .navbar-nav{margin:0;}
 .navbar-toggle{position:fixed;top:0;left:0;z-index:11;margin:4px 0;padding:16px 14px;width:48px;}
 .navbar-toggle.collapsed{position:absolute;}
-.navbar-toggle .icon-bar{width:20px;transform:translate(0,6px) rotate(45deg);transition:width,transform .2s ease-out;}
+.navbar-toggle .icon-bar{width:20px;transform:translate(0,6px) rotate(45deg);transition:width,transform .17s ease-out;}
 .navbar-toggle .icon-bar+.icon-bar{width:0px;transform:rotate(0deg)}
 .navbar-toggle .icon-bar+.icon-bar+.icon-bar{width:20px;transform:translate(0,-6px) rotate(-45deg)}
 .navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:transparent;border-color:transparent;}
@@ -473,20 +473,21 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 .navbar-toggle{margin:8px 0;}
 .navbar-search{position:static;margin:0;padding:12px 0;}
 .navbar-search .search-field:focus{width:170px}
-.navbar .navbar-nav{float:none;text-align:center;height:64px;padding-top:1px;}
+.navbar .navbar-nav{float:none;text-align:center;height:64px;padding-top:0px;}
 .navbar .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1}
 .navbar-default .navbar-nav li a{color:#424242;font-size:16px;text-align:center}
-.navbar .navbar-nav .current_page_parent a,.navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,.navbar .navbar-nav .active a:focus{background-color:#f5f5f5;border-bottom:3px solid #2196f3;}
+.navbar .navbar-nav .current_page_parent a,.navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,.navbar .navbar-nav .active a:focus{background-color:#f5f5f5;border-bottom:3px solid #2196f3;padding-bottom:17px;}
 .navbar-nav .open .dropdown-menu{background:#fff;}
 .navbar-nav .dropdown-menu li{display:block}
 .navbar-nav .dropdown-menu .active a.navbar-nav .dropdown-menu .active a:hover,.navbar-nav .dropdown-menu .active a:focus{border:none;background:#2196f3;padding-bottom:10px;color:#fff}
 .navbar-nav .dropdown.open{box-shadow:none;}
 .navbar-nav .open .dropdown-menu{margin-top:-6px;padding:0;overflow:hidden;border-width:5px 0 0;border-color:#2196f3;}
 .navbar-nav .dropdown-menu li+li{border-color:#eee}
+.navbar-nav .current-menu-parent >a{background:#f5f5f5;border-bottom:3px solid #bdbdbd;padding-bottom:17px!important;;}
+.current-menu-parent.menu-item-has-children>a{border-color:#bdbdbd!important;}
 .navbar-nav .open .dropdown-menu li a{text-align:left;padding:8px 16px;color:#424242;}
 .navbar-nav .open .dropdown-menu li a:hover{color:#2196f3;}
-.navbar-nav .current-menu-parent >a{background:#f5f5f5;border-bottom:3px solid #bdbdbd;}
-.navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a,.navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a:hover{background:#2196f3;color:#fff}
+.navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a,.navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a:hover{background:#2196f3;padding:8px 16px;color:#fff;}
 .navbar-default .navbar-nav .menu-item-has-children li a,.navbar-default .navbar-nav .menu-item-has-children li a:hover,.navbar-default .navbar-nav .menu-item-has-children li a:focus{background:#fff;border:0;}
 
 .contwarp section,.contwarp .widget{margin-bottom:32px;}
