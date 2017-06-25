@@ -14,8 +14,8 @@ License URI: LICENSE
 a,a em,a strong{color:#08c;text-decoration:none}
 a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 :link,:visited,ins{text-decoration:none}
-::selection{background:#b5d5ff;color:#000}
-::-moz-selection{background:#b5d5ff;color:#000}
+::selection{background:#ffee58;color:#000}
+::-moz-selection{background:#ffee58;color:#000}
 .container{cursor:url(images/arrow.cur),default}
 input[type=text],textarea{cursor:url(images/text.cur),text}
 a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images/pointer.cur),pointer}
@@ -89,12 +89,15 @@ box-shadow: 0 1px 5px rgba(0,0,0,.16);}
 
 .breadwarp,.breadcrumb{background:transparent}
 .breadcrumb{margin:0;padding:12px 0;border-radius:0;font-size:12px;color:rgba(0,0,0,.16)}
+.page .breadcrumb{padding:12px 0 0;}
 .breadcrumb a{color:rgba(0,0,0,.24)}
 .breadcrumb > .active{color:rgba(0,0,0,.48)}
 .custom-background .breadcrumb a{color:rgba(255,255,255,.6)}
 .custom-background .breadcrumb .active{color:rgba(255,255,255,.76)}
 
 #newpost{padding-bottom:24px;}
+.single .contwarp section{margin-bottom:4px;}
+.alert{box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);}
 /* Container End. */
 
 
@@ -163,7 +166,7 @@ section .related .thumbnail img{width:100px;height:100px}
 /* Sidebar */
 aside ul{list-style:none;padding-left:0}
 .widget{padding:16px}
-.widget h3{font-size:16px}
+.widget h2,.widget h3{font-size:16px}
 .widget ul li{border-top:1px solid #f4f4f4;border-color:rgba(0,0,0,.07);padding:8px 0;list-style:none;color:#757575;line-height:1.2}
 .widget a{color:#616161;display:block}
 .widget a:hover{color:#2196f3}
@@ -267,8 +270,7 @@ aside .reavatar a .avatar{margin:5px}
 
 /* Navigation */
 .pagination{border-radius:4px;overflow:hidden;}
-.pagination > li > a, .pagination > li > span{color:#616161;}
-
+.pagination > li > a, .pagination > li > span{padding:8px 16px;color:#616161;}
 
 .pagnav-row{list-style:none;margin:0;padding:24px 0 0}
 .pagnav-row li{padding:16px 0;min-height:80px;border:0 solid #eee;}
@@ -298,15 +300,10 @@ footer{clear:both;background:#fafafa;}
 .home footer{background:#f5f5f5;}
 footer ul{list-style:none;padding:0}
 footer .row{margin-bottom:16px}
-footer .row h4{margin:0 0 8px;line-height:20px;font-size:14px;font-weight:400;color:rgba(0,0,0,.6);text-transform:uppercase}
-
-/*
-footer .row .widget ul{display:none}
-footer .row .widget:focus ul{display:block;}
-*/
-footer .row li{border:none;line-height:1;}
-footer .row li a{color:rgba(0,0,0,.6);font-size:12px;}
-footer .row li a:hover{color:#1e88e5;text-decoration:none}
+footer .row h4{margin:0 0 8px;padding:0 8px;line-height:20px;font-size:14px;font-weight:400;color:rgba(0,0,0,.6);text-transform:uppercase}
+footer .row li{border:none;line-height:1;padding:0;}
+footer .row li a{position:relative;color:rgba(0,0,0,.6);font-size:12px;padding:8px;}
+footer .row li a:hover{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.12);color:#1e88e5;text-decoration:none;}
 
 footer .copyrt{color:#424242;}
 footer .copyrt p{margin:0;padding:8px 0;font-size:11px;font-weight:300;text-transform:uppercase}
@@ -497,10 +494,11 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 section .inarp{padding:0 32px 16px}
 section .title{padding:24px 0 16px}
 section .thumg{height:210px;}
+section .post-meta {padding:12px 20px;}
 
 .pagnav-row li + li{border-width:0 0 0 1px;}
 
-footer .row h4{margin-bottom:16px;}
+footer .row h4{margin-bottom:12px;}
 footer .row .widget{margin-bottom:16px;padding-top:24px}
 
 #rotation{margin-top:64px;}

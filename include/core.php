@@ -1,5 +1,4 @@
 <?php // Core Functions.
-
 function ilost_init(){
   register_sidebar(
     array('name'=>__('iLost SideBar','iLost'),

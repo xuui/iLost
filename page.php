@@ -8,7 +8,8 @@
   <div class="container">
     <div id="row" class="row">
       <article class="col-xl-9 col-md-9 col-sm-8 col-xs-12<?php if(ilost_getsidefl()=='left')echo ' pull-right'?>">
-        <?php if(have_posts()){while(have_posts()){the_post();?>
+        <?php if(have_posts()){
+      ilost_breadcrumb();while(have_posts()){the_post();?>
         <section id="post-<?php the_ID();?>" <?php post_class();?>>
           <div class="entry">
             <?php the_content();

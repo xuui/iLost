@@ -197,63 +197,33 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
 }
 */
 
-
-
-function ilost_breadcrumb() {
+function ilost_breadcrumb(){
   global $post;
-	$separator = '>';//get_option('brs_sep');
-
   foreach((get_the_category()) as $category){
     $catName=$category->cat_name;
     $catUrl=$category->slug;
   }
-
-  //echo '<div class="breadcrumb">';
-  
-  echo '<ol class="breadcrumb">';
-  if(is_page()){
-    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
+  $bccStart='<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
+  echo '<ol class="breadcrumb">'.$bccStart;
+  if(is_page() && $post->post_parent){
+    $home=get_page(get_option('page_on_front'));
+    for($i=count($post->ancestors)-1;$i>=0;$i--){
+      if (($home->ID)!=($post->ancestors[$i])){
+        echo '<li><a href="'.get_permalink($post->ancestors[$i]).'">'.get_the_title($post->ancestors[$i])."</a></li>";
+      }
+    }
+    echo '<li class="active">'.get_the_title().'</li>';
+  }elseif(is_page()){
     echo '<li class="active">'.get_the_title().'</li>';
   }elseif(is_single()){
-    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
     echo '<li><a href="'.$catUrl.'">'.$catName.'</a></li>';
     echo '<li class="active">'.get_the_title().'</li>';
-
+  }elseif(is_category()){
+    echo '<li><a href="">'.__('Category').'</a></li>';
+    echo '<li class="active">'.wp_title('',false,'right').'</li>';
   }else{
-    echo '<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
-    echo '<li class="active">'.get_the_title().'</li>';
+    echo '<li class="active">'.wp_title('',false,'right').'</li>';
   }
   echo '</ol>';
-  /*
-	
-    echo '<div class="breadcrumb"><i class="fa fa-home"></i> ';
-	if (!is_front_page()) {
-		echo '<a href="'.get_option('home').'">'.bloginfo('name')."</a> ";
-    echo $separator;
-		if ( is_category() || is_single() ) {
-			the_category(', ');
-			if ( is_single() ) {
-				echo $separator;
-				the_title();
-			}
-		} elseif ( is_page() && $post->post_parent ) {
-			$home = get_page(get_option('page_on_front'));
-			for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
-				if (($home->ID) != ($post->ancestors[$i])) {
-					echo '<a href="'.get_permalink($post->ancestors[$i]).'">'.get_the_title($post->ancestors[$i])."</a>".$separator;
-				}
-			}
-			echo the_title();
-		} elseif (is_page()) {
-			echo the_title();
-		} elseif (is_404()) {
-			echo "404";
-		}
-	} else {
-		bloginfo('name');
-	}
-	echo '</div>';
-  */
-	//echo '</div>';
 }
 ?>
