@@ -3,55 +3,66 @@
 class ilost_strapnav extends Walker_Nav_Menu{
   public function start_lvl(&$output,$depth=0,$args=array()){
     $indent=str_repeat("\t",$depth);
-    $output.="\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+    $output.="\n$indent<ul role=\"menu\" class=\" dropdown-menu\" >\n";
   }
   public function start_el(&$output,$item,$depth=0,$args=array(),$id=0){
-    $indent=($depth)? str_repeat("\t",$depth):'';
-    if(strcasecmp($item->attr_title,'divider')==0 && $depth===1){
+    $indent=($depth)? str_repeat("\t",$depth): '';
+    if(0===strcasecmp($item->attr_title,'divider')&& 1===$depth){
       $output.=$indent.'<li role="presentation" class="divider">';
-    }else if(strcasecmp($item->title,'divider')==0 && $depth===1){
+    }elseif(0===strcasecmp($item->title,'divider')&& 1===$depth){
       $output.=$indent.'<li role="presentation" class="divider">';
-    }else if(strcasecmp($item->attr_title,'dropdown-header')==0 && $depth===1){
+    }elseif(0===strcasecmp($item->attr_title,'dropdown-header')&& 1===$depth){
       $output.=$indent.'<li role="presentation" class="dropdown-header">'.esc_attr($item->title);
-    }else if(strcasecmp($item->attr_title,'disabled')==0){
+    }elseif(0===strcasecmp($item->attr_title,'disabled')){
       $output.=$indent.'<li role="presentation" class="disabled"><a href="#">'.esc_attr($item->title).'</a>';
     }else{
-      $class_names=$value='';
-      $classes=empty($item->classes)? array():(array)$item->classes;
+      $value='';
+      $class_names=$value;
+      $classes=empty($item->classes)? array():(array) $item->classes;
       $classes[]='menu-item-'.$item->ID;
       $class_names=join(' ',apply_filters('nav_menu_css_class',array_filter($classes),$item,$args));
-      if($args->has_children)$class_names.=' dropdown';
-      if(in_array('current-menu-item',$classes))$class_names.=' active';
-      $class_names=$class_names ? ' class="'.esc_attr($class_names).'"':'';
+      if($args->has_children){$class_names.=' dropdown';}
+      if(in_array('current-menu-item',$classes,true)){$class_names.=' active';}
+      $class_names=$class_names? ' class="'.esc_attr($class_names).'"':'';
       $id=apply_filters('nav_menu_item_id','menu-item-'.$item->ID,$item,$args);
-      $id=$id ? ' id="'.esc_attr($id).'"':'';
-      $output.=$indent.'<li'.$id.$value.$class_names .'>';
+      $id=$id? ' id="'.esc_attr($id).'"':'';
+      $output.=$indent.'<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"'.$id.$value.$class_names.'>';
       $atts=array();
-      $atts['title']=! empty($item->title)?$item->title:'';
-      $atts['target']=! empty($item->target)?$item->target:'';
-      $atts['rel']=! empty($item->xfn)? $item->xfn:'';
-      if($args->has_children && $depth===0){
-        $atts['href']='#';
+      if(empty($item->attr_title)){
+        $atts['title']=!empty($item->title)? strip_tags($item->title): '';
+      }else{$atts['title']=$item->attr_title;}
+      $atts['target']=!empty($item->target)? $item->target:'';
+      $atts['rel']=!empty($item->xfn)? $item->xfn:'';
+      if($args->has_children && 0===$depth){
+        $atts['href']='javascript:;';
         $atts['data-toggle']='dropdown';
         $atts['class']='dropdown-toggle';
         $atts['aria-haspopup']='true';
-      }else{
-        $atts['href']=! empty($item->url)? $item->url:'';
-      }
+      }else{$atts['href']=!empty($item->url)? $item->url:'';}
       $atts=apply_filters('nav_menu_link_attributes',$atts,$item,$args);
       $attributes='';
       foreach($atts as $attr=> $value){
-        if(! empty($value)){
-          $value=('href'===$attr)? esc_url($value):esc_attr($value);
+        if(!empty($value)){
+          $value=('href'===$attr)? esc_url($value): esc_attr($value);
           $attributes.=' '.$attr.'="'.$value.'"';
         }
       }
       $item_output=$args->before;
-      //if(! empty($item->attr_title)){
-      //  $item_output.='<a'.$attributes.'><span class="fa '.esc_attr($item->attr_title).'"></span>';
-      //}else{
-        $item_output.='<a'.$attributes.'>';
-      //}
+      /*
+        * Glyphicons/Font-Awesome
+        *===========
+        * Since the the menu item is NOT a Divider or Header we check the see
+        * if there is a value in the attr_title property. If the attr_title
+        * property is NOT null we apply it as the class name for the glyphicon.
+        */
+      if(!empty($item->attr_title)){
+        $pos=strpos(esc_attr($item->attr_title),'glyphicon');
+        if(false!==$pos){
+          $item_output.='<a'.$attributes.'><span class="glyphicon '.esc_attr($item->attr_title).'" aria-hidden="true"></span>&nbsp;';
+        }else{
+          $item_output.='<a'.$attributes.'><i class="fa '.esc_attr($item->attr_title).'" aria-hidden="true"></i>&nbsp;';
+        }
+      }else{$item_output.='<a'.$attributes.'>';}
       $item_output.=$args->link_before.apply_filters('the_title',$item->title,$item->ID).$args->link_after;
       $item_output.=($args->has_children && 0===$depth)? ' <span class="caret"></span></a>':'</a>';
       $item_output.=$args->after;
@@ -59,29 +70,31 @@ class ilost_strapnav extends Walker_Nav_Menu{
     }
   }
   public function display_element($element,&$children_elements,$max_depth,$depth,$args,&$output){
-    if(!$element)return;
+    if(!$element){return;}
     $id_field=$this->db_fields['id'];
-    if(is_object($args[0]))$args[0]->has_children=!empty($children_elements[ $element->$id_field ]);
+    if(is_object($args[0])){$args[0]->has_children=!empty($children_elements[ $element->$id_field ]);}
     parent::display_element($element,$children_elements,$max_depth,$depth,$args,$output);
   }
   public static function fallback($args){
-    if(current_user_can('manage_options')){
-      extract($args);
-      $fb_output=null;
+    if(current_user_can('edit_theme_options')){
+      $container=$args['container'];
+      $container_id=$args['container_id'];
+      $container_class=$args['container_class'];
+      $menu_class=$args['menu_class'];
+      $menu_id=$args['menu_id'];
       if($container){
-        $fb_output='<'.$container;
-        if($container_id){$fb_output.=' id="'.$container_id.'"';}
-        if($container_class){$fb_output.=' class="'.$container_class.'"';}
-        $fb_output.='>';
+        echo '<'.esc_attr($container);
+        if($container_id){echo ' id="'.esc_attr($container_id).'"';}
+        if($container_class){echo ' class="'.sanitize_html_class($container_class).'"';}
+        echo '>';
       }
-      $fb_output.='<ul';
-      if($menu_id){$fb_output.=' id="'.$menu_id.'"';}
-      if($menu_class){$fb_output.=' class="'.$menu_class.'"';}
-      $fb_output.='>';
-      $fb_output.='<li><a href="'.admin_url('nav-menus.php').'">Add a menu</a></li>';
-      $fb_output.='</ul>';
-      if($container)$fb_output.='</'.$container.'>';
-      echo $fb_output;
+      echo '<ul';
+      if($menu_id){echo ' id="'.esc_attr($menu_id).'"';}
+      if($menu_class){echo ' class="'.esc_attr($menu_class).'"';}
+      echo '>';
+      echo '<li><a href="'.esc_url(admin_url('nav-menus.php')).'" title="">'.esc_attr('Add a menu','').'</a></li>';
+      echo '</ul>';
+      if($container){echo '</'.esc_attr($container).'>';}
     }
   }
 }

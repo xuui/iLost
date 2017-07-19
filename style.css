@@ -20,10 +20,10 @@ a:focus,a:active,a:hover{color:#08c;text-decoration:underline}
 input[type=text],textarea{cursor:url(images/text.cur),text}
 a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images/pointer.cur),pointer}
 /*
-::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar{width:4px;height:4px}
 ::-webkit-scrollbar-track-piece{background:#eee url(images/scrollbar-bg.png) repeat-y;-webkit-border-radius:3px}
-::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:6px;-webkit-border-radius:3px}
-::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:6px;-webkit-border-radius:3px}
+::-webkit-scrollbar-thumb:vertical{background:#666 url(images/scrollbar-track-bg.png) repeat-y;height:4px;-webkit-border-radius:3px}
+::-webkit-scrollbar-thumb:horizontal{background:#666 url(images/scrollbar-track-bg.png) repeat-y;width:4px;-webkit-border-radius:3px}
 */
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
 body{position:relative;background:#eee}
