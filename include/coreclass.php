@@ -1,9 +1,11 @@
 <?php // Core Class.
 // bootstrap navbar.
+//class ilost_strapnav extends Walker_Nav_Menu{}
+if(!class_exists('ilost_strapnav')){
 class ilost_strapnav extends Walker_Nav_Menu{
   public function start_lvl(&$output,$depth=0,$args=array()){
     $indent=str_repeat("\t",$depth);
-    $output.="\n$indent<ul role=\"menu\" class=\" dropdown-menu\" >\n";
+    $output.="\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
   }
   public function start_el(&$output,$item,$depth=0,$args=array(),$id=0){
     $indent=($depth)? str_repeat("\t",$depth): '';
@@ -18,27 +20,37 @@ class ilost_strapnav extends Walker_Nav_Menu{
     }else{
       $value='';
       $class_names=$value;
-      $classes=empty($item->classes)? array():(array) $item->classes;
+      $classes=empty($item->classes)? array():(array)$item->classes;
       $classes[]='menu-item-'.$item->ID;
       $class_names=join(' ',apply_filters('nav_menu_css_class',array_filter($classes),$item,$args));
-      if($args->has_children){$class_names.=' dropdown';}
-      if(in_array('current-menu-item',$classes,true)){$class_names.=' active';}
-      $class_names=$class_names? ' class="'.esc_attr($class_names).'"':'';
+      if($args->has_children){
+        $class_names.=' dropdown';
+      }
+      if(in_array('current-menu-item',$classes,true)){
+        $class_names.=' active';
+      }
+      $class_names=$class_names ? ' class="'.esc_attr($class_names).'"' : '';
       $id=apply_filters('nav_menu_item_id','menu-item-'.$item->ID,$item,$args);
-      $id=$id? ' id="'.esc_attr($id).'"':'';
+      $id=$id ? ' id="'.esc_attr($id).'"' : '';
       $output.=$indent.'<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"'.$id.$value.$class_names.'>';
       $atts=array();
+
       if(empty($item->attr_title)){
         $atts['title']=!empty($item->title)? strip_tags($item->title): '';
-      }else{$atts['title']=$item->attr_title;}
-      $atts['target']=!empty($item->target)? $item->target:'';
-      $atts['rel']=!empty($item->xfn)? $item->xfn:'';
+      }else{
+        $atts['title']=$item->attr_title;
+      }
+
+      $atts['target']=!empty($item->target)? $item->target : '';
+      $atts['rel']=!empty($item->xfn)? $item->xfn    : '';
       if($args->has_children && 0===$depth){
-        $atts['href']='javascript:;';
+        $atts['href']='#';
         $atts['data-toggle']='dropdown';
         $atts['class']='dropdown-toggle';
         $atts['aria-haspopup']='true';
-      }else{$atts['href']=!empty($item->url)? $item->url:'';}
+      }else{
+        $atts['href']=!empty($item->url)? $item->url : '';
+      }
       $atts=apply_filters('nav_menu_link_attributes',$atts,$item,$args);
       $attributes='';
       foreach($atts as $attr=> $value){
@@ -48,31 +60,29 @@ class ilost_strapnav extends Walker_Nav_Menu{
         }
       }
       $item_output=$args->before;
-      /*
-        * Glyphicons/Font-Awesome
-        *===========
-        * Since the the menu item is NOT a Divider or Header we check the see
-        * if there is a value in the attr_title property. If the attr_title
-        * property is NOT null we apply it as the class name for the glyphicon.
-        */
       if(!empty($item->attr_title)){
         $pos=strpos(esc_attr($item->attr_title),'glyphicon');
-        if(false!==$pos){
+        if(false !==$pos){
           $item_output.='<a'.$attributes.'><span class="glyphicon '.esc_attr($item->attr_title).'" aria-hidden="true"></span>&nbsp;';
         }else{
           $item_output.='<a'.$attributes.'><i class="fa '.esc_attr($item->attr_title).'" aria-hidden="true"></i>&nbsp;';
         }
-      }else{$item_output.='<a'.$attributes.'>';}
+      }else{
+        $item_output.='<a'.$attributes.'>';
+      }
       $item_output.=$args->link_before.apply_filters('the_title',$item->title,$item->ID).$args->link_after;
-      $item_output.=($args->has_children && 0===$depth)? ' <span class="caret"></span></a>':'</a>';
+      $item_output.=($args->has_children && 0===$depth)? ' <span class="caret"></span></a>' : '</a>';
       $item_output.=$args->after;
       $output.=apply_filters('walker_nav_menu_start_el',$item_output,$item,$depth,$args);
-    }
+    }// End if().
   }
   public function display_element($element,&$children_elements,$max_depth,$depth,$args,&$output){
-    if(!$element){return;}
+    if(!$element){
+      return;}
     $id_field=$this->db_fields['id'];
-    if(is_object($args[0])){$args[0]->has_children=!empty($children_elements[ $element->$id_field ]);}
+    // Display this element.
+    if(is_object($args[0])){
+      $args[0]->has_children=!empty($children_elements[$element->$id_field]);}
     parent::display_element($element,$children_elements,$max_depth,$depth,$args,$output);
   }
   public static function fallback($args){
@@ -82,25 +92,35 @@ class ilost_strapnav extends Walker_Nav_Menu{
       $container_class=$args['container_class'];
       $menu_class=$args['menu_class'];
       $menu_id=$args['menu_id'];
+
       if($container){
         echo '<'.esc_attr($container);
-        if($container_id){echo ' id="'.esc_attr($container_id).'"';}
-        if($container_class){echo ' class="'.sanitize_html_class($container_class).'"';}
+        if($container_id){
+          echo ' id="'.esc_attr($container_id).'"';
+        }
+        if($container_class){
+          echo ' class="'.sanitize_html_class($container_class).'"';}
         echo '>';
       }
       echo '<ul';
-      if($menu_id){echo ' id="'.esc_attr($menu_id).'"';}
-      if($menu_class){echo ' class="'.esc_attr($menu_class).'"';}
+      if($menu_id){
+        echo ' id="'.esc_attr($menu_id).'"';}
+      if($menu_class){
+        echo ' class="'.esc_attr($menu_class).'"';}
       echo '>';
       echo '<li><a href="'.esc_url(admin_url('nav-menus.php')).'" title="">'.esc_attr('Add a menu','').'</a></li>';
       echo '</ul>';
-      if($container){echo '</'.esc_attr($container).'>';}
+      if($container){
+        echo '</'.esc_attr($container).'>';}
     }
   }
 }
+}// End if().
+
+
 
 /**/
-// bootstrap breadcrumb. 
+// bootstrap breadcrumb.
 /*
 function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   $breadcrumb_opt=array();
@@ -117,7 +137,7 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
     if(is_category()|| is_tag()|| is_date()|| is_author()){return '<li class="active">'.$input.'</li>';}else{return '<li class="active">'.$input.'</li>';}
   }
   function ilost_get_category_parents($id,$link=FALSE,$separator='/',$nicename=FALSE){
-    $chain='';$parent=@get_category($id);if(is_wp_error($parent)){return $parent;}if($nicename){$name=$parent->slug;}else{$name=$parent->cat_name;}if($parent->parent &&($parent->parent != $parent->term_id)){$chain.=get_category_parents($parent->parent,true,$separator,$nicename);}$chain.= ilost_bold_or_not($name);return $chain;
+    $chain='';$parent=@get_category($id);if(is_wp_error($parent)){return $parent;}if($nicename){$name=$parent->slug;}else{$name=$parent->cat_name;}if($parent->parent &&($parent->parent !=$parent->term_id)){$chain.=get_category_parents($parent->parent,true,$separator,$nicename);}$chain.=ilost_bold_or_not($name);return $chain;
   }
   $nofollow=' ';
   if($breadcrumb_opt['nofollowhome']){$nofollow=' rel="nofollow" ';}
@@ -140,10 +160,10 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
     }
     if(is_single()&& $breadcrumb_opt['singlecatprefix']){
       $cats=get_the_category();$cat=$cats[0];
-      if(is_object($cat)){if($cat->parent != 0){
-        $output.= get_category_parents($cat->term_id,true,'');
+      if(is_object($cat)){if($cat->parent !=0){
+        $output.=get_category_parents($cat->term_id,true,'');
       }else{
-        $output.= '<li><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></li>';
+        $output.='<li><a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a></li>';
       }
     }
   }
@@ -162,7 +182,7 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
   }else if(is_tax()){
     $taxonomy=get_taxonomy(get_query_var('taxonomy'));
     $term=get_query_var('term');
-    $output.=$taxonomy->label .':'.ilost_bold_or_not($term );
+    $output.=$taxonomy->label.':'.ilost_bold_or_not($term);
   }else{
     $output.=ilost_bold_or_not(get_the_title());
   }
@@ -212,16 +232,16 @@ function ilost_breadcrumb($prefix='<ol class="breadcrumb">',$suffix='</ol>'){
 
 function ilost_breadcrumb(){
   global $post;
-  foreach((get_the_category()) as $category){
+  foreach((get_the_category())as $category){
     $catName=$category->cat_name;
     $catUrl=$category->slug;
   }
   $bccStart='<li><a href="'.ilost_wp_homeurl.'"><i class="fa fa-home"></i> '.ilost_wp_name.'</a></li>';
   echo '<ol class="breadcrumb">'.$bccStart;
-  if(is_page() && $post->post_parent){
+  if(is_page()&& $post->post_parent){
     $home=get_page(get_option('page_on_front'));
     for($i=count($post->ancestors)-1;$i>=0;$i--){
-      if (($home->ID)!=($post->ancestors[$i])){
+      if(($home->ID)!=($post->ancestors[$i])){
         echo '<li><a href="'.get_permalink($post->ancestors[$i]).'">'.get_the_title($post->ancestors[$i])."</a></li>";
       }
     }
