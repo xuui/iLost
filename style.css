@@ -3,7 +3,7 @@ Theme Name: iLost
 Theme URI: http://xuui.net/themes/ilost-release.html
 GitHub Theme URI: https://github.com/xuui/iLost
 Description:The 2011 theme for Xu.Design is stylish. This is the full version. Designed and created by Xu.hel. WordPress 4.6 or later is Version to use.
-Version: 1.9.9
+Version: 1.9.10
 Author: Xu.hel
 Author URI: http://xuui.net/
 Tags: blue, white, two-columns, left-sidebar, fixed-width, custom-background, custom-menu, editor-style, sticky-post, theme-options, threaded-comments, translation-ready, microformats, rtl-language-support
@@ -27,7 +27,6 @@ a:link,input[type=button],input[type=submit],button,button.btn{cursor:url(images
 */
 html{-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased}
 body{position:relative;background:#eee}
-body.home{padding-top:64px;}
 a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;transition:color .2s ease-out;}
 .alert{margin-bottom:0;padding:16px 24px}
 h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
@@ -64,7 +63,7 @@ box-shadow: 0 1px 5px rgba(0,0,0,.16);}
 .navbar-search .search-field:hover{background-color:#fff;border-color:#2196f3}
 .search-field::-webkit-input-placeholder,.search-field::-moz-placeholder,.search-field:-moz-placeholder,.search-field:-ms-input-placeholder{color:#bdbdbd;}
 
-.navbar-fixed-top,.custom-background .navbar-default{background:rgba(255,255,255,.94)}
+.navbar-fixed-top,.custom-background .navbar-default{background:rgba(255,255,255,.90)}
 .navbar-default .navbar-nav li a{padding:20px 16px;color:#2196f3;font-size:18px;text-align:center}
 .navbar .navbar-nav .current_page_parent a,.navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,.navbar .navbar-nav .active a:focus{background-color:#fff;color:#424242;}
 .navbar-default .navbar-nav > .open > a,.navbar-default .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus{background-color:#fff;}
@@ -208,10 +207,8 @@ aside .reavatar{padding:8px 3px 0}
 aside .reavatar a .avatar{margin:5px}
 
 
-/* Comments *//*
-#comments{overflow:hidden;padding:40px 72px}
-#comments h3{margin-top:0;font-size:20px}
-.comment-form .comment-notes,.comment-form .logged-in-as,.comment-form .form-submit{padding:0 15px}
+/* Comments */
+
 .comment-list ul{}
 .comment-list .media + .media{border-top:1px dotted #b3b3b3}
 .comment-list .media{margin-top:0;padding:10px 0;line-height:1.7;color:#333}
@@ -235,6 +232,11 @@ aside .reavatar a .avatar{margin:5px}
 .comment-list .children .children li.toprep,
 .comment-list .children .children .box-bottom{margin-left:-6px}
 .comment-list .children .children li.toprep{padding-left:6px}
+
+/*
+#comments{overflow:hidden;padding:40px 72px}
+#comments h3{margin-top:0;font-size:20px}
+.comment-form .comment-notes,.comment-form .logged-in-as,.comment-form .form-submit{padding:0 15px}
 
 .comment-list li.pingback{padding:10px;color:#333}
 .comment-list li.pingback p{margin:0}
@@ -464,7 +466,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 .col-xs-12{padding-left:8px;padding-right:8px;}
 }
 @media (min-width:768px){
-.navbar-default{background-color:#fff;}
+.navbar-default{}
 .navbar-default .navbar-brand{padding:0 16px;line-height:64px}
 .navbar-default .nav-brand,.navbar-default .navbar-brand,.navbar-default .navbar-brand .logo{height:64px}
 .navbar-collapse{position:static;padding:0;background-color:transparent}
