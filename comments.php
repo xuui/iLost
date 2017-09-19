@@ -12,7 +12,7 @@ if(have_comments()){?>
 $ilost_comment_fields=array(
   'author'=>'<div class="form-group form-group-sm comment-form-author col-md-4"><label class="control-label" for="author">'.__('Name').($req ? '<span class="required">*</span>':'').'</label> '.'<input type="text" class="form-control" id="author" name="author" placeholder="your name" value="'.esc_attr($commenter['comment_author']).'" size="30" /></div>',//'.$aria_req.'
   'email'=>'<div class="form-group form-group-sm comment-form-email col-md-4"><label class="control-label" for="email">'.__('Email').($req ? '<span class="required">*</span>':'').'</label>'.'<input type="text" class="form-control" id="email" name="email" placeholder="your@mail.com" value="'.esc_attr($commenter['comment_author_email']).'" /></div>',//'.$aria_req.' 
-  'url'=>'<div class="form-group form-group-sm comment-form-url col-md-4"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http:///" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
+  'url'=>'<div class="form-group form-group-sm comment-form-url col-md-4"><label class="control-label" for="url">'.__('Website').'</label>'.'<input type="text" class="form-control" id="url" name="url" placeholder="http://" value="'.esc_attr($commenter['comment_author_url']).'" size="30" /></div>',
 );
 $ilost_comment_form=array(
   'class_form'=>'comment-form row',
