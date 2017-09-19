@@ -339,7 +339,7 @@ function ilost_pagenav($options=array()){
   if(!empty($options['prev_text'])){$out.='<li>'.get_previous_posts_link($options['prev_text']).'</li>';}
   foreach(range($start_page,$end_page) as $i){if($i==$paged && !empty($options['current_text'])){$current_page_text=str_replace('%PAGE_NUMBER%',number_format_i18n($i),$options['current_text']);$out.='<li class="active"><span>'.$current_page_text."</span></li>";}else{$out.=ilost_pgnavnum($i,'page',$options['page_text']);}}
   if(!empty($options['next_text'])){$out.='<li>'.get_next_posts_link($options['next_text'],$total_pages).'</li>';}$larger_page_end=0;
-  $out='<ul class="pagination">'."\n".$out."\n</ul>\n";
+  $out='<ul class="pagination pagination-sm">'."\n".$out."\n</ul>\n";
   echo apply_filters('ilost_pagenav',$out);
 }
 function ilost_pgnavnum($page,$class,$raw_text,$format='%PAGE_NUMBER%'){if(empty($raw_text)){return '';}$text=str_replace($format,number_format_i18n($page),$raw_text);return "<li><a href='".esc_url(get_pagenum_link($page))."' class='$class'>$text</a></li>";}
