@@ -333,6 +333,7 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 
 /* Home */
 #proaside{background:#f5f5f5;padding:2px 8px 8px;box-shadow:none}
+#proaside .container{padding:0;}
 #proaside .row{margin-left:-2px;margin-right:-2px}
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px;}
 #proaside a,#proaside a span{display:block;display:block}
@@ -509,6 +510,7 @@ footer .row .widget{margin-bottom:16px;padding-top:24px}
 #rotation .flex-caption span{margin-top:32px;margin-left:0;padding:12px 20px;border-width:2px;font-size:16px;}
 
 #proaside{padding:24px 0;}
+#proaside .container{padding:0 12px;}
 #proaside .row .col-xl-3,#proaside .row .col-xl-4{}
 #proaside a{height:220px;}
 #proaside a span{padding:16px;}
