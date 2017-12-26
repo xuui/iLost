@@ -1,11 +1,11 @@
 <?php /* Template Name: Home */
 get_header();?>
-<?php ilost_getiloshow();?>
-<div id="proaside">
-  <div class="container"><div class="row">
+<section id="showSection">
+  <?php ilost_getiloshow();?>
+  <div class="container postpart"><div class="row">
     <?php ilost_showProTu(ilost_frontCat());?>
   </div></div>
-</div>
+</section>
 <div id="newpost">
   <div class="container">
     <div class="row">

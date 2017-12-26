@@ -329,14 +329,16 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 .page aside{margin-top:-3px}
 
 /* Home */
-#proaside{background:#f5f5f5;padding:2px 8px 8px;box-shadow:none}
-#proaside .container{padding:0;}
-#proaside .row{margin-left:-2px;margin-right:-2px}
-#proaside .row .col-xl-3,#proaside .row .col-xl-4{padding:2px;}
-#proaside a,#proaside a span{display:block;display:block}
-#proaside a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:100px}
-#proaside a span{position:absolute;bottom:-100%;background:rgba(0,0,0,.34);color:#fff;width:100%;padding:8px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
-#proaside a:hover span{bottom:0}
+#showSection{padding:56px 0 0;}
+.postpart{/*background:#f5f5f5;*/padding:2px 8px 8px;box-shadow:none}
+.postpart .-container{padding:0;}
+.postpart .row{margin-left:-2px;margin-right:-2px}
+.postpart .row .col-xl-3,.postpart .row .col-xl-4{padding:2px;}
+.postpart a,.postpart a span{display:block;display:block}
+.postpart a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:100px}
+.postpart a span{position:absolute;bottom:-100%;background:rgba(0,0,0,.34);color:#fff;width:100%;padding:8px;-webkit-transition:bottom .3s ease-out;-moz-transition:bottom .3s ease-out;transition:bottom .3s ease-out}
+.postpart a:hover span{bottom:0}
+
 #newpost .col-xl-3{background:#fff;padding:16px;margin:0 8px 8px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.16);}
 #newpost .col-xl-3 h2{font-size:23px;font-weight:300;}
 #newpost .col-xl-3 h2,#newpost .col-xl-3 h2 a{color:#616161}
@@ -391,7 +393,7 @@ body.error footer{background:none;padding:0}
 body.error footer p{text-align:center}
 
 /* Rotation */
-#rotation{margin-top:56px;margin-bottom:0;background:#eee}
+#rotation{margin:0;background:#eee}
 #rotation .slides{overflow:hidden}
 #rotation .slides li{position:relative;}
 #rotation .slides img{background:#fff no-repeat 50% 0%;background-size:cover;width:100%;height:160px;}
@@ -500,16 +502,19 @@ section .post-meta {padding:12px 20px;}
 footer .row h4{margin-bottom:12px;}
 footer .row .widget{margin-bottom:16px;padding-top:24px}
 
-#rotation{margin-top:64px;-webkit-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-moz-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-ms-box-shadow:0 0 60px 0 rgba(0,0,0,.15);box-shadow:0 0 60px 0 rgba(0,0,0,.15);}
+  
+#showSection{padding:72px 0 0;}
+
+#rotation{-webkit-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-moz-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-ms-box-shadow:0 0 60px 0 rgba(0,0,0,.15);box-shadow:0 0 60px 0 rgba(0,0,0,.15);}
 #rotation .slides img{width:100%;height:auto;}
 #rotation .flex-caption{bottom:33%;left:80px;max-width:64%;font-size:32px;}
 #rotation .flex-caption span{margin-top:32px;margin-left:0;padding:12px 20px;border-width:2px;font-size:16px;}
 
-#proaside{padding:24px 0;}
-#proaside .container{padding:0 12px;}
-#proaside .row .col-xl-3,#proaside .row .col-xl-4{}
-#proaside a{height:220px;}
-#proaside a span{padding:16px;}
+.postpart{padding:24px 12px;}
+.postpart .container{padding:0 12px;}
+.postpart .row .col-xl-3,.postpart .row .col-xl-4{}
+.postpart a{height:220px;}
+.postpart a span{padding:16px;}
 
 #newpost{padding:32px 0;}
 #newpost .container{}
@@ -558,18 +563,18 @@ section .title{padding:16px 0}
 section{margin:30px 0}
 section .post-meta{padding:6px 15px 18px}
 .home .aside{padding:0}
-#proaside .col-xs-4,#proaside .col-sm-4{padding:0 5px}
-#proaside .col-xs-4 img,#proaside .col-sm-4 img{width:100%}
+.postpart .col-xs-4,.postpart .col-sm-4{padding:0 5px}
+.postpart .col-xs-4 img,.postpart .col-sm-4 img{width:100%}
 *//*
 }*/
 /*
-#proaside a{height:160px}
+.postpart a{height:160px}
 /*
 }
 @media (max-width:640px){
 
 /*
- #proaside a{height:120px}
+ .postpart a{height:120px}
 *//*
 }
 */
@@ -582,8 +587,8 @@ section .post-meta{padding:6px 15px 18px}
 }
 @media (max-width:992px){
 /*
-#proaside{padding:10px 0}
-#proaside a img{width:100%}
+.postpart{padding:10px 0}
+.postpart a img{width:100%}
 *//*
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){
