@@ -32,7 +32,7 @@ a{-webkit-transition:color .2s ease-out;-moz-transition:color .2s ease-out;trans
 h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:#212121}
 
 /* Navbar */
-.navbar-default{background:#f5f5f5;border:none;border-radius:0;margin-bottom:0}
+.navbar-default{background:#fff;border:none;border-radius:0;margin-bottom:0}
 .navbar-default .nav-brand{margin:0;padding:0;}
 .navbar-default .navbar-brand{padding:0 8px 0 48px;line-height:56px}
 .navbar-default .navbar-brand .logo{width:auto;}
@@ -403,7 +403,6 @@ body.error footer p{text-align:center}
 #rotation .flex-caption b{display:block;font-weight:300;text-shadow:0 1px 8px rgba(0,0,0,.75)}
 #rotation .flex-caption span{display:inline-block;background:#fff;margin-top:12px;margin-left:-8px;padding:8px 12px;border:1px solid #fff;font-size:12px;line-height:1;color:#000;text-shadow:none;}
 #rotation .flex-caption span:hover{background-color:#ccc;}
-#rotation .flex-control-nav li{margin:4px 2px}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%}
 #rotation .flex-direction-nav a.flex-next{background-position:-56px 50%;right:0}
 #rotation .flex-direction-nav a.flex-prev{background-position:0 50%;left:0}
@@ -475,7 +474,7 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 .navbar .navbar-nav{float:none;text-align:center;height:64px;padding-top:0px;}
 .navbar .navbar-nav li{float:none;display:inline-block;*display:inline;zoom:1}
 .navbar-default .navbar-nav li a{color:#424242;font-size:16px;text-align:center}
-.navbar .navbar-nav .current_page_parent a,.navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,.navbar .navbar-nav .active a:focus{background-color:#f5f5f5;border-bottom:3px solid #2196f3;padding-bottom:17px;}
+.navbar .navbar-nav .current_page_parent a,.navbar .navbar-nav .active a,.navbar .navbar-nav .active a:hover,.navbar .navbar-nav .active a:focus{background-color:#f5f5f5-;border-bottom:3px solid #2196f3;padding-bottom:17px;}
 .navbar-nav .open .dropdown-menu{background:#fff;}
 .navbar-nav .dropdown-menu li{display:block}
 .navbar-nav .dropdown-menu .active a.navbar-nav .dropdown-menu .active a:hover,.navbar-nav .dropdown-menu .active a:focus{border:none;background:#2196f3;padding-bottom:10px;color:#fff}
@@ -503,7 +502,7 @@ footer .row h4{margin-bottom:12px;}
 footer .row .widget{margin-bottom:16px;padding-top:24px}
 
   
-#showSection{padding:72px 0 0;}
+#showSection{padding:64px 0 0;}
 
 #rotation{-webkit-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-moz-box-shadow:0 0 60px 0 rgba(0,0,0,.15);-ms-box-shadow:0 0 60px 0 rgba(0,0,0,.15);box-shadow:0 0 60px 0 rgba(0,0,0,.15);}
 #rotation .slides img{width:100%;height:auto;}
