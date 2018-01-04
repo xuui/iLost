@@ -1,7 +1,7 @@
 <?php get_header();?>
 <div class="breadwarp">
   <div class="container">
-      <?php ilost_breadcrumb();?>
+      <?php cmp_breadcrumbs();//ilost_breadcrumb();?>
   </div>
 </div>
 <div class="contwarp singlewarp">

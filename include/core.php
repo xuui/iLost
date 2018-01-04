@@ -1,23 +1,7 @@
 <?php // Core Functions.
 function ilost_init(){
-  register_sidebar(
-    array('name'=>__('iLost SideBar','iLost'),
-    'id'=>'ilost-sidebar',
-    'description'=>themename.__(' theme\'s SideBar.','iLost'),
-    'class'=>'ilost-sidebar',
-    'before_widget'=>'<li id="%1$s" class="widget %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>')
-  );
-  register_sidebar(
-    array('name'=>__('Page SideBar','iLost'),
-    'id'=>'page-sidebar',
-    'description'=>themename.__(' theme\'s page sidebar.','iLost'),
-    'before_widget'=>'<li id="%1$s" class="widget %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h3 class="widgettitle">',
-    'after_title'=>'</h3>')
-  );
+  register_sidebar(array('name'=>__('iLost SideBar','iLost'),'id'=>'ilost-sidebar','description'=>themename.__('\'s SideBar.','iLost'),'class'=>'ilost-sidebar','before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
+  register_sidebar(array('name'=>__('Page SideBar','iLost'),'id'=>'page-sidebar','description'=>themename.__('\'s page sidebar.','iLost'),'before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
   register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
 
   register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
@@ -45,25 +29,6 @@ function ilost_init(){
 }
 /*
 function ilost_init(){
-  register_sidebar(
-    array('name'=>__('Home Page Right SideBar','iLost'),
-    'id'=>'home-listbar',
-    'description'=>themename.__(' theme\'s Home page template of right sidebar.','iLost'),
-    'before_widget'=>'<li id="%1$s" class="widget %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h3 class="widgettitle">',
-    'after_title'=>'</h3>')
-  );
-  register_sidebar(
-    array('name'=>__('Home Page Left SideBar','iLost'),
-    'id'=>'home-sidebar',
-    'description'=>themename.__(' theme\'s Home page template of left sidebar.','iLost'),
-    'before_widget'=>'<li id="%1$s" class="widget %2$s">',
-    'after_widget'=>'</li>',
-    'before_title'=>'<h3 class="widgettitle">',
-    'after_title'=>'</h3>')
-  );
-
   
   //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
   add_action('admin_menu','ilost_excerpt_meta_box');
@@ -78,9 +43,11 @@ function ilost_init(){
   add_filter('wp_page_menu_args','ilost_home_menulink');
   if(!isset($content_width))$content_width=700;
 }
+*/
+
 /*
-//function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
-//function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
+function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
+function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
 function ilost_excerpt_meta_box(){add_meta_box('postexcerpt',__('Excerpt','iLost'),'ilost_excerpt_meta_box','page','normal','core');}
 function ilost_from_name($email){$wp_from_name=get_option('blogname');return $wp_from_name;}
 function ilost_home_menulink($args){$args['show_home']=true;return $args;}

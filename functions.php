@@ -15,11 +15,11 @@ require_once(dirname( __FILE__ ).'/include/core.php');
 function ilost_page_number($echo=true){global $paged;if($paged>=2){if($echo){echo '| '.sprintf(__('Page %s','iLost'),$paged);}else{return '| '.sprintf(__('Page %s','iLost'),$paged);}}}
 
 /*
-
 function We_do_not_love_it(){wp_deregister_style('open-sans');wp_register_style('open-sans',false);wp_enqueue_style('open-sans','');}
 add_action('init','We_do_not_love_it');
 
 $ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
+*/
 
 /*
 function ilost_getThumbnail_url(ID){
@@ -39,18 +39,7 @@ function ilost_getiloshow(){
 <?php }wp_reset_postdata();
 }
 
-/*
-/function We_do_not_love_it(){wp_deregister_style('open-sans');wp_register_style('open-sans',false);wp_enqueue_style('open-sans','');}
-/*
-/
 
-
-add_action('init','We_do_not_love_it');
-/*
-$ilost_widgerSide=array('before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>');
-
-
-*/
 function ilost_getshare(){/*?>
 <div id="postshare"><div id="share">
   <span class="share"><?php _e('Share this post:','iLost');?></span>

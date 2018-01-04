@@ -21,12 +21,16 @@
       <?php if(have_posts()){while(have_posts()){the_post();?>
       <section id="post-<?php the_ID();?>" <?php post_class();?>>
         <?php if(has_post_thumbnail()){
-        $img_src=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');
-        echo '<div class="thumg" style="background-image:url('.$img_src[0].')"></div>';
-        }?>
+        $img_src=wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
+        <div class="thumg" style="background-image:url(<?php echo $img_src[0]?>)">
+          <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('%s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
+        </div>
+        <?php }?>
         <div class="inarp">
           <div class="title">
+            <?php if(!has_post_thumbnail()){?>
             <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('%s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
+            <?php }?>
             <small>
               <span class="post-data pull-right">
                 <i class="fa fa-calendar-o"></i> <?php the_time('Y-m-d');?>
