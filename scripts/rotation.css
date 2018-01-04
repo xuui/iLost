@@ -54,10 +54,6 @@ margin:0 2px;width:10px;height:10px;border-width:5px;}
 
 @media (max-width:640px){
 .flexslider .slides span{bottom:12px;padding:4px 12px;color:#000;}
-.flex-control-nav{padding:10px 4px;}
-.flex-control-nav li{margin:0 0 4px;}
-.flex-control-paging li a{margin:0 4px;width:16px;height:8px;border-radius:2px;}
-.flex-control-paging li a.flex-active{width:24px;}
 .flex-direction-nav{display:none;}
 }
 @media (max-width:768px){
