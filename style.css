@@ -502,11 +502,11 @@ section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_payby
 .navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a,.navbar-default .navbar-nav .open .dropdown-menu li.current_page_item a:hover{background:#2196f3;padding:8px 16px;color:#fff;}
 .navbar-default .navbar-nav .menu-item-has-children li a,.navbar-default .navbar-nav .menu-item-has-children li a:hover,.navbar-default .navbar-nav .menu-item-has-children li a:focus{background:#fff;border:0;}
 
-.contwarp section,.contwarp .widget{margin-bottom:32px;}
+.contwarp section,.contwarp .widget{margin-bottom:16px;}
 .breadcrumb{padding:24px 0;}
 
 section .inarp{padding:0 24px 4px}
-section .title{padding:20px 0 16px}
+section .title{padding:20px 0 8px}
 section .thumg{height:210px;}
 section .thumg h2{padding:24px;font-size:31px;line-height:1.1765em;}
 section .thumg h2 a{bottom:20px;}
