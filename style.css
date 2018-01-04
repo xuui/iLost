@@ -311,9 +311,10 @@ aside .reavatar a .avatar{margin:5px}
 footer{clear:both;background:#fafafa;}
 .home footer{background:#f5f5f5;}
 footer ul{list-style:none;padding:0}
-footer .row{margin-bottom:16px}
+footer .row{margin:0 -12px 16px}
 footer .row h4{margin:0 0 8px;line-height:20px;font-size:15px;font-weight:700;color:#616161;text-transform:uppercase}
-footer .row li{border:none;padding:6px 0;}
+footer .row li{border:none;padding:0 12px;}
+footer .row li li{padding:8px 0;}
 footer .row li a{position:relative;font-size:11px;line-height:16px;color:rgba(0,0,0,.6);}
 footer .row li a:hover{color:#616161;}
 footer .copyrt{color:#424242;}
