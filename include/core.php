@@ -215,7 +215,7 @@ function ilost_queryNewp($limit=4){
   while($postloop->have_posts()){$postloop->the_post();?>
     <div class="col-sm-6 col-md-3 col-xl-3">
      <h2><a href="<?php the_permalink();?>" title="<?php printf(esc_attr__('Permalink to %s','iLost'),the_title_attribute('echo=0'));?>" rel="bookmark"><?php the_title();?></a></h2>
-     <?php echo '<p>'.ilost_substr(get_the_excerpt(),48).'...</p>';?>
+     <?php echo '<p>'.ilost_substr(get_the_excerpt(),42).'...</p>';?>
      <?php //echo '<p>'.wp_trim_words(get_the_excerpt(),64).'</p>';?>
      <small><?php the_time('m.d.Y');?></small>
     </div>
