@@ -310,8 +310,7 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 */
 
 /* Footer */
-footer{clear:both;background:#fafafa;}
-.home footer{background:#f5f5f5;}
+footer{clear:both;background:#fff;}
 footer ul{list-style:none;padding:0}
 footer .row{margin:0 -12px 16px}
 footer .row h4{margin:0 0 8px;line-height:20px;font-size:15px;font-weight:700;color:#616161;text-transform:uppercase}
@@ -537,7 +536,7 @@ footer .row .widget{margin-bottom:16px;padding-top:24px}
 .postpart a{height:220px;}
 .postpart a span{padding:16px;}
 
-#newpost{padding:32px 0;}
+#newpost{padding:0 0 32px;}
 #newpost .row{margin:0;}
 #newpost .col-xl-3{margin:0;padding:32px 32px 0;min-height:233px;border-radius:0;box-shadow:none;}
 #newpost .col-xl-3 + .col-xl-3{border-left:1px solid #ebebeb}
