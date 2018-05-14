@@ -2,6 +2,7 @@
   
   <ul id="siderbar" class="sider clear">
   <?php 
+  if(is_single()){if(ilost_showAuthor())ilost_postAuthor(get_the_ID());}
   if(is_page()){
     if(!function_exists('dynamic_sidebar')||!dynamic_sidebar('page-sidebar')){
       the_widget('WP_Widget_Recent_Posts','number=6');
@@ -27,7 +28,6 @@
   }}}}
   ilost_adgsidebartop();?>
   <?php 
-    if(is_single()){if(ilost_showAuthor())ilost_postAuthor(get_the_ID());}
     if(is_page()){$children=wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');if($children){?>
     <li><h3><?php the_title();?></h3><ul><?php echo $children;?></ul></li>
   <?php }

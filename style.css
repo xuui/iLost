@@ -82,7 +82,9 @@ box-shadow: 0 1px 5px rgba(0,0,0,.16);}
 .pagewarp .row{background:#fff;padding:12px 0}
 .pagewarp section{padding-top:20px}
 .contindex{}
-.contwarp section,.contwarp .widget{overflow:hidden;background:#fff;border-radius:4px;box-shadow:0 2px 1px -1px rgba(0,0,0,.08),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);margin-bottom:16px}
+.contwarp section,.contwarp .widget{overflow:hidden;background:#fff;border-radius:4px;margin-bottom:16px;
+  box-shadow:0 2px 1px -1px rgba(0,0,0,.04),0 1px 1px 0 rgba(0,0,0,.08),0 1px 3px 0 rgba(0,0,0,.12);
+}
 .contwarp .widget{background:rgba(255,255,255,.9)}
 .breadwarp,.breadcrumb{background:transparent}
 .breadcrumb{margin:0;padding:12px 0;border-radius:0;font-size:12px;color:rgba(0,0,0,.16)}
@@ -151,9 +153,9 @@ section .related li a:hover{color:#429eb8}
 section .related .thumbnail{display:inline-block;*display:inline;*zoom:1;width:100px;vertical-align:top;margin:6px 26px 6px 0}
 section .related .thumbnail img{width:100px;height:100px}
 
-/* Author *//*
+/* Author */
 .widget-author{position:relative;background:#ffffff;border:none;border-radius:3px;box-shadow:0 1px 1px rgba(0,0,0,.1);margin-bottom:20px;width:100%}
-.widget-author .widget-author-header{background-color:#00a7d0!important;border-top-left-radius:3px;border-top-right-radius:3px;padding:20px}
+.widget-author .widget-author-header{background-color:#429eb8!important;border-top-left-radius:3px;border-top-right-radius:3px;padding:20px}
 .widget-author .widget-author-image img{float:left;width:64px;height:auto}
 .widget-author .widget-author-username, .widget-author .widget-author-desc{margin-left:75px}
 .widget-author .widget-author-username{font-size:21px;font-weight:300;margin-bottom:5px;margin-top:5px;color:#fff!important}
@@ -163,7 +165,7 @@ section .related .thumbnail img{width:100px;height:100px}
 .widget-author .nav-stacked li+li{border-top:1px solid #f4f4f4}
 .widget-author .nav-stacked li a{border-radius:0;border-top:0 none;padding:10px 16px;color:#444}
 .widget-author .nav-stacked li p{margin:0;padding:10px 16px}
-.widget-author li .badge{background-color:#00c0ef!important}
+.widget-author li .badge{background-color:#429eb8!important}
 
 /* Sidebar */
 aside ul{list-style:none;padding-left:0}
@@ -173,8 +175,8 @@ aside ul{list-style:none;padding-left:0}
 .widget a{color:#616161;display:block}
 .widget a:hover{color:#429eb8}
 .widget.widget_search{padding:0;}
-.widget.widget_search .form-control{height:auto;line-height:24px;}
-
+.widget.widget_search .form-control{height:auto;line-height:24px;box-shadow:none;}
+.widget.widget_search .form-control,.widget.widget_search .btn{border-color:#fff;}
 /* pad *//*
 
 */
