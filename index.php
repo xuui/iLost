@@ -1,10 +1,7 @@
 <?php get_header();?>
 <div class="breadwarp">
   <div class="container">
-      <?php
-      //if(is_home()){echo 'is_home';} 
-      //echo rand(1,10);
-      ilost_breadcrumb();?>
+      <?php ilost_breadcrumb();?>
   </div>
 </div>
 <?php /*$blogpageID=ilost_getposts();if($blogpageID){?>
