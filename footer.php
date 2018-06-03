@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div id="gotop"><a href="javascript:;" onClick="ilosts.goTop();return false;" title="<?php _e('Back Top','iLost');?>"><?php _e('Back Top','iLost');?></a></div>
+  
   <?php if(!is_front_page()){?>
   <aside class="row hidden-xs hidden-sm">
     <h3><?php _e(ilost_wp_name.' Archives','iLost');?> &raquo;</h3>
@@ -39,6 +39,7 @@
   <?php }?>
 </div>
 */?>
+<div id="gotop"><a href="javascript:;" onClick="ilosts.goTop();return false;" title="<?php _e('Back Top','iLost');?>"><?php _e('Back Top','iLost');?></a></div>
 </footer>
 <?php wp_footer();?>
 <!--<?php echo get_num_queries();?> queries. <?php timer_stop(1);?> seconds. -->

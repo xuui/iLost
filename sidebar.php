@@ -1,9 +1,6 @@
 <aside id="aside" class="col-sm-4 col-md-3 col-xl-3 hidden-xs">
-  
   <ul id="siderbar" class="sider clear">
-  <?php 
-  if(is_single()){if(ilost_showAuthor())ilost_postAuthor(get_the_ID());}
-  if(is_page()){
+  <?php if(is_page()){
     if(!function_exists('dynamic_sidebar')||!dynamic_sidebar('page-sidebar')){
       the_widget('WP_Widget_Recent_Posts','number=6');
       the_widget('WP_Widget_Categories','');

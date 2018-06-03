@@ -168,10 +168,6 @@ class ilost_RavatarWidget extends WP_Widget{
     return $instance;
   }
 }
-
-/*
-///////////////////////////////////////////////////////////////////////////////
-/*
 class ilost_viewsWidget extends WP_Widget{
   function __construct(){
     parent::__construct('ilost_viewsWidget',__('iLost Most Popular Articles','iLost'),array('description'=>__('Most Popular Articles','iLost')));
@@ -205,5 +201,4 @@ class ilost_viewsWidget extends WP_Widget{
     return $instance;
   }
 }
-*/
 ?>

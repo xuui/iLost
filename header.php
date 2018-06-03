@@ -12,16 +12,11 @@
 <?php if(is_single()){$keywords=ilost_searchKey().', ';$tags=wp_get_post_tags($post->ID);foreach($tags as $tag){$keywords=$keywords.$tag->name.', ';}if($post->post_excerpt){$description=$post->post_excerpt;}else{$description=ilost_substr(strip_tags($post->post_content),0,220);}$description=str_replace("\n",' ',$description);}elseif(is_page()){$keywords=ilost_wp_name.', '.ilost_searchKey().wp_title(',',false);$keywords=str_replace(' ,',',',$keywords);if($post->post_excerpt){$description=$post->post_excerpt;}else{$description=ilost_substr(strip_tags($post->post_content),0,220);}$description=str_replace("\n",' ',$description);}elseif(is_category()||is_tag()){$keywords=ilost_wp_name.', '.ilost_searchKey().wp_title(',',false);$keywords=str_replace(' ,',',',$keywords);if(ilost_seDescription()){$description=ilost_seDescription();}else{$description=ilost_wp_description;}}else{$keywords=ilost_wp_name.', '.ilost_searchKey();if(ilost_seDescription()){$description=ilost_seDescription();}else{$description=ilost_wp_description;}}?>
 <meta name="keywords" content="<?php echo $keywords;?>">
 <meta name="description" content="<?php echo $description?>">
-<?php //ilost_is_mobileos();?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="theme author" href="Xu.hel,xw@xuui.net">
 <?php ilost_getfavicon();ilost_getstyles();?>
 <link rel="pingback" href="<?php echo ilost_wp_pingback_url;?>">
 <?php ilost_customRssurl();?>
-<!--[if lt IE 9]>
-<script src="<?php echo(ilost_path.'/scripts/html5shiv.min.js');?>"></script>
-<script src="<?php echo(ilost_path.'/scripts/respond.min.js');?>"></script>
-<![endif]-->
 <?php wp_head();?>
 </head>
 <body <?php body_class();?>>

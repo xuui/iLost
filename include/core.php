@@ -3,22 +3,23 @@ function ilost_init(){
   register_sidebar(array('name'=>__('iLost SideBar','iLost'),'id'=>'ilost-sidebar','description'=>themename.__('\'s SideBar.','iLost'),'class'=>'ilost-sidebar','before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
   register_sidebar(array('name'=>__('Page SideBar','iLost'),'id'=>'page-sidebar','description'=>themename.__('\'s page sidebar.','iLost'),'before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
   register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
-
   register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
   add_theme_support('automatic-feed-links');
   add_theme_support('custom-background',array('wp-head-callback'=>'ilost_custom_background_cb'));
   add_theme_support('post-formats',array('aside','chat','gallery','link','image','quote','status','video'));
   add_theme_support('post-thumbnails');
-
   remove_action('wp_head','wp_generator');
   remove_action('admin_init','_wp_check_for_scheduled_split_terms');
-
+  add_editor_style();
   add_action('init','iloft_post_type');
   add_filter('emoji_svg_url','__return_false');
   add_action('widgets_init','ilost_Widget');
   add_action('admin_menu',array('ilostOption','addOptions'));
   add_action('wp_enqueue_scripts','ilost_enqueue_script');
+  add_action('admin_menu','ilost_excerpt_meta_box');
+  add_action('wp_footer','ilost_footerscript');
+  add_action('wp_before_admin_bar_render','ilost_themeopt_bar_render');
   add_filter('comments_popup_link_attributes','ilost_comments_nofollow_link');
   add_filter('excerpt_length','ilost_excerpt_length');
   add_filter('excerpt_more','ilost_auto_excerpt_more');
@@ -26,26 +27,15 @@ function ilost_init(){
   add_filter('get_avatar','ilost_fix_gravatar');
   add_filter('get_search_form','ilost_search_form');
   add_filter('user_contactmethods','ilost_contactmethods');
-}
-/*
-function ilost_init(){
-  
-  //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
-  add_action('admin_menu','ilost_excerpt_meta_box');
-  add_action('wp_head','ilost_sidefloat');
-  add_action('wp_footer','ilost_footerscript');
-  add_action('wp_before_admin_bar_render','ilost_themeopt_bar_render');
-  add_editor_style();
   add_filter('image_send_to_editor','ilost_remove_width_attribute');
   add_filter('post_thumbnail_html','ilost_remove_width_attribute');
   add_filter('smilies_src','ilost_smilies_src',1,10);
   add_filter('wp_mail_from_name','ilost_from_name');
   add_filter('wp_page_menu_args','ilost_home_menulink');
+  //if(!is_admin()){add_action("wp_loaded",'wp_loaded_minify_html');}
   if(!isset($content_width))$content_width=700;
 }
-*/
 
-/*
 function wp_loaded_minify_html(){ob_start('ilost_minify_html');}
 function ilost_minify_html($html){$search=array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');$replace=array('>','<','\\1');$html=preg_replace($search, $replace, $html);return $html;}
 function ilost_excerpt_meta_box(){add_meta_box('postexcerpt',__('Excerpt','iLost'),'ilost_excerpt_meta_box','page','normal','core');}
@@ -53,18 +43,13 @@ function ilost_from_name($email){$wp_from_name=get_option('blogname');return $wp
 function ilost_home_menulink($args){$args['show_home']=true;return $args;}
 function ilost_remove_width_attribute($html){$html=preg_replace('/(width|height)="\d*"\s/',"",$html);return $html;}
 function ilost_smilies_src($img_src,$img,$siteurl){return ilost_path.'/images/smilies/'.$img;}
-*/
-
 function ilost_excerpt_length($length){return 256;}
 function ilost_auto_excerpt_more($more){return ' &hellip;'.ilost_continue_reading_link();}
 function ilost_continue_reading_link(){return ' <a href="'.get_permalink().'" class="more-link">'.__('Learn more','iLost').'</a>';}
 function ilost_custom_excerpt_more($output){if(has_excerpt()&& !is_attachment()){$output.=ilost_continue_reading_link();}return $output;}
-
 function ilost_comments_nofollow_link(){return ' rel="nofollow" ';}
-function ilost_custom_background_cb(){
-  $background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
-<style type="text/css">body{<?php echo trim($style);?>background-size:cover;}</style>
-<?php }
+function ilost_custom_background_cb(){$background=get_background_image();$color=get_background_color();if(!$background && !$color)return;$style=$color?"background-color:#$color;":'';if($background){$image="background-image:url('$background');";$repeat=get_theme_mod('background_repeat','repeat');if(!in_array($repeat,array('no-repeat','repeat-x','repeat-y','repeat'))){$repeat='repeat';}$repeat="background-repeat:$repeat;";$position=get_theme_mod('background_position_x','left');if(!in_array($position,array('center','right','left'))){$position='left';}$position="background-position:top $position;";$attachment= get_theme_mod('background_attachment','scroll');if(!in_array($attachment,array('fixed','scroll'))){$attachment='scroll';}$attachment="background-attachment:$attachment;";$style.=$image.$repeat.$position.$attachment;}?>
+<style type="text/css">body{<?php echo trim($style);?>background-size:cover;}</style><?php }
 function iloft_post_type(){
   $Show_Image_labels=array('name'=>__('Show images','iLost'),'singular_name'=>__('Show image','iLost'),'add_new'=>__('Add Images','iLost'),'add_new_item'=>__('Add New Images','iLost'),'edit_item'=>__('Edit Image','iLost'),'new_item'=>__('Add Show image','iLost'),'view_item'=>__('View Image','iLost'),'search_items'=>__('Search Show images','iLost'),'not_found'=>__('No images found','iLost'),'not_found_in_trash'=>__('No images found in Trash','iLost'),'parent_item_colon'=>'');
   $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,'menu_icon'=>'dashicons-images-alt','supports'=>array('title','custom-fields','thumbnail'));
@@ -76,8 +61,7 @@ function ilost_Widget(){
   register_widget('ilost_randompostWidget');
   register_widget('ilost_RavatarWidget');
   register_widget('ilost_RCommentsWidget');
-  
-  //if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
+  if(function_exists('the_views')){register_widget('ilost_viewsWidget');}
 }
 function ilost_contactmethods($user_contactmethods){
   $user_contactmethods['jobs']=__('Jobs','iLost');
@@ -111,12 +95,6 @@ function ilost_is_mobileos(){
 }
 */
 function ilost_getstyles(){
-  /*if(ilost_is_iphone()){
-    echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/iphone.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"640x920\" href=\"".ilost_path."/images/icons/screen_phone.png\" />\n";
-  }elseif(ilost_is_ipad()){
-    echo "<link rel=\"apple-touch-icon\" href=\"".ilost_path."/images/icons/ipad.png\" />\n<link rel=\"apple-touch-startup-image\" sizes=\"768x1004\" href=\"".ilost_path."/images/icons/screen_pad.png\" />\n";
-  }elseif(ilost_is_wphone()){}
-  */
   echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css\" />\n";
@@ -131,18 +109,13 @@ function ilost_enqueue_script(){
   }else{wp_enqueue_script('jquery');}
   wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.7',true);
   wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0',true);
-  
-  //if((ilost_is_iphone())or(ilost_is_ipad()))wp_enqueue_script('ios',ilost_path.'/scripts/ios.js',array(),'1.9.5',true);
-  
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);
-
   if(ilost_baidu_zzpush()){
     wp_enqueue_script('baidu_zz_push','http://push.zhanzhang.baidu.com/push.js',array(),false,true);
   }
 }
 
 
-/*
 function ilost_footerscript(){
   $growlBox=ilost_getOption('growlBox');
   if($growlBox)echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script>\n";
@@ -150,9 +123,7 @@ function ilost_footerscript(){
     echo "<script type=\"text/javascript\">ilosts.quickComments();(function(jQuery){ilostQ=jQuery.noConflict();ilostQ(document).ready(function(){ilostQ('#commentform .form-submit #submit').after('<label class=\"cereply\">".__('Use Ctrl+Enter to reply comments','iLost')."</label>');});})(jQuery);
 </script>\n";
   }
-  if((ilost_is_ie6())or(ilost_is_ie7())){echo"<!--[if lte IE 7]><script type=\"text/javascript\">var IE6UPDATE_OPTIONS={icons_path:\"".ilost_path."/scripts/ie6upimg/\"}</script><script type=\"text/javascript\" src=\"".ilost_path."/scripts/ie6update.js\"></script><![endif]-->\n";}
 }
-*/
 function ilost_get_catlist($cat='',$limit=5){
   echo '<h3>'.get_cat_name($cat).'</h3><ul>';
   $postloop=new WP_Query(array('cat'=>$cat,'posts_per_page'=>$limit));
@@ -237,66 +208,6 @@ function ilost_relatedposts($postID,$limit=5,$type=''){
     }wp_reset_postdata();
   }
 }
-function ilost_postAuthor($post){?>
-<li class="widget-author">
-  <div class="widget-author-header">
-    <div class="widget-author-image">
-      <?php echo get_avatar(get_the_author_meta('email'),'64','wavatar', get_the_author_meta('display_name'),array('class'=>'img-circle'));?>
-    </div>
-    <h3 class="widget-author-username"><?php echo get_the_author_meta('display_name');?></h3>
-    <?php if(get_the_author_meta('jobs')){echo '<h5 class="widget-author-desc">'.get_the_author_meta('jobs').'</h5>';}else{echo '<h5 class="widget-author-desc">'.ilost_wp_name.'</h5>';}?>
-  </div>
-  <div class="widget-author-footer">
-    <ul class="nav nav-stacked">
-      <?php if(get_the_author_meta('description')){echo '<li><p>'.get_the_author_meta('description').'</p></li>';}?>
-      <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ); ?>">看他的所有文章<span class="pull-right badge bg-aqua"><?php echo get_the_author_posts(); ?></span></a></li>
-    </ul>
-  </div>
-</li>
-<?php /*
-<li id="recent-posts-2" class="widget-author">
-  <div class="widget-author-header bg-aqua-active">
-    <h3 class="widget-user-username"><?php echo get_the_author_meta('display_name');?></h3>
-    <h5 class="widget-user-desc"><?php echo ilost_wp_name?></h5>
-  </div>
-  <div class="widget-user-image">
-    <?php echo get_avatar(get_the_author_meta('email'),'64','wavatar', get_the_author_meta('display_name'),array('class'=>'img-circle'));?>
-  </div>
-  <div class="widget-user-footer">
-    <div class="row">
-      <div class="col-sm-4 border-right">
-        <div class="description-block">
-          <h5 class="description-header">3,200</h5>
-          <span class="description-text">SALES</span>
-        </div>
-      </div>
-      <div class="col-sm-4 border-right">
-        <div class="description-block">
-          <h5 class="description-header">13,000</h5>
-          <span class="description-text">FOLLOWERS</span>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="description-block">
-          <h5 class="description-header">35</h5>
-          <span class="description-text">PRODUCTS</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</li>
-css :
-.widget-author .widget-user-username {font-size:21px;font-weight:300;margin-bottom:5px;margin-top:0;text-shadow:0 1px 1px rgba(0,0,0,.2);color:#fff!important;}
-.widget-author .widget-user-desc {margin-top:0;color:#fff!important;}
-.widget-author .widget-user-image {left:50%;margin-left:-45px;position:absolute;top:65px;}
-.widget-author .widget-user-image img {border:3px solid #fff;height:auto;width:90px;}
-.widget-user-footer {background-color:#fff;border-radius:0 0 3px 3px;border-top:1px solid #f4f4f4;padding:30px 0;}
-.widget-user-footer .border-right{border-right:1px solid #f4f4f4;}
-.description-block {display:block;margin:10px 0;text-align:center;}
-.description-block .description-header {font-size:16px;font-weight:600;margin:0;padding:0;}
-.description-block .description-text {text-transform:uppercase;}
-*/?>
-<?php }
 function ilost_pagenav($options=array()){
   global $wp_query;$options=array('pages_text'=>'Page %CURRENT_PAGE% of %TOTAL_PAGES%','current_text'=>'%PAGE_NUMBER%','page_text'=>'%PAGE_NUMBER%','prev_text'=>'&laquo;','next_text'=>'&raquo;','num_pages'=>5,'always_show'=>false);
   $posts_per_page=intval(get_query_var('posts_per_page'));
