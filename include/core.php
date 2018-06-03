@@ -1,8 +1,8 @@
 <?php // Core Functions.
 function ilost_init(){
-  register_sidebar(array('name'=>__('iLost SideBar','iLost'),'id'=>'ilost-sidebar','description'=>themename.__('\'s SideBar.','iLost'),'class'=>'ilost-sidebar','before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
-  register_sidebar(array('name'=>__('Page SideBar','iLost'),'id'=>'page-sidebar','description'=>themename.__('\'s page sidebar.','iLost'),'before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
-  register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'footer-sidebar','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
+  register_sidebar(array('name'=>__('iLost SideBar','iLost'),'id'=>'sidebar-1','description'=>themename.__('\'s SideBar.','iLost'),'class'=>'ilost-sidebar','before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
+  register_sidebar(array('name'=>__('Page SideBar','iLost'),'id'=>'sidebar-2','description'=>themename.__('\'s page sidebar.','iLost'),'before_widget'=>'<li id="%1$s" class="widget %2$s">','after_widget'=>'</li>','before_title'=>'<h3 class="widgettitle">','after_title'=>'</h3>'));
+  register_sidebar(array('name'=>__('Footer SideBar','iLost'),'id'=>'sidebar-3','description'=>themename.__(' theme\' footer sidebar, This can only be placed on 5 widget.','iLost'),'before_widget'=>'<li id="%1$s" class="col-sm-4 col-md-3 col-xl-3 widget %2$s">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">','after_title'=>'</h4>'));
   register_nav_menus(array('primary'=>__('Primary Navigation','iLost')));
   load_theme_textdomain('iLost',TEMPLATEPATH.'/languages');
   add_theme_support('automatic-feed-links');
@@ -101,12 +101,7 @@ function ilost_getstyles(){
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
 }
 function ilost_enqueue_script(){
-  if(ilost_getjQuery()!='wp_jquery'){
-    wp_deregister_script('jquery');
-    if(ilost_getjQuery()=='jqgzip_jquery'){wp_register_script('jquery','//code.jquery.com/jquery-3.2.1.min.js',array(),'3.2.1');}
-    if(ilost_getjQuery()=='custom_jquery'){wp_register_script('jquery',ilost_getjQueryurl());}
-    wp_enqueue_script('jquery');
-  }else{wp_enqueue_script('jquery');}
+  wp_enqueue_script('jquery');
   wp_enqueue_script('bootstrap',ilost_path.'/scripts/bootstrap.min.js',array(),'3.3.7',true);
   wp_enqueue_script('scripts',ilost_path.'/scripts/scripts.js',array(),'2.0',true);
   if(is_singular()&&get_option('thread_comments'))wp_enqueue_script('comment-reply',array(),false,true);

@@ -18,8 +18,6 @@ class ilostOption{
       $options['repostShow']='post';
       $options['growlBox']=false;
       $options['jgrowltext']='';
-      $options['jquerysrc']='wp_jquery';
-      $options['custom_jquery']='';
       $options['googleanalytics']='';
       $options['sidebartopcode']='';
       $options['sidebarbottomcode']='';
@@ -64,8 +62,6 @@ class ilostOption{
           $options['searchDescription']=stripslashes($_POST['searchDescription']);
           if(@$_POST['baidu_zz_push']){$options['baidu_zz_push']=(bool)true;}else{$options['baidu_zz_push']=(bool)false;}
         break;case 'script':
-          $options['jquerysrc']=stripslashes($_POST['jquerysrc']);
-          $options['custom_jquery']=stripslashes($_POST['custom_jquery']);
           $options['googleanalytics']=stripslashes($_POST['googleanalytics']);
           $options['sidebartopcode']=stripslashes($_POST['sidebartopcode']);
           $options['sidebarbottomcode']=stripslashes($_POST['sidebarbottomcode']);
@@ -194,15 +190,6 @@ p.description,span.description{vertical-align:middle;}
       </fieldset>
   <?php break;case 'script':?>
       <fieldset>
-        <legend><?php _e('jQuery Library','iLost');?></legend>
-        <p><label class="th"><?php _e('Source URL','iLost');?></label><label class="th"><input type="radio" name="jquerysrc" value="wp_jquery"<?php if($options['jquerysrc']=="wp_jquery")echo 'checked="checked"';?>/> <?php _e('WordPress Default','iLost');?></label><br>
-          <span class="supoption">
-          <label class="th"><input type="radio" name="jquerysrc" value="jqgzip_jquery"<?php if($options['jquerysrc']=="jqgzip_jquery")echo 'checked="checked"';?>/> <?php _e('jQurey 3.x','iLost');?></label><br>
-          <label class="th" for="jquerysrc" style="width:auto;"><input type="radio" name="jquerysrc" value="custom_jquery"<?php if($options['jquerysrc']=="custom_jquery")echo 'checked="checked"';?>/> <?php _e('Custom URL:','iLost');?><input name="custom_jquery" id="jgrowltext" class="large-text" style="display:inline-block;width:auto;" type="text" size="30" value="" placeholder="http://"></label>
-          </span>
-        </p>
-      </fieldset>
-      <fieldset>
         <legend><?php _e('Google Analytics statistics','iLost');?></legend>
         <p><label class="th" for="googleanalytics"><?php _e('Google Analytics statistics code','iLost');?></label>
           <textarea name="googleanalytics" id="googleanalytics" class="large-text" cols="50" rows="3" placeholder="<script>Google Analytics Code<script/>"><?php echo($options['googleanalytics']);?></textarea>
@@ -243,7 +230,7 @@ function ilost_themeopt_bar_css(){echo '<style type="text/css">#wpadminbar .ilos
 add_action('admin_head','ilost_themeopt_bar_css');
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
-  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='searchDescription')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')or($option=='jquerysrc')or($option=='custom_jquery')){
+  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='searchDescription')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')){
     return ent2ncr($options[$option]);
   }elseif(($option=='googleanalytics')or($option=='sidebartopcode')or($option=='sidebarbottomcode')or($option=='postembcode')or($option=='postendcode')){
     return stripslashes($options[$option]);
@@ -345,14 +332,6 @@ function ilost_jgrowlbox(){
   }
 }
 if(ilost_getOption('growlBox')&&ilost_getOption('jgrowltext'))add_action('wp_footer','ilost_jgrowlbox');
-function ilost_getjQuery(){
-  $jquerysrc=ilost_getOption('jquerysrc');
-  return $jquerysrc;
-}
-function ilost_getjQueryurl(){
-  $custom_jquery=ilost_getOption('custom_jquery');
-  return $custom_jquery;
-}
 function ilost_googleanalytics(){
   $googleanalytics=ilost_getOption('googleanalytics');
   echo $googleanalytics;
