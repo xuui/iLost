@@ -16,8 +16,6 @@ class ilostOption{
       $options['relatedpost']=true;
       $options['repostNum']='5';
       $options['repostShow']='post';
-      $options['growlBox']=false;
-      $options['jgrowltext']='';
       $options['googleanalytics']='';
       $options['sidebartopcode']='';
       $options['sidebarbottomcode']='';
@@ -50,8 +48,6 @@ class ilostOption{
           }else{$options['repostNum']=stripslashes($_POST['repostNum']);}
           $options['repostShow']=stripslashes($_POST['repostShow']);
           if(@$_POST['showAuthor']){$options['showAuthor']=(bool)true;}else{$options['showAuthor']=(bool)false;}
-          if(@$_POST['growlBox']){$options['growlBox']=(bool)true;}else{$options['growlBox']=(bool)false;}
-          $options['jgrowltext']=stripslashes($_POST['jgrowltext']);
         break;case 'frontpg':
           if(!$_POST['ilshowNum']){$options['ilshowNum']=stripslashes(4);
           }elseif($_POST['ilshowNum']<1){$options['ilshowNum']=stripslashes(1);
@@ -76,7 +72,7 @@ class ilostOption{
     add_theme_page(themename.' '.__('Options','iLost'),themename.' '.__('Options','iLost'),'edit_theme_options','ilost_options',array('ilostOption','OptionsPage'));
   }
   public static function option_tabs($current='general'){
-    $tabs=array('general'=>__('General','iLost'),'frontpg'=>__('Front Page','iLost'),'script'=>__('Script Code','iLost'),'seo'=>__('SEO','iLost'));
+    $tabs=array('general'=>__('General','iLost'),'script'=>__('Script Code','iLost'),'seo'=>__('SEO','iLost'));
     $links=array();
     echo '<h2 class="nav-tab-wrapper">';
     foreach($tabs as $tab=>$name){
@@ -111,7 +107,7 @@ p.description,span.description{vertical-align:middle;}
   <!--div id="icon-themes" class="icon32"></div-->
 <?php if(isset($_GET['tab'])){ilostOption::option_tabs($_GET['tab']);}else{ilostOption::option_tabs('general');}
   if(isset($_GET['tab'])){$tab=$_GET['tab'];}else{$tab='general';}?>
-  <p class="themeinfo"><?php _e('Thank you for purchasing this theme, designed by the Xu.hel.','iLost');?></p>
+  <p class="themeinfo"> </p>
   <div id="ilosttabpage">
     <form name="options_form" id="options_form" class="neo_fold" action="<?php admin_url('themes.php?page=ilost_options');?>" method="post" enctype="multipart/form-data">
 <?php switch($tab){case 'general':?>
@@ -145,16 +141,7 @@ p.description,span.description{vertical-align:middle;}
             <span class="description"><?php _e('The default display 5 articles.','iLost');?></span>
           </span>
         </p>
-        <p><label class="th"><?php _e('Article footer display author information','iLost');?></label><input name="showAuthor" id="growlBox" type="checkbox" <?php if($options['showAuthor']){echo 'checked="checked"';}?>><label for="showAuthor"><?php _e('Enabled','iLost')?></label>
-        </p>
-        <p><label class="th"><?php _e('GrowlBox pop-up tips','iLost');?></label><input name="growlBox" id="growlBox" type="checkbox" <?php if($options['growlBox']){echo 'checked="checked"';}?>><label for="growlBox"><?php _e('Enabled','iLost')?></label><br>
-          <span class="supoption">
-            <input name="jgrowltext" id="jgrowltext" class="large-text" type="text" size="30" value="<?php echo($options['jgrowltext']);?>" placeholder="<?php _e('Text...##Title#Pop-up bubble title','iLost');?>"><br>
-            <span class="description"><?php _e('Set GrowlBox tip box\'s contents. Use the # # Title# "separate content and title, can do not have a title. Is empty is not GrowlBox tip box popup.','iLost');?></span>
-          </span>
-        </p>
       </fieldset>
-  <?php break;case 'frontpg':?>
       <fieldset>
         <legend><?php _e('Front Page','iLost');?></legend>
         <p>
@@ -230,7 +217,7 @@ function ilost_themeopt_bar_css(){echo '<style type="text/css">#wpadminbar .ilos
 add_action('admin_head','ilost_themeopt_bar_css');
 function ilost_getOption($option){
   $options=get_option('ilostOptions');
-  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='searchDescription')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='jgrowltext')or($option=='fan_token')or($option=='fan_token_secret')){
+  if(($option=='logoimgurl')or($option=='faviconurl')or($option=='sidefloat')or($option=='customRssurl')or($option=='searchKey')or($option=='searchDescription')or($option=='ilshowNum')or($option=='repostNum')or($option=='repostShow')or($option=='fan_token')or($option=='fan_token_secret')){
     return ent2ncr($options[$option]);
   }elseif(($option=='googleanalytics')or($option=='sidebartopcode')or($option=='sidebarbottomcode')or($option=='postembcode')or($option=='postendcode')){
     return stripslashes($options[$option]);
@@ -322,16 +309,6 @@ function ilost_showAuthor(){
   $showAuthor=ilost_getOption('showAuthor');
   return $showAuthor;
 }
-
-function ilost_jgrowlbox(){
-  $growlBox=ilost_getOption('growlBox');$jgrowltext=ilost_getOption('jgrowltext');
-  if($growlBox && $jgrowltext){
-  $jgrowlinfo=explode('##Title#',$jgrowltext);
-  if(@$jgrowlinfo[1]){$jgrtitle=$jgrowlinfo[1];}else{$jgrtitle=esc_attr(ilost_wp_name);}
-  echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script><link rel=\"stylesheet\" href=\"".ilost_path."/scripts/jgrowl.css\" /><script type=\"text/javascript\">".'(function($){$=jQuery.noConflict();$(window).load(function(){$.jGrowl("'.$jgrowlinfo[0].'",{header:"'.$jgrtitle.'"});});})(jQuery);'."</script>\n";
-  }
-}
-if(ilost_getOption('growlBox')&&ilost_getOption('jgrowltext'))add_action('wp_footer','ilost_jgrowlbox');
 function ilost_googleanalytics(){
   $googleanalytics=ilost_getOption('googleanalytics');
   echo $googleanalytics;

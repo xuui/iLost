@@ -109,11 +109,7 @@ function ilost_enqueue_script(){
     wp_enqueue_script('baidu_zz_push','http://push.zhanzhang.baidu.com/push.js',array(),false,true);
   }
 }
-
-
 function ilost_footerscript(){
-  $growlBox=ilost_getOption('growlBox');
-  if($growlBox)echo "<script src=\"".ilost_path."/scripts/jgrowl.js\"></script>\n";
   if(is_single()&&ilost_ctrlentry()){
     echo "<script type=\"text/javascript\">ilosts.quickComments();(function(jQuery){ilostQ=jQuery.noConflict();ilostQ(document).ready(function(){ilostQ('#commentform .form-submit #submit').after('<label class=\"cereply\">".__('Use Ctrl+Enter to reply comments','iLost')."</label>');});})(jQuery);
 </script>\n";
