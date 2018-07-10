@@ -156,11 +156,14 @@ section .related .thumbnail img{width:100px;height:100px}
 
 /* Sidebar */
 aside ul{list-style:none;padding-left:0}
-.widget{padding:16px}
+.widget{padding:16px 24px}
 .widget h2,.widget h3{font-size:16px}
-.widget ul li{border-top:1px solid #f4f4f4;border-color:rgba(0,0,0,.07);padding:8px 0;list-style:none;color:#757575;line-height:1.2}
+.widget ul li{border-top:1px solid #f4f4f4;border-color:rgba(0,0,0,.07);list-style:none;color:#757575;line-height:1.2}
 .widget a{color:#616161;display:block}
 .widget a:hover{color:#429eb8}
+.widget ul li a{padding:8px 0;}
+.widget .children li{padding-left:1em;}
+.widget .recentcomments{padding:8px 0;}
 .widget.widget_search{padding:0;}
 .widget.widget_search .form-control{height:auto;line-height:24px;box-shadow:none;}
 .widget.widget_search .form-control,.widget.widget_search .btn{border-color:#fff;}
