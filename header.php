@@ -31,6 +31,7 @@
       <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ilost-collapse">&equiv;</button-->
       <?php ilost_getlogoimg();?>
     </div>
+    <?php /*
     <form role="search" method="get" class="navbar-form navbar-right navbar-search search-form" action="<?php echo home_url('/');?>">
       <div class="form-group">
       <!--label>
@@ -41,8 +42,9 @@
     value="<?php echo esc_attr_x('Search','submit button');?>" /-->
       </div>
     </form>
+    */?>
     <div class="navbar-collapse collapse" id="ilost-collapse">
-      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav','walker'=>new ilost_strapnav()));?>
+      <?php wp_nav_menu(array('theme_location'=>'primary','container'=>'ul','container_id'=>'navs','menu_class'=>'nav navbar-nav navbar-right','walker'=>new ilost_strapnav()));?>
     </div>
   </div>
 </header>
