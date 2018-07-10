@@ -205,6 +205,9 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 .widget .reavatar a{display:inline;}
 .widget .reavatar a .avatar{margin:5px}
 
+.widget .blogroll li,.widget .blogroll li a{display:inline;}
+.widget .blogroll li{padding-right:16px;}
+
 
 /* Comments */
 #comments-title,#reply-title{margin-top:16px;font-size:16px;font-weight:300;color:#000}
@@ -302,11 +305,11 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 footer{clear:both;background:#fff;}
 footer ul{list-style:none;padding:0}
 footer .row{margin:0 -12px 16px}
-footer .row h4{margin:0 0 8px;line-height:20px;font-size:15px;font-weight:700;color:#616161;text-transform:uppercase}
-footer .row li{border:none;padding:0 12px;}
-footer .row li li{padding:8px 0;}
-footer .row li a{position:relative;font-size:11px;line-height:16px;color:rgba(0,0,0,.6);}
-footer .row li a:hover{color:#616161;}
+footer .widget h4,footer .widget .widgettitle{margin:0 0 8px;line-height:20px;font-size:14px;font-weight:700;color:#616161;text-transform:uppercase}
+footer .widget li{border:none;}
+footer .widget li li{padding:0px 0;}
+footer .widget li a{position:relative;padding:4px 0;font-size:11px;line-height:16px;color:rgba(0,0,0,.6);}
+footer .widget li a:hover{color:#616161;}
 footer .copyrt{color:#424242;}
 footer .copyrt p{margin:0;padding:8px 0;font-size:11px;font-weight:300;text-transform:uppercase}
 footer .copyrt p.line{border-bottom:1px solid #cbcbcb}
@@ -494,8 +497,8 @@ section .post-meta{padding:12px 24px;}
 
 .pagnav-row li + li{border-width:0 0 0 1px;}
 
-footer .row h4{margin-bottom:12px;}
-footer .row .widget{margin-bottom:16px;padding-top:24px}
+footer .widget h4{margin-bottom:12px;}
+footer .widget{margin-bottom:16px;padding:24px 16px 0;}
 
   
 #showSection{padding:64px 0 0;}

@@ -1,11 +1,12 @@
 <footer>
   <div class="container">
     <ul class="row hidden-xs">
-    <?php if(!dynamic_sidebar('footer-sidebar')){$ilost_widgerFooter=array('before_widget'=>'<li class="col-sm-6 col-md-3 col-xl-3 widget">','after_widget'=>'</li>');
+    <?php if(!dynamic_sidebar('footer-sidebar')){
+      $ilost_widgerFooter=array('before_widget'=>'<li class="col-sm-6 col-md-3 col-xl-3 widget">','after_widget'=>'</li>','before_title'=>'<h4 class="widgettitle">',' after_title'=>'</h4>');
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
       the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
-      the_widget('ilost_footlistsWidget','catid=1&number=5',$ilost_widgerFooter);
+      the_widget('WP_Widget_Links','number=5',$ilost_widgerFooter);
     }?>
     </ul>
     <div class="copyrt">
