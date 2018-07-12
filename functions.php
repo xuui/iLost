@@ -29,21 +29,26 @@ function ilost_getThumbnail_url(ID){
 */
 function ilost_getiloshow(){
   $showlistloop=new WP_Query(array('post_type'=>'ilostshow','posts_per_page'=>ilost_ilshowNum()));if($showlistloop->have_posts()){?>
-<div class="container-"><div id="rotation" class="flexslider">
+<div id="rotation" class="flexslider">
   <ul class="slides">
-    <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}$img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
+    <?php while($showlistloop->have_posts()){$showlistloop->the_post();
+      $urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}
+      $align=get_post_meta(get_the_ID(),"align",$single=true);
+      $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
     <li>
-      <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="">
-      <a class="flex-caption" href="<?php echo $urlLink;?>" target="_blank">
-        <?php //the_post_thumbnail('full');?><b><?php the_title()?></b>
-        <p><?php echo( get_post_meta(get_the_ID(), "heading", true) )?></p>
-        <p><?php echo( get_post_meta(get_the_ID(), "intro", true) )?></p>
-        <span><?php echo(__('Learn more','iLost'))?></span>
-      </a>
+      <!--a href="<?php echo $urlLink;?>"-->
+      <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="<?php the_title()?>">
+      <!--/a-->
+      <div class="flex-caption container"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
+        <?php //the_post_thumbnail('full');?><b class="heading"><?php the_title()?></b>
+        <b class="heading"><?php //echo( get_post_meta(get_the_ID(), "heading", true) )?></b>
+        <i class="intro"><?php echo( get_post_meta(get_the_ID(), "intro", true) )?></i>
+        <a class="btn link" href="<?php echo $urlLink;?>" target="_blank"><?php echo(__('Learn more','iLost'))?></a>
+      </div>
     </li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
-</div></div>
+</div>
 <?php }wp_reset_postdata();
 }
 if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$depth){
