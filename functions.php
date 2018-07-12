@@ -32,7 +32,15 @@ function ilost_getiloshow(){
 <div class="container-"><div id="rotation" class="flexslider">
   <ul class="slides">
     <?php while($showlistloop->have_posts()){$showlistloop->the_post();$urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}$img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
-    <li><img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt=""><a class="flex-caption" href="<?php echo $urlLink;?>" target="_blank"><?php //the_post_thumbnail('full');?><b><?php the_title()?></b><span><?php echo(__('Learn more','iLost'))?></span></a></li>
+    <li>
+      <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="">
+      <a class="flex-caption" href="<?php echo $urlLink;?>" target="_blank">
+        <?php //the_post_thumbnail('full');?><b><?php the_title()?></b>
+        <p><?php echo( get_post_meta(get_the_ID(), "heading", true) )?></p>
+        <p><?php echo( get_post_meta(get_the_ID(), "intro", true) )?></p>
+        <span><?php echo(__('Learn more','iLost'))?></span>
+      </a>
+    </li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
 </div></div>

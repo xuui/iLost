@@ -55,6 +55,44 @@ function iloft_post_type(){
   $Show_Image_Aargs=array('labels'=>$Show_Image_labels,'public'=>true,'publicly_queryable'=>true,'show_ui'=>true,'query_var'=>true,'rewrite'=>true,'capability_type'=>'post','hierarchical'=>false,'menu_position'=>2,'menu_icon'=>'dashicons-images-alt','supports'=>array('title','custom-fields','thumbnail'));
   register_post_type('ilostshow',$Show_Image_Aargs);
 }
+
+$new_meta_boxes =array(
+  "heading" => array("name" => "heading","std" => "这里填图片的标题","title" => "标题:"),
+  "intro" => array("name" => "intro","std" => "这里填图片的简介，30字以内","title" => "简介:"),
+  "link" => array("name" => "urlink","std" => "http:///","title" => "链接:")
+);
+function new_meta_boxes() {
+  global $post, $new_meta_boxes;
+  foreach($new_meta_boxes as $meta_box) {
+    $meta_box_value = get_post_meta($post->ID, $meta_box['name'], true);
+    //if($meta_box_value == ""){$meta_box_value = $meta_box['std'];}
+    // 自定义字段标题
+    echo '<p>'.$meta_box['title'].'</p>';
+    // 自定义字段输入框
+    echo '<input type="text" name="'.$meta_box['name'].'" value="'.$meta_box_value.'" class="form-control" placeholder="'.$meta_box['std'].'">';
+  }
+  echo '<input type="hidden" name="ludou_metaboxes_nonce" id="ludou_metaboxes_nonce" value="'.wp_create_nonce( plugin_basename(__FILE__) ).'" />';
+}
+function create_meta_box() {
+  if ( function_exists('add_meta_box') ) {
+    add_meta_box( 'new-meta-boxes', '轮播文字', 'new_meta_boxes', 'ilostshow', 'normal', 'high' );
+  }
+}
+function save_postdata( $post_id ) {
+  global $new_meta_boxes;
+  if ( !wp_verify_nonce( $_POST['ludou_metaboxes_nonce'], plugin_basename(__FILE__) )){return;}
+  if ( !current_user_can( 'edit_posts', $post_id )){return;}
+  foreach($new_meta_boxes as $meta_box) {
+    $data = $_POST[$meta_box['name']];
+    if($data == "")
+      delete_post_meta($post_id, $meta_box['name'], get_post_meta($post_id, $meta_box['name'].'_value', true));
+    else
+      update_post_meta($post_id, $meta_box['name'], $data);
+   }
+}
+add_action('admin_menu', 'create_meta_box');
+add_action('save_post', 'save_postdata');
+
 function ilost_Widget(){
   register_widget('ilost_catlistsWidget');
   register_widget('ilost_footlistsWidget');
