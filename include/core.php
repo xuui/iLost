@@ -57,22 +57,18 @@ function iloft_post_type(){
 }
 
 $new_meta_boxes=array(
-  "heading"=>array("name"=>"heading","std"=>"这里填图片的标题","title"=>"标题:"),
+  //"heading"=>array("name"=>"heading","std"=>"这里填图片的标题","title"=>"标题:"),
   "intro"=>array("name"=>"intro","std"=>"这里填图片的简介，30字以内","title"=>"简介:"),
   "link"=>array("name"=>"urlink","std"=>"http:///","title"=>"链接:"),
   "align"=>array("name"=>"align","std"=>"默认左对齐","title"=>"文字对其:")
 );
-function new_meta_boxes() {
-  global $post, $new_meta_boxes;
-  foreach($new_meta_boxes as $meta_box) {
+function new_meta_boxes(){
+  global $post,$new_meta_boxes;
+  foreach($new_meta_boxes as $meta_box){
     $meta_box_value=get_post_meta($post->ID,$meta_box['name'],true);
-    //if($meta_box_value == ""){$meta_box_value = $meta_box['std'];}
-    // 自定义字段标题
     echo '<p>'.$meta_box['title'].'</p>';
-    // 自定义字段输入框
     if($meta_box['name']=='align'){
-      //$alignv=$meta_box_value;
-      if($meta_box_value=='left'){
+      if($meta_box_value=='left' || $meta_box_value==''){
         $salign_l='<label><input type="radio" name="align" id="salign_l" value="left" checked />左</label>';
       }else{
         $salign_l='<label><input type="radio" name="align" id="salign_l" value="left" />左</label>';
@@ -95,24 +91,25 @@ function new_meta_boxes() {
   echo '<input type="hidden" name="ludou_metaboxes_nonce" id="ludou_metaboxes_nonce" value="'.wp_create_nonce( plugin_basename(__FILE__) ).'" />';
 }
 function create_meta_box() {
-  if ( function_exists('add_meta_box') ) {
-    add_meta_box( 'new-meta-boxes', '轮播文字', 'new_meta_boxes', 'ilostshow', 'normal', 'high' );
+  if(function_exists('add_meta_box')){
+    add_meta_box('new-meta-boxes','轮播文字','new_meta_boxes','ilostshow','normal','high');
   }
 }
-function save_postdata( $post_id ) {
+function save_postdata($post_id){
   global $new_meta_boxes;
-  if ( !wp_verify_nonce( $_POST['ludou_metaboxes_nonce'], plugin_basename(__FILE__) )){return;}
-  if ( !current_user_can( 'edit_posts', $post_id )){return;}
-  foreach($new_meta_boxes as $meta_box) {
-    $data = $_POST[$meta_box['name']];
-    if($data == "")
-      delete_post_meta($post_id, $meta_box['name'], get_post_meta($post_id, $meta_box['name'].'_value', true));
-    else
-      update_post_meta($post_id, $meta_box['name'], $data);
-   }
+  if(!wp_verify_nonce($_POST['ludou_metaboxes_nonce'],plugin_basename(__FILE__))){return;}
+  if(!current_user_can('edit_posts',$post_id)){return;}
+  foreach($new_meta_boxes as $meta_box){
+    $data=$_POST[$meta_box['name']];
+    if($data==""){
+      delete_post_meta($post_id,$meta_box['name'],get_post_meta($post_id,$meta_box['name'],true));
+    }else{
+      update_post_meta($post_id,$meta_box['name'],$data);
+    }
+  }
 }
-add_action('admin_menu', 'create_meta_box');
-add_action('save_post', 'save_postdata');
+add_action('admin_menu','create_meta_box');
+add_action('save_post','save_postdata');
 
 function ilost_Widget(){
   register_widget('ilost_catlistsWidget');
