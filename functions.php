@@ -40,10 +40,10 @@ function ilost_getiloshow(){
       <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="<?php the_title()?>">
       <!--/a-->
       <div class="flex-caption container-"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
-        <?php //the_post_thumbnail('full');?><b class="heading"><?php the_title()?></b>
-        <b class="heading"><?php //echo( get_post_meta(get_the_ID(), "heading", true) )?></b>
-        <i class="intro"><?php echo( get_post_meta(get_the_ID(), "intro", true) )?></i>
-        <a class="btn link" href="<?php echo $urlLink;?>" target="_blank"><?php echo(__('Learn more','iLost'))?></a>
+        <b class="heading"><?php the_title()?></b>
+        <!--b class="heading"><?php //echo(get_post_meta(get_the_ID(),"heading",true))?></b-->
+        <i class="intro"><?php echo(get_post_meta(get_the_ID(),"intro",true))?></i>
+        <a class="btn link" href="<?php echo $urlLink;?>" target="_blank"><?php echo(__('Learn more','iLost'))?> &gt;</a>
       </div>
     </li>
     <?php }?>
