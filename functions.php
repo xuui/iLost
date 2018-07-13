@@ -39,7 +39,7 @@ function ilost_getiloshow(){
       <!--a href="<?php echo $urlLink;?>"-->
       <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="<?php the_title()?>">
       <!--/a-->
-      <div class="flex-caption container"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
+      <div class="flex-caption container-"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
         <?php //the_post_thumbnail('full');?><b class="heading"><?php the_title()?></b>
         <b class="heading"><?php //echo( get_post_meta(get_the_ID(), "heading", true) )?></b>
         <i class="intro"><?php echo( get_post_meta(get_the_ID(), "intro", true) )?></i>

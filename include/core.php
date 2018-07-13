@@ -155,8 +155,6 @@ function ilost_is_mobileos(){
 */
 function ilost_getstyles(){
   echo "<link rel=\"stylesheet\" href=\"".ilost_path."/styles/bootstrap.min.css\" />\n";
-  echo "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css\" />\n";
-  echo "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css\" />\n";
   echo "<link rel=\"stylesheet\" href=\"".get_stylesheet_uri()."\" />\n";
 }
 function ilost_enqueue_script(){
