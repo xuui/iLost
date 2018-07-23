@@ -1,32 +1,26 @@
-<?php
-if(post_password_required()){return;}
-?>
-
-<section id="comments" class="clearfix"><div class="inarp">
+<?php if(post_password_required()){return;}?>
+<section id="comments" class="clearfix">
+	<div class="inarp">
 	<?php if(have_comments()){?>
 		<h3 class="comments-title">
 			<?php $comments_number=get_comments_number();
 			if('1'===$comments_number){
-				/* translators: %s: post title */
 				printf(_x('One Reply to &ldquo;%s&rdquo;','comments title','iLost'),get_the_title());
 			}else{
 				printf(_nx('%1$s Reply to &ldquo;%2$s&rdquo;','%1$s Replies to &ldquo;%2$s&rdquo;',$comments_number,'comments title','iLost'),number_format_i18n($comments_number),get_the_title());
-			} ?>
+			}?>
 		</h2>
-
 		<ol class="comment-list">
-			<?php wp_list_comments(array('avatar_size'=>100,'style'=>'ol','short_ping'=>true,'reply_text'=>__('Reply','iLost')));?>
+			<?php wp_list_comments(array('callback'=>'ilost_comments','avatar_size'=>96,'style'=>'ol','short_ping'=>true,'reply_text'=>__('Reply','iLost')));?>
 		</ol>
 		<?php the_comments_pagination(array('prev_text'=>'<span class="screen-reader-text">'.__('Previous','iLost').'</span>','next_text'=>'<span class="screen-reader-text">'.__('Next','iLost').'</span>',));
-  } // Check for have_comments().
-
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if (!comments_open() && get_comments_number() && post_type_supports( get_post_type(),'comments')){ ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'iLost' ); ?></p>
+  }
+	if(!comments_open() && get_comments_number() && post_type_supports(get_post_type(),'comments')){?>
+		<p class="no-comments"><?php _e('Comments are closed.','iLost');?></p>
 	<?php }
-	comment_form();
-	?>
-</div></section>
+	comment_form();?>
+	</div>
+</section>
 
 <?php /*
 if(post_password_required()){?>

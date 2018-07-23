@@ -52,23 +52,25 @@ function ilost_getiloshow(){
 <?php }wp_reset_postdata();
 }
 if(!function_exists('ilost_comments')){function ilost_comments($comment,$args,$depth){
-  $GLOBALS['comment']=$comment;
-  switch($comment->comment_type){
-    case '':?><li <?php comment_class('media');?> id="li-comment-<?php comment_ID();?>">
-    <div class="media-left comment-author"><?php echo get_avatar($comment,96);?></div>
-    <div class="comment-body media-body">
-      <h4 class="media-heading"><?php printf(__('%1$s <small><time pubdate datetime="%2$s">%3$s</time></small>','iLost'),sprintf('%s',get_comment_author_link()),get_comment_time('c'),sprintf(__('%1$s %2$s','iLost'),get_comment_date('Y-m-d'),get_comment_time(' H:i')));echo '<span class="pull-right">';comment_reply_link(array_merge($args,array('depth'=>$depth,'max_depth'=>$args['max_depth'])));echo '</span>';?></h4>
-      <?php if($comment->comment_approved=='0'){echo '<em>'.__('Your comment is awaiting moderation.','iLost').'</em>';}?>
-      <?php echo '<small class="pull-right">';
-      edit_comment_link(__('[Edit]','iLost'),'','');
-      echo '</small>';comment_text();?>
+  if('div'===$args['style']){$tag='div ';$add_below='comment';
+  }else{$tag='li ';$add_below='div-comment';}?>
+  <<?php echo $tag;?><?php comment_class(empty($args['has_children'])?'media':'media parent');?> id="comment-<?php comment_ID();?>">
+    <?php /*if('div'!=$args['style']){?>
+    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <?php }*/?>
+    <div class="media-left comment-author vcard">
+      <?php if($args['avatar_size']!=0){echo get_avatar($comment,$args['avatar_size']);}?>
     </div>
-    <?php break;
-    case 'pingback':case 'trackback':?>
-<li class="pingback media">
-    <div class="media-body"><?php comment_author_link();edit_comment_link(__('[Edit]','iLost'),'');?></div>
-    <?php break;
-  }
+    <div class="comment-body media-body">
+      <h4 class="media-heading">
+        <small class="pull-right comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID));?>"><?php	printf(__('%1$s at %2$s'),get_comment_date(),get_comment_time());?></a><?php edit_comment_link(__('(Edit)'),'  ','');?></small>
+        <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'),get_comment_author_link());?>
+      </h4>
+      <?php if($comment->comment_approved=='0'){?><em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.');?></em><br/><?php }
+      comment_text();?>
+      <p class="reply"><?php comment_reply_link(array_merge($args,array('add_below'=>$add_below,'depth'=>$depth,'max_depth'=>$args['max_depth'])));?></p>
+    </div>
+  <?php /*if('div'!=$args['style']){?></div><?php }*/
 }}
 
 /*
