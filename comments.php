@@ -24,22 +24,7 @@
 		'fields'=>apply_filters('comment_form_default_fields',$ilost_comment_fields),
 	);
 	comment_form($ilost_comment_form);
-	//comment_form();?>
+	//comment_form();
+	ilost_ctrlentry();?>
 	</div>
 </section>
-
-<?php /*
-if(post_password_required()){?>
-<div class="alert alert-warning" role="alert"><?php _e('This post is password protected. Enter the password to view any comments.','iLost');?></div>
-<?php return;}
-if(have_comments()){?>
-<?php 
-ilost_ctrlentry();?>
-
-<?php }else{
-if(!comments_open()){?>
-<div class="alert alert-warning" role="alert"><?php _e('Comments are closed.','iLost');?></div>
-<?php }
-}
-*/
-?>

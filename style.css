@@ -212,6 +212,7 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 /* Comments */
 .comments-title,.comment-reply-title{margin-top:16px;font-size:20px;font-weight:400;color:#000}
 .comment-notes{font-size:12px;}
+.comment-list{padding:0;}
 .comment-list ul{}
 .comment-list .media + .media{border-top:1px dotted #b3b3b3}
 .comment-list .media{margin-top:0;padding:10px 0;color:#333}
