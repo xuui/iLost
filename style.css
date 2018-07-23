@@ -210,7 +210,7 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 
 
 /* Comments */
-#comments-title,#reply-title{margin-top:16px;font-size:16px;font-weight:300;color:#000}
+.comments-title,.comment-reply-title{margin-top:16px;font-size:20px;font-weight:400;color:#000}
 .comment-notes{font-size:12px;}
 .comment-list ul{}
 .comment-list .media + .media{border-top:1px dotted #b3b3b3}
@@ -258,21 +258,20 @@ aside .media{border-bottom:1px dashed #eee;margin-top:0}
 #respond .form-group,#respond .comment-notes,#respond .form-submit{padding:0 16px}
 #respond .required{color:#c00}
 #respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input,#respond textarea{-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;transition:all .2s ease-out}
-#respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input{border:none;border-bottom:2px solid #ddd;box-shadow:none;border-radius:0;}
+#respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input{border:none;border-bottom:1px solid #999;box-shadow:none;border-radius:0;}
 #respond .comment-form-author input:focus,#respond .comment-form-email input:focus,#respond .comment-form-url input:focus,#respond textarea:focus{border-color:#1e88e5;box-shadow:none;}
 /*
 #respond .cereply{display:inline-block;margin:5px 10px;height:24px;line-height:24px;vertical-align:middle;color:#999;*zoom:1}
-
 #respond .form-allowed-tags{color:#888;font-size:1em;line-height:18px}
 #respond .form-allowed-tags code{font-size:.9em}
-
 */
 /*
 #respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input,#respond textarea{background:#fff url(images/input_bg.png) repeat-x}
 #respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input{border:1px solid #889194;width:260px}
 #respond textarea{border:1px solid #889194}
 */
-#respond .form-submit .btn{padding:4px 24px;font-size:15px}
+#respond .form-submit{text-align:right;}
+#respond .form-submit .btn{padding:4px 24px;font-size:16px}
 
 /* Navigation */
 .pagination{border-radius:4px;overflow:hidden;}

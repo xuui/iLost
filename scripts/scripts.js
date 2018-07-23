@@ -17,7 +17,7 @@ ilostQ('#comments ul.children li:last-child').after('<li class="box-bottom"><spa
   }*/
 $window.scroll(function(){
   gotopbutton(gotop);
-  share.width(shareW);
+  //share.width(shareW);
 });
 function gotopbutton(id){if(id.length>0){if($document.scrollTop()>=128){id.fadeIn(200);}else{id.fadeOut(200);}}}
 })})(jQuery);
