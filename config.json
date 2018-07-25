@@ -6,7 +6,7 @@
     "@gray": "lighten(@gray-base, 34%)",
     "@gray-light": "lighten(@gray-base, 48%)",
     "@gray-lighter": "lighten(@gray-base, 95%)",
-    "@brand-primary": "#429eb8",
+    "@brand-primary": "#117ccc",
     "@brand-success": "#43a047",
     "@brand-info": "#00bcd4",
     "@brand-warning": "#ffb300",
