@@ -228,29 +228,13 @@ aside ul{list-style:none;padding-left:0}
 .pagnav-row a{display:block;color:var(--bColor2);font-size:21px;font-weight:300;line-height:1.1429;text-transform:capitalize;}
 .pagnav-row small{display:block;margin-bottom:8px;color:var(--bColor3);font-weight:400;line-height:1.25}
 .pagnav-row a small{text-decoration:none}
-
 .post-link{text-align:center;}
-.post-link span,.post-link a{display:inline-block;*display:inline;zoom:1;vertical-align:top;border:1px solid var(--bgColor);border-radius:4px;padding:2px 8px;}
-.post-link span{color:var(--bColor2);}
-.post-link a{border-color:var(--pColor);}
-.post-link a span{border:none;padding:0;color:var(--pColor);}
-.post-link a:hover{background:var(--pColor);border-color:var(--pColor);}
+.post-link span,.post-link a{display:inline-block;*display:inline;zoom:1;vertical-align:top;border:1px solid var(--bgColor);border-radius:4px;padding:4px 8px;line-height:1.428;}
+.post-link span{background:var(--bgColor);color:var(--bColor);}
+.post-link a{border-color:var(--bgColor);}
+.post-link a span{background:transparent;border:none;padding:0;color:var(--pColor);}
+.post-link a:hover,.post-link a:focus,.post-link a:active{background:var(--pColor);border-color:var(--pColor);color:#fff;text-decoration:none;}
 .post-link a:hover span{color:#fff;}
-
-/*
-.postnav-link{clear:both;border:none;margin:20px 0;text-align:center;letter-spacing:-4px}
-.postnav-link .page-numbers{border:1px solid #ededec;padding:5px 10px;letter-spacing:0;text-decoration:none}
-.postnav-link .page-numbers+.page-numbers{margin-left:1px}
-.postnav-link .current{background:#f7f7f7;border-color:#f2f2f2;color:#000}
-
-/*
-.post-nav{clear:both;border-bottom:1px solid #dbdbdb;padding:10px 5px}
-.post-nav{list-style:none;padding-left:0}
-.post-nav a,.post-nav a:visited{text-decoration:none}
-.post-nav a:hover{text-decoration:none}
-.post-nav .previous{float:left;background-position:-287px -440px;padding-left:16px}
-.post-nav .next{float:right;background-position:100% -387px;padding-right:16px;text-align:right}
-*/
 
 /* Footer */
 footer{clear:both;background:#fff;}

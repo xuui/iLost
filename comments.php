@@ -6,7 +6,9 @@
 		<ol class="comment-list">
 			<?php wp_list_comments(array('callback'=>'ilost_comments','avatar_size'=>96,'style'=>'ol','short_ping'=>true,'reply_text'=>__('Reply','iLost')));?>
 		</ol>
-		<?php the_comments_pagination(array('prev_text'=>'<span class="screen-reader-text">'.__('Previous','iLost').'</span>','next_text'=>'<span class="screen-reader-text">'.__('Next','iLost').'</span>',));
+		<div class="post-link"><?php paginate_comments_links(array('prev_text' =>'&laquo;','next_text'=>'&raquo;'));?></div>
+		<?php 
+//the_comments_pagination(array('prev_text'=>'<span class="screen-reader-text">'.__('Previous','iLost').'</span>','next_text'=>'<span class="screen-reader-text">'.__('Next','iLost').'</span>',));
   }
 	if(!comments_open() && get_comments_number() && post_type_supports(get_post_type(),'comments')){?>
 		<p class="no-comments"><?php _e('Comments are closed.','iLost');?></p>
