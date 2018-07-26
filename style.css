@@ -202,29 +202,18 @@ aside ul{list-style:none;padding-left:0}
 .comment-list .children .children li.toprep,
 .comment-list .children .children .box-bottom{margin-left:-6px}
 .comment-list .children .children li.toprep{padding-left:6px}
-
 .comment-notes{color:var(--bColor2)}
 .comment-list .pingback{padding:10px;color:var(--bColor2)}
 .comment-list .pingback p{margin:0}
 .comment-list .pingback a{color:var(--pColor)}
-
-/*
-.nopassword,.nocomments{display:none}
-*/
 #respond{clear:both;position:relative;overflow:hidden;padding-bottom:12px;text-align:left}
 #commentform.row{margin:0 -12px;}
 .comment-form label{margin:0;font-size:13px;color:var(--bColor2);}
 #respond .comment-notes,#respond .form-submit{padding:0 12px}
 #respond .required{color:#c00}
-#respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input,#respond textarea{-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;transition:all .2s ease-out}
-#respond .comment-form-author input,#respond .comment-form-email input,#respond .comment-form-url input{border:none;border-bottom:1px solid var(--bColor2);box-shadow:none;border-radius:0;}
-#respond .comment-form-author input:focus,#respond .comment-form-email input:focus,#respond .comment-form-url input:focus,#respond textarea:focus{background-color:#fafafa;border-color:#1e88e5;box-shadow:none;}
-/*
-#respond .cereply{display:inline-block;margin:5px 10px;height:24px;line-height:24px;vertical-align:middle;color:#999;*zoom:1}
-#respond .form-allowed-tags{color:var(--bColor2);font-size:1em;line-height:18px}
-#respond .form-allowed-tags code{font-size:.9em}
-*/
-#respond textarea{border:1px solid var(--bColor2)}
+#respond .form-control{border:none;border-bottom:1px solid var(--bColor3);box-shadow:none;border-radius:0;-webkit-transition:all .2s ease-out;-moz-transition:all .2s ease-out;transition:all .2s ease-out;}
+#respond .form-control:focus{background-color:#fafafa;border-color:#1e88e5;box-shadow:none;}
+#respond textarea.form-control{border:1px solid var(--bColor3);border-radius:4px;}
 #respond .form-submit{text-align:right;}
 #respond .form-submit .btn{padding:4px 24px;font-size:16px}
 
