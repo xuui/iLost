@@ -4,8 +4,8 @@
 var $window=ilostQ(window),$document=ilostQ(document);//,mouseover_tid=[],mouseout_tid=[];
 var gotop=ilostQ('#gotop'),sidebar=ilostQ('#aside'),side_Width=sidebar.width(),$article=ilostQ('article'),footer=ilostQ('footer');
 
-ilostQ('#comments ul.children li:first-child').addClass('toprep');
-ilostQ('#comments ul.children li:last-child').after('<li class="box-bottom"><span class="left"></span><span class="right"></span></li>');
+ilostQ('#comments .children li:first-child').addClass('toprep');
+ilostQ('#comments .children li:last-child').after('<li class="box-bottom"><span class="left"></span><span class="right"></span></li>');
 
 
   /*

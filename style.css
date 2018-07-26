@@ -97,8 +97,8 @@ h1,h2,h3,h4,h5,h6,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{color:var(--bColor);}
 .breadwarp,.breadcrumb{background:transparent}
 .breadcrumb{margin:0;padding:12px 0;border-radius:0;font-size:12px;color:rgba(0,0,0,.16)}
 .page .breadcrumb{padding:12px 0 0;}
-.breadcrumb a{color:rgba(0,0,0,.24)}
-.breadcrumb > .active{color:rgba(0,0,0,.48)}
+.breadcrumb a{color:var(--bColor3)}
+.breadcrumb > .active{color:var(--bColor2)}
 .custom-background .breadcrumb a{color:rgba(255,255,255,.6)}
 .custom-background .breadcrumb .active{color:rgba(255,255,255,.76)}
 #newpost{padding-bottom:24px;}
@@ -505,12 +505,10 @@ section .post-meta{padding:6px 15px 18px}
 */
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){
-
-/*
-section .post-meta{padding:6px 10px 9px;background-size:100% 5px;-webkit-background-size:100% 5px}
 .comment-list .children,.comment-list .children li.toprep{background-image:url(images/retina/wavecommml.png);background-size:680px 80px}
 .comment-list .children .box-bottom,.comment-list .children .box-bottom .left,.comment-list .children .box-bottom .right{background-image:url(images/retina/wavecommmb.png);background-size:91px 21px}
-#sidehome li h3{background-image:url(images/retina/pageside.png);background-size:480px 120px}
+  
+/*
 #gotop a{background-image:url(images/retina/gotop.png);background-size:48px 64px}
 */
 }
