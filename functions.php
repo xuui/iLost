@@ -35,16 +35,16 @@ function ilost_getiloshow(){
       $urlLink=get_post_meta(get_the_ID(),"urlink",$single=true);if(!$urlLink){$urlLink='javascript:;';}
       $align=get_post_meta(get_the_ID(),"align",$single=true);
       $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
-    <li>
-      <!--a href="<?php echo $urlLink;?>"-->
-      <img src="<?php echo ilost_path.'/images/slidemark.png';?>" style="background-image:url(<?php echo $img_src[0];?>);" alt="<?php the_title()?>">
-      <!--/a-->
-      <div class="flex-caption container-"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
+    <li style="background-image:url(<?php echo $img_src[0];?>);">
+      <div class="flex-caption container"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
         <b class="heading"><?php the_title()?></b>
         <!--b class="heading"><?php //echo(get_post_meta(get_the_ID(),"heading",true))?></b-->
         <i class="intro"><?php echo(get_post_meta(get_the_ID(),"intro",true))?></i>
         <a class="btn link" href="<?php echo $urlLink;?>" target="_blank"><?php echo(__('Learn more','iLost'))?> &gt;</a>
       </div>
+      <!--a href="<?php echo $urlLink;?>"-->
+      <!--<img src="<?php echo ilost_path.'/images/slidemark.png';?>"  alt="<?php the_title()?>">-->
+      <!--/a-->
     </li>
     <?php }?>
   </ul><script type="text/javascript" defer src="<?php echo ilost_path.'/scripts/rotation.js';?>"></script>
