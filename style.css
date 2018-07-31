@@ -432,7 +432,7 @@ footer .widget{margin-bottom:16px;padding:24px 16px 0;}
 .postpart .container{padding:0 12px;}
 .postpart .row .col-xl-3,.postpart .row .col-xl-4{}
 .postpart a{height:220px;}
-.postpart a span{padding:16px;}
+.postpart a span{bottom:20px;padding:12px 16px;}
 
 #newpost{padding:0 0 32px;}
 #newpost .row{margin:0;}
