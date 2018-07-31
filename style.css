@@ -271,9 +271,9 @@ section.page #readerwall .avatar{margin:0;border:none;padding:0}
 .postpart .-container{padding:0;}
 .postpart .row{margin-left:-2px;margin-right:-2px}
 .postpart .row .col-xl-3,.postpart .row .col-xl-4{padding:2px;}
-.postpart a,.postpart a span{display:block;display:block}
-.postpart a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:128px;-webkit-transition:all .24s ease-out;-moz-transition:all .24s ease-out;transition:all .24s ease-out;}
-.postpart a span{position:absolute;bottom:16px;background:rgba(255,255,255,.95);color:#000;margin-right:32px;padding:8px 12px;line-height:1.2;-webkit-transition:bottom .32s ease-out;-moz-transition:bottom .32s ease-out;transition:bottom .32s ease-out;}
+.postpart a,.postpart a span{display:block;display:block;-webkit-transition:all .24s ease-out;-moz-transition:all .24s ease-out;transition:all .24s ease-out;}
+.postpart a{position:relative;overflow:hidden;background:#fff no-repeat 50% 50%;background-size:cover;height:128px;}
+.postpart a span{position:absolute;bottom:16px;background:rgba(255,255,255,.95);color:#000;margin-right:32px;padding:8px 12px;line-height:1.2;}
 .postpart a:hover{box-shadow:0 2px 16px 4px rgba(0,0,0,.2);z-index:10;}
 .postpart a:hover span{bottom:0}
 
