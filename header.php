@@ -20,7 +20,7 @@
   }
   $description=str_replace("\n",' ',$description);
 }elseif(is_page()){
-  $keywords=xuui_wp_name.', '.xuui_searchKey().wp_title(',',false);
+  $keywords=ilost_wp_name.', '.xuui_searchKey().wp_title(',',false);
   $keywords=str_replace(' ,',',',$keywords);
   if(!is_front_page()){
     if($post->post_excerpt){
@@ -35,7 +35,7 @@
     }else{$description=xuui_wp_description;}
   }
 }elseif(is_category()||is_tag()){
-  $keywords=xuui_wp_name.', '.xuui_searchKey().wp_title(',',false);
+  $keywords=ilost_wp_name.', '.xuui_searchKey().wp_title(',',false);
   $keywords=str_replace(' ,',',',$keywords);
   if(xuui_seDescription()){
     $description=xuui_seDescription();
@@ -43,7 +43,7 @@
     $description=xuui_wp_description;
   }
 }else{
-  $keywords=xuui_wp_name.', '.xuui_searchKey();
+  $keywords=ilost_wp_name.', '.xuui_searchKey();
   if(xuui_seDescription()){
     $description=xuui_seDescription();
   }else{$description=xuui_wp_description;}
