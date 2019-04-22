@@ -36,7 +36,7 @@ function ilost_getiloshow(){
       $align=get_post_meta(get_the_ID(),"align",$single=true);
       $img_src=wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');?>
     <li style="background-image:url(<?php echo $img_src[0];?>);">
-      <div class="flex-caption container"<?php if($align!='left'){echo ' style="text-align:'.$align.'"';}?>>
+      <div class="flex-caption container"<?php if($align!='left' && $align!=null){echo ' style="text-align:'.$align.'"';}?>>
         <b class="heading"><?php the_title()?></b>
         <!--b class="heading"><?php //echo(get_post_meta(get_the_ID(),"heading",true))?></b-->
         <i class="intro"><?php echo(get_post_meta(get_the_ID(),"intro",true))?></i>

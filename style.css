@@ -335,6 +335,7 @@ body.error footer p{text-align:center}
 #rotation .flex-caption .intro{font-size:16px;line-height:24px;}
 #rotation .flex-caption .link{background:#fff;padding:8px 16px;border-radius:0;font-size:14px;line-height:1;color:#000;text-shadow:none;}
 #rotation .flex-caption .link:hover{background-color:#000;color:#fff;}
+#rotation .flex-control-nav{bottom:8px;}
 #rotation .flex-direction-nav a{background:url(images/direction_nav.png) no-repeat 0 50%}
 #rotation .flex-direction-nav a.flex-next{background-position:-56px 50%;right:0}
 #rotation .flex-direction-nav a.flex-prev{background-position:0 50%;left:0}
