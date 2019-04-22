@@ -97,7 +97,7 @@ function create_meta_box() {
 }
 function save_postdata($post_id){
   global $new_meta_boxes;
-  if(!wp_verify_nonce($_POST['ludou_metaboxes_nonce'],plugin_basename(__FILE__))){return;}
+  if(!wp_verify_nonce(@$_POST['ludou_metaboxes_nonce'],plugin_basename(__FILE__))){return;}
   if(!current_user_can('edit_posts',$post_id)){return;}
   foreach($new_meta_boxes as $meta_box){
     $data=$_POST[$meta_box['name']];
