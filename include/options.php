@@ -227,7 +227,7 @@ function ilost_getOption($option){
 }
 function ilost_getlogoimg(){
   $usrlogoimg=ilost_getOption('usrlogoimg');$logoimgurl=ilost_getoption('logoimgurl');
-  if(!$logoimgurl){$logoimgurl=ilost_path.'/images/logo.png';}
+  if(!$logoimgurl){$logoimgurl=ilost_path.'/images/logo.svg';}
   if(is_front_page()||is_home()){echo '<h1 class="nav-brand">';}
   echo '<a class="navbar-brand" href="'.ilost_wp_homeurl.'">';
   if($usrlogoimg){
