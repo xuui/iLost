@@ -328,13 +328,7 @@ body.error footer p{text-align:center}
 /* Rotation */
 #rotation{margin:0;background:#eee}
 #rotation .slides{overflow:hidden}
-#rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;width:100%;height:360px;
-animation:bgzoom 7s infinite;
-}
-@keyframes bgzoom{
-from{background-size:100% auto;}
-to{background-size:110% auto;}
-}
+#rotation .slides li{position:relative;background:#fff no-repeat 50% 0%;background-size:cover;width:100%;height:360px;}
 #rotation .flex-caption{position:absolute;z-index:1;bottom:36%;left:0;right:0;background-color:transparent;margin:0 auto;padding:0 6.4%;text-align:left;text-shadow:0 2px 3px rgba(0,0,0,.54)}
 #rotation .flex-caption .heading,#rotation .flex-caption .intro{display:block;margin-bottom:16px;font-style:normal;color:#fff;}
 #rotation .flex-caption .heading{line-height:24px;font-size:20px;font-weight:300;text-shadow:0 1px 5px rgba(0,0,0,.72)}
@@ -382,6 +376,12 @@ img.alignleft,img.alignright,img.aligncenter{margin-bottom:12px}
 /*
 section.post .ilost_demo,section.post .ilost_downloads,section.post .ilost_paybys{text-shadow:none}
 */
+
+
+@keyframes bgzoom{
+from{background-size:100% auto;}
+to{background-size:110% auto;}
+}
 
 @media (max-width:767px){
 .col-xs-12{padding-left:8px;padding-right:8px;}
@@ -431,7 +431,7 @@ footer .widget{margin-bottom:16px;padding:24px 16px 0;}
 #showSection .container{padding-left:12px;padding-right:12px;}
 
 #rotation{-webkit-box-shadow:0 0 56px 0 rgba(0,0,0,.12);-moz-box-shadow:0 0 56px 0 rgba(0,0,0,.12);-ms-box-shadow:0 0 56px 0 rgba(0,0,0,.12);box-shadow:0 0 56px 0 rgba(0,0,0,.12);}
-#rotation .slides li{width:100%;height:520px;}
+#rotation .slides li{width:100%;height:520px;animation:bgzoom 7s infinite;}
 #rotation .flex-caption .heading{line-height:48px;font-size:40px;}
 #rotation .flex-caption .link{padding:12px 24px;}
 
