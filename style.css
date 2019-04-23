@@ -429,7 +429,7 @@ footer .widget{margin-bottom:16px;padding:24px 16px 0;}
 #showSection .container{padding-left:12px;padding-right:12px;}
 
 #rotation{-webkit-box-shadow:0 0 56px 0 rgba(0,0,0,.12);-moz-box-shadow:0 0 56px 0 rgba(0,0,0,.12);-ms-box-shadow:0 0 56px 0 rgba(0,0,0,.12);box-shadow:0 0 56px 0 rgba(0,0,0,.12);}
-#rotation .slides li{width:100%;height:560px;animation:bgzoom 7s infinite;}
+#rotation .slides li{width:100%;height:560px;animation:bgzoom 7.6s infinite;}
 #rotation .flex-caption .heading{line-height:48px;font-size:40px;}
 #rotation .flex-caption .link{padding:12px 24px;}
 
